@@ -303,6 +303,18 @@ div.body p.caption {
     text-align: inherit;
 }
 
+div.figure p.caption {
+clear:both;
+background-color:#11557;
+font-size:.8em;
+font-weight:bold;
+width:80%;
+margin-left:10%;
+margin-right:10%;
+text-align:justify;
+line-height:1.5em;
+}
+
 div.body td {
     text-align: left;
 }

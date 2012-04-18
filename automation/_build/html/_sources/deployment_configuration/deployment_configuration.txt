@@ -319,7 +319,7 @@ automated deployment environment, we recommend installing the following software
 | cryptsetup        | Encryption (LUKS)                | Recommended  |
 +-------------------+----------------------------------+--------------+
 | haproxy           | Load Balancing                   | Optional     |
-+-------------------+----------------------------------+-------------+
++-------------------+----------------------------------+--------------+
 | cronolog          | Logging                          | Optional     |
 +-------------------+----------------------------------+--------------+
 | sysstat           | OS metrics                       | **Required** |
