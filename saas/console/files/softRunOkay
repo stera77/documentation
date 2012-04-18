@@ -1,0 +1,23 @@
+Date: Wed,  1 Dec 2010 03:21:50 +0000 (UTC)                                                                                      
+From: alerts@enstratus.com                                                                                                       
+To: enstratus.admin@enstratus.com                                                                                                   
+
+New Cloud Event: Wed 01 Dec 2010 03:21:50 UTC
+Cloud: Amazon Web Services
+Account: Company
+Subject: NEW EVENT #312221 (Severity 5) - Monthly RunRate Now within Soft Limits
+for Company Name (YACNGH)
+
+The budget status for Company Name (YACNGH) is again within normal
+parameters.
+
+If you need assistance understanding this message or if you believe this message
+is the result of an issue with enStratus, please visit our support site at
+https://support.enstratus.com and login with your standard enStratus login
+credentials.
+
+To check on the status of enStratus itself, visit: http://status.enstratus.com
+
+Subscribe to live status updates via RSS at
+http://status.enstratus.com/status.xml or via Twitter at
+http://www.twitter.com/enStratusStatus.

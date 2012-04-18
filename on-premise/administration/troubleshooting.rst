@@ -1,0 +1,5 @@
+.. _administration:
+
+**************
+Administration
+**************

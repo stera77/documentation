@@ -1,0 +1,428 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. Configuration Management &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="next" title="3. Automation" href="../automation/automation.html" />
+    <link rel="prev" title="1. Console" href="../console/console.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>2. Configuration Management</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="../automation/automation.html" title="3. Automation" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="../console/console.html" title="1. Console" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">2. Configuration Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#chef">2.1. Chef</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-chef">2.2. Using Chef</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/configuration_management/configuration_management.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="configuration-management">
+<h1>2. Configuration Management<a class="headerlink" href="#configuration-management" title="Permalink to this headline">¶</a></h1>
+<p>This section provides information on using configuration management systems within the
+enStratus console.</p>
+<p>The enStratus console allows you to manage resources using two kinds of configuration
+management systems, Chef and Object Store.</p>
+<div class="section" id="chef">
+<h2>2.1. Chef<a class="headerlink" href="#chef" title="Permalink to this headline">¶</a></h2>
+<p>Chef is a configuration management tool created by Opscode. enStratus support both the
+hosted and private versions of Chef.</p>
+<p>Object Store is a simple script based Configuration Management System that allows you to
+upload custom scripts into a cloud storage account, groups scripts into personalities, and
+automatically download and run the scripts when a new server is launched in your cloud
+account.
+Services</p>
+<p>To implement configuration management, you must first configure a service under
+Configuration Management &gt; Services. If you choose Chef, you must supply an endpoint for
+the service. If you choose Object Store, you must choose a region and then a directory in
+which to store your scripts.</p>
+<div class="section" id="accounts">
+<h3>2.1.1. Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h3>
+<p>Once your service has been configured, you will need to create an account associated with
+that service under Configuration Management &gt; Accounts. When you set up an account for a
+Chef service you associate a set of credentials with that account. Credentials are not
+necessary for Object Store services.</p>
+<p>Multiple accounts may be attached to the same Chef service with different sets of
+credentials, but an Object Store service can be associated with only one configuration
+management account at a time.</p>
+</div>
+</div>
+<div class="section" id="using-chef">
+<h2>2.2. Using Chef<a class="headerlink" href="#using-chef" title="Permalink to this headline">¶</a></h2>
+<p>Using Chef to configure instances requires the following software be installed:</p>
+<ol class="arabic">
+<li><p class="first">enStratus agent.</p>
+<p>Although Chef can be used to install the enStratus agent, in an automation enviroment
+where Chef is used to configure instances at run-time, the agent is used as a trigger
+point so that chef runs happen at the appropriate time and with the appropriate
+credentials.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the requirement for the enStratus agent seems like an unreasonable
+request at first, it actually allows for a great degree of flexibility in executing Chef
+client calls against Chef endpoints.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">enStratus passes in a chef-endpoint, and the credentials for connecting to
+that endpoint at runtime to the instance via the agent. The agent dynamically writes
+the client.rb file with this information, making the image usable anywhere.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Use Case</strong></p>
+<p>enStratus engineers frequently do Chef server installations at client sites
+for POC. Often, the Chef server is a VM just like any other instance, and as such has all
+the ephemerality of instances running on a POC cloud project.</p>
+<p>enStratus solves the problem of moving Chef server targets by abstracting that process and
+using the agent to handle the passing of necessary information to each instance.</p>
+<p class="last">In summary, the standing up of Chef-enabled instances becomes trivial. Just install
+the Chef client with a templated client.rb (shown below) and let the agent kick off the
+Chef execution.</p>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first">Chef-client.</p>
+<p>The chef-client software is used to execute the Chef run.</p>
+</li>
+</ol>
+<p>Location: Configuration Management &gt; Services</p>
+<p>Create a new configuration management service of type Chef.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/chefService.png"><img alt="Add Configuration Management Service" src="../_images/chefService.png" style="width: 475.0px; height: 380.0px;" /></a>
+<p class="caption">Add Configuration Management Service</p>
+</div>
+<p><strong>Service Added</strong></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/chefService2.png"><img alt="Add Configuration Management Service" src="../_images/chefService2.png" style="width: 975.0px; height: 260.0px;" /></a>
+<p class="caption">Configuration Management Service Added</p>
+</div>
+<p>Location: Configuration Management &gt; Accounts</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/chefAccount.png"><img alt="Add Configuration Management Account" src="../_images/chefAccount.png" style="width: 570.0px; height: 475.0px;" /></a>
+<p class="caption">Add Configuration Management Account</p>
+</div>
+<p><strong>Account Added</strong></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/chefAccount2.png"><img alt="Configuration Management Account Added" src="../_images/chefAccount2.png" style="width: 975.0px; height: 260.0px;" /></a>
+<p class="caption">Configuration Management Account Added</p>
+</div>
+<ol class="arabic simple">
+<li>Install the enStratus Agent.</li>
+<li>Install the chef client.</li>
+<li>Edit /etc/chef/client.rb (make it a &#8220;template&#8221; that the enStratus agent will re-write)</li>
+</ol>
+<p>To trigger a vm launch and and accompanying chef action, launch a vm and choose the
+appropriate configuration management engine. For Chef, use the text window to paste in
+json that will be passed to the chef-client call as shown.</p>
+<p>Here, we&#8217;re passing in a chef role.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/launchWithRole.png"><img alt="Launch VM with CM Action" src="../_images/launchWithRole.png" style="width: 600.0px; height: 450.0px;" /></a>
+<p class="caption">Launch VM with Configuration Management Action</p>
+</div>
+<p>The process for launching a vm with a subsequent chef-client call is shown below.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/chefLaunchProcess.png"><img alt="Chef launch Process" src="../_images/chefLaunchProcess.png" style="width: 600.0px; height: 450.0px;" /></a>
+<p class="caption">Launching a VM with a chef-client call</p>
+</div>
+<ol class="arabic simple">
+<li>A launch event is triggered using the Configuration Management tab with a run list.</li>
+<li>The VM must have the chef-client pre-installed and the enStratus agent pre-installed.</li>
+<li>enStratus will pass to the VM agent script:<ul>
+<li>validation.pem</li>
+<li>first-boot.json</li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="4">
+<li>The agent script dynamically replaces the template variables in client.rb and copies the validation.pem to /etc/chef</li>
+<li>The agent triggers a chef-client call with the first-boot.json file as an argument</li>
+<li>Triggering a validation run for the client</li>
+<li>The client.pem file is returned and the chef run completes.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">At first, it might seem like the dynamic re-writing of the client.rb variables
+is a hindrance to smooth operations, however, it makes images very portable should the
+chef endpoint change.</p>
+</div>
+<p>This file is part of an agent installation and is located in the /enstratus/bin directory.
+enStratus passes the validation.pem file along with some json used to execute the
+chef-client procedure shown below.</p>
+<p>The agent script replaces the dummy variables in the client.rb and then it executes a
+chef-client call:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo chef-client -j <span class="nv">$FIRST_BOOT</span>
+</pre></div>
+</div>
+<p>Where $FIRST_BOOT is a file with the contents specified via the enstratus console as json
+file for the chef client call. In the example below:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span><span class="nt">&quot;run_list&quot;</span><span class="p">:[</span><span class="s2">&quot;role[cloudFoundry]&quot;</span><span class="p">]}</span>
+</pre></div>
+</div>
+<p><strong>Agent Script: /enstratus/bin/runConfigurationManagement-CHEF</strong></p>
+<div class="highlight-bash"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/bin/bash</span>
+
+<span class="nb">set</span> -u
+
+<span class="nv">logTag</span><span class="o">=</span><span class="s2">&quot;runConfigurationManagement-CHEF&quot;</span>
+<span class="nv">LOGGER</span><span class="o">=</span>/enstratus/bin/log
+<span class="nv">FIRST_BOOT</span><span class="o">=</span><span class="s1">&#39;/etc/chef/first-boot.json&#39;</span>
+
+<span class="nv">$LOGGER</span> -t <span class="s2">&quot;$logTag&quot;</span> runConfigurationManagement-CHEF <span class="s2">&quot;$@&quot;</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$# </span>-lt 5 <span class="o">]</span> ; <span class="k">then</span>
+   <span class="nv">$LOGGER</span> -t <span class="s2">&quot;$logTag&quot;</span> <span class="s2">&quot;Syntax: runConfigurationManagement-CHEF RUN_AS_USER TOKEN CONFIG_FILE_PATH AUTH_ID ENDPOINT&quot;</span>
+   <span class="nb">exit </span>1
+<span class="k">fi</span>
+
+<span class="nv">$LOGGER</span> -t <span class="s2">&quot;$logTag&quot;</span> <span class="s2">&quot;Running configuration management for Chef...&quot;</span>
+
+<span class="nv">RUN_AS_USER</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nv">TOKEN_FILE_PATH</span><span class="o">=</span><span class="nv">$2</span>
+<span class="nv">EXTRA_INFO_FILE_PATH</span><span class="o">=</span><span class="nv">$3</span>
+<span class="nv">AUTH_ID</span><span class="o">=</span><span class="nv">$4</span>
+<span class="nv">ENDPOINT</span><span class="o">=</span><span class="nv">$5</span>
+
+<span class="nv">CLIENT_RB</span><span class="o">=</span><span class="s1">&#39;/etc/chef/client.rb&#39;</span>
+<span class="c">#Replace the endpoint variable in the /etc/chef/client.rb file.</span>
+<span class="hll">sudo sed -i <span class="s2">&quot;s#CHEF_ENDPOINT#$ENDPOINT#&quot;</span> <span class="nv">$CLIENT_RB</span> &gt; /dev/null 2&gt;&amp;1
+</span>
+<span class="c">#Replace the validator variable in the /etc/chef/client.rb file.</span>
+<span class="hll">sudo sed -i <span class="s2">&quot;s/VALIDATOR/$AUTH_ID/&quot;</span> <span class="nv">$CLIENT_RB</span> &gt; /dev/null 2&gt;&amp;1
+</span>
+sudo cp <span class="nv">$TOKEN_FILE_PATH</span> /etc/chef/validation.pem &gt; /dev/null 2&gt;&amp;1
+
+sudo cp <span class="nv">$EXTRA_INFO_FILE_PATH</span> <span class="nv">$FIRST_BOOT</span> &gt; /dev/null 2&gt;&amp;1
+
+<span class="hll">sudo chef-client -j <span class="nv">$FIRST_BOOT</span> &gt; /dev/null 2&gt;&amp;1
+</span><span class="nv">EXIT</span><span class="o">=</span><span class="nv">$?</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="nv">$EXIT</span> !<span class="o">=</span> 0 <span class="o">]]</span>; <span class="k">then</span>
+<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;chef-client run failed: $EXIT&quot;</span> 2&gt;&amp;1 | <span class="nv">$LOGGER</span> -t <span class="s2">&quot;$logTag&quot;</span>
+        <span class="nb">exit </span>99
+<span class="k">fi</span>
+
+sudo rm -f /etc/chef/validation.pem &gt; /dev/null 2&gt;&amp;1
+
+<span class="nv">$LOGGER</span> -t <span class="s2">&quot;$logTag&quot;</span> <span class="s2">&quot;Finished running configuration management for Chef.&quot;</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple">
+<li>Line 26: Rewrites the chef endpoint.</li>
+<li>Line 29: Rewrites the validator.</li>
+<li>Line 35: Executes the chef call.</li>
+</ol>
+<p><strong>Client.rb: /etc/chef/client.rb</strong></p>
+<div class="highlight-ruby"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">log_level</span>          <span class="ss">:debug</span>
+
+<span class="c1">#log_location       STDOUT</span>
+<span class="n">log_location</span> <span class="s2">&quot;/var/log/chef/client.log&quot;</span>
+
+<span class="n">ssl_verify_mode</span>    <span class="ss">:verify_none</span>
+
+<span class="hll"><span class="n">chef_server_url</span> <span class="s2">&quot;CHEF_ENDPOINT&quot;</span>
+</span>
+<span class="n">file_cache_path</span>    <span class="s2">&quot;/var/cache/chef&quot;</span>
+
+<span class="n">file_backup_path</span>   <span class="s2">&quot;/var/lib/chef/backup&quot;</span>
+
+<span class="n">pid_file</span>           <span class="s2">&quot;/var/run/chef/client.pid&quot;</span>
+
+<span class="n">cache_options</span><span class="p">({</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s2">&quot;/var/cache/chef/checksums&quot;</span><span class="p">,</span> <span class="ss">:skip_expires</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">})</span>
+
+<span class="n">signing_ca_user</span> <span class="s2">&quot;chef&quot;</span>
+
+<span class="no">Mixlib</span><span class="o">::</span><span class="no">Log</span><span class="o">::</span><span class="no">Formatter</span><span class="o">.</span><span class="n">show_time</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="hll"><span class="n">validation_client_name</span> <span class="s1">&#39;VALIDATOR&#39;</span>
+</span></pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		2. Configuration Management
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

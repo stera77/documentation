@@ -1,0 +1,156 @@
+#!/bin/bash
+
+#This is the enstratus-configure script. It is responsible for parsing the enstratus.cfg file.
+
+LOGGER=/enstratus/bin/log
+logTag="enstratus-configure"
+
+$LOGGER -t "$logTag Entering enstratus-configure."
+
+serviceId=$1
+configFile=$2
+theTime=$( date +%H%M )
+SVC_DIR="/mnt/services/$serviceId"
+
+#Testing only, do not use in production.
+#This copies over the enstratus.cfg file to /mnt/tmp
+sudo cp cfg/enstratus.cfg /mnt/tmp/enstratus.cfg.${theTime}
+
+serverId=$( grep serverId $configFile | cut -f 2 -d= )
+serviceId=$( grep serviceId $configFile | cut -f 2 -d= )
+name=$( grep name $configFile | cut -f 2 -d= )
+dataSources=$( grep dataSources $configFile | cut -f 2 -d= )
+
+readIP=$( grep "dataSource.$dataSources.read" $configFile | cut -f 2 -d= )
+writeIP=$( grep "dataSource.$dataSources.write" $configFile | cut -f 2 -d= )
+
+serviceUser=$( grep serviceUser $configFile | cut -f 2 -d= )
+servicePass=$( grep servicePassword $configFile | cut -f 2 -d= )
+
+publicPort=$( grep ^publicPort $configFile | cut -f 2 -d= )
+privatePort=$( grep ^privatePort $configFile | cut -f 2 -d= )
+
+domain=$( grep primaryAddress $configFile | cut -f 2 -d= )
+
+localIP=$( sudo ifconfig | grep inet | egrep -v "inet6|127" | \
+awk -F: '{ print $2 }' | awk '{ print $1 }' )
+externalIP=$( wget -qO - icanhazip.com )
+
+function doApache2(){
+
+        # Make a working copy of the template file
+        sudo cp ${SVC_DIR}/cfg/default.template ${SVC_DIR}/cfg/default \
+	> /dev/null 2>&1
+
+        #Stop apache and clear out any sites-enabled
+	sudo /etc/init.d/apache2 stop > /dev/null 2>&1
+        sleep 1
+
+        #Replace key variables of default file
+	sudo sed -i "s/DOCROOT/\/mnt\/services\/$serviceId\/www/" \
+	${SVC_DIR}/cfg/default > /dev/null 2>&1
+	sudo sed -i "s/DIRECTORY/\/mnt\/services\/$serviceId\/www/" \
+	${SVC_DIR}/cfg/default > /dev/null 2>&1
+	sudo sed -i "s/PORT/${publicPort}/" ${SVC_DIR}/cfg/default \
+	> /dev/null 2>&1
+
+	#Change permissions
+	sudo chmod 644 ${SVC_DIR}/cfg/default > /dev/null 2>&1
+
+	#Finally, set up links and enable site, here we create a
+	#symlink instead of moving the file to /etc/apache2
+	sudo rm -f /etc/apache2/sites-enabled/000* > /dev/null 2>&1
+	sudo rm -f /etc/apache2/sites-available/000* > /dev/null 2>&1
+        sudo a2dissite default
+	sudo ln -s ${SVC_DIR}/cfg/default \ 
+	/etc/apache2/sites-enabled/wordpress > /dev/null 2>&1
+        sudo a2ensite wordpress > /dev/null 2>&1
+}
+
+function doHttpd(){
+        # Make a working copy of the template file
+        sudo cp ${SVC_DIR}/cfg/httpd.template \ 
+	${SVC_DIR}/cfg/httpd.conf > /dev/null 2>&1
+
+        #Stop apache
+        sudo /etc/init.d/httpd stop > /dev/null 2>&1
+        sleep 1
+
+        # Replace the key variables in the httpd.template 
+	# file with the ones we got from the enstratus.cfg
+
+        sudo sed -i "s/SVC_ID/${serviceId}/" cfg/httpd.template.temp \
+	> /dev/null 2>&1
+        sudo sed -i "s/HOST/${dotDomain}/" cfg/httpd.template.temp > \
+	/dev/null 2>&1
+        sudo sed -i "s/PORT/${publicPort}/" cfg/httpd.template.temp > \
+	/dev/null 2>&1
+        sudo sed -i "s/SERVER_NAME/${dotDomain}/" cfg/httpd.template.temp > \
+	 /dev/null 2>&1
+
+        #Move httpd.conf file into place
+        $LOGGER -t $logTag "Moving httpd.conf into place."
+
+        sudo mv cfg/httpd.template.temp /etc/httpd/conf/httpd.conf > /dev/null 2>&1
+
+        if [ $? != 0 ]; then
+                $LOGGER -t $logTag "Could not move cfg/httpd.conf \
+	to /etc/httpd/conf for some reason."
+        else
+                $LOGGER -t $logTag "Done."
+        fi
+
+        #Check apache syntax
+        httpd -t > /dev/null 2>&1
+        if [ $? != 0 ]; then
+                $LOGGER -t $logTag "Apache syntax problem. \
+	Check /etc/httpd/conf/httpd.conf"
+                $LOGGER -t $logTag "Exiting 0 anyway, but your site is likely broken."
+        else
+                $LOGGER -t $logTag "Apache syntax OK."
+        fi
+}
+
+function whichApache(){
+        if [ -d /etc/httpd/conf ]; then
+                doHttpd
+        elif [ -d /etc/apache2 ]; then
+                doApache2
+        fi
+}
+
+doConfigure(){
+
+        #Make a copy of the configuration file.
+        sudo cp ${SVC_DIR}/cfg/wp-config.template \
+	${SVC_DIR}/cfg/wp-config.php > /dev/null 2>&1
+
+        local WP_CONFIG="${SVC_DIR}/cfg/wp-config.php"
+
+        sudo sed -i "s/database_name_here/$dataSources/" $WP_CONFIG > \
+	 /dev/null 2>&1
+        sudo sed -i "s/username_here/$serviceUser/" $WP_CONFIG > \
+	/dev/null 2>&1
+        sudo sed -i "s/password_here/$servicePass/" $WP_CONFIG > \ 
+	/dev/null 2>&1
+        sudo sed -i "s/localhost/$readIP/" $WP_CONFIG > \ 
+	/dev/null 2>&1
+        sudo sed -i "s/IP_ADDRESS/$externalIP/" $WP_CONFIG > \ 
+	/dev/null 2>&1
+
+        $LOGGER -t $logTag "Created wp-config.php."
+        $LOGGER -t $logTag "IP of DB: $readIP"
+
+        #Move newly created wp-config file into place
+        mv ${SVC_DIR}/cfg/wp-config.php \
+	${SVC_DIR}/www/wp-config.php > /dev/null 2>&1
+
+	#Change some permissions
+	chmod 644 ${SVC_DIR}/www/wp-config.php > /dev/null 2>&1
+
+}
+
+whichApache
+doConfigure
+
+exit 0

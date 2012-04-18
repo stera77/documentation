@@ -1,0 +1,272 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3. Services &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="next" title="4. Deployment Configuration" href="../deployment_configuration/deployment_configuration.html" />
+    <link rel="prev" title="2. Overview" href="../introduction/overview.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>3. Services</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="../deployment_configuration/deployment_configuration.html" title="4. Deployment Configuration" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="../introduction/overview.html" title="2. Overview" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">2. Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">3. Services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">3.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anatomy">3.2. Anatomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#behavior">3.3. Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#managing">3.4. Managing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#files">3.5. Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_configuration/deployment_configuration.html">4. Deployment Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_operation/deployment_operation.html">5. Deployment Operation</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/services/services.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="services">
+<h1>3. Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>3.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-s-in-and-what-is-a-service">
+<h3>3.1.1. What&#8217;s in, and what is, a service?<a class="headerlink" href="#what-s-in-and-what-is-a-service" title="Permalink to this headline">¶</a></h3>
+<p>A service is a file stored in cloud file storage. Services can be tied to tiers and
+connected to each other by a special relationship called a dependency.</p>
+<p>Using enStratus automation, services are downloaded to servers when servers reach a
+running state. The enStratus agent downloads, extracts, and executes a service
+configuration routine written by the application designer.</p>
+<p>Readers familiar with configuration management services such as Chef should approach
+services in a similar way to a recipe. Services are deployed onto virtual machines that
+are configured accoring to their launch configuration.</p>
+</div>
+<div class="section" id="services-logically">
+<h3>3.1.2. Services: Logically<a class="headerlink" href="#services-logically" title="Permalink to this headline">¶</a></h3>
+<p>enStratus makes a logical connection between tiers and services. Services are tied to
+tiers because tiers are able to span across cloud regions, for example a tier that spans
+AWS region US-East and AWS region US-West.</p>
+<p>Beyond spanning tiers across regions within a single cloud, tiers are capable of spanning
+across several clouds as shown in the diagram below.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/spanningClouds.png"><img alt="Tier Spanning Clouds" src="../_images/spanningClouds.png" style="width: 792.0px; height: 297.0px;" /></a>
+<p class="caption">Tier Spanning Clouds</p>
+</div>
+<p>This implementation depicts a tier spanning between two public clouds, in this case Amazon
+AWS and Rackspace. It is equally possible to span a tier into a private cloud as well.</p>
+</div>
+<div class="section" id="services-physically">
+<h3>3.1.3. Services: Physically<a class="headerlink" href="#services-physically" title="Permalink to this headline">¶</a></h3>
+<p>Physically, services are stored in cloud storage and downloaded as part of the start of a
+deployment. Once downloaded, services are installed onto servers that are running within
+a tier.</p>
+</div>
+</div>
+<div class="section" id="anatomy">
+<h2>3.2. Anatomy<a class="headerlink" href="#anatomy" title="Permalink to this headline">¶</a></h2>
+<p>The anatomy of a service is very free-form. This allows for great flexibility in designing
+or adapting an application for use in a multi-cloud environment.</p>
+<p>An enStratus service should have the following structure:</p>
+<div class="section" id="bin">
+<h3>3.2.1. bin<a class="headerlink" href="#bin" title="Permalink to this headline">¶</a></h3>
+<p>Inside the bin/ directory, minimally 3 files:</p>
+<ol class="arabic simple">
+<li>enstratus-start</li>
+<li>enstratus-stop</li>
+<li>enstratus-configure</li>
+</ol>
+<p>The bin/ directory provides a known path for leveraging the enstratus orchestration and
+automation sections. When a service is deployed enStratus will, using the enStratus agent,
+trigger events to configure each service in the appropriate order.</p>
+</div>
+<div class="section" id="cfg">
+<h3>3.2.2. cfg<a class="headerlink" href="#cfg" title="Permalink to this headline">¶</a></h3>
+<p>The cfg directory is a directory where enStratus writes configuration files generated at
+run time with information the application will need to operate in the cloud. This
+directory is a good place for putting configuration file &#8220;templates&#8221;.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The astute chef user/reader will recognize the word template as a very useful
+construct from the Chef/Opscode world and that&#8217;s precisely correct. As deployers of
+cloud applications, we use this cfg directory to stage files that will be written
+dynamically with ephemeral cloud information.</p>
+</div>
+<p>And...that&#8217;s it. Questions? :)</p>
+<p>The bin/ and the cfg/ directories are the two primary directories used by the enStratus
+management system. Beyond that, additional directories can be added to suit the
+application. For example, a third directory might be:</p>
+</div>
+<div class="section" id="app">
+<h3>3.2.3. app<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h3>
+<p>index.html</p>
+<p>Where the application directory holds the application files, in this case a lonely
+index.html.</p>
+</div>
+<div class="section" id="mysql-service">
+<h3>3.2.4. MySQL Service<a class="headerlink" href="#mysql-service" title="Permalink to this headline">¶</a></h3>
+<p>The MySQL service structure looks like this:</p>
+<p>bin/</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>addDataSource</li>
+<li>enstratus-backupDataSource</li>
+<li>enstratus-configureDataSource</li>
+<li>enstratus-lock</li>
+<li>mysql</li>
+<li>mysqlStartReplication</li>
+</ul>
+</td><td><ul class="simple">
+<li>configureDataSource</li>
+<li>enstratus-check</li>
+<li>enstratus-dbgrant</li>
+<li>enstratus-start</li>
+<li>mysqlDump</li>
+</ul>
+</td><td><ul class="simple">
+<li>configureMySQL</li>
+<li>enstratus-configure</li>
+<li>enstratus-installds</li>
+<li>enstratus-stop</li>
+<li>mysqlGrant</li>
+</ul>
+</td></tr></table>
+<p>cfg/</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>master.cnf</li>
+<li>replicant.cnf</li>
+</ul>
+</td></tr></table>
+<p>data/</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">&lt;empty&gt;</span></tt></li>
+</ul>
+</td></tr></table>
+<p>log/</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">&lt;empty&gt;</span></tt></li>
+</ul>
+</td></tr></table>
+</div>
+</div>
+<div class="section" id="behavior">
+<h2>3.3. Behavior<a class="headerlink" href="#behavior" title="Permalink to this headline">¶</a></h2>
+<p>During an orchestrated, automated launch of an application stack, enStratus ensures the
+proper ordering of events, including the download of service files to each instance.</p>
+</div>
+<div class="section" id="managing">
+<h2>3.4. Managing<a class="headerlink" href="#managing" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>3.5. Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		3. Services
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

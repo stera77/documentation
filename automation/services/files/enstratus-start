@@ -1,0 +1,38 @@
+#!/bin/bash
+
+LOGGER=/enstratus/bin/log
+logTag="enstratus-start"
+
+$LOGGER -t $logTag "Calling enstratus start. Starting Apache"
+
+doApache2(){
+	sleep 1
+	sudo /etc/init.d/apache2 start > /dev/null 2>&1
+
+	if [ $? != 0 ] ; then
+		$LOGGER -t $logTag "Apache start failed."
+	else
+		$LOGGER -t $logTag "Apache start successful."
+	fi
+}
+
+doHttpd(){
+	sleep 1
+	sudo /etc/init.d/httpd start > /dev/null 2>&1
+
+	if [ $? != 0 ] ; then
+		$LOGGER -t $logTag "Apache start failed."
+	else
+		$LOGGER -t $logTag "Apache start successful."
+	fi
+}
+
+function whichApache(){
+	if [ -d /etc/httpd/conf ]; then
+		doHttpd
+	elif [ -d /etc/apache2 ]; then
+		doApache2
+	fi
+}
+
+whichApache

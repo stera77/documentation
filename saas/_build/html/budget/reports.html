@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Reports &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Reports</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="budget.html">7. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/budget/reports.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="reports">
+<h1>Reports<a class="headerlink" href="#reports" title="Permalink to this headline">¶</a></h1>
+<p>Using the enStratus console, it is also possible to view detailed reports of your account.</p>
+<p>For an even more granular view of how resources are being used in the account, navigate to
+Console &gt; Reports. Several options are presented in a tabbed interface. Choose the tab
+labeled usage.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/billingView.png"><img alt="Budget View" src="../_images/billingView.png" style="width: 800.0px; height: 360.0px;" /></a>
+<p class="caption">Budget View</p>
+</div>
+<p>Using the reports tab, information relating to billing and charges can be sorted by
+billing code, resource, user, and group. Use the drop down box selector for Show Usage By:
+to choose the preferred method for displaying data.</p>
+<p>Use the date selector drop down options to look back to previous months usage.</p>
+<div class="section" id="billing-code">
+<h2>Billing Code<a class="headerlink" href="#billing-code" title="Permalink to this headline">¶</a></h2>
+<p>Displaying usage by billing code will display the costs associated with each billing code
+for which there is information. This view is similar to the information presented when
+viewing</p>
+<p>Infrastructure &gt; Budget Codes. In this view, however, costs are segregated into two main
+categories. First, the costs for usage based on the price charged by the cloud provider.
+Second, the costs charged by enStratus.</p>
+</div>
+<div class="section" id="resource">
+<h2>Resource<a class="headerlink" href="#resource" title="Permalink to this headline">¶</a></h2>
+<p>To view charges associated with cloud resources such as servers and load balancers, select
+Show Usage By: Resource from the option list and click Get Report.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/resourceView.png"><img alt="Resource View" src="../_images/resourceView.png" style="width: 800.0px; height: 480.0px;" /></a>
+<p class="caption">Resource View</p>
+</div>
+<p>As usual, the columns are sortable and the entire list is able to be filtered using the
+filter text box.</p>
+</div>
+<div class="section" id="user">
+<h2>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h2>
+<p>To view charges by user, select Show Usage By: User, and click Get Report.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/userView.png"><img alt="User View" src="../_images/userView.png" style="width: 880.0px; height: 480.0px;" /></a>
+<p class="caption">User View</p>
+</div>
+</div>
+<div class="section" id="group">
+<h2>Group<a class="headerlink" href="#group" title="Permalink to this headline">¶</a></h2>
+<p>Finally, to view usage by group. Select Show Usage By: Group, and click Get Report.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/groupView.png"><img alt="Group View" src="../_images/groupView.png" style="width: 880.0px; height: 400.0px;" /></a>
+<p class="caption">Group View</p>
+</div>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Reports
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

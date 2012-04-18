@@ -1,0 +1,742 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4. Infrastructure &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="next" title="5. Platform" href="../platform/platform.html" />
+    <link rel="prev" title="3. Automation" href="../automation/automation.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>4. Infrastructure</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="../platform/platform.html" title="5. Platform" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="../automation/automation.html" title="3. Automation" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">4. Infrastructure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#servers">4.1. Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#machine-images">4.2. Machine Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ip-addresses">4.3. IP Addresses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#load-balancers">4.4. Load Balancers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#firewalls">4.5. Firewalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">4.6. Volumes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snapshots">4.7. Snapshots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/infrastructure/infrastructure.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="infrastructure">
+<h1>4. Infrastructure<a class="headerlink" href="#infrastructure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="servers">
+<h2>4.1. Servers<a class="headerlink" href="#servers" title="Permalink to this headline">¶</a></h2>
+<p>enStratus monitors all servers in your account. Use the green actions button to access
+your server. If the enStratus agent is not installed on the server, the options available
+are limited to getting information, rebooting, pausing/starting, or terminating the
+server. If the enStratus agent is installed on a running server, additional functionality
+is included in the actions menu.</p>
+<div class="section" id="expanded-information">
+<h3>4.1.1. Expanded information<a class="headerlink" href="#expanded-information" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Info: Expanded information regarding server attributes. Including comprehensive hardware information such as logical volumes attached, filesystems used, encryption, and memory.</li>
+<li>Analytics: A graphical representation of CPU Load (in %) over the last hour.</li>
+<li>Console: Hypervisor information.</li>
+<li>Agent: Agent logging capturing events such as adding/removing users, Host Intrusion Detection System alerts, and customizable information messages.</li>
+</ul>
+</div>
+<div class="section" id="make-image">
+<h3>4.1.2. Make Image<a class="headerlink" href="#make-image" title="Permalink to this headline">¶</a></h3>
+<p>Making a machine image means making a saved copy of the server state for future use.
+Machine images will show up in the tab. Machine images should be made whenever changes are
+made to the operating system such as patches or updates.</p>
+</div>
+<div class="section" id="make-snapshot">
+<h3>4.1.3. Make Snapshot<a class="headerlink" href="#make-snapshot" title="Permalink to this headline">¶</a></h3>
+<p>Making a snapshot means create a differential backup of any attached volumes.</p>
+</div>
+<div class="section" id="shell-remote-access">
+<h3>4.1.4. Shell/Remote Access<a class="headerlink" href="#shell-remote-access" title="Permalink to this headline">¶</a></h3>
+<p>Shell (Linux) and remote (Windows) access refers to creating user accounts on running
+servers. Each user in enStratus is assigned a user code of the form p123. When remote
+access is granted on a Linux server, a home user account is created on that server and the
+public ssh credentials defined in the enStratus user profile are set for the user. On
+Windows, a home account is created and the user can access the running server using the
+RDP password set in the enStratus profile.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Before granting shell/remote access to a server, the user must define their
+public ssh key and RDP password in their user profile. If the credentials change, the
+remote servers are not notified of the change. To ensure the new credentials are used, the
+user must first be removed and re-added to remote access so the changes can propagate to
+their account.</p>
+</div>
+</div>
+<div class="section" id="reboot">
+<h3>4.1.5. Reboot<a class="headerlink" href="#reboot" title="Permalink to this headline">¶</a></h3>
+<p>Reboot the running server. Rebooting does not change the IP address of the server.</p>
+</div>
+<div class="section" id="pause">
+<h3>4.1.6. Pause<a class="headerlink" href="#pause" title="Permalink to this headline">¶</a></h3>
+<p>Pause the running server. enStratus still monitors the server. IP address will change upon starting.</p>
+</div>
+<div class="section" id="terminate">
+<h3>4.1.7. Terminate<a class="headerlink" href="#terminate" title="Permalink to this headline">¶</a></h3>
+<p>Terminate the instance. No data on the instance will be saved.</p>
+<p>To rename a running server, click on the server name indicated by a brown dashed line. A
+text window will appear. Enter the desired name and select OK. The hostname of the server
+will be changed.</p>
+<p>To change the label color of a running server, click on the label color and choose the
+desired color from the resulting choices.</p>
+</div>
+</div>
+<div class="section" id="machine-images">
+<h2>4.2. Machine Images<a class="headerlink" href="#machine-images" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h3>4.2.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>A machine image is a saved template of a server. Running servers are started from machine images.</p>
+<p>If you are going to be utilizing enStratus images to begin your cloud work, please follow this workflow:</p>
+<ol class="arabic simple">
+<li>Start a server from one of the provided enStratus templates (machine images).</li>
+<li>Next, create a machine image from the server you have started.</li>
+<li>Use the resulting image in your work, not the provided enStratus image.</li>
+</ol>
+<p><em>Why?</em></p>
+<p>We update the available enStratus images periodically, and when we do, we delete the old
+images to be good stewards of cloud resources. If the backing image of a running server is
+deleted, it can lead to imaging problems going forward. It will not affect the running
+server.</p>
+<p>The functionality included with machine images varies depending on the underlying cloud
+provider. Some cloud providers allow access to a public database of images from which
+private servers can be started. enStratus allows searching and starting of any publicly
+available machine images.</p>
+</div>
+<div class="section" id="renaming">
+<h3>4.2.2. Renaming<a class="headerlink" href="#renaming" title="Permalink to this headline">¶</a></h3>
+<p>To rename a machine image, click on the image name indicated by a brown dashed line. A
+text window will appear. Enter the desired name and select OK.</p>
+<p>To change the label color of a machine image, click on the label color and choose the
+desired color from the resulting choices.</p>
+</div>
+<div class="section" id="starting">
+<h3>4.2.3. Starting<a class="headerlink" href="#starting" title="Permalink to this headline">¶</a></h3>
+<p>To start a server from a machine image, click on the green action button and select
+launch. A dialog box will appear allowing for customization of launch options.</p>
+<p>Some of the launch parameters are governed by the functionality provided for by the
+underlying cloud provider. Most cloud providers allow for customization of the amount of
+hardware (CPU, Memory, storage) provisioned for the server.</p>
+</div>
+<div class="section" id="security-group">
+<h3>4.2.4. Security Group<a class="headerlink" href="#security-group" title="Permalink to this headline">¶</a></h3>
+<p>Security parameters in the form of firewall or security group are also chosen at the time
+of server launch.</p>
+<p>enStratus layers additional functionality in the form of groups and billing codes into
+server launch for all cloud providers.</p>
+</div>
+<div class="section" id="key-pair">
+<h3>4.2.5. Key Pair<a class="headerlink" href="#key-pair" title="Permalink to this headline">¶</a></h3>
+<p>Some cloud providers allow servers to be started with a root keypair. enStratus provides
+for this functionality by allowing the user to choose from a set of existing keypairs or
+to create a new keypair at launch.</p>
+</div>
+<div class="section" id="volumes">
+<h3>4.2.6. Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">¶</a></h3>
+<p>Additionally, through some cloud providers it is possible to specify a volume group to be
+attached, formatted, put into a RAID configuration, and optionally encrypted at launch
+time.</p>
+<p>Once the server is launched, it will usually take less than 20 minutes for the server to
+be ready for use.</p>
+<p>To do:
+#. Launch process
+#. Screenshots</p>
+</div>
+</div>
+<div class="section" id="ip-addresses">
+<h2>4.3. IP Addresses<a class="headerlink" href="#ip-addresses" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>4.3.1. Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><em>IP Addresses allow for reservation of static ip addresses which can then be assigned to running servers.</em></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">IP address reservation is a feature not available in all clouds. If it&#8217;s not a
+feature supported by your cloud provider, enStratus will not present it in the console.</p>
+</div>
+<p>To reserve an IP Address, click on + reserve_address in the menu window and select Reserve
+IP Address. A new IP address will be added to the list of Active Addresses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the Amazon cloud, there is a limit of 5 reserved IP addresses. To reserve
+more, you must contact Amazon Web Services.</p>
+</div>
+<p>Once the IP address has been reserved it is available for use by assigning it to a running
+server. To assign the IP address to a server, select the green actions button and choose
+assign. A dialog box will appear with a dropdown list of available servers. Select your
+server from the list and choose Assign address. It will take a few moments for the
+assignment to be made.</p>
+<p>If an addresses is already assigned to a server and is set for removal instead, click on
+the actions button and choose the release option. This action will also take a few
+moments.</p>
+<p>Hint: Unused reserved IP addresses still cost money even though they are not assigned to
+running server. To delete an IP address, click on the actions button and choose delete.
+Confirm the deletion in the resulting dialog box and the IP address will be removed from
+your account.</p>
+</div>
+</div>
+<div class="section" id="load-balancers">
+<h2>4.4. Load Balancers<a class="headerlink" href="#load-balancers" title="Permalink to this headline">¶</a></h2>
+<p>Successful application load balancing involves dynamically adding and removing application
+nodes from the load balanced pool. This discussion is limited to addressing the activity
+that takes place on the load balancer.</p>
+<div class="section" id="id2">
+<h3>4.4.1. Overview<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>enStratus supports a wide range of load balancers. In the Amazon Cloud, Elastic Load
+Balancers are available for provisioning and use from within enStratus. Server-based load
+balancers can be started for use or an existing server can be purposed as a load balancer
+via HA-Proxy or ajp (mod_jk). Finally, third party load balancing solutions are available
+in the form of the Zeus load balancer.</p>
+</div>
+<div class="section" id="elastic-load-balancer">
+<h3>4.4.2. Elastic Load Balancer<a class="headerlink" href="#elastic-load-balancer" title="Permalink to this headline">¶</a></h3>
+<p>Elastic load balancers are an offering from Amazon Web Services that are well supported in
+enStratus. ELB are advantagous because they can be cheaper to operate than server based
+solutions. The configuration requirements for ELB is often simpler than using server-based
+load balancing.</p>
+<p>To provision a new elastic load balancer using enStratus, navigate to Infrastructure, Load
+Balancers. Select + create_load_balancer. A single dialog box will present the required
+configuration options for the load balancer.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/createELB.png"><img alt="Create ELB" src="../_images/createELB.png" style="width: 380.0px; height: 285.0px;" /></a>
+<p class="caption">Create ELB</p>
+</div>
+</div>
+<div class="section" id="elb-discussion">
+<h3>4.4.3. ELB Discussion<a class="headerlink" href="#elb-discussion" title="Permalink to this headline">¶</a></h3>
+<p>The Name, Label, and Description fields should be self-explanatory. More care should be
+taken when configuring the Data Center portion of the dialog. Each configured data center
+will receive an equal portion of the traffic entering the load balancer. This means that
+for each data center configured, there should be a &#8220;listening&#8221; application server to field
+the load balanced traffic.</p>
+<p>For example, let&#8217;s assume we have a load balancer configured for data centers us-east-1a
+and us-east-1b. This means that 50% of the inbound traffic that reaches the load balancer
+will be sent to associated servers in east-1a and 50% of the inbound traffic will be sent
+to servers in east-1b. If no servers are provisioned in a data center, the traffic will
+manifest as an error.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is possible to re-configure additional data centers after the load balancer has
+been created. Additionally, in a clustered environment, enStratus knows not to start any
+servers in a data center that is unassociated with the load balancer.</p>
+</div>
+<p>Billing code and user group are the billing code and user group attributes that enStratus
+will use to track billing charges and access rights tied to the user management and
+billing code offering of enStratus.</p>
+<p>The last step in configuring an elastic load balancer is to configure the protocols that
+pass through the load balancer. Several protocols are available for configuration
+including HTTP, HTTPS, AJP, and RAW TCP. At the time of this writing, it is not possible
+to terminate SSL traffic on an elastic load balancer. To configure SSL traffic to utilize
+an ELB, use the RAW TCP protocol and pass through port 443, or whatever port you will use
+for SSL traffic.</p>
+<p>Once the ELB has been configured, it will appear as an available load balancer in the Load
+Balancer list.</p>
+<p>The action button for the load balancer allows for changing the configuration of the ELB.
+Manage servers allows currently running servers to be associated with the running ELB.
+Manage zones allows for adding or dropping zone associations. For example, if there are no
+longer any server running in a currently balanced zone, that zone should be removed from
+the ELB.</p>
+<p>Lastly, to delete an existing ELB, choose the delete option under the actions menu.</p>
+</div>
+<div class="section" id="elb-and-cname">
+<h3>4.4.4. ELB and CNAME<a class="headerlink" href="#elb-and-cname" title="Permalink to this headline">¶</a></h3>
+<p>One more item of interest with respect to ELB is the way domain names are resolved. Each
+ELB has a host name of the form: CompanyName-LB-1234567890.us-east-1.elb.amazonaws.com.</p>
+<p>Here is the step-by-step flow of what happens when a client requests a URL served by your
+application:</p>
+<p>When a name resolution request for a domain name is attempted for your webserver,
+www.yourdomain.com, DNS will respond with the CNAME alias of
+CompanyName-LB-1234567890.us-east-1.elb.amazonaws.com. Next, the client request will
+attempt to resolve the name of the ELB,
+CompanyName-LB-1234567890.us-east-1.elb.amazonaws.com.</p>
+<p>Amazon web services controls this domain name since it is part of the domain
+amazonaws.com. Amazon DNS servers return an address of the ELB, 111.222.222.111. The
+client connection starts with this IP address. The ELB will pass traffic as directed
+through this IP address to the balanced pool of servers.</p>
+</div>
+<div class="section" id="mod-jk">
+<h3>4.4.5. mod-jk<a class="headerlink" href="#mod-jk" title="Permalink to this headline">¶</a></h3>
+<p>A second popular method for load balancing applications is to use mod_jk. Using mod_jk is
+one of two types of virtual machine based load balancing currently supported by enStratus.
+enStratus manages mod_jk balanced applications via the 5 mod_jk scripts that are a part of
+the enStratus agent. These scripts are located in /enstratus/bin/</p>
+<ol class="arabic simple">
+<li>modjk-addAddress &#8211; Adds an address to the worker pool.</li>
+<li>modjk-buildWorkers &#8211; Creates the workers.list file.</li>
+<li>modjk-removeAddress &#8211; Removes an address from the worker pool.</li>
+<li>modjk-startProxy &#8211; Calls modjk-addAddress with the necessary parameters to add a worker to the pool.</li>
+<li>modjk-stopProxy &#8211; Calls modjk-removeAddress with the necessary parameters to remove a worker from the pool.</li>
+</ol>
+</div>
+<div class="section" id="modjk-agent-scripts">
+<h3>4.4.6. modjk Agent Scripts<a class="headerlink" href="#modjk-agent-scripts" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Agent Script</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>modjk-addAddress</td>
+<td>Adds an address to the worker pool.</td>
+</tr>
+<tr class="row-odd"><td>modjk-buildWorkers</td>
+<td>Creates the workers.list file.</td>
+</tr>
+<tr class="row-even"><td>modjk-removeAddress</td>
+<td>Removes an address from the worker pool.</td>
+</tr>
+<tr class="row-odd"><td>modjk-startProxy</td>
+<td>Calls modjk-addAddress with the necessary parameters to add a worker to the pool.</td>
+</tr>
+<tr class="row-even"><td>modjk-stopProxy</td>
+<td>Calls modjk-removeAddress with the necessary parameters to remove a worker from the pool.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The drop-in point for this and the other types of load balancing are the
+/enstratus/bin/startProxy and /enstratus/bin/stopProxy scripts.</p>
+</div>
+</div>
+<div class="section" id="ha-proxy">
+<h3>4.4.7. HA-Proxy<a class="headerlink" href="#ha-proxy" title="Permalink to this headline">¶</a></h3>
+<p>Another popular method for load balancing is using the High Availability Proxy or HA-Proxy
+method. This method is the other type of virtual machine based load in active support by
+enstratus. Although HA-Proxy is highly customizable and extensible, the support scripts
+are arranged for the most basic proxying. However, the scripts are open for customization
+and extension. They are located in /enstratus/bin/</p>
+<p>haproxy-addService &#8211; Adds a balanced node to /etc/haproxy.cfg and auto-increments.
+haproxy-runLb &#8211; Ensures haproxy runs at start.  haproxy-startProxy &#8211; Creates a basic
+/etc/haproxy.cfg script to control the proxy service.  haproxy-stopProxy &#8211; Removes a
+balanced node from /etc/haproxy.cfg.</p>
+</div>
+<div class="section" id="ha-proxy-agent-scripts">
+<h3>4.4.8. HA-Proxy Agent Scripts<a class="headerlink" href="#ha-proxy-agent-scripts" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Agent Script</th>
+<th class="head">Function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>haproxy-addService</td>
+<td>Adds a balanced node to /etc/haproxy.cfg and auto-increments.</td>
+</tr>
+<tr class="row-odd"><td>haproxy-runLb</td>
+<td>Ensures haproxy runs at start.</td>
+</tr>
+<tr class="row-even"><td>haproxy-startProxy</td>
+<td>Creates a basic /etc/haproxy.cfg script to control the proxy service.</td>
+</tr>
+<tr class="row-odd"><td>haproxy-stopProxy</td>
+<td>Removes a balanced node from /etc/haproxy.cfg.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The drop-in point for this and the other types of load balancing are the
+/enstratus/bin/startProxy and /enstratus/bin/stopProxy scripts.</p>
+</div>
+<p>Using any type of virtual machine-based load balancing requires that the underlying
+machine image have the supporting binaries imaged onto it. The advantages to using a
+virtual machine to perform load balancing are:</p>
+<p>SSL-termination is possible on the load balancer.  Fine-grained control of load balancer
+configuration. Third party plugin extensions.  Adding additional load balancers in a DNS
+round robin configuration.  The disadvantages to using a virtual machine to perform load
+balancing are:</p>
+<p>Costs for running a virtual machine are generally higher than using an ELB.  Increased
+configuration complexity</p>
+</div>
+<div class="section" id="zeus">
+<h3>4.4.9. Zeus<a class="headerlink" href="#zeus" title="Permalink to this headline">¶</a></h3>
+<p>The final method of application load balancing for this discussion is the Zeus Load Balancer.</p>
+<p>Zeus is a very powerful solution for high-availability and high-performance load
+balancing. It is available for use with enStratus and a demonstration of the auto-scaling
+and recovery behavior can be viewed here:</p>
+<p><a class="reference external" href="http://www.youtube.com/watch?v=jRPNhQSPrws">Zeus Load Balancing in Rackspace</a></p>
+<p>The agent scripts that control the functionality of the zeus load balancer are locate in
+/enstratus/bin/</p>
+</div>
+<div class="section" id="to-do">
+<h3>4.4.10. To Do:<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Links to tutorials</li>
+<li>Links to agent discussion</li>
+</ol>
+</div>
+</div>
+<div class="section" id="firewalls">
+<h2>4.5. Firewalls<a class="headerlink" href="#firewalls" title="Permalink to this headline">¶</a></h2>
+<p>Firewalls, or security groups, in enStratus control accessibility to running servers. Each
+account has a firewall called &#8216;default&#8217; that is the default firewall into which all
+servers are launched.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The terms firewall and security group are interchangeable in enStratus.</p>
+</div>
+<p>Security groups are applied to servers. Servers are part of security groups. A server is
+added to a security group at the time of server start. It is not currently possible to
+change the security group of a server post-launch. This is far less of a limitation than
+it sounds because the individual rules that comprise a security group can be changed at
+any time.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/securityGroups.png"><img alt="Security Groups" src="../_images/securityGroups.png" style="width: 475.0px; height: 285.0px;" /></a>
+<p class="caption">Security Groups</p>
+</div>
+<p>Generally, the process for managing firewalls is to first create the security group and
+then choose a security group into which servers will be launched at start.</p>
+<p>To access firewalls in the enStratus console, navigate to Infrastructure &gt; Firewalls. A
+listing of the active firewalls will be shown. To add a new firewall, click on the
++create_firewall. Only two pieces of information are required to create a firewall: A
+name, billing code, and an optional group.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/createFirewall.png"><img alt="Create Security Group" src="../_images/createFirewall.png" style="width: 375.0px; height: 187.5px;" /></a>
+<p class="caption">Create Security Group</p>
+</div>
+<p>Once the firewall has been saved, it will be added to the list of active firewalls. Once
+the firewall is active, it will be provided as an option when launching new servers.</p>
+<div class="section" id="editing-firewalls">
+<h3>4.5.1. Editing Firewalls<a class="headerlink" href="#editing-firewalls" title="Permalink to this headline">¶</a></h3>
+<p>To edit an existing firewall, select the green action button that corresponds to the
+firewall targeted for editing. A dialog box will appear showing the rules that comprise
+the firewall.</p>
+<p>The six columns that make up the firewall are:</p>
+<p>1. Source - A common name for the firewall rule. Standard networks naming conventions apply
+to this column. If a standard network is used, the CIDR column will be automatically
+populated with the information defined by that standard network.</p>
+<p>2. CIDR - CIDR means Classless Inter-Domain Routing. Practically, this means / or &#8220;slash&#8221;
+notation is required. For example, to apply a rule to only one IP address, the rule takes
+the form: 1.2.3.4/32. This is practical for creating a rule for your home IP address. This
+type of notation allows for firewall rules that encompass ranges of IP addresses. For
+example, to apply a rule to a range of 256 IP addresses, this represents a rule of the
+form: 1.2.3.0/24. This is a very powerful feature of firewall rule creation.</p>
+<p>3. Method - Refers to the program being used, and provides a common name for the program. For
+example, MySQL or SSH. Standard ports can be used to modify this part of the ruleset.
+Protocol, From Port and To Port are automatically populated with the information provided
+by that standard port.</p>
+<ol class="arabic simple" start="4">
+<li>Protocol - Indicates the type of protocol that will apply, TCP, UDP, or ICMP.</li>
+<li>From Port - The starting port for the rule.</li>
+<li>To Port - The ending port for the rule.</li>
+</ol>
+</div>
+<div class="section" id="standard-networks-and-ports">
+<h3>4.5.2. Standard Networks and Ports<a class="headerlink" href="#standard-networks-and-ports" title="Permalink to this headline">¶</a></h3>
+<p>enStratus introduces the concept of a standard network to firewalls. A standard network is
+a user-defined commonly used network that can be quickly added to a firewall using a
+common name that maps to the IP address specified. This functionality creates the
+advantage of being able to easily identify, add, and remove specific firewall rules among
+what may be a long list of rules.</p>
+<p>For example, if a user typically conncects from a particular office IP address, this
+address should be added as a standard network and named appropriately for ease of
+identification.</p>
+<p>Similarly, standard ports are user-defined commonly used ports that typically map to a
+specific application. For example, if an application is required to allow connections on
+port 5555, a standard port can be defined to identify that application by a common name
+and add it to the firewall.</p>
+<p>Standard networks are defined in Company Settings &gt; Standard Networks. Every enStratus
+account has some default rules defined in a default firewall to allow for the enStratus
+monitoring service to connect to running servers. To define a new standard network, select
++add_new_standard_network and complete the resulting dialog box.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/addStandardNetwork.png"><img alt="Standard Network" src="../_images/addStandardNetwork.png" style="width: 380.0px; height: 285.0px;" /></a>
+<p class="caption">Standard Network</p>
+</div>
+<p>Once the standard network is saved, it will be added to the list of standard networks.</p>
+<p>Before we return to editing the firewalls, let&#8217;s define a standard port. Navigate to
+Company Settings &gt; Standard Ports. To add a new standard port, select
++add_new_standard_port and complete the resulting dialog box.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/addStandardPort.png"><img alt="Standard Port" src="../_images/addStandardPort.png" style="width: 380.0px; height: 285.0px;" /></a>
+<p class="caption">Standard Port</p>
+</div>
+<p>Once the standard port is saved, it will be added to the list of standard ports.</p>
+<p>Returning again to editing firewalls, the new standard network called Office IP and the
+standard port called Custom Application can be quickly added to any of the existing
+firewalls.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/editFirewall.png"><img alt="Edit Firewall Using Standard Port" src="../_images/editFirewall.png" style="width: 675.0px; height: 120.0px;" /></a>
+<p class="caption">Edit Firewall Using Standard Port</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a standard network or port is deleted, the rule will still be applied to the
+firewalls, it will only lose the customized name that was given and revert to a Custom
+rule.</p>
+</div>
+</div>
+<div class="section" id="starting-a-server-in-security-group">
+<h3>4.5.3. Starting a Server in Security Group<a class="headerlink" href="#starting-a-server-in-security-group" title="Permalink to this headline">¶</a></h3>
+<p>The final step in utilizing firewalls in the cloud is to apply a firewall group when
+starting a new server. To start a new server, navigate to Infrastructure &gt; Machine Images.
+Select an image to launch and in the resulting dialog box, choose the security group to be
+applied to the resulting server. All of the rules comprising the security group will be
+applied to the server.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/startServerinFirewall.png"><img alt="Start Server in Firewall" src="../_images/startServerinFirewall.png" style="width: 425.0px; height: 340.0px;" /></a>
+<p class="caption">Start Server in Firewall</p>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>4.6. Volumes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>4.6.1. Overview<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Volumes represent block storage. Conceptually, storage devices can be used to store data in a persistent manner in the cloud.</p>
+</div>
+<div class="section" id="creating-volumes">
+<h3>4.6.2. Creating Volumes<a class="headerlink" href="#creating-volumes" title="Permalink to this headline">¶</a></h3>
+<p>To create a new volume, navigate to Infrastructure &gt; Volumes. If volumes had been
+previously created either within enStratus or via the cloud provider, they will be listed
+in the volumes table. Select +create_volume and complete the resulting dialog box.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/createVolume.png"><img alt="Create Volume" src="../_images/createVolume.png" style="width: 380.0px; height: 285.0px;" /></a>
+<p class="caption">Create Volume</p>
+</div>
+<p>The name of the volume is a logical name that will be used within enStratus to reference
+the volume. The size of the volume is should be between 1 and 1000 gigabytes (1 Tb).</p>
+<p>The Zone in which a volume is created is important because volumes may only be attached to
+servers in the same zone. Billing code and group complete the creation options for a
+volume.</p>
+<p>Volume creation takes only a few minutes to complete. Once the volume is created it will
+be added to the list of volumes. Since newly created volumes are not attached to a server,
+the Device and Current Server columns will be blank.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/finishedVolume.png"><img alt="Volume Created" src="../_images/finishedVolume.png" style="width: 800.0px; height: 200.0px;" /></a>
+<p class="caption">Volume Created</p>
+</div>
+</div>
+<div class="section" id="attaching-volumes">
+<h3>4.6.3. Attaching Volumes<a class="headerlink" href="#attaching-volumes" title="Permalink to this headline">¶</a></h3>
+<p>Volumes and servers must share an availability zone for volume attachment to succeed.
+Volumes are attached as block storage devices and are neither partitioned nor formatted
+when attached. enStratus allows for automated attachment, formatting, and mounting of new
+volumes only when starting a new server.</p>
+<p>To attach a volume to a server, select the volume for attachment and select the green
+actions button. The only required information to attach a volume is the name of the server
+to which the volume will be attached. The list of servers that share an availability zone
+will populate the dropdown selector.</p>
+<p>Optionally, a device name may be selected for the volume. In this case, I have chosen a
+device name of sdh, which means the device will appear as /dev/sdh on the server:</p>
+<div class="highlight-bash"><pre>p335@ApplicationServer:~$ sudo fdisk -l
+
+Disk /dev/sdh: 2147 MB, 2147483648 bytes 255 heads, 63 sectors/track, 261 cylinders Units
+= cylinders of 16065 * 512 = 8225280 bytes Sector size (logical/physical): 512 bytes / 512
+bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disk identifier: 0x00000000
+
+Disk /dev/sdh doesn't contain a valid partition table</pre>
+</div>
+<p>Once the volume is attached, it can be considered and treated somewhat like an external
+hard drive attached to the server. Standard hard drive activities are available including
+partitioning, formatting, and mounting.</p>
+</div>
+<div class="section" id="creating-snapshots">
+<h3>4.6.4. Creating Snapshots<a class="headerlink" href="#creating-snapshots" title="Permalink to this headline">¶</a></h3>
+<p>Snapshots are created from volumes and volumes are created from snapshots.</p>
+<p>A snapshot of a volume represents a differential backup of the data contained on the
+volume. This means that only the blocks that have changed are saved each time a snapshot
+is created. To create a snapshot, select the green actions button for the volume, and
+choose make_snapshot. The only required information to create the snapshot is a logical
+name for the snapshot. Once the snapshot is saved, the snapshot will appear in the
+snapshots page in the enStratus console.</p>
+</div>
+<div class="section" id="deleting-volumes">
+<h3>4.6.5. Deleting Volumes<a class="headerlink" href="#deleting-volumes" title="Permalink to this headline">¶</a></h3>
+<p>To delete a volume, click on the green action button associated with the volume and choose
+delete. A dialog box will prompt you to confirm the action and the volume will be removed
+from the volumes list.</p>
+</div>
+<div class="section" id="volume-strategies">
+<h3>4.6.6. Volume Strategies<a class="headerlink" href="#volume-strategies" title="Permalink to this headline">¶</a></h3>
+<p>Volume storage is often persistent beyond the life of the server to which it was attached.
+This makes volumes a very useful item for managing data storage in the cloud. In a
+high-availability failure-tolerant automated environment, enStratus leverages volumes to
+restore applications to an operational state without data loss.</p>
+</div>
+</div>
+<div class="section" id="snapshots">
+<h2>4.7. Snapshots<a class="headerlink" href="#snapshots" title="Permalink to this headline">¶</a></h2>
+<p>Snapshots are the reciprocal of volumes. When a snapshot of a volume is created, a
+differential backup of the devices is created and stored in S3. From this snapshot, a
+clone of the original volume can be created. enStratus leverages this property of
+snapshots when automating application deployments. At the time of this writing, snapshot
+creation is only supported by the Amazon EC2 cloud.</p>
+<div class="section" id="creating-volumes-from-snapshots">
+<h3>4.7.1. Creating Volumes from Snapshots<a class="headerlink" href="#creating-volumes-from-snapshots" title="Permalink to this headline">¶</a></h3>
+<p>Creating volumes from snapshots is a way to create an exact duplicate of the volume from
+which the snapshot came. If the filesystem on the volume supports increasing the size of
+the volume, the volume created from the snapshot may be increased in size.</p>
+<p>The volume created from the snapshot must be at least the size of the original volume.</p>
+<p>To create a volume from a snapshot, navigate to Infrastructure &gt; Snaphots and select a
+snapshot. Click on the appropriate actions button and choose create_volume. The resulting
+dialog box allows for the customization of several options, including standard enStratus
+options of name, group, and billing code.</p>
+<p>The size field will automatically be populated with the size of the original volume, but
+can be increased. For Amazon, volumes are specific to an availability zone, so a zone is
+required for volume creation.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/createVolumeFromSnapshot.png"><img alt="Create Volume from Snapshot" src="../_images/createVolumeFromSnapshot.png" style="width: 475.0px; height: 285.0px;" /></a>
+<p class="caption">Create Volume from Snapshot</p>
+</div>
+<p>The created volume will soon appear in the Infrastructure &gt; Volumes page for selection and
+attachment to servers.</p>
+</div>
+<div class="section" id="sharing-snapshots">
+<h3>4.7.2. Sharing Snapshots<a class="headerlink" href="#sharing-snapshots" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes it is advantageous to share snapshots to another account for ease of data
+transfer. Sharing snapshots in enStratus is accomplished by selecting the snapshot to
+share and clicking on the action button choosing sharing.</p>
+<p>A dialog box with two primary options is presented. The first share type is Private.
+Private sharing enables an enStratus user who is a part of several accounts to share
+snapshots between those accounts. The accounts of which the user is a part will populate a
+dropdown window. Once the snapshot is shared, the snapshot will appear in the other
+account.</p>
+<p>The second share type is Public. Public sharing enables an enStratus user to add a
+snapshot to the publicly available pool of snapshots. This is an option that carries the
+risk of making publicly available private data, so this action should be restricted using
+enStratus groups and roles.</p>
+</div>
+<div class="section" id="snapshot-strategies">
+<h3>4.7.3. Snapshot Strategies<a class="headerlink" href="#snapshot-strategies" title="Permalink to this headline">¶</a></h3>
+<p>Because snapshots are differential backups, the time snapshots take to create varies based
+on the amount of changed information since the last snapshot was taken. Frequent snapshots
+will generally be created more quickly than infrequent ones.</p>
+<p>In an automated environment with enStratus, it is possible to have enStratus automate both
+the creation of snapshots and recovery volumes according to a customizable schedule.</p>
+</div>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		4. Infrastructure
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

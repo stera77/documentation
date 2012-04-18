@@ -1,0 +1,19 @@
+New Cloud Event: Wed 01 Dec 2010 02:59:41 UTC
+Cloud: Amazon Web Services
+Account: Company Name
+Subject: NEW EVENT #312218 (Severity 5) - Monthly Soft Run-Rate Exceeded for
+Company Company Name (YACNGT)
+
+The current run-rate of usage against the billing code Company Company Name (YACNGT)
+exceeds the alloted soft run rate for this budget.
+
+If you need assistance understanding this message or if you believe this message
+is the result of an issue with enStratus, please visit our support site at
+https://support.enstratus.com and login with your standard enStratus login
+credentials.
+
+To check on the status of enStratus itself, visit: http://status.enstratus.com
+
+Subscribe to live status updates via RSS at
+http://status.enstratus.com/status.xml or via Twitter at
+http://www.twitter.com/enStratusStatus.

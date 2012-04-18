@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Key Value Databases &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Key Value Databases</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">5. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/platform/key_value_databases.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="key-value-databases">
+<h1>Key Value Databases<a class="headerlink" href="#key-value-databases" title="Permalink to this headline">¶</a></h1>
+<p>enStratus Key/Value Databases (KV Databases or KVDB) are a simple solution for storing
+your data for high availability and scalability. With a KV database you get only what you
+need. You can simply query your data and return the results without having to manage
+different schemas for your stored data sets. You do not need to worry when storing new
+data because it is automatically indexed for you.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>enStratus currently supports the creation and termination of Amazon SimpleDB domains. See
+Amazon SimpleDB for more information and current pricing.</p>
+<p>KV databases are large collections of data organized into separate domains. The data is
+stored in hash tables that contain key to value pairs. The key to value pairs are
+attributes that can be searched in lexicographical queries.</p>
+</div>
+<div class="section" id="creating-a-key-value-database">
+<h2>Creating a Key/Value Database<a class="headerlink" href="#creating-a-key-value-database" title="Permalink to this headline">¶</a></h2>
+<p>To launch a new KV database in the enStratus console click on Platform &gt; Key/Value
+Databases. Then click  +add key/value database.</p>
+<p>Screenshot 1</p>
+<p>In the Create Key/Value Database form you will see the different fields for creating the
+KVDB.</p>
+<p>Screenshot 2</p>
+<p>The <strong>Name</strong> field is for a custom name to associate with your database.</p>
+<p>The <strong>Description</strong> field can be a custom description for your database.</p>
+<p>The <strong>Label</strong> field helps you organize your KVDB instances by providing a unique color label.</p>
+<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
+will use to track billing charges and access rights tied to the user management and
+billing code offerings of enStratus.</p>
+<p>Upon save the KV database is launched. It can take up to 15 minutes to appear in the
+enStratus console.</p>
+</div>
+<div class="section" id="terminating-key-value-databases">
+<h2>Terminating Key/Value Databases<a class="headerlink" href="#terminating-key-value-databases" title="Permalink to this headline">¶</a></h2>
+<p>To terminate a KVDB click actions &gt; terminate in the Key/Value Databases table.</p>
+<p>Screenshot 3.</p>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Key Value Databases
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

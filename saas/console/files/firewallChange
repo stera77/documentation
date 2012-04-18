@@ -1,0 +1,30 @@
+New Cloud Event: Thu 13 Jan 2011 17:10:07 UTC
+Cloud: Amazon Web Services
+Account: Company
+Subject: NEW EVENT #340176 (Severity 5) - Firewall Rule ADDED to Amazon Web
+Services/Company/default [default]
+        
+A new firewall rule has been added to the firewall default #6979 [default].
+
+Agent:        External
+Provider ID:  default:999.999.177.183/32:INGRESS:TCP:2003:2003
+Type:         INGRESS
+CIDR:         999.999.177.183/32
+Protocol:     TCP
+Start Port:   2003
+End Port:     2003
+Permission:   ALLOW
+        
+If this rule change was not authorized, you should take immediate action to address
+the situation.
+
+If you need assistance understanding this message or if you believe this message is
+the result of an issue with enStratus, please visit 
+our support site at https://support.enstratus.com and login with your standard
+enStratus login credentials.
+
+To check on the status of enStratus itself, visit: http://status.enstratus.com
+
+Subscribe to live status updates via RSS at http://status.enstratus.com/status.xml or
+via Twitter at
+http://www.twitter.com/enStratusStatus.

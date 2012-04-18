@@ -1,0 +1,207 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Relational Databases &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Relational Databases</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">5. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/platform/relational_databases.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="relational-databases">
+<h1>Relational Databases<a class="headerlink" href="#relational-databases" title="Permalink to this headline">¶</a></h1>
+<p>enStratus supports cloud based relational database management services through enStratus
+Relational Databases (RDBMS). This service allows the end user to operate, scale and
+manage their relational databases in the cloud. Relational database instances give you the
+full capabilities and features you would normally find on a familiar RDBMS.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>enStratus currently supports cloud based relational database management with Amazon
+Relational Database Service (Amazon RDS). With a relational database instance you get the
+functions of a traditional database, plus scalability and redundancy in the cloud.</p>
+</div>
+<div class="section" id="creating-a-relational-database">
+<h2>Creating a Relational Database<a class="headerlink" href="#creating-a-relational-database" title="Permalink to this headline">¶</a></h2>
+<p>To create a new relational database in the enStratus console navigate to Platform &gt;
+Relational Databases. Click on +add database in the right corner of the table.</p>
+<p>Screenshot 1.</p>
+<p>Under the configuration tab you will see the fields for creating a database.</p>
+<p>Screenshot 2.</p>
+<p>The <strong>Name</strong> field is for a custom name to associate with your database.</p>
+<p>The <strong>Description</strong> field can be a custom description of your database.</p>
+<p>The <strong>Label</strong> field helps you organize your RDBMS instances by providing a unique color label.</p>
+<p>The <strong>Engine</strong> field currently supports MySQL 5.1 relational databases. More options will be
+provided as they become available.</p>
+<p>The <strong>Product</strong> field displays the different sizes available for the RDBMS and should be
+chosen to fit your needs. Database operating costs are proportional to the size, measured
+in compute power, of the provisioned datbase. See Amazon RDS for more information and
+current pricing.</p>
+<p>The <strong>Port</strong> number is restricted to ranges 1150 – 65535.</p>
+<p>For the <strong>Zone</strong> field it is highly recommended that you choose a zone that is in the same
+location as your primary application server.</p>
+<p>Another Zone option is high availability. In AWS this is know as a Multi-AZ deployment.
+The high availability option improves database durability and takes extra measures to
+ensure the RDBMS has minimal down time. This involves provisioning and maintaining a
+running backup of the primary instance in another zone. If there is planned maintenance,
+instance failure or availability zone failure in the primary zone the RDBMS will
+automatically failover to the backup instance.</p>
+<p>The size you specify in the Storage field must be in the 5GB to 1TB range.</p>
+<p>After the above fields have been completed proceed to the permissions tab.</p>
+<p>Screenshot 3</p>
+<p>The <strong>Admin User</strong> and <strong>Admin Password</strong> fields are required.</p>
+<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
+will use to track billing charges and access rights tied to the user management and
+billing code offerings of enStratus.</p>
+<p>Upon save the RDBMS is launched and could take up to 15 minutes to show up in the
+enStratus console.</p>
+<p><strong>Connecting to a Relational Database</strong></p>
+<p>First you need to allow connections between your local ip and the database you want to
+connect to.</p>
+<p>On the Platform &gt; Relational Databases page, select actions &gt; network access for the
+database you want to use.</p>
+<p>Screenshot 4</p>
+<p>If you have created a standard network (on the Company Settings &gt; Standard Networks page)
+for the IP you want to connect to your database from you can select your standard network
+from the Source drop-down. If you have not created a standard network you can make a new
+one on the Company Settings &gt; Standard Networks page or you can type your CIDR in the CIDR
+field and the Source will be labeled Custom. Click the Allow Access button and you will
+have network access to the database in 5 minutes or less.</p>
+<p>Screenshot 5</p>
+<p>Next, view the info page for your database by selecting actions &gt; info in the relational
+databases table.</p>
+<p>You can then connect to your database using a MySQL client, the Admin User, Admin Password
+and Port you specified in the Create RDBMS form, and the DNS/Host specified in the Info
+page.</p>
+</div>
+<div class="section" id="other-actions">
+<h2>Other Actions<a class="headerlink" href="#other-actions" title="Permalink to this headline">¶</a></h2>
+<p>To change the admin password for your relational database instance click on actions &gt;
+change password in the Relational Databases table. You can&#8217;t change the admin user name,
+but you can change the password by typing a new password in the Admin Password box and
+clicking the &#8220;Change RDBMS Password&#8221; button.</p>
+<p>To terminate a relational database instance click on actions &gt; terminate in the Relational
+Databases table.</p>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Relational Databases
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

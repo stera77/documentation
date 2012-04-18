@@ -1,0 +1,193 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Servers &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Servers</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/infrastructure/servers.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="servers">
+<h1>Servers<a class="headerlink" href="#servers" title="Permalink to this headline">¶</a></h1>
+<p>enStratus monitors all servers in your account. Use the green actions button to access
+your server. If the enStratus agent is not installed on the server, the options available
+are limited to getting information, rebooting, pausing/starting, or terminating the
+server. If the enStratus agent is installed on a running server, additional functionality
+is included in the actions menu.</p>
+<div class="section" id="expanded-information">
+<h2>Expanded information<a class="headerlink" href="#expanded-information" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Info: Expanded information regarding server attributes. Including comprehensive hardware information such as logical volumes attached, filesystems used, encryption, and memory.</li>
+<li>Analytics: A graphical representation of CPU Load (in %) over the last hour.</li>
+<li>Console: Hypervisor information.</li>
+<li>Agent: Agent logging capturing events such as adding/removing users, Host Intrusion Detection System alerts, and customizable information messages.</li>
+</ul>
+</div>
+<div class="section" id="make-image">
+<h2>Make Image<a class="headerlink" href="#make-image" title="Permalink to this headline">¶</a></h2>
+<p>Making a machine image means making a saved copy of the server state for future use.
+Machine images will show up in the tab. Machine images should be made whenever changes are
+made to the operating system such as patches or updates.</p>
+</div>
+<div class="section" id="make-snapshot">
+<h2>Make Snapshot<a class="headerlink" href="#make-snapshot" title="Permalink to this headline">¶</a></h2>
+<p>Making a snapshot means create a differential backup of any attached volumes.</p>
+</div>
+<div class="section" id="shell-remote-access">
+<h2>Shell/Remote Access<a class="headerlink" href="#shell-remote-access" title="Permalink to this headline">¶</a></h2>
+<p>Shell (Linux) and remote (Windows) access refers to creating user accounts on running
+servers. Each user in enStratus is assigned a user code of the form p123. When remote
+access is granted on a Linux server, a home user account is created on that server and the
+public ssh credentials defined in the enStratus user profile are set for the user. On
+Windows, a home account is created and the user can access the running server using the
+RDP password set in the enStratus profile.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Before granting shell/remote access to a server, the user must define their
+public ssh key and RDP password in their user profile. If the credentials change, the
+remote servers are not notified of the change. To ensure the new credentials are used, the
+user must first be removed and re-added to remote access so the changes can propagate to
+their account.</p>
+</div>
+</div>
+<div class="section" id="reboot">
+<h2>Reboot<a class="headerlink" href="#reboot" title="Permalink to this headline">¶</a></h2>
+<p>Reboot the running server. Rebooting does not change the IP address of the server.</p>
+</div>
+<div class="section" id="pause">
+<h2>Pause<a class="headerlink" href="#pause" title="Permalink to this headline">¶</a></h2>
+<p>Pause the running server. enStratus still monitors the server. IP address will change upon starting.</p>
+</div>
+<div class="section" id="terminate">
+<h2>Terminate<a class="headerlink" href="#terminate" title="Permalink to this headline">¶</a></h2>
+<p>Terminate the instance. No data on the instance will be saved.</p>
+<p>To rename a running server, click on the server name indicated by a brown dashed line. A
+text window will appear. Enter the desired name and select OK. The hostname of the server
+will be changed.</p>
+<p>To change the label color of a running server, click on the label color and choose the
+desired color from the resulting choices.</p>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Servers
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

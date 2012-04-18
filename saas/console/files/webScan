@@ -1,0 +1,60 @@
+Date: Wed,  1 Dec 2010 06:14:31 +0000 (UTC)                                                                                       
+From: alerts@enstratus.com                                                                                                        
+To: enstratus.admin@enstratus.com                                                                                                    
+
+New Cloud Event: Wed 01 Dec 2010 06:14:31 UTC
+Cloud: Amazon Web Services
+Account: Company
+Subject: NEW EVENT #312184 (Severity 5) - IDS ALERT: 'Multiple attempts to
+access non-existent files (web scan) from same source.': app-server-1/Amazon
+Web Services - Company - i-55555558
+
+Intrusion Detection System Alert (Severity 5)
+Wed Dec 01 06:14:24 UTC 2010
+
+CLOUD:     Amazon Web Services
+SERVER ID: 25744
+NAME:      app-server-1
+SUBJECT:   IDS ALERT: 'Multiple attempts to access non-existent files (web scan)
+from same source.'
+
+2010 Dec 01 06:14:24 app-server-1->/var/log/apache2/error.log
+Rule: 30114 (level 10) -> 'Multiple attempts to access non-existent files (web
+scan) from same source.'
+Src IP: 999.999.30.105
+User: (none)
+
+[Wed Dec 01 06:14:24 2010] [error] [client 999.999.30.105] 
+File does not exist: /var/www/p
+[Wed Dec 01 06:14:23 2010] [error] [client 999.999.30.105] 
+File does not exist: /var/www/mysqlmanager
+[Wed Dec 01 06:14:23 2010] [error] [client 999.999.30.105] 
+File does not exist: /var/www/sqlmanager
+[Wed Dec 01 06:14:23 2010] [error] [client 999.999.30.105] 
+File does not exist: /var/www/pma2006
+[Wed Dec 01 06:14:23 2010] [error] [client 999.999.30.105] 
+File does not exist: /var/www/PMA2006
+[Wed Dec 01 06:14:22 2010] [error] [client 999.999.30.105] 
+File does not exist: /var/www/dbadmin
+[Wed Dec 01 06:14:22 2010] [error] [client 999.999.30.105] 
+File does not exist: /var/www/admin
+[Wed Dec 01 06:14:22 2010] [error] [client 999.999.30.105] 
+File does not exist: /var/www/PMA
+[Wed Dec 01 06:14:21 2010] [error] [client 999.999.30.105] 
+File does not exist: /var/www/web
+[Wed Dec 01 06:14:21 2010] [error] [client 999.999.30.105] 
+File does not exist: /var/www/db
+[Wed Dec 01 06:14:21 2010] [error] [client 999.999.30.105] 
+File does not exist: /var/www/phpMyAdmin
+
+
+If you need assistance understanding this message or if you believe this message
+is the result of an issue with enStratus, please visit our support site at
+https://support.enstratus.com and login with your standard enStratus login
+credentials.
+
+To check on the status of enStratus itself, visit: http://status.enstratus.com
+
+Subscribe to live status updates via RSS at
+http://status.enstratus.com/status.xml or via Twitter at
+http://www.twitter.com/enStratusStatus.

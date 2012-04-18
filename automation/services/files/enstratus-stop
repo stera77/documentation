@@ -1,0 +1,38 @@
+#!/bin/bash
+
+LOGGER=/enstratus/bin/log
+logTag="enstratus-stop"
+
+$LOGGER -t $logTag "Calling enstratus stop. Stopping Apache"
+
+doApache2(){
+	sleep 3
+	sudo /etc/init.d/apache2 stop > /dev/null 2>&1
+
+	if [ $? != 0 ] ; then
+		$LOGGER -t $logTag "Apache stop failed."
+	else
+		$LOGGER -t $logTag "Apache stop successful."
+	fi
+}
+
+doHttpd(){
+	sleep 3
+	sudo /etc/init.d/httpd stop > /dev/null 2>&1
+
+	if [ $? != 0 ] ; then
+		$LOGGER -t $logTag "Apache stop failed."
+	else
+		$LOGGER -t $logTag "Apache stop successful."
+	fi
+}
+
+function whichApache(){
+	if [ -d /etc/httpd/conf ]; then
+		doHttpd
+	elif [ -d /etc/apache2 ]; then
+		doApache2
+	fi
+}
+
+whichApache

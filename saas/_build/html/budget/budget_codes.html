@@ -1,0 +1,312 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Budget Codes &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Budget Codes</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="budget.html">7. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/budget/budget_codes.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="budget-codes">
+<h1>Budget Codes<a class="headerlink" href="#budget-codes" title="Permalink to this headline">¶</a></h1>
+<p>enStratus tracks infrastructure costs based on the costs reported by the cloud provider or
+in the case of an on-premise installation of enStratus, against a customizable set of
+values.</p>
+<p>enStratus calculates costs based on the hourly run rate for usage. Servers, storage, load
+balancers, databases, and IP Addresses are all examples of items that have an associated
+cost in many of the public clouds. The values for each of these items is used to calculate
+a run rate and project costs.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/budgetCodeInitial.png"><img alt="Budget Codes" src="../_images/budgetCodeInitial.png" style="width: 1000.0px; height: 300.0px;" /></a>
+<p class="caption">Budget Codes</p>
+</div>
+<p>In diagram above, there are several billing codes in various quota states. Billing codes
+are color coded for quick reference regarding the state of the billing code.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="91%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Color</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Green</td>
+<td>Run rate has not exceeded and additional infrastructure/capacity may be charged
+against this code.</td>
+</tr>
+<tr class="row-odd"><td>Yellow</td>
+<td>Run rate has exceeded the soft quota limit. An email warning will be sent, but
+additional infrastructure/capacity may be charged against this code.</td>
+</tr>
+<tr class="row-even"><td>Red</td>
+<td>Run rate exceeded the hard quota. An email message will be sent. No additional
+infrastructure/capacity may be charged against this code.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="definitions">
+<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
+<p><strong>RUN RATE</strong></p>
+<p>The run rate is the calculated usage per hour costs for all of the
+infrastructure being tracked against this code.</p>
+<p><strong>CURRENT USAGE</strong></p>
+<p>The current usage is the total charges tracked against the billing code up
+to the current point in the month. For example, if 10 days of the month have elapsed, the
+current usage value should be approximately one third of the projected usage.</p>
+<p><strong>PROJECTED USAGE</strong></p>
+<p>The projected usage is the projected total usage costs for the month
+based on the current run rate.</p>
+</div>
+<div class="section" id="email-warning-messages">
+<h2>Email Warning Messages<a class="headerlink" href="#email-warning-messages" title="Permalink to this headline">¶</a></h2>
+<p>An example of the email message that is sent when the soft quota is exceeded is shown
+below:</p>
+<div class="section" id="soft-quota-exceeded">
+<h3>Soft Quota Exceeded<a class="headerlink" href="#soft-quota-exceeded" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none"><div class="highlight"><pre>New Cloud Event: Wed 01 Dec 2010 02:59:41 UTC Cloud: Amazon Web Services
+Account: Company Subject: NEW EVENT #312218 (Severity 5) - Monthly Soft Run-Rate Exceeded
+for Company Company (YACNGH)
+
+The current run-rate of usage against the billing code Company Company (YACNGH) exceeds
+the alloted soft run rate for this budget.
+
+If you need assistance understanding this message or if you believe this message is the
+result of an issue with enStratus, please visit our support site at
+https://support.enstratus.com and login with your standard enStratus login credentials.
+
+To check on the status of enStratus itself, visit: http://status.enstratus.com
+
+Subscribe to live status updates via RSS at http://status.enstratus.com/status.xml or via
+Twitter at http://www.twitter.com/enStratusStatus.
+An example of the email message that is sent when the hard quota is exceeded is shown
+below:
+</pre></div>
+</div>
+</div>
+<div class="section" id="hard-quota-exceeded">
+<h3>Hard Quota Exceeded<a class="headerlink" href="#hard-quota-exceeded" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none"><div class="highlight"><pre>New Cloud Event: Wed 01 Dec 2010 02:11:15 UTC Cloud: Amazon Web Services Account: Company
+Acc Subject: NEW EVENT #312214 (Severity 7) - Monthly Hard Run-Rate Exceeded for Website
+(WWW)
+
+The current run-rate of usage against the billing code Website (WWW) exceeds the alloted
+hard run rate for this budget. As a result, no one will be able to provision resources
+against this budget until the run-rate falls within the hard quota. You may remedy the
+situation either by increasing the hard quota for this budget or reducing the current
+spend against the budget.
+
+If you need assistance understanding this message or if you believe this message is the
+result of an issue with enStratus, please visit our support site at
+https://support.enstratus.com and login with your standard enStratus login credentials.
+
+To check on the status of enStratus itself, visit: http://status.enstratus.com
+
+Subscribe to live status updates via RSS at http://status.enstratus.com/status.xml or via
+Twitter at http://www.twitter.com/enStratusStatus.
+It is important to note that if the hard quota has been breached, enStratus will not take
+any drastic actions such as deleting infrastructure to bring the run rate below the quota.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="users">
+<h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
+<p>Users may be a part of one or more billing codes as shown in the user profile, located in
+User Manager &gt; Users.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/userBudgetCodes.png"><img alt="User Profile" src="../_images/userBudgetCodes.png" style="width: 360.0px; height: 420.0px;" /></a>
+<p class="caption">User Profile</p>
+</div>
+<p>In this case, the user is a part of three budget codes: TestBudget, Default, and R&amp;D
+Budget.</p>
+<p>Referring back to the overall budget code listing, it becomes apparent that the Default
+and TestBudget budget codes have exceeded the hard quota.</p>
+<p>To see the functionality of budget codes and how they can be used to restrict a users
+ability to provision infrastructure, let&#8217;s try to start a server from a machine image
+and examine the budget code options presented.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/launchInstance.png"><img alt="Launch Machine w/Billing Code" src="../_images/launchInstance.png" style="width: 420.0px; height: 360.0px;" /></a>
+<p class="caption">Launch Machine w/Billing Code</p>
+</div>
+<p>enStratus hides budget codes that have exceeded their hard quota from use in the
+enStratus console. If a user is only a part of one budget code <em>and</em> that code has
+exceeded its hard quota, that user will be unable to provision any resources.</p>
+</div>
+<div class="section" id="creating-and-editing-budget-codes">
+<h2>Creating and Editing Budget Codes<a class="headerlink" href="#creating-and-editing-budget-codes" title="Permalink to this headline">¶</a></h2>
+<p>To create a budget code, navigate to Finance &gt; Budget Codes. The list of active budget
+codes will be shown as in Figure 1. To add a new budget code, select + add budget code
+and complete the resulting dialog box.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/createBudgetCode.png"><img alt="Add New Budget Code" src="../_images/createBudgetCode.png" style="width: 360.0px; height: 240.0px;" /></a>
+<p class="caption">Add New Budget Code</p>
+</div>
+<p>Once the dialog box is complete, the new budget code will be added to the list of
+available budget codes.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/newBudgetCodeAdded.png"><img alt="Budget Code Added" src="../_images/newBudgetCodeAdded.png" style="width: 1000.0px; height: 200.0px;" /></a>
+<p class="caption">Budget Code Added</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Before the budget code is available to be used, the user must add that code to
+their profile using User Manager.</p>
+</div>
+<p>To edit a billing code, click on the actions option and choose edit.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/editBudgetCode.png"><img alt="Edit Budget Code" src="../_images/editBudgetCode.png" style="width: 300.0px; height: 225.0px;" /></a>
+<p class="caption">Edit Budget Code</p>
+</div>
+<p>Once the changes are made, the list of billing codes will be updated immediately.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/quotaChanged.png"><img alt="Quota Changed" src="../_images/quotaChanged.png" style="width: 1000.0px; height: 200.0px;" /></a>
+<p class="caption">Quota Changed</p>
+</div>
+</div>
+<div class="section" id="deactivating-billing-codes">
+<h2>Deactivating Billing Codes<a class="headerlink" href="#deactivating-billing-codes" title="Permalink to this headline">¶</a></h2>
+<p>When a billing code is deactivated, a replacement code must be specified. Any
+infrastructure/services being tracked against the billing code set for deactivation will
+be tracked in the replacement code going forward. Historical data will still be available
+via reports in the old billing code.</p>
+<p>To deactivate a billing code, select the code marked for deactivation, click on actions,
+and choose deactivate.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/deactivateBudgetCode.png"><img alt="Deactivate Budget Code" src="../_images/deactivateBudgetCode.png" style="width: 300.0px; height: 175.0px;" /></a>
+<p class="caption">Deactivate Budget Code</p>
+</div>
+<p>Once a replacement code is selected and the deactivation is confirmed, the deactivated
+code is removed from the active list.</p>
+<p>Screenshot</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/budgetCodeInitial.png"><img alt="Budget Codes" src="../_images/budgetCodeInitial.png" style="width: 1000.0px; height: 300.0px;" /></a>
+<p class="caption">Budget Codes</p>
+</div>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Budget Codes
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

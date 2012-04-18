@@ -1,0 +1,372 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5. Platform &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="next" title="6. Users" href="../users/users.html" />
+    <link rel="prev" title="4. Infrastructure" href="../infrastructure/infrastructure.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>5. Platform</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="../users/users.html" title="6. Users" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="../infrastructure/infrastructure.html" title="4. Infrastructure" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">5. Platform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#relational-databases">5.1. Relational Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-value-databases">5.2. Key Value Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notification-topics">5.3. Notification Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#distributions">5.4. Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloud-files">5.5. Cloud Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/platform/platform.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="platform">
+<h1>5. Platform<a class="headerlink" href="#platform" title="Permalink to this headline">¶</a></h1>
+<p>Many clouds support Platform-as-a-Service (PaaS) offerings such as cloud files/object
+storage, databases, and content distribution systems. Accessing PaaS offerings using
+enStratus is done via the Platform menu.</p>
+<div class="section" id="relational-databases">
+<h2>5.1. Relational Databases<a class="headerlink" href="#relational-databases" title="Permalink to this headline">¶</a></h2>
+<p>enStratus supports cloud based relational database management services through enStratus
+Relational Databases (RDBMS). This service allows the end user to operate, scale and
+manage their relational databases in the cloud. Relational database instances give you the
+full capabilities and features you would normally find on a familiar RDBMS.</p>
+<div class="section" id="overview">
+<h3>5.1.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>enStratus currently supports cloud based relational database management with Amazon
+Relational Database Service (Amazon RDS). With a relational database instance you get the
+functions of a traditional database, plus scalability and redundancy in the cloud.</p>
+</div>
+<div class="section" id="creating-a-relational-database">
+<h3>5.1.2. Creating a Relational Database<a class="headerlink" href="#creating-a-relational-database" title="Permalink to this headline">¶</a></h3>
+<p>To create a new relational database in the enStratus console navigate to Platform &gt;
+Relational Databases. Click on +add database in the right corner of the table.</p>
+<p>Screenshot 1.</p>
+<p>Under the configuration tab you will see the fields for creating a database.</p>
+<p>Screenshot 2.</p>
+<p>The <strong>Name</strong> field is for a custom name to associate with your database.</p>
+<p>The <strong>Description</strong> field can be a custom description of your database.</p>
+<p>The <strong>Label</strong> field helps you organize your RDBMS instances by providing a unique color label.</p>
+<p>The <strong>Engine</strong> field currently supports MySQL 5.1 relational databases. More options will be
+provided as they become available.</p>
+<p>The <strong>Product</strong> field displays the different sizes available for the RDBMS and should be
+chosen to fit your needs. Database operating costs are proportional to the size, measured
+in compute power, of the provisioned datbase. See Amazon RDS for more information and
+current pricing.</p>
+<p>The <strong>Port</strong> number is restricted to ranges 1150 – 65535.</p>
+<p>For the <strong>Zone</strong> field it is highly recommended that you choose a zone that is in the same
+location as your primary application server.</p>
+<p>Another Zone option is high availability. In AWS this is know as a Multi-AZ deployment.
+The high availability option improves database durability and takes extra measures to
+ensure the RDBMS has minimal down time. This involves provisioning and maintaining a
+running backup of the primary instance in another zone. If there is planned maintenance,
+instance failure or availability zone failure in the primary zone the RDBMS will
+automatically failover to the backup instance.</p>
+<p>The size you specify in the Storage field must be in the 5GB to 1TB range.</p>
+<p>After the above fields have been completed proceed to the permissions tab.</p>
+<p>Screenshot 3</p>
+<p>The <strong>Admin User</strong> and <strong>Admin Password</strong> fields are required.</p>
+<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
+will use to track billing charges and access rights tied to the user management and
+billing code offerings of enStratus.</p>
+<p>Upon save the RDBMS is launched and could take up to 15 minutes to show up in the
+enStratus console.</p>
+<p><strong>Connecting to a Relational Database</strong></p>
+<p>First you need to allow connections between your local ip and the database you want to
+connect to.</p>
+<p>On the Platform &gt; Relational Databases page, select actions &gt; network access for the
+database you want to use.</p>
+<p>Screenshot 4</p>
+<p>If you have created a standard network (on the Company Settings &gt; Standard Networks page)
+for the IP you want to connect to your database from you can select your standard network
+from the Source drop-down. If you have not created a standard network you can make a new
+one on the Company Settings &gt; Standard Networks page or you can type your CIDR in the CIDR
+field and the Source will be labeled Custom. Click the Allow Access button and you will
+have network access to the database in 5 minutes or less.</p>
+<p>Screenshot 5</p>
+<p>Next, view the info page for your database by selecting actions &gt; info in the relational
+databases table.</p>
+<p>You can then connect to your database using a MySQL client, the Admin User, Admin Password
+and Port you specified in the Create RDBMS form, and the DNS/Host specified in the Info
+page.</p>
+</div>
+<div class="section" id="other-actions">
+<h3>5.1.3. Other Actions<a class="headerlink" href="#other-actions" title="Permalink to this headline">¶</a></h3>
+<p>To change the admin password for your relational database instance click on actions &gt;
+change password in the Relational Databases table. You can&#8217;t change the admin user name,
+but you can change the password by typing a new password in the Admin Password box and
+clicking the &#8220;Change RDBMS Password&#8221; button.</p>
+<p>To terminate a relational database instance click on actions &gt; terminate in the Relational
+Databases table.</p>
+</div>
+</div>
+<div class="section" id="key-value-databases">
+<h2>5.2. Key Value Databases<a class="headerlink" href="#key-value-databases" title="Permalink to this headline">¶</a></h2>
+<p>enStratus Key/Value Databases (KV Databases or KVDB) are a simple solution for storing
+your data for high availability and scalability. With a KV database you get only what you
+need. You can simply query your data and return the results without having to manage
+different schemas for your stored data sets. You do not need to worry when storing new
+data because it is automatically indexed for you.</p>
+<div class="section" id="id1">
+<h3>5.2.1. Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>enStratus currently supports the creation and termination of Amazon SimpleDB domains. See
+Amazon SimpleDB for more information and current pricing.</p>
+<p>KV databases are large collections of data organized into separate domains. The data is
+stored in hash tables that contain key to value pairs. The key to value pairs are
+attributes that can be searched in lexicographical queries.</p>
+</div>
+<div class="section" id="creating-a-key-value-database">
+<h3>5.2.2. Creating a Key/Value Database<a class="headerlink" href="#creating-a-key-value-database" title="Permalink to this headline">¶</a></h3>
+<p>To launch a new KV database in the enStratus console click on Platform &gt; Key/Value
+Databases. Then click  +add key/value database.</p>
+<p>Screenshot 1</p>
+<p>In the Create Key/Value Database form you will see the different fields for creating the
+KVDB.</p>
+<p>Screenshot 2</p>
+<p>The <strong>Name</strong> field is for a custom name to associate with your database.</p>
+<p>The <strong>Description</strong> field can be a custom description for your database.</p>
+<p>The <strong>Label</strong> field helps you organize your KVDB instances by providing a unique color label.</p>
+<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
+will use to track billing charges and access rights tied to the user management and
+billing code offerings of enStratus.</p>
+<p>Upon save the KV database is launched. It can take up to 15 minutes to appear in the
+enStratus console.</p>
+</div>
+<div class="section" id="terminating-key-value-databases">
+<h3>5.2.3. Terminating Key/Value Databases<a class="headerlink" href="#terminating-key-value-databases" title="Permalink to this headline">¶</a></h3>
+<p>To terminate a KVDB click actions &gt; terminate in the Key/Value Databases table.</p>
+<p>Screenshot 3.</p>
+</div>
+</div>
+<div class="section" id="notification-topics">
+<h2>5.3. Notification Topics<a class="headerlink" href="#notification-topics" title="Permalink to this headline">¶</a></h2>
+<p>enStratus supports management of cloud based notification topic web services through the
+enStratus console. Notification topics are often applied to an application and can be used
+to automatically send messages to subscribers or other applications.</p>
+<div class="section" id="id2">
+<h3>5.3.1. Overview<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>enStratus currently supports the creation and management of Amazon Simple Notification
+Service (Amazon SNS). See Amazon SNS for more information and current pricing.</p>
+<p>Notification topics makes it easy for the developer to send out important messages to
+applications or users. This allows for the developer to effectively communicate
+time-sensitive information in the form of a message.</p>
+<p>Creating Notification Topics:</p>
+<p>Screenshot</p>
+<p>To create a new Notification Topic click on Platform &gt; Notification Topics, then click on
++ add Topic.</p>
+<p>Screenshot</p>
+<p>The <strong>Name</strong> field is for a custom name to associate with your topic.</p>
+<p>The <strong>Description</strong> field can be a custom description for your topic.</p>
+<p>The <strong>Label</strong> field helps you organize your topics by providing a unique color label.</p>
+<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
+will use to track billing charges and access rights tied to the user management and
+billing code offerings of enStratus.</p>
+<p>Upon save your topic will be created and will appear shortly.</p>
+</div>
+<div class="section" id="subscribing-to-notification-topics">
+<h3>5.3.2. Subscribing To Notification Topics<a class="headerlink" href="#subscribing-to-notification-topics" title="Permalink to this headline">¶</a></h3>
+<p>Screenshot</p>
+<p>After the topic has been created you can add subscribers to the topic by clicking on
+actions &gt; subscriptions.</p>
+<p>Screenshot</p>
+<p><strong>End point</strong> is where you can enter the end point as an email address, web services URL, or
+the Amazon Resource Name string on a SQS (Simple Queue Service) queue.</p>
+<p><strong>Data Format</strong> is currently supported in JSON and plain text formats.</p>
+<p>Clicking Subscribe to Topic will add the subscriber.</p>
+</div>
+<div class="section" id="publishing-to-notification-topics">
+<h3>5.3.3. Publishing To Notification Topics<a class="headerlink" href="#publishing-to-notification-topics" title="Permalink to this headline">¶</a></h3>
+<p>To publish a message to your subscribers click on actions &gt; publish.</p>
+<p>Screenshot</p>
+<p>The Subject field can be any custom subject for your message.</p>
+<p>The Message field will be where you provide your custom message.</p>
+</div>
+<div class="section" id="deleting-notification-topics">
+<h3>5.3.4. Deleting Notification Topics<a class="headerlink" href="#deleting-notification-topics" title="Permalink to this headline">¶</a></h3>
+<p>To delete a notification topic click actions &gt; delete in the Notification Topics table.</p>
+</div>
+</div>
+<div class="section" id="distributions">
+<h2>5.4. Distributions<a class="headerlink" href="#distributions" title="Permalink to this headline">¶</a></h2>
+<p>enStratus supports cloud based content distribution networks or content delivery networks
+(CDN) through enStratus Distributions. Distributions allow users to distribute content
+from cloud storage quickly and efficiently to end users in the cloud.</p>
+<p>enStratus currently supports Limelight Networks&#8217; CDN through the Rackspace cloud and the
+Amazon Web Services CDN CloudFront. CloudFront allow users to distribute content from
+Amazon S3 storage and Limelight Networks allows users to distribute content from Rackspace
+Cloud Files.</p>
+<p>To create a new distribution in enStratus click on Platform &gt; Distributions then click
++Create Distribution.</p>
+<p>Screenshot</p>
+<p>Note: to create a new distribution you must have a pre-existing directory in Platform &gt;
+Files. Click here for more detail.</p>
+<p>The Name field is where you specify a custom domain name for your distribution. (e.g.
+example.cloudfront.net)</p>
+<p>The Aliases field allows you to map comma delimited aliases to the specific domain name.</p>
+<p>The Select a directory drop-down contains a list of all root-level directories located on
+the Platform &gt; Files page of the enStratus console. The directory that is selected for the
+distribution is mapped to the domain name you created.</p>
+<p>Clicking the actions tab next to your newly created distribution will provide you with the
+options to edit, delete, or activate/deactivate the distribution.</p>
+</div>
+<div class="section" id="cloud-files">
+<h2>5.5. Cloud Files<a class="headerlink" href="#cloud-files" title="Permalink to this headline">¶</a></h2>
+<p>enStratus supports cloud file storage via the enStratus console. File storage allows users
+to store and retrieve important data for easy and reliable access.</p>
+<p>enStratus supports cloud file storage in Amazon Simple Storage Service (Amazon S3),
+Windows Azure Storage Services, Google Storage, Eucalyptus Walrus, AT&amp;T Synaptic Storage,
+OpenStack Object Storage (Swift), and Rackspace Cloud Files.</p>
+<p>To create a new bucket through the enStratus console click on Platform &gt; Files, then click
+on +create root-level directory.</p>
+<p>Screenshot</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">you can create multiple root-level directories</p>
+</div>
+<p>The <strong>Name</strong> field is for a custom name to associate with your directory.</p>
+<p>The <strong>Label</strong> field helps you organize your directories by providing a unique color label.</p>
+<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
+will use to track billing charges and access rights tied to the user management and
+billing code offerings of enStratus.</p>
+<p>Once the directory is created you can create a hierarchy of directories within the
+root-level directory. Clicking on the actions tab next to the root-level directory will
+bring up options for that directory. These options include:</p>
+<p><strong>Info</strong>: Will provide information relating to the directory (e.g. directory name, user group,
+date created, parent directory, etc.)</p>
+<p>Screenshot</p>
+<p><strong>Permissions</strong>: You can set access level permissions to each directory.</p>
+<p><strong>Upload Files</strong>: You can upload files to the given directory from your local machine.</p>
+<p><strong>New Directory</strong>: Will create a new directory within the current working directory.</p>
+<p><strong>Delete</strong>: Will remove the directory and it’s contents.</p>
+<p>After a file is uploaded, an action tab is placed next to the file and allows for you to
+manage the file. These options include:</p>
+<p>Info: Provides information about the file (e.g. creation date, last updated date, file
+size, etc.)</p>
+<p>Download: Will allow you to download the selected file to your local machine.</p>
+<p>Note: This can take some time depending on file size and currently no progress bar has
+been implemented.</p>
+<p>Rename: Gives you the option to rename the file.</p>
+<p>Delete: Permanently removes the file from the directory.</p>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		5. Platform
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

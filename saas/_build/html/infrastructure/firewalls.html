@@ -1,0 +1,245 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Firewalls &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Firewalls</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/infrastructure/firewalls.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="firewalls">
+<h1>Firewalls<a class="headerlink" href="#firewalls" title="Permalink to this headline">¶</a></h1>
+<p>Firewalls, or security groups, in enStratus control accessibility to running servers. Each
+account has a firewall called &#8216;default&#8217; that is the default firewall into which all
+servers are launched.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The terms firewall and security group are interchangeable in enStratus.</p>
+</div>
+<p>Security groups are applied to servers. Servers are part of security groups. A server is
+added to a security group at the time of server start. It is not currently possible to
+change the security group of a server post-launch. This is far less of a limitation than
+it sounds because the individual rules that comprise a security group can be changed at
+any time.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/securityGroups.png"><img alt="Security Groups" src="../_images/securityGroups.png" style="width: 475.0px; height: 285.0px;" /></a>
+<p class="caption">Security Groups</p>
+</div>
+<p>Generally, the process for managing firewalls is to first create the security group and
+then choose a security group into which servers will be launched at start.</p>
+<p>To access firewalls in the enStratus console, navigate to Infrastructure &gt; Firewalls. A
+listing of the active firewalls will be shown. To add a new firewall, click on the
++create_firewall. Only two pieces of information are required to create a firewall: A
+name, billing code, and an optional group.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/createFirewall.png"><img alt="Create Security Group" src="../_images/createFirewall.png" style="width: 375.0px; height: 187.5px;" /></a>
+<p class="caption">Create Security Group</p>
+</div>
+<p>Once the firewall has been saved, it will be added to the list of active firewalls. Once
+the firewall is active, it will be provided as an option when launching new servers.</p>
+<div class="section" id="editing-firewalls">
+<h2>Editing Firewalls<a class="headerlink" href="#editing-firewalls" title="Permalink to this headline">¶</a></h2>
+<p>To edit an existing firewall, select the green action button that corresponds to the
+firewall targeted for editing. A dialog box will appear showing the rules that comprise
+the firewall.</p>
+<p>The six columns that make up the firewall are:</p>
+<p>1. Source - A common name for the firewall rule. Standard networks naming conventions apply
+to this column. If a standard network is used, the CIDR column will be automatically
+populated with the information defined by that standard network.</p>
+<p>2. CIDR - CIDR means Classless Inter-Domain Routing. Practically, this means / or &#8220;slash&#8221;
+notation is required. For example, to apply a rule to only one IP address, the rule takes
+the form: 1.2.3.4/32. This is practical for creating a rule for your home IP address. This
+type of notation allows for firewall rules that encompass ranges of IP addresses. For
+example, to apply a rule to a range of 256 IP addresses, this represents a rule of the
+form: 1.2.3.0/24. This is a very powerful feature of firewall rule creation.</p>
+<p>3. Method - Refers to the program being used, and provides a common name for the program. For
+example, MySQL or SSH. Standard ports can be used to modify this part of the ruleset.
+Protocol, From Port and To Port are automatically populated with the information provided
+by that standard port.</p>
+<ol class="arabic simple" start="4">
+<li>Protocol - Indicates the type of protocol that will apply, TCP, UDP, or ICMP.</li>
+<li>From Port - The starting port for the rule.</li>
+<li>To Port - The ending port for the rule.</li>
+</ol>
+</div>
+<div class="section" id="standard-networks-and-ports">
+<h2>Standard Networks and Ports<a class="headerlink" href="#standard-networks-and-ports" title="Permalink to this headline">¶</a></h2>
+<p>enStratus introduces the concept of a standard network to firewalls. A standard network is
+a user-defined commonly used network that can be quickly added to a firewall using a
+common name that maps to the IP address specified. This functionality creates the
+advantage of being able to easily identify, add, and remove specific firewall rules among
+what may be a long list of rules.</p>
+<p>For example, if a user typically conncects from a particular office IP address, this
+address should be added as a standard network and named appropriately for ease of
+identification.</p>
+<p>Similarly, standard ports are user-defined commonly used ports that typically map to a
+specific application. For example, if an application is required to allow connections on
+port 5555, a standard port can be defined to identify that application by a common name
+and add it to the firewall.</p>
+<p>Standard networks are defined in Company Settings &gt; Standard Networks. Every enStratus
+account has some default rules defined in a default firewall to allow for the enStratus
+monitoring service to connect to running servers. To define a new standard network, select
++add_new_standard_network and complete the resulting dialog box.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/addStandardNetwork.png"><img alt="Standard Network" src="../_images/addStandardNetwork.png" style="width: 380.0px; height: 285.0px;" /></a>
+<p class="caption">Standard Network</p>
+</div>
+<p>Once the standard network is saved, it will be added to the list of standard networks.</p>
+<p>Before we return to editing the firewalls, let&#8217;s define a standard port. Navigate to
+Company Settings &gt; Standard Ports. To add a new standard port, select
++add_new_standard_port and complete the resulting dialog box.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/addStandardPort.png"><img alt="Standard Port" src="../_images/addStandardPort.png" style="width: 380.0px; height: 285.0px;" /></a>
+<p class="caption">Standard Port</p>
+</div>
+<p>Once the standard port is saved, it will be added to the list of standard ports.</p>
+<p>Returning again to editing firewalls, the new standard network called Office IP and the
+standard port called Custom Application can be quickly added to any of the existing
+firewalls.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/editFirewall.png"><img alt="Edit Firewall Using Standard Port" src="../_images/editFirewall.png" style="width: 675.0px; height: 120.0px;" /></a>
+<p class="caption">Edit Firewall Using Standard Port</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a standard network or port is deleted, the rule will still be applied to the
+firewalls, it will only lose the customized name that was given and revert to a Custom
+rule.</p>
+</div>
+</div>
+<div class="section" id="starting-a-server-in-security-group">
+<h2>Starting a Server in Security Group<a class="headerlink" href="#starting-a-server-in-security-group" title="Permalink to this headline">¶</a></h2>
+<p>The final step in utilizing firewalls in the cloud is to apply a firewall group when
+starting a new server. To start a new server, navigate to Infrastructure &gt; Machine Images.
+Select an image to launch and in the resulting dialog box, choose the security group to be
+applied to the resulting server. All of the rules comprising the security group will be
+applied to the server.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/startServerinFirewall.png"><img alt="Start Server in Firewall" src="../_images/startServerinFirewall.png" style="width: 425.0px; height: 340.0px;" /></a>
+<p class="caption">Start Server in Firewall</p>
+</div>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Firewalls
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

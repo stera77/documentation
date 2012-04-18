@@ -1,0 +1,213 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Anatomy &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Anatomy</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">2. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">3. Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_configuration/deployment_configuration.html">4. Deployment Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_operation/deployment_operation.html">5. Deployment Operation</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/services/anatomy.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="anatomy">
+<h1>Anatomy<a class="headerlink" href="#anatomy" title="Permalink to this headline">¶</a></h1>
+<p>The anatomy of a service is very free-form. This allows for great flexibility in designing
+or adapting an application for use in a multi-cloud environment.</p>
+<p>An enStratus service should have the following structure:</p>
+<div class="section" id="bin">
+<h2>bin<a class="headerlink" href="#bin" title="Permalink to this headline">¶</a></h2>
+<p>Inside the bin/ directory, minimally 3 files:</p>
+<ol class="arabic simple">
+<li>enstratus-start</li>
+<li>enstratus-stop</li>
+<li>enstratus-configure</li>
+</ol>
+<p>The bin/ directory provides a known path for leveraging the enstratus orchestration and
+automation sections. When a service is deployed enStratus will, using the enStratus agent,
+trigger events to configure each service in the appropriate order.</p>
+</div>
+<div class="section" id="cfg">
+<h2>cfg<a class="headerlink" href="#cfg" title="Permalink to this headline">¶</a></h2>
+<p>The cfg directory is a directory where enStratus writes configuration files generated at
+run time with information the application will need to operate in the cloud. This
+directory is a good place for putting configuration file &#8220;templates&#8221;.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The astute chef user/reader will recognize the word template as a very useful
+construct from the Chef/Opscode world and that&#8217;s precisely correct. As deployers of
+cloud applications, we use this cfg directory to stage files that will be written
+dynamically with ephemeral cloud information.</p>
+</div>
+<p>And...that&#8217;s it. Questions? :)</p>
+<p>The bin/ and the cfg/ directories are the two primary directories used by the enStratus
+management system. Beyond that, additional directories can be added to suit the
+application. For example, a third directory might be:</p>
+</div>
+<div class="section" id="app">
+<h2>app<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
+<p>index.html</p>
+<p>Where the application directory holds the application files, in this case a lonely
+index.html.</p>
+</div>
+<div class="section" id="mysql-service">
+<h2>MySQL Service<a class="headerlink" href="#mysql-service" title="Permalink to this headline">¶</a></h2>
+<p>The MySQL service structure looks like this:</p>
+<p>bin/</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>addDataSource</li>
+<li>enstratus-backupDataSource</li>
+<li>enstratus-configureDataSource</li>
+<li>enstratus-lock</li>
+<li>mysql</li>
+<li>mysqlStartReplication</li>
+</ul>
+</td><td><ul class="simple">
+<li>configureDataSource</li>
+<li>enstratus-check</li>
+<li>enstratus-dbgrant</li>
+<li>enstratus-start</li>
+<li>mysqlDump</li>
+</ul>
+</td><td><ul class="simple">
+<li>configureMySQL</li>
+<li>enstratus-configure</li>
+<li>enstratus-installds</li>
+<li>enstratus-stop</li>
+<li>mysqlGrant</li>
+</ul>
+</td></tr></table>
+<p>cfg/</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>master.cnf</li>
+<li>replicant.cnf</li>
+</ul>
+</td></tr></table>
+<p>data/</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">&lt;empty&gt;</span></tt></li>
+</ul>
+</td></tr></table>
+<p>log/</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">&lt;empty&gt;</span></tt></li>
+</ul>
+</td></tr></table>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Anatomy
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

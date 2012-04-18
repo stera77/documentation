@@ -1,0 +1,45 @@
+#!/bin/bash
+
+set -u
+
+logTag="runConfigurationManagement-CHEF"
+LOGGER=/enstratus/bin/log
+FIRST_BOOT='/etc/chef/first-boot.json'
+
+$LOGGER -t "$logTag" runConfigurationManagement-CHEF "$@"
+
+if [ $# -lt 5 ] ; then
+   $LOGGER -t "$logTag" "Syntax: runConfigurationManagement-CHEF RUN_AS_USER TOKEN CONFIG_FILE_PATH AUTH_ID ENDPOINT"
+   exit 1
+fi
+
+$LOGGER -t "$logTag" "Running configuration management for Chef..."
+
+RUN_AS_USER=$1
+TOKEN_FILE_PATH=$2
+EXTRA_INFO_FILE_PATH=$3
+AUTH_ID=$4
+ENDPOINT=$5
+
+CLIENT_RB='/etc/chef/client.rb'
+#Replace the endpoint variable in the /etc/chef/client.rb file.
+sudo sed -i "s#CHEF_ENDPOINT#$ENDPOINT#" $CLIENT_RB > /dev/null 2>&1
+
+#Replace the validator variable in the /etc/chef/client.rb file.
+sudo sed -i "s/VALIDATOR/$AUTH_ID/" $CLIENT_RB > /dev/null 2>&1
+
+sudo cp $TOKEN_FILE_PATH /etc/chef/validation.pem > /dev/null 2>&1
+
+sudo cp $EXTRA_INFO_FILE_PATH $FIRST_BOOT > /dev/null 2>&1
+
+sudo chef-client -j $FIRST_BOOT > /dev/null 2>&1
+EXIT=$?
+
+if [[ $EXIT != 0 ]]; then
+        echo "chef-client run failed: $EXIT" 2>&1 | $LOGGER -t "$logTag"
+        exit 99
+fi
+
+sudo rm -f /etc/chef/validation.pem > /dev/null 2>&1
+
+$LOGGER -t "$logTag" "Finished running configuration management for Chef."

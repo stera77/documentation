@@ -1,0 +1,180 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Notification Topics &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Notification Topics</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">5. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/platform/notification_topics.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="notification-topics">
+<h1>Notification Topics<a class="headerlink" href="#notification-topics" title="Permalink to this headline">¶</a></h1>
+<p>enStratus supports management of cloud based notification topic web services through the
+enStratus console. Notification topics are often applied to an application and can be used
+to automatically send messages to subscribers or other applications.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>enStratus currently supports the creation and management of Amazon Simple Notification
+Service (Amazon SNS). See Amazon SNS for more information and current pricing.</p>
+<p>Notification topics makes it easy for the developer to send out important messages to
+applications or users. This allows for the developer to effectively communicate
+time-sensitive information in the form of a message.</p>
+<p>Creating Notification Topics:</p>
+<p>Screenshot</p>
+<p>To create a new Notification Topic click on Platform &gt; Notification Topics, then click on
++ add Topic.</p>
+<p>Screenshot</p>
+<p>The <strong>Name</strong> field is for a custom name to associate with your topic.</p>
+<p>The <strong>Description</strong> field can be a custom description for your topic.</p>
+<p>The <strong>Label</strong> field helps you organize your topics by providing a unique color label.</p>
+<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
+will use to track billing charges and access rights tied to the user management and
+billing code offerings of enStratus.</p>
+<p>Upon save your topic will be created and will appear shortly.</p>
+</div>
+<div class="section" id="subscribing-to-notification-topics">
+<h2>Subscribing To Notification Topics<a class="headerlink" href="#subscribing-to-notification-topics" title="Permalink to this headline">¶</a></h2>
+<p>Screenshot</p>
+<p>After the topic has been created you can add subscribers to the topic by clicking on
+actions &gt; subscriptions.</p>
+<p>Screenshot</p>
+<p><strong>End point</strong> is where you can enter the end point as an email address, web services URL, or
+the Amazon Resource Name string on a SQS (Simple Queue Service) queue.</p>
+<p><strong>Data Format</strong> is currently supported in JSON and plain text formats.</p>
+<p>Clicking Subscribe to Topic will add the subscriber.</p>
+</div>
+<div class="section" id="publishing-to-notification-topics">
+<h2>Publishing To Notification Topics<a class="headerlink" href="#publishing-to-notification-topics" title="Permalink to this headline">¶</a></h2>
+<p>To publish a message to your subscribers click on actions &gt; publish.</p>
+<p>Screenshot</p>
+<p>The Subject field can be any custom subject for your message.</p>
+<p>The Message field will be where you provide your custom message.</p>
+</div>
+<div class="section" id="deleting-notification-topics">
+<h2>Deleting Notification Topics<a class="headerlink" href="#deleting-notification-topics" title="Permalink to this headline">¶</a></h2>
+<p>To delete a notification topic click actions &gt; delete in the Notification Topics table.</p>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Notification Topics
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

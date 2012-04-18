@@ -1,0 +1,35 @@
+Date: Wed,  1 Dec 2010 08:12:40 +0000 (UTC)                                                                                       
+From: alerts@enstratus.com                                                                                                        
+To: enstratus.admin@enstratus.com                                                                                                    
+
+New Cloud Event: Wed 01 Dec 2010 08:12:40 UTC
+Cloud: Amazon Web Services
+Account: Company Name
+Subject: NEW EVENT #312317 (Severity 3) - IDS ALERT: 'Host-based anomaly
+detection event (rootcheck).': prd-2-app-1/Amazon Web Services - Company Name -
+i-60555555
+
+Intrusion Detection System Alert (Severity 3)
+Wed Dec 01 08:12:11 UTC 2010
+
+CLOUD:     Amazon Web Services
+SERVER ID: 2340
+NAME:      prd-2-app-1
+SUBJECT:   IDS ALERT: 'Host-based anomaly detection event (rootcheck).'
+
+2010 Dec 01 02:12:10 prd-2-app-1->rootcheck
+Rule: 510 (level 7) -> 'Host-based anomaly detection event (rootcheck).'
+Src IP: (none)
+User: (none)
+Port '54579'(tcp) hidden. Kernel-level rootkit or trojaned version of netstat.
+
+If you need assistance understanding this message or if you believe this message
+is the result of an issue with enStratus, please visit our support site at
+https://support.enstratus.com and login with your standard enStratus login
+credentials.
+
+To check on the status of enStratus itself, visit: http://status.enstratus.com
+
+Subscribe to live status updates via RSS at
+http://status.enstratus.com/status.xml or via Twitter at
+http://www.twitter.com/enStratusStatus.

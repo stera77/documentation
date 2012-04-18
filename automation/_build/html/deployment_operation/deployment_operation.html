@@ -1,0 +1,567 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5. Deployment Operation &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="prev" title="4. Deployment Configuration" href="../deployment_configuration/deployment_configuration.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>5. Deployment Operation</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="../deployment_configuration/deployment_configuration.html" title="4. Deployment Configuration" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">2. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/services.html">3. Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_configuration/deployment_configuration.html">4. Deployment Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">5. Deployment Operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#launch">5.1. Launch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scaling">5.2. Scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#auto-recovery">5.3. Auto-Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steady-state-operations">5.4. Steady State Operations</a></li>
+</ul>
+</li>
+</ul>
+
+    <h3>Downloads</h3>
+    <ul><li><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Specification</a></li>
+    <li><a href="http://es-content.s3.amazonaws.com/Security_Architecture.pdf">Security Architecture</a></li>
+    </ul>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/deployment_operation/deployment_operation.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="deployment-operation">
+<h1>5. Deployment Operation<a class="headerlink" href="#deployment-operation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="launch">
+<h2>5.1. Launch<a class="headerlink" href="#launch" title="Permalink to this headline">¶</a></h2>
+<p>Launching a deployment triggers a series of highly orchestrated and controlled events
+leading to a successful deployment and configuration of an application stack.</p>
+<p>Starting with the deployment configuration shown below. We&#8217;ll track the launch of the
+deployment from cold start to running.</p>
+<p>We&#8217;ll track the deployment launch by following the enStratus components throughout the
+event.</p>
+<p><strong>enStratus</strong>: State/actions of the enStratus management platform.</p>
+<p><strong>Deployment</strong>: State of the deployment. Values will be LAUNCHING, RUNNING.</p>
+<p><strong>Agent</strong>: State of the agent. Script(s) called. Logs to watch.</p>
+<p><strong>Service</strong>: State of the service. Script(s) called.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">SaaS users may not have access to view some logs and files that are generated.</p>
+</div>
+<p><strong>Logs</strong>: Relevant enStratus logs to watch during this step.</p>
+<p><strong>Files</strong>: Files generated by enStratus.</p>
+<div class="section" id="pre-launch">
+<h3>5.1.1. Pre-Launch<a class="headerlink" href="#pre-launch" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Launch0.png"><img alt="Pre-Launch" src="../_images/Launch0.png" style="width: 500.0px; height: 450.0px;" /></a>
+<p class="caption">Pre-Launch</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">CM = Configuration Management. Applied at the level of launch configuration.</p>
+</div>
+</div>
+<div class="section" id="launch-initiated-scale-up">
+<h3>5.1.2. Launch Initiated/Scale Up<a class="headerlink" href="#launch-initiated-scale-up" title="Permalink to this headline">¶</a></h3>
+<p>During deployment launch, enStratus begins the process of provisioning the infrastructure
+needed to support the application architecture.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Server launches in an automated &#8220;deployment&#8221; context are initiated by the
+Scaling worker process, not the dispatcher service as in standalone server launches.</p>
+<p class="last">All deployment server launches are &#8220;scaling events&#8221;. The start of a deployment is a
+scale up from 0 to the minimum number of servers, as specified in the tier.</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Launch1.png"><img alt="Launch Initiated" src="../_images/Launch1.png" style="width: 500.0px; height: 450.0px;" /></a>
+<p class="caption">Launch Initiated</p>
+</div>
+<div class="section" id="component-actions">
+<h4>5.1.2.1. Component Actions<a class="headerlink" href="#component-actions" title="Permalink to this headline">¶</a></h4>
+<p><strong>Overview</strong></p>
+<ol class="arabic simple">
+<li>enStratus makes API calls to launch the servers.</li>
+<li>Once the servers are started, the agents will initiate a handshake.</li>
+</ol>
+<p><strong>enStratus</strong>: Initiate scaling event, launch VM. Register launch event. Change deployment state to LAUNCHING.</p>
+<p><strong>Deployment</strong>: LAUNCHING. This is an informative status change.</p>
+<p><strong>Agent</strong>: STARTING, then RUNNING.</p>
+<p><strong>Services</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Application: PAUSED</li>
+<li>Database: PAUSED</li>
+</ul>
+</div></blockquote>
+<p><strong>Logs</strong>:</p>
+<ol class="arabic">
+<li><p class="first">Worker: scaling will launch the VM via the cloud API.</p>
+<p>Log location: /services/worker/log/</p>
+<p>com.enstratus.automation.worker.ScalingTaskWorker.100.log</p>
+<p>where 100 is a customer ID, yours may be different</p>
+</li>
+<li><p class="first">Monitor: Server log &#8220;discovers&#8221; new servers. Deployment log tracks deployment tier
+state. ScalingEvent logs track state of scaling events.</p>
+<p>Log location: /services/monitor/log/</p>
+<ul class="simple">
+<li>Server-1.log</li>
+<li>Deployment-1.log</li>
+<li>ScalingEvent-1.log</li>
+<li>ScalingEventProcess-1.log</li>
+</ul>
+</li>
+<li><p class="first">Dispatcher service: dispatcher log will register the agent handshake.</p>
+</li>
+</ol>
+<p><strong>Files</strong>: A new scaling worker log will be created if one does not already exist.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Expect time from when the launch button is pressed to the generation of a
+scaling event is less than one minute. The expected time of running servers is cloud
+dependent, but should be a few minutes.</p>
+</div>
+</div>
+</div>
+<div class="section" id="prepare-configuration-management">
+<h3>5.1.3. Prepare Configuration Management<a class="headerlink" href="#prepare-configuration-management" title="Permalink to this headline">¶</a></h3>
+<p>In this step, enStratus prepares each VM for executing the configuration management run by
+passing the necessary credentials/endpoint information to the VM via the enStratus agent.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The actions in this step will only take place if there is a configuration
+management action set in the launch configuration.</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Launch2.png"><img alt="Prepare Configuration Management" src="../_images/Launch2.png" style="width: 500.0px; height: 450.0px;" /></a>
+<p class="caption">Prepare Configuration Management</p>
+</div>
+<div class="section" id="id1">
+<h4>5.1.3.1. Component Actions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p><strong>enStratus</strong>: Get credentials for the configuration management run from Key/credentials
+Management system. Pass them to the VM.</p>
+<p><strong>Deployment</strong>: LAUNCHING</p>
+<p><strong>Agent</strong>: RUNNING. Script called:</p>
+<ul class="simple">
+<li>/enstratus/bin/runConfigurationManagement-CHEF</li>
+</ul>
+<p><strong>Services</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Application: PAUSED</li>
+<li>Database: PAUSED</li>
+</ul>
+</div></blockquote>
+<p><strong>Logs</strong>:</p>
+<ol class="arabic">
+<li><p class="first">Worker Service: Configuration worker.</p>
+<p>Log location: /services/worker/log</p>
+<p>com.enstratus.automation.worker.ConfigurationTaskWorker.100.log</p>
+</li>
+</ol>
+<p><strong>Files</strong>: first-boot.json, validation.pem. These files are passed to the agent script.</p>
+</div>
+</div>
+<div class="section" id="execute-configuration-management">
+<h3>5.1.4. Execute Configuration Management<a class="headerlink" href="#execute-configuration-management" title="Permalink to this headline">¶</a></h3>
+<p>enStratus executes the agent script /enstratus/bin/runConfigurationManagement-CHEF ( in
+the case of Chef ) which in turn calls chef-client with first-boot.json as an argument.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">first-boot.json contains the json for executing the appropriate chef role. For
+example: {&#8220;run_list&#8221;:[&#8220;role[applicationServer]&#8221;]}</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Launch3.png"><img alt="Execute Configuration Management" src="../_images/Launch3.png" style="width: 500.0px; height: 450.0px;" /></a>
+<p class="caption">Execute Configuration Management</p>
+</div>
+<div class="section" id="id2">
+<h4>5.1.4.1. Component Actions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p><strong>enStratus</strong>: Execute the agent script runConfigurationManagement-CHEF.</p>
+<p><strong>Deployment</strong>: LAUNCHING</p>
+<p><strong>Agent</strong>: RUNNING. Script called: runConfigurationManagement-CHEF</p>
+<p><strong>Services</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Application: PAUSED</li>
+<li>Database: PAUSED</li>
+</ul>
+</div></blockquote>
+<p><strong>Logs</strong>:</p>
+<ol class="arabic">
+<li><p class="first">Worker Service: Configuration worker. Also, the scaling log will still be helpful to
+track.</p>
+<p>Log location: /services/worker/log</p>
+<ul class="simple">
+<li>com.enstratus.automation.worker.ConfigurationTaskWorker.100.log</li>
+<li>com.enstratus.automation.worker.ScalingTaskWorker.100.log</li>
+</ul>
+</li>
+<li><p class="first">Agent log.</p>
+<p>Log location: /enstratus/ws/tomcat/log/</p>
+<ul class="simple">
+<li>enStratus console. Server actions menu &gt; Logs</li>
+<li>catalina.out</li>
+</ul>
+</li>
+</ol>
+<p><strong>Files</strong>: first-boot.json, validation.pem, client.pem (post-registration)</p>
+</div>
+</div>
+<div class="section" id="service-download-install">
+<h3>5.1.5. Service Download/Install<a class="headerlink" href="#service-download-install" title="Permalink to this headline">¶</a></h3>
+<p>enStratus downloads the service files from cloud files and installs them to a directory
+called /mnt/services/a####, where a#### is the service ID of the service tied to the tier.</p>
+<p>This service path is used by enstratus to execute automation events.</p>
+<p>All services that are defined for the tier are downloaded to every running VM in the tier.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Launch4.png"><img alt="Service Download" src="../_images/Launch4.png" style="width: 500.0px; height: 450.0px;" /></a>
+<p class="caption">Service Download</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Launch5.png"><img alt="Service Download" src="../_images/Launch5.png" style="width: 500.0px; height: 450.0px;" /></a>
+<p class="caption">Service Download</p>
+</div>
+<div class="section" id="id3">
+<h4>5.1.5.1. Component Actions<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p><strong>Overview</strong></p>
+<ol class="arabic simple">
+<li>enStratus triggers the service download.</li>
+<li>The enStratus agent download the service files.</li>
+<li>enStratus executes the agent script called installService, passing the service file.</li>
+</ol>
+<p><strong>enStratus</strong>: Triggers the service download event.</p>
+<p><strong>Deployment</strong>: LAUNCHING</p>
+<p><strong>Agent</strong>: RUNNING. Script called:</p>
+<blockquote>
+<div><ul class="simple">
+<li>/enstratus/bin/installService, once the service is downloaded.</li>
+</ul>
+</div></blockquote>
+<p><strong>Services</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Application: PAUSED</li>
+<li>Database: STARTING</li>
+</ul>
+</div></blockquote>
+<p><strong>Logs</strong>:</p>
+<ol class="arabic">
+<li><p class="first">Worker Service: Configuration worker.</p>
+</li>
+<li><p class="first">Agent log. In here there will be information about the download of the service.</p>
+<p>Log location: /enstratus/ws/tomcat/log/ and in the console actions &gt; Logs.</p>
+<ul class="simple">
+<li>enStratus console. Server actions menu &gt; Logs</li>
+<li>catalina.out</li>
+</ul>
+</li>
+</ol>
+<p><strong>Files</strong>: appService.tar.gz, dbService.tar.gz.</p>
+</div>
+</div>
+<div class="section" id="configure-dependencies">
+<h3>5.1.6. Configure Dependencies<a class="headerlink" href="#configure-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>The first part of orchestration, the ordering of deployment events according to the
+service dependency relationships, starts here.</p>
+<p>The application service depends on the datasource installed as part of the database
+service. This means that enStratus will finish configuration on the database service, up
+to and including the installation of the datasource, before installing and configuring the
+application service.</p>
+<p>In this step, the datasource is downloaded from cloudfiles storage and installed on the
+database.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Launch6.png"><img alt="Configure Dependencies" src="../_images/Launch6.png" style="width: 500.0px; height: 450.0px;" /></a>
+<p class="caption">Configure Dependencies</p>
+</div>
+<p><strong>Overview</strong></p>
+<ol class="arabic simple">
+<li>Since the datasource installed as part of the database service is the dependency for
+the applicaiton service, it must be configured before any actions can be taken on
+the application service.</li>
+<li>enStratus initiates the process for downloading the data source.</li>
+<li>the enStratus agent downloads the data source file from cloud files storage.</li>
+<li>enStratus passes in a configuration file to the database server containing information
+about the dependent application VM.</li>
+</ol>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>This is probably the single most important step to understand in this
+process.</p>
+<p>Information that cannot be known by the database server <em>a priori</em>, such as IP
+addresses, is/are passed to the DB server so it can run a grant statement to allow for a
+connection from a heretofore non-existent application server(s).</p>
+<p class="last">enStratus has knowledge of the entire cloud infrastructure and passes your applications,
+databases, and any service this type of information in a file called enstratus.cfg. The
+information passed to each VM is customizable and extensible.</p>
+</div>
+<div class="section" id="id4">
+<h4>5.1.6.1. Component Actions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p><strong>enStratus</strong>: Initiates the download of the database datasource file to the database VM,
+and passing of configuration files.</p>
+<p><strong>Deployment</strong>: LAUNCHING</p>
+<p><strong>Agent</strong>: RUNNING.</p>
+<p>Scripts called:</p>
+<ol class="arabic simple">
+<li>installDataSource. Responsible for calling the service script:
+enstratus-installDataSource, which loads the data source into the database.</li>
+<li>configureService. Responsible for calling the service script: enstratus-configure,
+which reads the configuration file called enstratus.cfg.</li>
+<li>stopService. Once the configuration is complete, the service is stopped with a call to
+this script, which calls the service script enstratus-stop.</li>
+<li>startService. After the service is stopped, enStratus start the service using the logic
+provided by calling the service script enstratus-start.</li>
+</ol>
+<p><strong>Services</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Application: PAUSED</li>
+<li>Database: STARTING</li>
+</ul>
+</div></blockquote>
+<p>Scripts called:</p>
+<ol class="arabic simple">
+<li>enstratus-installDataSource</li>
+<li>enstratus-configure. Contains logic to dynamically generate configuration files using
+the information passed to it by enStratus. In this case, the my.cnf file for MySQL is
+generated from the template file that was in cfg/master.cnf. This script is passed the
+above mentioned enstratus.cfg file.</li>
+<li>enstratus-stop. Contains logic to stop the MySQL service.</li>
+<li>enstratus-start. Contains logic to start the MySQL service.</li>
+</ol>
+<p><strong>Logs</strong>:</p>
+<ol class="arabic">
+<li><p class="first">Worker Service: Configuration worker. Scaling Worker.</p>
+<p>Log location: /services/worker/log</p>
+<ul class="simple">
+<li>com.enstratus.automation.worker.ConfigurationTaskWorker.100.log</li>
+<li>com.enstratus.automation.worker.ScalingTaskWorker.100.log</li>
+</ul>
+</li>
+<li><p class="first">Agent log. In here there will be information about the download of the datasource and
+the subsequent configuration.</p>
+<p>Log location: /enstratus/ws/tomcat/log/ and in the console actions &gt; Logs.</p>
+<ul class="simple">
+<li>enStratus console. Server actions menu &gt; Logs</li>
+<li>catalina.out</li>
+</ul>
+</li>
+</ol>
+<p><strong>Files</strong>: datasource.sql, enstratus.cfg. These files are passed to the database instance.</p>
+</div>
+</div>
+<div class="section" id="configure-dependent-services">
+<h3>5.1.7. Configure Dependent Services<a class="headerlink" href="#configure-dependent-services" title="Permalink to this headline">¶</a></h3>
+<p>Now that the database service is configured, the application service dependency is
+satisified and the application service can be configured.</p>
+<p>enStratus passes a configuration file called enstratus.cfg to the application service
+which contains information for the application to dynamically configure the application
+configuration files to connect to the database.</p>
+<p>Once the application service is deployed and configured, the load balancer is notified of
+a new server joining the load-balanced pool. enStratus passes information to the load
+balancer so it can take the actions necessary to join the node.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Launch7.png"><img alt="Configure Dependent Service(s)" src="../_images/Launch7.png" style="width: 500.0px; height: 450.0px;" /></a>
+<p class="caption">Configure Dependent Service(s)</p>
+</div>
+<div class="section" id="id5">
+<h4>5.1.7.1. Component Actions<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p><strong>enStratus</strong>: Dependency satisified. Configure application service. Grant database access
+to application servers.</p>
+<p><strong>Deployment</strong>: LAUNCHING</p>
+<p><strong>Agent</strong>: RUNNING.</p>
+<p>Scripts called:</p>
+<ol class="arabic simple">
+<li>configureService. Responsible for calling the service script: enstratus-configure,
+which reads the configuration file called enstratus.cfg.</li>
+<li>stopService. Once the configuration is complete, the service is stopped with a call to
+this script, which calls the service script enstratus-stop</li>
+<li>startService. After the service is stopped, enStratus start the service using the logic
+provided by calling the service script enstratus-start.</li>
+<li>startProxy (Load Balancer, if VM) enStratus passes information about each load-balanced
+node to the load balancer.</li>
+<li>grantDatabaseAccess. Called on the database server with information about the
+application servers to which access should be granted.</li>
+</ol>
+<p><strong>Services</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Application: STARTING</li>
+<li>Database: RUNNING</li>
+</ul>
+</div></blockquote>
+<p>Scripts called:</p>
+<ol class="arabic simple">
+<li>enstratus-configure. Contains logic to dynamically generate configuration files using
+the information passed to it by enStratus. In this case, the application configuration
+files are generated from the template files in cfg/.</li>
+<li>enstratus-stop. Contains logic to stop the application service.</li>
+<li>enstratus-start. Contains logic to start the application service.</li>
+<li>enstratus-grantDatabaseAccess. Called on the database server.</li>
+</ol>
+<p><strong>Logs</strong>:</p>
+<ol class="arabic">
+<li><p class="first">Worker Service: Configuration worker.</p>
+<p>Log location: /services/worker/log</p>
+<p>com.enstratus.automation.worker.ConfigurationTaskWorker.100.log</p>
+</li>
+<li><p class="first">Agent log. Contains information about the configuration of the application service and
+the addition of a load-balanced node.</p>
+<p>Log location: /enstratus/ws/tomcat/log/ and in the console actions &gt; Logs.</p>
+<ul class="simple">
+<li>enStratus console. Server actions menu &gt; Logs</li>
+<li>catalina.out</li>
+</ul>
+</li>
+</ol>
+<p><strong>Files</strong>: enstratus.cfg, passed to the application vm.</p>
+</div>
+</div>
+<div class="section" id="start-proxy">
+<h3>5.1.8. Start Proxy<a class="headerlink" href="#start-proxy" title="Permalink to this headline">¶</a></h3>
+<p>In the final step of this deployment launch, the newly provisioned application server
+nodes are joined to the load balancing VM.</p>
+<p><strong>enStratus</strong>: Call startProxy on the load balancing VM with information about the
+application nodes.</p>
+<p><strong>Deployment</strong>: RUNNING. After this step, the deployment will switch to a RUNNING state.</p>
+<p><strong>Agent</strong>: RUNNING. Script called: /enstratus/bin/startProxy, with arguments necessary to
+add the application node to the load balancer software.</p>
+<p><strong>Services</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Application: RUNNING</li>
+<li>Database: RUNNING</li>
+</ul>
+</div></blockquote>
+<p><strong>Logs</strong>:</p>
+<ol class="arabic">
+<li><p class="first">Agent log on the load balancing VM.</p>
+<p>Log location: /enstratus/ws/tomcat/log/ and in the console actions &gt; Logs.</p>
+<ul class="simple">
+<li>enStratus console. Server actions menu &gt; Logs</li>
+<li>catalina.out</li>
+</ul>
+</li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Launch8.png"><img alt="Configure Load Balancing" src="../_images/Launch8.png" style="width: 500.0px; height: 450.0px;" /></a>
+<p class="caption">Configure Load Balancing</p>
+</div>
+</div>
+</div>
+<div class="section" id="scaling">
+<h2>5.2. Scaling<a class="headerlink" href="#scaling" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="auto-recovery">
+<h2>5.3. Auto-Recovery<a class="headerlink" href="#auto-recovery" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="steady-state-operations">
+<h2>5.4. Steady State Operations<a class="headerlink" href="#steady-state-operations" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		5. Deployment Operation
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>
