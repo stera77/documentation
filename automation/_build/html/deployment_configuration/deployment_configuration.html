@@ -531,7 +531,7 @@ Setup. This type of encryption is file-system based encryption.</p>
 <li><p class="first"><strong>Server Type</strong></p>
 <p>There are five options for Server Type:</p>
 <ul class="simple">
-<li>Load Load balancer. This option specifies a launch configuration as a load balancer so
+<li>Load balancer. This option specifies a launch configuration as a load balancer so
 that servers in this tier will be treated as such.</li>
 <li>Service General Service. This option identifies the servers governed by this launch
 configuration as a generic service such as a web application.</li>
@@ -733,6 +733,54 @@ applying a normalization factor to &#8220;small&#8221; servers running in EC2.</
 <p class="last">In all cases, enStratus manages the actions of initiating the scale. Each
 scaling event is a server launch, and all of the orchestration/automation around that
 launch is controlled using the parameters set in enStratus</p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c">#!/bin/bash</span>
+<span class="nv">stat</span><span class="o">=</span><span class="k">$(</span>uptime | awk <span class="s1">&#39;{print $12}&#39;</span> | sed <span class="s1">&#39;s/,//g&#39;</span><span class="k">)</span>
+<span class="nb">time</span><span class="o">=</span><span class="k">$(</span> date +%H:%M:%S <span class="k">)</span>
+
+<span class="nv">MAX_THRESHOLD</span><span class="o">=</span>0.75
+<span class="nv">SCALE_FACTOR</span><span class="o">=</span>0.35
+
+<span class="k">if</span> <span class="o">[</span> ! -e statFile <span class="o">]</span>;
+        <span class="k">then </span>touch statFile
+        cat &gt; statFile <span class="s">&lt;&lt; STOP_HERE</span>
+<span class="s">MAX=1.00</span>
+<span class="s">MIN=0.32</span>
+<span class="s">STOP_HERE</span>
+<span class="k">fi</span>
+
+<span class="nv">SCALED_LOAD</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$stat</span> <span class="k">${</span><span class="nv">SCALE_FACTOR</span><span class="k">}</span>| awk <span class="s1">&#39;{print $1*$2}&#39;</span><span class="k">)</span>
+
+<span class="c">#echo &quot;Actual Load: $stat&quot;</span>
+<span class="c">#echo &quot;Scaled Load: $SCALED_LOAD&quot;</span>
+
+<span class="nv">DO_SCALE</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$SCALED_LOAD</span> <span class="nv">$MAX_THRESHOLD</span> | awk <span class="s1">&#39;{if ($1 &gt; $2) print &quot;1&quot;; else print &quot;0&quot;}&#39;</span><span class="k">)</span>
+
+<span class="k">function </span>checkMax<span class="o">(){</span>
+        <span class="nv">NEW_MAX</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$1</span> <span class="nv">$2</span> | awk <span class="s1">&#39;{if ($1 &gt; $2) print &quot;1&quot;; else print &quot;0&quot;}&#39;</span><span class="k">)</span>
+        <span class="c">#echo &quot;Is this a new max: $NEW_MAX&quot;</span>
+        <span class="k">if</span> <span class="o">[</span> <span class="nv">$NEW_MAX</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span> <span class="o">]</span>; <span class="k">then</span>
+<span class="k">                </span>sed -i <span class="s2">&quot;s/MAX=${2}/MAX=${1}/&quot;</span> statFile
+        <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="k">function </span>checkMin<span class="o">(){</span>
+        <span class="nv">NEW_MIN</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$1</span> <span class="nv">$2</span> | awk <span class="s1">&#39;{if ($1 &lt; $2) print &quot;1&quot;; else print &quot;0&quot;}&#39;</span><span class="k">)</span>
+        <span class="c">#echo &quot;Is this a new min: $NEW_MIN&quot;</span>
+        <span class="k">if</span> <span class="o">[</span> <span class="nv">$NEW_MIN</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span> <span class="o">]</span>; <span class="k">then</span>
+<span class="k">                </span>sed -i <span class="s2">&quot;s/MIN=${2}/MIN=${1}/&quot;</span> statFile
+        <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="c">#echo &quot;Should we scale? $DO_SCALE&quot;</span>
+
+<span class="nb">source </span>statFile
+
+checkMax <span class="nv">$SCALED_LOAD</span> <span class="nv">$MAX</span>
+checkMin <span class="nv">$SCALED_LOAD</span> <span class="nv">$MIN</span>
+
+<span class="nb">echo</span> <span class="nv">$DO_SCALE</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="scaling-sensitivity">
@@ -1066,6 +1114,30 @@ fashion at the time of server start.</p>
 <h3>4.10.1. Creating<a class="headerlink" href="#creating" title="Permalink to this headline">¶</a></h3>
 <p>Create SSL certificates by any method you desire. enStratus will inform the administrator
 via an alert when the SSL cerfiticate is set to expire via a message of the form:</p>
+<div class="highlight-python"><pre>New Cloud Event: Tue 07 Nov 2010 12:28:59 UTC
+Cloud: Rackspace
+Account: enStratus RS NOC
+Subject: NEW EVENT #315741 (Severity 3) - SSL Certificate 'My CERT' EXPIRING: Sun Dec 12
+00:00:00 UTC 2010
+
+Customer ID: 9999
+Customer: enStratus
+Address: www.company.org
+Expiration: Sun Dec 12 00:00:00 UTC 2010
+
+The SSL certificate MPLS attached to www.company.org will soon expire.
+
+
+If you need assistance understanding this message or if you believe this message is the
+result of an issue with enStratus, please visit our support site at
+https://support.enstratus.com and login with your standard enStratus login credentials.
+
+To check on the status of enStratus itself, visit: http://status.enstratus.com
+
+Subscribe to live status updates via RSS at http://status.enstratus.com/status.xml or via
+Twitter at http://www.twitter.com/enStratusStatus.
+</pre>
+</div>
 </div>
 <div class="section" id="uploading">
 <h3>4.10.2. Uploading<a class="headerlink" href="#uploading" title="Permalink to this headline">¶</a></h3>
