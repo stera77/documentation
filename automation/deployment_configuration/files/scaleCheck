@@ -1,0 +1,46 @@
+#!/bin/bash
+stat=$(uptime | awk '{print $12}' | sed 's/,//g')
+time=$( date +%H:%M:%S )
+
+MAX_THRESHOLD=0.75
+SCALE_FACTOR=0.35
+
+if [ ! -e statFile ];
+        then touch statFile
+        cat > statFile << STOP_HERE
+MAX=1.00
+MIN=0.32
+STOP_HERE
+fi
+
+SCALED_LOAD=$(echo $stat ${SCALE_FACTOR}| awk '{print $1*$2}')
+
+#echo "Actual Load: $stat"
+#echo "Scaled Load: $SCALED_LOAD"
+
+DO_SCALE=$(echo $SCALED_LOAD $MAX_THRESHOLD | awk '{if ($1 > $2) print "1"; else print "0"}')
+
+function checkMax(){
+        NEW_MAX=$(echo $1 $2 | awk '{if ($1 > $2) print "1"; else print "0"}')
+        #echo "Is this a new max: $NEW_MAX"
+        if [ $NEW_MAX = '1' ]; then
+                sed -i "s/MAX=${2}/MAX=${1}/" statFile
+        fi
+}
+
+function checkMin(){
+        NEW_MIN=$(echo $1 $2 | awk '{if ($1 < $2) print "1"; else print "0"}')
+        #echo "Is this a new min: $NEW_MIN"
+        if [ $NEW_MIN = '1' ]; then
+                sed -i "s/MIN=${2}/MIN=${1}/" statFile
+        fi
+}
+
+#echo "Should we scale? $DO_SCALE"
+
+source statFile
+
+checkMax $SCALED_LOAD $MAX
+checkMin $SCALED_LOAD $MIN
+
+echo $DO_SCALE

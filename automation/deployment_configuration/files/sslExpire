@@ -1,0 +1,22 @@
+New Cloud Event: Tue 07 Nov 2010 12:28:59 UTC
+Cloud: Rackspace
+Account: enStratus RS NOC
+Subject: NEW EVENT #315741 (Severity 3) - SSL Certificate 'My CERT' EXPIRING: Sun Dec 12
+00:00:00 UTC 2010
+
+Customer ID: 9999
+Customer: enStratus
+Address: www.company.org
+Expiration: Sun Dec 12 00:00:00 UTC 2010
+
+The SSL certificate MPLS attached to www.company.org will soon expire.
+
+
+If you need assistance understanding this message or if you believe this message is the
+result of an issue with enStratus, please visit our support site at
+https://support.enstratus.com and login with your standard enStratus login credentials.
+
+To check on the status of enStratus itself, visit: http://status.enstratus.com
+
+Subscribe to live status updates via RSS at http://status.enstratus.com/status.xml or via
+Twitter at http://www.twitter.com/enStratusStatus.
