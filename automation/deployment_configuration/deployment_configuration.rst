@@ -470,7 +470,7 @@ Manage Launch Configuration, General Information
 
    There are five options for Server Type:
 
-   * Load Load balancer. This option specifies a launch configuration as a load balancer so
+   * Load balancer. This option specifies a launch configuration as a load balancer so
      that servers in this tier will be treated as such.
    * Service General Service. This option identifies the servers governed by this launch
      configuration as a generic service such as a web application.
