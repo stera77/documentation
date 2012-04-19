@@ -7,9 +7,6 @@
 enStratus Tutorials
 ===================
 
-Coming soon...
-
-Contents:
 
 .. toctree::
    :maxdepth: 2
@@ -17,6 +14,7 @@ Contents:
    :glob:
     
    introduction/introduction
+   wordpressdemo/wordpressdemo
 
 Indices and tables
 ==================
