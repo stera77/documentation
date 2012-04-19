@@ -4,8 +4,10 @@
    contain the root `toctree` directive.
 
 
-enStratus Agent
-===============
+enStratus Tutorials
+===================
+
+Coming soon...
 
 Contents:
 
