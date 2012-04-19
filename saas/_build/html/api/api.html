@@ -63,6 +63,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">9. API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#specifications">9.1. Specifications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#java-examples">9.2. Java Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#c-examples">9.3. C# Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -180,6 +181,90 @@
 <span class="o">}</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="c-examples">
+<h2>9.3. C# Examples<a class="headerlink" href="#c-examples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Generic</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Linq</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Security</span><span class="p">.</span><span class="n">Cryptography</span><span class="p">;</span>
+
+<span class="n">namespace</span> <span class="n">APIExamples</span>
+<span class="p">{</span>
+    <span class="n">class</span> <span class="n">APIExample</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="kt">void</span> <span class="n">Main</span><span class="p">(</span><span class="n">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">String</span> <span class="n">accessKey</span> <span class="o">=</span> <span class="s">&quot;&lt;your access key&gt;&quot;</span><span class="p">;</span>
+            <span class="n">String</span> <span class="n">secretKey</span> <span class="o">=</span> <span class="s">&quot;&lt;your secret key&gt;&quot;</span><span class="p">;</span>
+            <span class="n">String</span> <span class="n">userAgent</span> <span class="o">=</span> <span class="s">&quot;dotnet-example&quot;</span><span class="p">;</span>
+            <span class="n">TimeSpan</span> <span class="n">ts</span> <span class="o">=</span> <span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span> <span class="o">-</span> <span class="n">new</span> <span class="n">DateTime</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+            <span class="n">String</span> <span class="n">timestamp</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="n">ts</span><span class="p">.</span><span class="n">TotalSeconds</span><span class="o">*</span><span class="mi">1000</span><span class="p">);</span>
+
+
+            <span class="n">String</span> <span class="n">command</span> <span class="o">=</span> <span class="s">&quot;geography/Cloud&quot;</span><span class="p">;</span>
+
+
+            <span class="n">String</span> <span class="n">urlStub</span> <span class="o">=</span> <span class="s">&quot;/api/enstratus/2011-07-15/&quot;</span><span class="p">;</span>
+            <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://api.enstratus.com&quot;</span><span class="o">+</span><span class="n">urlStub</span><span class="o">+</span><span class="n">command</span><span class="p">;</span>
+
+            <span class="n">String</span> <span class="n">toSign</span> <span class="o">=</span> <span class="n">accessKey</span> <span class="o">+</span> <span class="s">&quot;:GET:&quot;</span> <span class="o">+</span> <span class="n">urlStub</span> <span class="o">+</span> <span class="n">command</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="n">timestamp</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="n">userAgent</span><span class="p">;</span>
+            <span class="c1">//Console.WriteLine(toSign);</span>
+            <span class="n">String</span> <span class="n">signature</span> <span class="o">=</span> <span class="n">sign</span><span class="p">(</span><span class="n">secretKey</span><span class="p">,</span> <span class="n">toSign</span><span class="p">);</span>
+            <span class="c1">//Console.WriteLine(signature);</span>
+
+            <span class="n">HttpWebRequest</span> <span class="n">req</span> <span class="o">=</span> <span class="n">WebRequest</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+                                 <span class="n">as</span> <span class="n">HttpWebRequest</span><span class="p">;</span>
+
+            <span class="n">req</span><span class="p">.</span><span class="n">UserAgent</span> <span class="o">=</span> <span class="n">userAgent</span><span class="p">;</span>
+            <span class="n">req</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;x-es-details&quot;</span><span class="p">,</span> <span class="s">&quot;basic&quot;</span><span class="p">);</span>
+            <span class="n">req</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;x-es-with-perms&quot;</span><span class="p">,</span> <span class="s">&quot;false&quot;</span><span class="p">);</span>
+            <span class="n">req</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;x-esauth-access&quot;</span><span class="p">,</span> <span class="n">accessKey</span><span class="p">);</span>
+            <span class="n">req</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;x-esauth-signature&quot;</span><span class="p">,</span> <span class="n">signature</span><span class="p">);</span>
+            <span class="n">req</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;x-esauth-timestamp&quot;</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">);</span>
+            <span class="n">try</span>
+            <span class="p">{</span>
+                <span class="n">WebResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">req</span><span class="p">.</span><span class="n">GetResponse</span><span class="p">();</span>
+
+                <span class="c1">// Display the status.</span>
+                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(((</span><span class="n">HttpWebResponse</span><span class="p">)</span><span class="n">response</span><span class="p">).</span><span class="n">StatusDescription</span><span class="p">);</span>
+                <span class="c1">// Get the stream containing content returned by the server.</span>
+                <span class="n">Stream</span> <span class="n">dataStream</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">GetResponseStream</span><span class="p">();</span>
+                <span class="c1">// Open the stream using a StreamReader for easy access.</span>
+                <span class="n">StreamReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="n">new</span> <span class="n">StreamReader</span><span class="p">(</span><span class="n">dataStream</span><span class="p">);</span>
+                <span class="c1">// Read the content.</span>
+                <span class="n">string</span> <span class="n">responseFromServer</span> <span class="o">=</span> <span class="n">reader</span><span class="p">.</span><span class="n">ReadToEnd</span><span class="p">();</span>
+                <span class="c1">// Display the content.</span>
+                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">responseFromServer</span><span class="p">);</span>
+                <span class="c1">// Clean up the streams.</span>
+                <span class="n">reader</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+                <span class="n">dataStream</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+                <span class="n">response</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="n">catch</span> <span class="p">(</span><span class="n">WebException</span> <span class="n">we</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">we</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Press any key to quit...&quot;</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">ReadKey</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">static</span>  <span class="n">String</span> <span class="n">sign</span><span class="p">(</span><span class="n">String</span> <span class="n">key</span><span class="p">,</span> <span class="n">String</span> <span class="n">stringToSign</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">ASCIIEncoding</span> <span class="n">encoding</span> <span class="o">=</span> <span class="n">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">ASCIIEncoding</span><span class="p">();</span>
+
+            <span class="n">byte</span><span class="p">[]</span> <span class="n">keyByte</span> <span class="o">=</span> <span class="n">encoding</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+            <span class="n">HMACSHA256</span> <span class="n">hmacsha256</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HMACSHA256</span><span class="p">(</span><span class="n">keyByte</span><span class="p">);</span>
+
+            <span class="k">return</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToBase64String</span><span class="p">(</span><span class="n">hmacsha256</span><span class="p">.</span><span class="n">ComputeHash</span><span class="p">(</span><span class="n">encoding</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">stringToSign</span><span class="p">)));</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </div>
 </div>

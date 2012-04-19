@@ -1,7 +1,7 @@
 Deployment Configuration
 ========================
 
-.. warning:: Some of the screenshots may look different than the ones shown here. The
+.. note:: Some of the screenshots may look different than the ones shown here. The
    difference in all cases should be cosmetic and not affect operations.
 
 The purpose of this section is to walk through the deployment configuration options in
