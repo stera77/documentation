@@ -101,13 +101,28 @@
 <h1>Agent Downloads<a class="headerlink" href="#agent-downloads" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="ubuntu-x32-x64">
 <h2>Ubuntu x32/x64<a class="headerlink" href="#ubuntu-x32-x64" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-ubuntu-latest.tar.gz">Ubuntu x32/x64</a> 141a5c1d60347bf5f897c70ceee2101a Thu Apr 19 12:08:46 CDT 2012</p>
 <div class="section" id="tarball">
 <h3>Tarball<a class="headerlink" href="#tarball" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-ubuntu-latest.tar.gz">Download</a> 934e360248b4564d7c248889b891daee Thu Apr 19 10:09:18 CDT 2012</p>
 </div>
 <div class="section" id="chef-cookbook">
 <h3>Chef Cookbook<a class="headerlink" href="#chef-cookbook" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon...</p>
+<p>To install the agent using chef-solo, you will first need to install chef. Here&#8217;s how to
+do that:</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The chef-cookbook is only set to run with the EC2 cloud. More clouds will be
+added ASAP.</p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> <span class="s2">&quot;deb http://apt.opscode.com/ `lsb_release -cs`-0.10 main&quot;</span> | sudo tee /etc/apt/sources.list.d/opscode.list
+sudo mkdir -p /etc/apt/trusted.gpg.d
+gpg --keyserver keys.gnupg.net --recv-keys 83EF826A
+gpg --export packages@opscode.com | sudo tee /etc/apt/trusted.gpg.d/opscode-keyring.gpg &gt; /dev/null
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get -y install chef
+</pre></div>
+</div>
 </div>
 <div class="section" id="deb-package">
 <h3>.deb Package<a class="headerlink" href="#deb-package" title="Permalink to this headline">¶</a></h3>
@@ -116,19 +131,27 @@
 </div>
 <div class="section" id="centos-redhat-x32-x64">
 <h2>CentOS/RedHat x32/x64<a class="headerlink" href="#centos-redhat-x32-x64" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-centos-latest.tar.gz">Download</a> 1613b848a9727313f65445f563798d7a Thu Apr 19 10:09:18 CDT 2012</p>
+<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-centos-latest.tar.gz">CentOS/Redhat x32/x64</a> 4a373bd98a3f973f21ce79ad03fca8a5 Thu Apr 19 12:08:46 CDT 2012</p>
 </div>
 <div class="section" id="windows-2003-2008-x32">
 <h2>Windows 2003/2008 x32<a class="headerlink" href="#windows-2003-2008-x32" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-windows-32bit-latest.zip">Download</a> 3e75b61f9a20d228bef1d0effa1cb981 Thu Apr 19 10:09:18 CDT 2012</p>
+<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-windows-32bit-latest.zip">Windows 2003/2008x32</a> 7547e41987dda84033b860ea38e37ebc Thu Apr 19 12:08:46 CDT 2012</p>
 </div>
 <div class="section" id="windows-2003-2008-x64">
 <h2>Windows 2003/2008 x64<a class="headerlink" href="#windows-2003-2008-x64" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-windows-64bit-latest.zip">Download</a> b953ea77a30f5afc1d86b4c9339d367c Thu Apr 19 10:09:18 CDT 2012</p>
+<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-windows-64bit-latest.zip">Windows 2003/2008x64</a> a3258978a220b13e6d4c65d7daa0a998 Thu Apr 19 12:08:47 CDT 2012</p>
 </div>
 <div class="section" id="smartos">
 <h2>SmartOS<a class="headerlink" href="#smartos" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-smartos-latest.tar.gz">Download</a> a4db165049cc471093e77b3d190e3e29 Thu Apr 19 10:09:19 CDT 2012</p>
+<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-smartos-latest.tar.gz">SmartOS x32/X64</a> 178ba5b506d76bbe2a5e3a2408275903 Thu Apr 19 12:08:46 CDT 2012</p>
+</div>
+<div class="section" id="debian">
+<h2>Debian<a class="headerlink" href="#debian" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-debian-latest.tar.gz">Debian x32/x64</a> 43ea649f3848867ac06f400e370f1472 Thu Apr 19 12:08:46 CDT 2012</p>
+</div>
+<div class="section" id="fedora">
+<h2>Fedora<a class="headerlink" href="#fedora" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://es-download.s3.amazonaws.com/enstratus-agent-fedora-latest.tar.gz">Fedora x32/x64</a> 8ee583c1f5a2c56b26da30ad6482694c Thu Apr 19 12:08:46 CDT 2012</p>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -138,6 +161,8 @@
 <li class="toctree-l2"><a class="reference internal" href="downloads/downloads.html#windows-2003-2008-x32">1.3. Windows 2003/2008 x32</a></li>
 <li class="toctree-l2"><a class="reference internal" href="downloads/downloads.html#windows-2003-2008-x64">1.4. Windows 2003/2008 x64</a></li>
 <li class="toctree-l2"><a class="reference internal" href="downloads/downloads.html#smartos">1.5. SmartOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="downloads/downloads.html#debian">1.6. Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="downloads/downloads.html#fedora">1.7. Fedora</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="introduction/introduction.html">2. Introduction</a></li>

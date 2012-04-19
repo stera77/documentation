@@ -1,17 +1,20 @@
-Agent Downloads
-===============
+Agent Downloads (Version 16)
+============================
 
 Ubuntu x32/x64
 ~~~~~~~~~~~~~~
+`Ubuntu x32/x64 <http://es-download.s3.amazonaws.com/enstratus-agent-ubuntu-latest.tar.gz>`_ 141a5c1d60347bf5f897c70ceee2101a Thu Apr 19 12:08:46 CDT 2012
 
 Tarball
 ^^^^^^^
-`Download <http://es-download.s3.amazonaws.com/enstratus-agent-ubuntu-latest.tar.gz>`_ 934e360248b4564d7c248889b891daee Thu Apr 19 10:09:18 CDT 2012
 
 Chef Cookbook
 ^^^^^^^^^^^^^
 To install the agent using chef-solo, you will first need to install chef. Here's how to
 do that:
+
+.. warning:: The chef-cookbook is only set to run with the EC2 cloud. More clouds will be
+  added ASAP.
 
 .. code-block:: bash
 
@@ -30,18 +33,25 @@ Coming soon...
 
 CentOS/RedHat x32/x64
 ~~~~~~~~~~~~~~~~~~~~~
+`CentOS/Redhat x32/x64 <http://es-download.s3.amazonaws.com/enstratus-agent-centos-latest.tar.gz>`_ 4a373bd98a3f973f21ce79ad03fca8a5 Thu Apr 19 12:08:46 CDT 2012
 
-`Download <http://es-download.s3.amazonaws.com/enstratus-agent-centos-latest.tar.gz>`_ 1613b848a9727313f65445f563798d7a Thu Apr 19 10:09:18 CDT 2012 
 
 Windows 2003/2008 x32
 ~~~~~~~~~~~~~~~~~~~~~
-`Download <http://es-download.s3.amazonaws.com/enstratus-agent-windows-32bit-latest.zip>`_ 3e75b61f9a20d228bef1d0effa1cb981 Thu Apr 19 10:09:18 CDT 2012 
+`Windows 2003/2008x32 <http://es-download.s3.amazonaws.com/enstratus-agent-windows-32bit-latest.zip>`_ 7547e41987dda84033b860ea38e37ebc Thu Apr 19 12:08:46 CDT 2012
 
 Windows 2003/2008 x64
 ~~~~~~~~~~~~~~~~~~~~~
-`Download <http://es-download.s3.amazonaws.com/enstratus-agent-windows-64bit-latest.zip>`_ b953ea77a30f5afc1d86b4c9339d367c Thu Apr 19 10:09:18 CDT 2012 
+`Windows 2003/2008x64 <http://es-download.s3.amazonaws.com/enstratus-agent-windows-64bit-latest.zip>`_ a3258978a220b13e6d4c65d7daa0a998 Thu Apr 19 12:08:47 CDT 2012
 
 SmartOS
 ~~~~~~~
-`Download <http://es-download.s3.amazonaws.com/enstratus-agent-smartos-latest.tar.gz>`_ a4db165049cc471093e77b3d190e3e29 Thu Apr 19 10:09:19 CDT 2012 
+`SmartOS x32/X64 <http://es-download.s3.amazonaws.com/enstratus-agent-smartos-latest.tar.gz>`_ 178ba5b506d76bbe2a5e3a2408275903 Thu Apr 19 12:08:46 CDT 2012
 
+Debian
+~~~~~~
+`Debian x32/x64 <http://es-download.s3.amazonaws.com/enstratus-agent-debian-latest.tar.gz>`_ 43ea649f3848867ac06f400e370f1472 Thu Apr 19 12:08:46 CDT 2012
+
+Fedora
+~~~~~~
+`Fedora x32/x64 <http://es-download.s3.amazonaws.com/enstratus-agent-fedora-latest.tar.gz>`_ 8ee583c1f5a2c56b26da30ad6482694c Thu Apr 19 12:08:46 CDT 2012
