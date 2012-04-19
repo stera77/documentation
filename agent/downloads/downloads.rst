@@ -13,8 +13,8 @@ Chef Cookbook
 To install the agent using chef-solo, you will first need to install chef. Here's how to
 do that:
 
-.. warning:: The chef-cookbook is only set to run with the EC2 cloud. More clouds will be
-  added ASAP.
+.. warning:: The chef-cookbook is only set to run with the EC2 cloud in the enStratus
+  production (SaaS) environment. More clouds will be added ASAP.
 
 .. code-block:: bash
 
