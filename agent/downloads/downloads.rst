@@ -3,10 +3,10 @@ Agent Downloads (Version 16)
 
 Ubuntu x32/x64
 ~~~~~~~~~~~~~~
-`Ubuntu x32/x64 <http://es-download.s3.amazonaws.com/enstratus-agent-ubuntu-latest.tar.gz>`_ 141a5c1d60347bf5f897c70ceee2101a Thu Apr 19 12:08:46 CDT 2012
 
 Tarball
 ^^^^^^^
+`Ubuntu x32/x64 <http://es-download.s3.amazonaws.com/enstratus-agent-ubuntu-latest.tar.gz>`_ 141a5c1d60347bf5f897c70ceee2101a Thu Apr 19 12:08:46 CDT 2012
 
 Chef Cookbook
 ^^^^^^^^^^^^^
