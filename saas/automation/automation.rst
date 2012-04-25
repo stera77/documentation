@@ -1,9 +1,9 @@
 #Automation
-©“®‰»
+è‡ªå‹•åŒ–
 ==========
 
 #Introduction
-‚Í‚¶‚ß‚É
+ã¯ã˜ã‚ã«
 ~~~~~~~~~~~~
 enStratus automation encompasses many facets of infrastructure mangement and orchstration.
 
