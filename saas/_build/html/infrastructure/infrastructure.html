@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
     <link rel="next" title="5. Platform" href="../platform/platform.html" />
-    <link rel="prev" title="3. Automation" href="../automation/automation.html" />
+    <link rel="prev" title="3. Pre-requisites" href="../automation/automation.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -41,7 +41,7 @@
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
 			<div class="headerButton"><a href="../platform/platform.html" title="5. Platform" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="../automation/automation.html" title="3. Automation" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="../automation/automation.html" title="3. Pre-requisites" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -56,7 +56,7 @@
 	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">4. Infrastructure</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#servers">4.1. Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#machine-images">4.2. Machine Images</a></li>
@@ -288,7 +288,7 @@ load balancing.</p>
 Balancers. Select + create_load_balancer. A single dialog box will present the required
 configuration options for the load balancer.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/createELB.png"><img alt="Create ELB" src="../_images/createELB.png" style="width: 380.0px; height: 285.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/createELB1.png"><img alt="Create ELB" src="../_images/createELB1.png" style="width: 380.0px; height: 285.0px;" /></a>
 <p class="caption">Create ELB</p>
 </div>
 </div>
@@ -481,7 +481,7 @@ change the security group of a server post-launch. This is far less of a limitat
 it sounds because the individual rules that comprise a security group can be changed at
 any time.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/securityGroups.png"><img alt="Security Groups" src="../_images/securityGroups.png" style="width: 475.0px; height: 285.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/securityGroups1.png"><img alt="Security Groups" src="../_images/securityGroups1.png" style="width: 475.0px; height: 285.0px;" /></a>
 <p class="caption">Security Groups</p>
 </div>
 <p>Generally, the process for managing firewalls is to first create the security group and
@@ -491,7 +491,7 @@ listing of the active firewalls will be shown. To add a new firewall, click on t
 +create_firewall. Only two pieces of information are required to create a firewall: A
 name, billing code, and an optional group.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/createFirewall.png"><img alt="Create Security Group" src="../_images/createFirewall.png" style="width: 375.0px; height: 187.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/createFirewall1.png"><img alt="Create Security Group" src="../_images/createFirewall1.png" style="width: 375.0px; height: 187.5px;" /></a>
 <p class="caption">Create Security Group</p>
 </div>
 <p>Once the firewall has been saved, it will be added to the list of active firewalls. Once
@@ -540,7 +540,7 @@ account has some default rules defined in a default firewall to allow for the en
 monitoring service to connect to running servers. To define a new standard network, select
 +add_new_standard_network and complete the resulting dialog box.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/addStandardNetwork.png"><img alt="Standard Network" src="../_images/addStandardNetwork.png" style="width: 380.0px; height: 285.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/addStandardNetwork1.png"><img alt="Standard Network" src="../_images/addStandardNetwork1.png" style="width: 380.0px; height: 285.0px;" /></a>
 <p class="caption">Standard Network</p>
 </div>
 <p>Once the standard network is saved, it will be added to the list of standard networks.</p>
@@ -548,7 +548,7 @@ monitoring service to connect to running servers. To define a new standard netwo
 Company Settings &gt; Standard Ports. To add a new standard port, select
 +add_new_standard_port and complete the resulting dialog box.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/addStandardPort.png"><img alt="Standard Port" src="../_images/addStandardPort.png" style="width: 380.0px; height: 285.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/addStandardPort1.png"><img alt="Standard Port" src="../_images/addStandardPort1.png" style="width: 380.0px; height: 285.0px;" /></a>
 <p class="caption">Standard Port</p>
 </div>
 <p>Once the standard port is saved, it will be added to the list of standard ports.</p>
@@ -556,7 +556,7 @@ Company Settings &gt; Standard Ports. To add a new standard port, select
 standard port called Custom Application can be quickly added to any of the existing
 firewalls.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/editFirewall.png"><img alt="Edit Firewall Using Standard Port" src="../_images/editFirewall.png" style="width: 675.0px; height: 120.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/editFirewall1.png"><img alt="Edit Firewall Using Standard Port" src="../_images/editFirewall1.png" style="width: 675.0px; height: 120.0px;" /></a>
 <p class="caption">Edit Firewall Using Standard Port</p>
 </div>
 <div class="admonition note">
@@ -574,7 +574,7 @@ Select an image to launch and in the resulting dialog box, choose the security g
 applied to the resulting server. All of the rules comprising the security group will be
 applied to the server.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/startServerinFirewall.png"><img alt="Start Server in Firewall" src="../_images/startServerinFirewall.png" style="width: 425.0px; height: 340.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/startServerinFirewall1.png"><img alt="Start Server in Firewall" src="../_images/startServerinFirewall1.png" style="width: 425.0px; height: 340.0px;" /></a>
 <p class="caption">Start Server in Firewall</p>
 </div>
 </div>
@@ -591,7 +591,7 @@ applied to the server.</p>
 previously created either within enStratus or via the cloud provider, they will be listed
 in the volumes table. Select +create_volume and complete the resulting dialog box.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/createVolume.png"><img alt="Create Volume" src="../_images/createVolume.png" style="width: 380.0px; height: 285.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/createVolume1.png"><img alt="Create Volume" src="../_images/createVolume1.png" style="width: 380.0px; height: 285.0px;" /></a>
 <p class="caption">Create Volume</p>
 </div>
 <p>The name of the volume is a logical name that will be used within enStratus to reference
@@ -603,7 +603,7 @@ volume.</p>
 be added to the list of volumes. Since newly created volumes are not attached to a server,
 the Device and Current Server columns will be blank.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/finishedVolume.png"><img alt="Volume Created" src="../_images/finishedVolume.png" style="width: 800.0px; height: 200.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/finishedVolume1.png"><img alt="Volume Created" src="../_images/finishedVolume1.png" style="width: 800.0px; height: 200.0px;" /></a>
 <p class="caption">Volume Created</p>
 </div>
 </div>
@@ -676,7 +676,7 @@ options of name, group, and billing code.</p>
 can be increased. For Amazon, volumes are specific to an availability zone, so a zone is
 required for volume creation.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/createVolumeFromSnapshot.png"><img alt="Create Volume from Snapshot" src="../_images/createVolumeFromSnapshot.png" style="width: 475.0px; height: 285.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/createVolumeFromSnapshot1.png"><img alt="Create Volume from Snapshot" src="../_images/createVolumeFromSnapshot1.png" style="width: 475.0px; height: 285.0px;" /></a>
 <p class="caption">Create Volume from Snapshot</p>
 </div>
 <p>The created volume will soon appear in the Infrastructure &gt; Volumes page for selection and

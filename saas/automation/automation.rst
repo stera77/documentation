@@ -1,8 +1,8 @@
-#Automation
+..Automation
 自動化
 ==========
 
-#Introduction
+..Introduction
 はじめに
 ~~~~~~~~~~~~
 enStratus automation encompasses many facets of infrastructure mangement and orchstration.
