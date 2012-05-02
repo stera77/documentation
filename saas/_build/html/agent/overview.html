@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Overview &mdash; The enStratus Documentation Project</title>
+    <title>概要 &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Overview</h1></div>
+	<div id="title"><h1>概要</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -52,7 +52,7 @@
 	<ul>
 <li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. 自動化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
@@ -97,30 +97,30 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<p>The enStratus agent is composed of a lightweight tomcat application used for communicating
-with the enStratus provisioning server and a set of associated shell scripts. The shell
-scripts are responsible for executing some actions on the server and are extensible by end
-users.</p>
-<p>The agent listens on port 2003 and takes action based on user input as in the case of
-adding a user to a system (the addUser script) and also automates actions such as
-attaching, formatting, encrypting, and mounting volumes as part of a fully automated
-enStratus deployment. Communication to and from the enStratus provisioning server is
-encrypted using SSL.</p>
-<p>The enStratus agent is suitable for use on many popular GNU/Linux distributions such as
-Ubuntu, Debian, Cent OS, and Fedora. Additionally, the enStratus agent works on Windows
-Server 2003/2008. The agent functions in both 32- and 64-bit environments.</p>
-<p>The enStratus agent and the associated scripts can be found in /enstratus on a GNU/Linux
-system, and in C:enstratus on a Windows server.</p>
-<div class="section" id="functionality">
-<h2>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h2>
-<p>Installing the enStratus agent opens the server to the full functionality provided by
-enStratus including user management, automation, scheduled termination, statistics,
-logging, and alerting.</p>
-<p>enStratus will monitor servers that have the agent installed and alert when status changes
-occur as in the case of an unexpected termination of the server. In an automated
-deployment, enStratus will take the further step of restoring lost servers.</p>
+  <div class="section" id="id1">
+<h1>概要<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>enStratusエージェントは軽量のTomcatアプリケーションで構成されていて、
+enStratusプロビジョニングサーバおよび関連するシェルスクリプトセットとの通信に使用されます。
+スクリプトは、サーバー上のいくつかのアクションを実行する役目があり、ユーザーによって拡張可能です。</p>
+<p>エージェントはポート2003をリッスンし、システムにユーザーを追加（adduserスクリプト）する場合
+のようにユーザー入力に基づいてアクションを実行したり、
+アタッチ、フォーマット、暗号化、、ボリュームのマウントなどのenStratus配備における完全自動化の
+1部としての自動化アクションを実行します。
+enStratusプロビジョニング·サーバーとの通信はSSLを使用して暗号化されます。</p>
+<p>enStratusエージェントは、Ubuntu、Debian、Cent OS、およびFedoraのような多くの有名な
+GNU / Linuxディストリビューション上での使用に適しています。
+さらに、enStratusエージェントは、Windows Server 2003/2008の上で動作します。
+エージェントは32ビット環境と64ビット環境両方で機能します。</p>
+<p>enStratusエージェントと関連スクリプトは、GNU / Linuxシステム上では/ enstratusで、
+Windowsサーバ上では C:\enstratus で見つけることができます。</p>
+<div class="section" id="id2">
+<h2>機能<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>enStratusエージェントをインストールすることにより、enStratusによって提供された
+ユーザー管理、自動化、スケジュー化された停止、統計、ロギング、警告機能などの全機能を
+サーバーで利用可能になります。</p>
+<p>enStratusは、エージェントがインストールされているサーバーを監視し、サーバの予期しない停止の
+場合のような状態の変化の発生を警告します。
+自動化配備では、enStratusは失われたサーバーを復元するための更なる一歩を踏み出すでしょう。</p>
 </div>
 </div>
 
@@ -137,7 +137,7 @@ deployment, enStratus will take the further step of restoring lost servers.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Overview
+		概要
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

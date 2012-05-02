@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3. Pre-requisites &mdash; The enStratus Documentation Project</title>
+    <title>3. 自動化 &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -35,7 +35,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>3. Pre-requisites</h1></div>
+	<div id="title"><h1>3. 自動化</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -56,7 +56,11 @@
 	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">3. Pre-requisites</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">3. 自動化</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3.1. はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">3.2. 前提条件</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
@@ -101,35 +105,35 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <p>#Automation
-自動化
-==========</p>
-<p>#Introduction
-はじめに
-~~~~~~~~~~~~
-enStratus automation encompasses many facets of infrastructure mangement and orchstration.</p>
+  <div class="section" id="id1">
+<h1>3. 自動化<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>3.1. はじめに<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>enStratus自動化は、インフラストラクチャの管理と統合の多くの側面を網羅しています。</p>
 <ol class="arabic simple">
-<li>Automated backups. enStratus will perform backup/maintenance of the application and
-hardware infrastructure according to the specification of the deployment. Backups
-include both snapshots and service-level backups.</li>
-<li>Scalability. enStratus will scale the servers to closely match infrastructure with
-demand.</li>
-<li>Resiliency. Cloud servers by their nature are ephemeral, configuring a deployment will
-allow applications to survive the unexpected termination of a node.</li>
+<li>自動バックアップ。 enStratusは、アプリケーションのバックアップ/メンテナンスの実行および
+配備の仕様に従ってハードウェアインフラストラクチャを提供します。バックアップには
+スナップショットおよびサービス·レベルのバックアップの両方が含まれています。</li>
+<li>スケーラビリティ。 enStratusはサーバーのインフラストラクチャを需要と密接に一致するようにスケールします
+。</li>
+<li>弾力性。その性質上、クラウド·サーバーは、一時的なものですが、   アプリケーションノードの
+予期しない終了後も存続することができるように配備を構成します。</li>
 </ol>
-<div class="section" id="pre-requisites">
-<h1>3. Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id3">
+<h2>3.2. 前提条件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>The most important pre-requisite for automation is the installation of the enStratus
-agent. The enStratus agent is the secure access point to each running instance for the
-enStratus cloud management software.</li>
+<li>自動化のための最も重要な前提条件は、enStratusエージェントのインストールです。
+enStratusエージェントは、enStratusクラウド管理ソフトウェアにとって、各実行中のインスタンスへの
+セキュアなアクセスポイントです。</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>This pre-requisite is one of the most frequently asked questions about
-automation. Before a machine image can be used in a deployment launch configuration,
-the enStratus agent must be installed.</p>
-<p class="last">For more information on how to install the agent, please see the agent documentation.</p>
+<p>この前提条件は自動化についてよく寄せられる質問の一つです。
+マシンのイメージは、配備された起動構成で使用する前に、
+enStratusエージェントをインストールする必要があります。</p>
+<p class="last">エージェントをインストールする方法の詳細については、エージェントのマニュアルを参照してください。</p>
+</div>
 </div>
 </div>
 
@@ -146,7 +150,7 @@ the enStratus agent must be installed.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		3. Pre-requisites
+		3. 自動化
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

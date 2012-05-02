@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>8. Agent &mdash; The enStratus Documentation Project</title>
+    <title>8. エージェント &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -35,7 +35,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>8. Agent</h1></div>
+	<div id="title"><h1>8. エージェント</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -56,16 +56,16 @@
 	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. 自動化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">8. Agent</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">8.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#provided-images">8.2. Provided Images</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation">8.3. Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#additional-information">8.4. Additional Information</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">8. エージェント</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">8.1. 概要</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">8.2. 提供イメージ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">8.3. インストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">8.4. 追加情報</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
@@ -107,47 +107,48 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="agent">
-<h1>8. Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>8.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>The enStratus agent is composed of a lightweight tomcat application used for communicating
-with the enStratus provisioning server and a set of associated shell scripts. The shell
-scripts are responsible for executing some actions on the server and are extensible by end
-users.</p>
-<p>The agent listens on port 2003 and takes action based on user input as in the case of
-adding a user to a system (the addUser script) and also automates actions such as
-attaching, formatting, encrypting, and mounting volumes as part of a fully automated
-enStratus deployment. Communication to and from the enStratus provisioning server is
-encrypted using SSL.</p>
-<p>The enStratus agent is suitable for use on many popular GNU/Linux distributions such as
-Ubuntu, Debian, Cent OS, and Fedora. Additionally, the enStratus agent works on Windows
-Server 2003/2008. The agent functions in both 32- and 64-bit environments.</p>
-<p>The enStratus agent and the associated scripts can be found in /enstratus on a GNU/Linux
-system, and in C:enstratus on a Windows server.</p>
-<div class="section" id="functionality">
-<h3>8.1.1. Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h3>
-<p>Installing the enStratus agent opens the server to the full functionality provided by
-enStratus including user management, automation, scheduled termination, statistics,
-logging, and alerting.</p>
-<p>enStratus will monitor servers that have the agent installed and alert when status changes
-occur as in the case of an unexpected termination of the server. In an automated
-deployment, enStratus will take the further step of restoring lost servers.</p>
+  <div class="section" id="id1">
+<h1>8. エージェント<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>8.1. 概要<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>enStratusエージェントは軽量のTomcatアプリケーションで構成されていて、
+enStratusプロビジョニングサーバおよび関連するシェルスクリプトセットとの通信に使用されます。
+スクリプトは、サーバー上のいくつかのアクションを実行する役目があり、ユーザーによって拡張可能です。</p>
+<p>エージェントはポート2003をリッスンし、システムにユーザーを追加（adduserスクリプト）する場合
+のようにユーザー入力に基づいてアクションを実行したり、
+アタッチ、フォーマット、暗号化、、ボリュームのマウントなどのenStratus配備における完全自動化の
+1部としての自動化アクションを実行します。
+enStratusプロビジョニング·サーバーとの通信はSSLを使用して暗号化されます。</p>
+<p>enStratusエージェントは、Ubuntu、Debian、Cent OS、およびFedoraのような多くの有名な
+GNU / Linuxディストリビューション上での使用に適しています。
+さらに、enStratusエージェントは、Windows Server 2003/2008の上で動作します。
+エージェントは32ビット環境と64ビット環境両方で機能します。</p>
+<p>enStratusエージェントと関連スクリプトは、GNU / Linuxシステム上では/ enstratusで、
+Windowsサーバ上では C:\enstratus で見つけることができます。</p>
+<div class="section" id="id3">
+<h3>8.1.1. 機能<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>enStratusエージェントをインストールすることにより、enStratusによって提供された
+ユーザー管理、自動化、スケジュー化された停止、統計、ロギング、警告機能などの全機能を
+サーバーで利用可能になります。</p>
+<p>enStratusは、エージェントがインストールされているサーバーを監視し、サーバの予期しない停止の
+場合のような状態の変化の発生を警告します。
+自動化配備では、enStratusは失われたサーバーを復元するための更なる一歩を踏み出すでしょう。</p>
 </div>
 </div>
-<div class="section" id="provided-images">
-<h2>8.2. Provided Images<a class="headerlink" href="#provided-images" title="Permalink to this headline">¶</a></h2>
-<p>The enStratus team provides some machine images that are pre-installed with the enStratus
-agent. These images are configured for use up to and including functioning as a member of
-an automated enStratus deployment. To that end, several changes have been made to the
-images which will be covered here.</p>
-<p>By default, enStratus images come with the OSSEC host-based intrusion detection system.
-OSSEC alerting is integrated into the enStratus alerting system, so you will receive
-alerts based on events triggered by OSSEC both in the enStratus console, and depending on
-your alerts settings, via email. OSSEC is available only on the GNU/Linux platform.</p>
-<p>enStratus images have installed some software packages to prepare servers started from
-that image for utilization in a wide range of purposes. The list of packages installed on
-enStratus images includes:</p>
+<div class="section" id="id4">
+<h2>8.2. 提供イメージ<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>enStratusチームはenStratusエージェントがプリインストールされているいくつかのマシンのイメージを
+提供しています。
+これらのイメージは、自動化されたenStratus配備のメンバーとしての機能を含み、最大限に使用するための
+設定がなされています。そのためにイメージには、これから説明します、いくつかの変更が行われました。</p>
+<p>デフォルトでは、enStratuseイメージにはOSSECホストベースの侵入検知システムが付属しています。
+OSSECアラートは、警告がenStratus警告システムに統合されています。
+それでOSSECによってトリガされるイベントに基づいたアラートは、enStratusコンソールと
+アラート設定に応じては電子メール経由の両方で受信できます。
+OSSECは、GNU / Linuxプラットフォーム上でのみ利用可能です。</p>
+<p>enStratusイメージには、広範囲な利用目的で使用するためのソフトウェアパッケージが、
+そのイメージから起動できるように準備してインストールされています。
+enStratuseイメージにインストールされているパッケージの一覧:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li>zip</li>
 <li>unzip</li>
@@ -172,30 +173,27 @@ enStratus images includes:</p>
 <li>cronolog</li>
 </ul>
 </td></tr></table>
-<p>Not all of these packages are strictly necessary for using enStratus successfully.
-Examples of packages that are not required but are installed are cryptsetup, apache, and
-mysql. If, for example, cryptsetup is not installed, automated encryption of volumes will
-not be possible.</p>
-<p>All of the software used by enStratus should be readily available in the distribution
-repositories.</p>
-<p>Some init scripts that would normally be in place are also moved to prepare the image for
-use in an automated enStratus deployment. For example, the mysql init script
-/etc/init.d/mysql is removed to prepare the image for use in conjunction with the mysql
-service image where enStratus handles the configuration, installation of the database,
-permissioning, and starting of the mysql service on an attached volume. More information
-on how service images work in a deployment can be found in the documentation on
-automation</p>
-<p>All enStratus images also disable SSH access via password authentication. SSH access is
-available only via a public key authentication using the public key located in the user
-profile. SSH access as root user is also disabled. The root password is unknown.</p>
+<p>これらのパッケージ全てが、enStratusを正常に使用するために厳密に必要であるわけではありません。
+必須ではありませんがインストールされているパッケージの例としては、cryptsetup、Apache、mysqlがあります。
+たとえば、cryptsetupがインストールされていない場合は、ボリュームの自動暗号化ができません。</p>
+<p>enStratusで使用されるすべてのソフトウェアは、ディストリビューションリポジトリで
+容易に利用可能であるべきです。</p>
+<p>いくつかのinitスクリプトはenStratusの配備の自動化で使用するために、通常の場所から移動されています。
+例えば、mysqlのinitスクリプトの /etc/init.d/mysql はMySQLのサービスイメージと組み合わせて
+使用するようにイメージから削除されます。
+そこではenStratusは、データベースの構成、データベースのインストール、permissioning、
+および接続されたボリューム上のMySQLサービスの開始などの操作を実施します。
+配備におけるサービスイメージの仕組みの詳細については、自動化のドキュメント上に記載されています</p>
+<p>すべてのenStratusイメージはパスワード認証を経由したSSHアクセスを無効にします。 SSHアクセスは、
+ユーザプロフィール内の公開鍵を使用した公開鍵認証でのみ利用可能です。
+rootユーザとしてのSSHアクセスは無効です。rootのパスワードは不明です。</p>
 </div>
-<div class="section" id="installation">
-<h2>8.3. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>8.3. インストール<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
-<p class="last">The easiest way to determine what version of the enStratus agent is installed on
-an instance is to use the actions menu associated with the instance. Choose actions &gt; info
-and select the tab labeled &#8220;Guest&#8221;.</p>
+<p class="last">インスタンス上にインストールされているenStratusエージェントのバージョンを確認する最も簡単な方法は、
+インスタンスに関連付けられたアクション·メニューを使用することです。 actions &gt; info を選択して &#8220;Guest&#8221; というラベルのタブを選択します。</p>
 </div>
 <div class="section" id="debian-ubuntu">
 <h3>8.3.1. Debian/Ubuntu<a class="headerlink" href="#debian-ubuntu" title="Permalink to this headline">¶</a></h3>
@@ -206,45 +204,48 @@ and select the tab labeled &#8220;Guest&#8221;.</p>
 </div>
 <div class="section" id="chef">
 <h3>8.3.2. Chef<a class="headerlink" href="#chef" title="Permalink to this headline">¶</a></h3>
-<p>Using Chef to install and configure a VM for using the enStratus agent is the most
-efficient and <em>idempotent</em> way of installing the enStratus agent.</p>
+<p>シェフを使用するのがenStratusエージェントを使用するVMをインストールおよび構成する場合の
+最も効率的かつenStratusエージェントをインストールするのと*冪等*な方法です。</p>
+<p>冪等(べきとう):「その操作を何回繰り返しても，１回だけ実行した時と同じ結果になること。」</p>
 </div>
 <div class="section" id="windows">
 <h3>8.3.3. Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
-<div class="section" id="additional-information">
-<h2>8.4. Additional Information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="updating">
-<h3>8.4.1. Updating<a class="headerlink" href="#updating" title="Permalink to this headline">¶</a></h3>
-<p>Updating the agent on a Ubuntu/Debian server can be accomplished by using the .deb
-package. The installation routine will detect previously installed versions and do a
-backup, preserving any customizations by preserving the contents of the
-/enstratus/custom/bin directory.</p>
+<div class="section" id="id6">
+<h2>8.4. 追加情報<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>8.4.1. アップデート<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Ubuntuの/ Debianサーバ上のエージェントの更新は .debパッケージを使用することによって
+達成することができます
+インストールルーチンは、以前にインストールしたバージョンを検出して、 /enstratus/custom/bin ディレクトリ
+にあるコンテンツを保持することで
+任意のカスタマイズを保持しながらバックアップをおこないます。</p>
 </div>
-<div class="section" id="extending-the-agent">
-<h3>8.4.2. Extending the Agent<a class="headerlink" href="#extending-the-agent" title="Permalink to this headline">¶</a></h3>
-<p>Agent scripts are designed to be extended and customized. The scripts located in
-/enstratus/bin are not designed to be edited directly as these scripts are overwritten
-during an upgrade. Instead, use the /enstratus/custom/bin directory to run custom scripts
-before, in place of, and/or after the provided scripts.</p>
-<p>To run a script before the default enStratus script, place a script called $scriptName-pre
-in the /enstratus/custom/bin directory. To run a script in place of the default enStratus
-script, place a script of the same name in the /enstratus/custom/bin directory. To run a
-script after the default enStratus script, place a script called $scriptName-post in the
-/enstratus/custom/bin directory.</p>
-<p>For example to modify the /enstratus/bin/addUser script do the following:</p>
-<p>/enstratus/custom/bin/addUser - if exists, will completely replace this script</p>
-<p>/enstratus/custom/bin/addUser-pre - if exists, will be executed before this script</p>
-<p>/enstratus/custom/bin/addUser-post - if exists, will be executed after this script</p>
+<div class="section" id="id8">
+<h3>8.4.2. エージェントの拡張<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>エージェント·スクリプトは、拡張およびカスタマイズできるように設計されています。 /enstratus/bin にある
+スクリプトはアップグレード中に上書きされるので、直接編集できるように設計されていません。
+代わりに、 /enstratus/custom/bin ディレクトリ
+を使用して [事前に、代わりに、および/または提供されているスクリプトの後に] カスタムスクリプト
+を実行します。</p>
+<p>デフォルトの enStratus スクリプトの前にスクリプトを実行するには、 $scriptName-pre と呼ばれる
+スクリプトを /enstratus/custom/bin ディレクトリに置きます。
+デフォルト enStratus スクリプトの代わりにスクリプトを実行するには
+同じ名前のスクリプトを、 /enstratus/custom/bin ディレクトリに配置します。
+デフォルト enStratus スクリプトの後にスクリプトを実行するには、 $scriptName-post 呼ばれる
+スクリプトを /enstratus/custom/bin ディレクトリに置きます。</p>
+<p>たとえば、 /enstratus/bin/addUser スクリプトを修正するには、次の操作を行います。</p>
+<p>/enstratus/custom/bin/addUser  - 存在する場合、完全にこのスクリプトを置き換えます</p>
+<p>/enstratus/custom/bin/addUser-pre  - 存在する場合は、このスクリプトの前に実行されます。</p>
+<p>/enstratus/custom/bin/addUser-post  - 存在する場合は、このスクリプトの後に実行されます。</p>
 </div>
-<div class="section" id="starting-from-scratch">
-<h3>8.4.3. Starting from Scratch<a class="headerlink" href="#starting-from-scratch" title="Permalink to this headline">¶</a></h3>
-<p>At enStratus we use the EC2 images supplied by Alestic www.alestic.com with success. The
-.deb installer has been tested with the latest releases of Ubuntu (10.04) and Debian
-(5.0).</p>
-<p>The installation process should work on most flavors of Ubuntu and Debian, if you have
-trouble installing on your own, please contact support at enStratus.</p>
+<div class="section" id="id9">
+<h3>8.4.3. ゼロから始める<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>enStratusでAlestic www.alestic.comによって供給されたEC2イメージを使用して我々は成功を収めています。
+Ubuntu（10.04）とDebian(5.0)の最新リリースで .deb ファイルのインストーラはテストされています。</p>
+<p>このインストールプロセスは Ubuntu と Debian の殆どの場合で動作するはずです。
+インストール上ののトラブルについては enStratus のサポートに連絡してください。</p>
 </div>
 </div>
 </div>
@@ -262,7 +263,7 @@ trouble installing on your own, please contact support at enStratus.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		8. Agent
+		8. エージェント
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
