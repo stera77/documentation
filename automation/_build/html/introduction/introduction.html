@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>1. Introduction &mdash; The enStratus Documentation Project</title>
+    <title>1. はじめに &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
     <link rel="next" title="2. Overview" href="overview.html" />
-    <link rel="prev" title="enStratus Automation" href="../index.html" />
+    <link rel="prev" title="enStratus 自動化" href="../index.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -35,13 +35,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>1. Introduction</h1></div>
+	<div id="title"><h1>1. はじめに</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
 			<div class="headerButton"><a href="overview.html" title="2. Overview" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="../index.html" title="enStratus Automation" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="../index.html" title="enStratus 自動化" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -54,9 +54,9 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">1. Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#automation-benefits">1.1. Automation Benefits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pre-requsites">1.2. Pre-requsites</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">1. はじめに</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.1. 自動化の利点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1.2. 前提条件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">2. Overview</a></li>
@@ -101,57 +101,61 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="introduction">
-<h1>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="automation-benefits">
-<h2>1.1. Automation Benefits<a class="headerlink" href="#automation-benefits" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="id1">
+<h1>1. はじめに<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>1.1. 自動化の利点<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Orchestration. enStratus will intelligently launch and configure your servers and applications.</li>
-<li>Automated backups. enStratus will perform backup/maintenance of the application and hardware infrastructure according to the specification of the deployment.</li>
-<li>Scalability. enStratus will scale the servers to closely match infrastructure with demand.</li>
-<li>Resiliency. Cloud servers by their nature are ephemeral, configuring a deployment will allow applications to survive the unexpected termination of a node.</li>
+<li>オーケストレーション　enStratusはインテリジェントに起動し、サーバおよびアプリケーションを構成します。</li>
+<li>自動バックアップ　enStratusは、配備の仕様に従って、アプリケーションおよびハードウェアインフラストラクチャの
+バックアップ/メンテナンスを実行します。</li>
+<li>スケーラビリティ　enStratusは密接に需要とインフラストラクチャを一致するようにサーバーをスケールします。</li>
+<li>弾力性　その性質上、クラウド·サーバーが一時的であり、アプリケーションの配備構成を、
+ノードの予期しない終了後も存続するようにできます。</li>
 </ol>
 </div>
-<div class="section" id="pre-requsites">
-<h2>1.2. Pre-requsites<a class="headerlink" href="#pre-requsites" title="Permalink to this headline">¶</a></h2>
-<p>Automation is often a task with many moving parts, here are some things to consider before
-attempting automation.</p>
-<div class="section" id="cloud">
-<h3>1.2.1. Cloud<a class="headerlink" href="#cloud" title="Permalink to this headline">¶</a></h3>
-<p>Your cloud provider must be reliable enough to start VM in a timely fashion. A scalable
-application stack will typically require the starting and stopping of many vm
-simultaneously.</p>
+<div class="section" id="id3">
+<h2>1.2. 前提条件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>自動化は、しばしば多くの可動部分を持つタスクですので、自動化を試みる前に考慮すべきことが幾つかあります。</p>
+<div class="section" id="id4">
+<h3>1.2.1. クラウド<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>クラウドプロバイダには十分な信頼性があり、タイムリーにVMを起動できなければなりません。スケーラブルな
+アプリケーションスタックは通常、多くのVMの起動と同時に停止が必要になります</p>
 </div>
-<div class="section" id="storage">
-<h3>1.2.2. Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h3>
-<p>enStratus considers two types of cloud storage: Block and File. File storage is also known
-as object storage. enStratus automation depends heavily on cloud files storage.</p>
-<p>Block storage is sometimes referred to as a &#8220;data&#8221; disk offering. This type of storage can
-also be quite useful during automation, although it is not required.</p>
+<div class="section" id="id5">
+<h3>1.2.2. ストレージ<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>enStratusは、クラウドストレージの2つのタイプを考慮します。： ブロックとファイル。
+ファイルストレージはオブジェクトストレージとしても知られています。 enStratus自動化は、
+クラウド　ファイル　ストレージに大きく依存しています。</p>
+<p>ブロック　ストレージは、しばしば&#8221;データ&#8221;のディスクオファーリング呼ばれています。このタイプのストレージは
+必須ではありませんが自動化には非常に有用です。</p>
 </div>
-<div class="section" id="application">
-<h3>1.2.3. Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h3>
-<p>Attempting to do automation (scaling, recovery, cross-cloud) requires intimate application
-knowledge. The biggest challenge when it comes to automation is at the application layer.</p>
-<p>Being able to handle a dynamically provisioned infrastructure on an application is the
-first step to being able to leverage dynamically provisioned resources. Consider:</p>
+<div class="section" id="id6">
+<h3>1.2.3. アプリケーション<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>自動化（スケーリング、回復、クロスクラウド）を実行しようとすると、
+アプリケーションに対する親密な知識が必要です。自動化における最大の課題は、アプリケーション層です。</p>
+<p>アプリケーション上に動的にプロビジョニングされたインフラストラクチャを操作することができることが
+動的にプロビジョニングされたリソースを活用できることへの第一歩です。考えてみましょう。:</p>
 </div>
-<div class="section" id="best-practices">
-<h3>1.2.4. Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>1.2.4. ベストプラクティス<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>IP Addresses. Often, IP addresses change with every newly provisioned instance. A cloudy application will be able to leverage this for scalability.</li>
-<li>Storage. Storing data on ephemeral storage is risky, putting application/database data on more persistent data storage is preferable.</li>
-<li>Backups. enStratus considers two types of backups: Snapshots and Service. Used in combination, these backups provide a very reliable and customizable solution.</li>
+<li>IPアドレス。多くの場合、IPアドレスはすべての新しくプロビジョニングされたインスタンスで変更します。
+クラウドのアプリケーションは、スケーラビリティのためにこれを活用できるようになります。</li>
+<li>ストレージ。データを一時的なストレージ上に格納するのは危険です、より永続的なデータストレージにアプリケーション/データベースのデータを置くのが望ましい。</li>
+<li>バックアップ。スナップショットとサービス：enStratusは、バックアップの2つのタイプを考慮します。組み合わせて使用することで、これらのバックアップは非常に信頼性が高く、カスタマイズ可能なソリューションを提供します。</li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>Snapshots: Backups accomplished by taking a snapshot of a data volume. The result of this operation is a snapshot.</li>
-<li>Services: Backups accomplished by calling a user defined script. The result of this operation is a file, which can be stored in cloud files storage.</li>
+<li>スナップショット：データボリュームのスナップショットをとることによってバックアップを達成します。
+この操作の結果はスナップショットです。</li>
+<li>サービス：ユーザーがスクリプトを定義して呼び出すことによってバックアップを実行します。
+この操作の結果は、クラウド　ファイル　ストレージに格納することができるファイルです。</li>
 </ul>
 </div></blockquote>
-<p>4. Disaster Recovery. Disaster recovery for enStratus means storing the files resulting
-from service backups in a geographically distinct cloud region (EC2 East, West, etc...) or
-a separate cloud altogether.</p>
+<ol class="arabic simple" start="4">
+<li>ディザスタリカバリ。 enStratusための災害復旧は、サービスのバックアップを地理的に異なったクラウドリージョン（EC2 East、 West、等..）またはお互いに完全に独立したクラウドに格納することです。</li>
+</ol>
 </div>
 </div>
 </div>
@@ -169,7 +173,7 @@ a separate cloud altogether.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		1. Introduction
+		1. はじめに
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

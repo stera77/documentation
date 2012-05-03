@@ -4,10 +4,12 @@
    contain the root `toctree` directive.
 
 
-enStratus Automation
+.. enStratus Automation
+enStratus 自動化
 ====================
 
-Contents:
+.. Contents:
+目次
 
 .. toctree::
    :maxdepth: 2
