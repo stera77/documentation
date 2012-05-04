@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2. Overview &mdash; The enStratus Documentation Project</title>
+    <title>2. 概要 &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
     <link rel="next" title="3. Services" href="../services/services.html" />
-    <link rel="prev" title="1. Introduction" href="introduction.html" />
+    <link rel="prev" title="1. はじめに" href="introduction.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -35,13 +35,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>2. Overview</h1></div>
+	<div id="title"><h1>2. 概要</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
 			<div class="headerButton"><a href="../services/services.html" title="3. Services" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="introduction.html" title="1. Introduction" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="introduction.html" title="1. はじめに" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -54,19 +54,19 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">2. Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#start-at-the-end">2.1. Start at the End</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#takeaway-points">2.2. Takeaway Points</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-deployment">2.3. The Deployment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#add-first-tier">2.4. Add First Tier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#add-second-tier">2.5. Add Second Tier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#add-services">2.6. Add Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#add-data-source-optional">2.7. Add Data Source (optional)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#establish-dependencies">2.8. Establish Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#launch-configuration">2.9. Launch Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#adding-a-second-region">2.10. Adding a Second Region</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#adding-configuration-management">2.11. Adding Configuration Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. はじめに</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">2. 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.1. 終了時に開始</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">2.2. 持ち帰り用のポイント</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">2.3. 配備</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">2.4. 最初の層の追加</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">2.5. 2番目のの層の追加</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">2.6. サービスの追加</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">2.7. データソースの追加（オプション）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">2.8. 依存関係の確立</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">2.9. 起動構成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">2.10. 2番目のリージョンの追加</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">2.11. 構成管理の追加</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../services/services.html">3. Services</a></li>
@@ -110,147 +110,128 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="overview">
-<h1>2. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<p>Before embarking on cloud automation using enStratus, let&#8217;s cover some terminology and
-concepts enStratus uses to automate and orchestrate cloud operations. The purpose of this
-section is to introduce at an academic level the components of an enStratus deployment.</p>
-<div class="section" id="start-at-the-end">
-<h2>2.1. Start at the End<a class="headerlink" href="#start-at-the-end" title="Permalink to this headline">¶</a></h2>
-<p>A properly configured enStratus deployment is shown below. Each of the functional
-components will be introduced in turn.</p>
+  <div class="section" id="id1">
+<h1>2. 概要<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>enStratusを使用してクラウドの自動化に着手する前に、用語とenStratusが
+クラウドの操作を自動化し、調整するために使用していますいくつかの概念を紹介しましょう。
+このセクションの目的は、学術レベルでenStratus配備のコンポーネントを導入することです。</p>
+<div class="section" id="id2">
+<h2>2.1. 終了時に開始<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>適切に構成されたenStratus配備を以下に示します。各機能的
+コンポーネントを順番にご紹介します。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deployment7.png"><img alt="enStratus Deployment" src="../_images/deployment7.png" style="width: 450.0px; height: 450.0px;" /></a>
 <p class="caption">enStratus Deployment</p>
 </div>
-<p>The fully operational enStratus deployment is a mechanism for deploying, orchestrating,
-and automating an n-tier application. The above figure shows a 3-tier deployment, running
-in two separate clouds with load balancing and a web application that depends on a
-database. Let&#8217;s build the deployment from the ground up.</p>
+<p>完全に機能するenStratusの配備は、n層のアプリケーションを配備・調整し自動化するためのメカニズムです。
+上の図は、3層配備を示していて、2つの別々のクラウドの中でロードバランシングと1つの
+データベースに依存するWebアプリケーションが動作しています。グラウンドから配備を構築しましょう。</p>
 </div>
-<div class="section" id="takeaway-points">
-<h2>2.2. Takeaway Points<a class="headerlink" href="#takeaway-points" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>2.2. 持ち帰り用のポイント<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>A deployment is a logical grouping of tiers, services, and launch configurations. Resources provisioned as part of a deployment are &#8220;special&#8221; in the sense that they are subject to the governing rules set by the user.</li>
-<li>Tiers are logical groupings of servers.</li>
-<li>Services are software packages that are tied to tiers.</li>
-<li>Services can have datasources passed to them and can depend on each other, or each other&#8217;s datasources.</li>
-<li>Dependencies tell enStratus how to orchestrate service installation and what information is appropriate to pass to each VM.</li>
-<li>Launch Configurations define the size of the VM, volumes, configuration management, and firewalls for each server.</li>
-<li>As servers are started, enStratus orchestrates the installation of services and datasources according to their dependency relationships.</li>
+<li>配備は層、サービス、および起動構成の論理グループです。
+配備の一部としてプロビジョニングされたリソースは、ユーザーによって設定された規則に従うという意味で &#8220;特別&#8221;です。</li>
+<li>層は、サーバーの論理グループです。</li>
+<li>サービスは、階層に関連付けられたソフトウェアパッケージです。</li>
+<li>サービスは、データソースを渡され、他のサービスと相互に依存し、または他のサービスのデータソースに依存することができます。</li>
+<li>依存関係はどのようにサービスインストールを調整し、どの情報を各VMに渡すことが適切であるかをenStratusに伝えます。</li>
+<li>起動設定は、VM、ボリューム、構成管理、および各サーバーのファイアウォールのサイズを定義します。</li>
+<li>サーバーが開始されると、enStratusは、サービスとその依存関係に従って、データソースのインストールを調整します。</li>
 </ol>
 </div>
-<div class="section" id="the-deployment">
-<h2>2.3. The Deployment<a class="headerlink" href="#the-deployment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>2.3. 配備<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deployment1.png"><img alt="enStratus Deployment" src="../_images/deployment1.png" style="width: 450.0px; height: 450.0px;" /></a>
 <p class="caption">enStratus Deployment</p>
 </div>
-<p>An enStratus deployment is a container enStratus uses to manage all of moving parts of an
-aribtrarily complex application. The resources running in the deployment are subject to
-the constraints the deployment architect places on it, such as when to scale, when backups
-are run, and what relationships exist between deployment components.</p>
-<p>The deployment itself needs only a name, this initializes the deployment environment for
-the rest of the build. The first component added to this deployment is called a tier.</p>
-<p>A place holder for adding a load balancer is automatically generated.</p>
+<p>enStratus配備は、enStratusが任意の複雑なアプリケーションの全ての可動部分を管理するために使用するコンテナです。配備内で実行されているリソースは、どんな時にスケールするか、何時バックアップするか、配備コンポーネントの間にどんな関係があるかなどのデプロイメント　アーキテクトが置く制約に従います。</p>
+<p>配備自体は名前だけを必要とし、残りの部分をビルドするため、配備環境を初期化します。
+。この配備に最初に追加されたコンポーネントは、層と呼ばれています。</p>
+<p>ロードバランサを追加するためのプレースホルダが自動的に生成されます。</p>
 </div>
-<div class="section" id="add-first-tier">
-<h2>2.4. Add First Tier<a class="headerlink" href="#add-first-tier" title="Permalink to this headline">¶</a></h2>
-<p>An enStratus tier is a component that can have services (software) tied to it. The tier
-layer is where attributes such as minimum/maximum servers and scaling rules are set.</p>
-<p>In assembling the deployment, the first thing to do after creating the new deployment is
-to add tiers.</p>
+<div class="section" id="id5">
+<h2>2.4. 最初の層の追加<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>enStratus層は、それに結びつけられたサービス（ソフトウェア）を持つことができるコンポーネントです。層
+レイヤは最小値/最大サーバやスケーリングルールなどの属性が設定されている場所です。</p>
+<p>配備を組み立てるにあたって、新しい配備を作成した後、まず最初に行うのは層の追加です。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deployment2.png"><img alt="Tier Added" src="../_images/deployment2.png" style="width: 450.0px; height: 450.0px;" /></a>
 <p class="caption">Tier Added</p>
 </div>
-<p>Adding the first tier prompts enStratus to create a placeholder for a launch
-configuration.</p>
+<p>最初の層を追加すると、enStratusは起動構成ためのプレースホルダを作成するように求めます。</p>
 </div>
-<div class="section" id="add-second-tier">
-<h2>2.5. Add Second Tier<a class="headerlink" href="#add-second-tier" title="Permalink to this headline">¶</a></h2>
-<p>Next we add another tier to bring a more classic 3-tier architecture more clearly into
-view. A launch configuration will be automatically generated as a placeholder for the
-second tier.</p>
-<p>Once the tiers are in place, it&#8217;s time to start adding services to them.</p>
+<div class="section" id="id6">
+<h2>2.5. 2番目のの層の追加<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>次に、より古典的な3層アーキテクチャがより明確に見えるように別の層を追加します。起動設定が自動的に2番目の層のプレースホルダとして生成されます。</p>
+<p>層が配置されれば、それにサービスの追加を開始するときです。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deployment3.png"><img alt="Second Tier Added" src="../_images/deployment3.png" style="width: 450.0px; height: 450.0px;" /></a>
 <p class="caption">Second Tier Added</p>
 </div>
 </div>
-<div class="section" id="add-services">
-<h2>2.6. Add Services<a class="headerlink" href="#add-services" title="Permalink to this headline">¶</a></h2>
-<p>Services are connected to a deployment at the tier level. Put simply, a service is a
-file that is downloaded from cloudfiles storage to every server running in the tier.</p>
-<p>Examples of services include MySQL, Postgres, Wordpress, Drupal, Tomcat, etc.</p>
+<div class="section" id="id7">
+<h2>2.6. サービスの追加<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>サービスは、層レベルでの配備に接続されています。簡単に言えば、サービスは
+クラウド　ファイル　ストレージからその層で実行されているすべてのサーバーにダウンロードされたファイルです。</p>
+<p>サービスの例としては、MySQL、Postgres、Wordpress、Drupal、Tomcatなどが含まれます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deployment4.png"><img alt="Services Added to Tiers" src="../_images/deployment4.png" style="width: 450.0px; height: 450.0px;" /></a>
 <p class="caption">Services Added to Tiers</p>
 </div>
 </div>
-<div class="section" id="add-data-source-optional">
-<h2>2.7. Add Data Source (optional)<a class="headerlink" href="#add-data-source-optional" title="Permalink to this headline">¶</a></h2>
-<p>In some cases, it may be appropriate to connect a datasource to a service. In our example
-deployment, the lower tier is a database tier and the service connected to it is a
-database dump file for MySQL.</p>
-<p>By connecting a datasource to a service, enStratus knows to first configure the service,
-then pass in the datasource to the service. Proper ordering of operations like that is
-called <em>orchestration</em>.</p>
+<div class="section" id="id8">
+<h2>2.7. データソースの追加（オプション）<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>いくつかのケースでは、サービスにデータソースを接続することは適切であるかもしれません。私たちの配備例では、下位層がデータベース層であり、それに接続されているサービスはMySQLのデータベースのダンプファイルです。</p>
+<p>サービスにデータソースを接続することにより、enStratusは、最初にサービスを設定して、
+そのサービスにデータソースに渡すこと知っています。そのような適切な操作の順序付けを
+<a href="#id9"><span class="problematic" id="id10">*</span></a>オーケストレーション*と呼びます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deployment4a.png"><img alt="Data Source Added to Service" src="../_images/deployment4a.png" style="width: 450.0px; height: 450.0px;" /></a>
 <p class="caption">Data Source Added to Service</p>
 </div>
 </div>
-<div class="section" id="establish-dependencies">
-<h2>2.8. Establish Dependencies<a class="headerlink" href="#establish-dependencies" title="Permalink to this headline">¶</a></h2>
-<p>A dependency is a logical connection between services that tells enStratus about the
-relationship two services have. Here, we&#8217;ve established a dependency relationship between
-the top (application) tier and the database service&#8217;s datasource.</p>
-<p>A special type of dependency is established for the application service to the load
-balancer as well.</p>
+<div class="section" id="id11">
+<h2>2.8. 依存関係の確立<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>依存性は2つのサービス間の関係をenStratusを伝えるサービス間の論理接続です。ここでは、最上位（アプリケーション）層とデータベースサービスのデータソース間の依存関係を確立しました。</p>
+<p>同様にアプリケーション　サービスからロードバランサへの特殊なタイプの依存関係が確立されます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deployment5.png"><img alt="Establish Dependencies" src="../_images/deployment5.png" style="width: 450.0px; height: 450.0px;" /></a>
 <p class="caption">Establish Dependencies</p>
 </div>
-<p>Establishing dependencies tells enStratus how to orchestrate the deployment of the
-services. Given the dependency relationships described here, the following events will
-happen:</p>
+<p>依存関係を確立することでenStratusにサービスを配備する要領を指示します。ここで説明された依存関係を与えられて、次のイベントが発生します:</p>
 <ol class="arabic simple">
-<li>Service installed on the Database Tier</li>
-<li>Datasource installed on the Database Service</li>
-<li>Service installed on the Application Tier.</li>
-<li>enStratus passes information to the database server so it can grant access to the application servers.</li>
-<li>enStratus passes information to every server in the application tier about how to find the datasource.</li>
-<li>enStratus passes information to the load balancer about each application node.</li>
+<li>サービス　データベース層にインストールされています</li>
+<li>データソース　データベース　サービスにインストールされています</li>
+<li>サービス　アプリケーション層にインストールされています。</li>
+<li>enStratusは、アプリケーション　サーバーへのアクセス権を付与することができるようデータベース　サーバーに情報を渡します。</li>
+<li>enStratusは、アプリケーション層のすべてのサーバーにデータソースを見つける方法についての情報を渡します。</li>
+<li>enStratusは、各アプリケーション　ノードに関する情報をロードバランサに渡します。</li>
 </ol>
-<p>At this point, the deployment is nearly configured. We have yet to tell enStratus about
-the servers that will house the services.</p>
+<p>この時点で、展開はほぼ設定されています。我々はenStratusにサービスを収容するサーバーについての情報をまだ伝えていません。</p>
 </div>
-<div class="section" id="launch-configuration">
-<h2>2.9. Launch Configuration<a class="headerlink" href="#launch-configuration" title="Permalink to this headline">¶</a></h2>
-<p>A launch configuration is a definition that governs the resources provisioned to support a
-virtual machine.</p>
-<p>An enStratus launch configuration includes attaching, raiding, and encrypting volumes,
-configuration management runs such as Chef, as well as the firewall into which the server
-is started.</p>
-<p>A launch configuration is typically tied to a region within a cloud.</p>
-<p>Now the deployment is complete, but to take the deployment concept to it&#8217;s logical
-conclusion, let&#8217;s demonstrate adding another region to this deployment.</p>
+<div class="section" id="id12">
+<h2>2.9. 起動構成<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>起動構成は仮想マシンサポートするためにプロビジョニングされたリソースを管理する定義です。
+。</p>
+<p>enStratusの起動設定には、アタッチング、レイディング、ボリュームの暗号化および構成管理が含まれており、
+サーバ内でファイアウォールだけでなく、 Chef も起動されます。</p>
+<p>起動設定は、通常、クラウドが存在するリージョンに接続されています。</p>
+<p>さて配備が完了すると、論理的な結論として配備のコンセプトを取ります。この配備に別の領域を追加してみましょう。</p>
 </div>
-<div class="section" id="adding-a-second-region">
-<h2>2.10. Adding a Second Region<a class="headerlink" href="#adding-a-second-region" title="Permalink to this headline">¶</a></h2>
-<p>enStratus will prompt the user to add a launch configuration for the newly added region.</p>
-<p>No other conifguration changes need to be made since enStratus decouples the service
-concept from the launch configuration.</p>
+<div class="section" id="id13">
+<h2>2.10. 2番目のリージョンの追加<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>enStratusは、ユーザーに新しく追加されたリージョンの起動設定を追加することを求めます。</p>
+<p>enStratusはサービス　コンセプトと起動構成を分離していますので、他の構成変更は行う必要はありません</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deployment6.png"><img alt="Add New Region" src="../_images/deployment6.png" style="width: 450.0px; height: 450.0px;" /></a>
 <p class="caption">Add New Region</p>
 </div>
 </div>
-<div class="section" id="adding-configuration-management">
-<h2>2.11. Adding Configuration Management<a class="headerlink" href="#adding-configuration-management" title="Permalink to this headline">¶</a></h2>
-<p>An optional configuration management execution call configured for each launch
-configuration if Chef/Puppet is used to configure servers.</p>
+<div class="section" id="id14">
+<h2>2.11. 構成管理の追加<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>もし Chef/Puppet がサーバを設定するのに使用されている場合、各起動構成にオプションの構成管理の呼び出しが構成されます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deployment7.png"><img alt="Add Configuration Management to Launch Configuration" src="../_images/deployment7.png" style="width: 450.0px; height: 450.0px;" /></a>
 <p class="caption">Add Configuration Management to Launch Configuration</p>
@@ -271,7 +252,7 @@ configuration if Chef/Puppet is used to configure servers.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		2. Overview
+		2. 概要
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
