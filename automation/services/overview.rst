@@ -3,7 +3,7 @@
 --------
 
 .. What's in, and what is, a service?
-サービスとは何であり、中にに何があるのか？
+サービスとは何であり、中に何があるのか？
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. A service is a file stored in cloud file storage. Services can be tied to tiers and
