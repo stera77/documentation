@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3. Services &mdash; The enStratus Documentation Project</title>
+    <title>3. サービス &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
     <link rel="next" title="4. Deployment Configuration" href="../deployment_configuration/deployment_configuration.html" />
-    <link rel="prev" title="2. Overview" href="../introduction/overview.html" />
+    <link rel="prev" title="2. 概要" href="../introduction/overview.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -35,13 +35,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>3. Services</h1></div>
+	<div id="title"><h1>3. サービス</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
 			<div class="headerButton"><a href="../deployment_configuration/deployment_configuration.html" title="4. Deployment Configuration" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="../introduction/overview.html" title="2. Overview" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="../introduction/overview.html" title="2. 概要" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -54,14 +54,13 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">2. Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">3. Services</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">3.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#anatomy">3.2. Anatomy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#behavior">3.3. Behavior</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#managing">3.4. Managing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#files">3.5. Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">1. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">2. 概要</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">3. サービス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3.1. 概要</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">3.2. 構造の解剖</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#managing">3.3. Managing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#files">3.4. Files</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../deployment_configuration/deployment_configuration.html">4. Deployment Configuration</a></li>
@@ -104,85 +103,79 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="services">
-<h1>3. Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>3.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="what-s-in-and-what-is-a-service">
-<h3>3.1.1. What&#8217;s in, and what is, a service?<a class="headerlink" href="#what-s-in-and-what-is-a-service" title="Permalink to this headline">¶</a></h3>
-<p>A service is a file stored in cloud file storage. Services can be tied to tiers and
-connected to each other by a special relationship called a dependency.</p>
-<p>Using enStratus automation, services are downloaded to servers when servers reach a
-running state. The enStratus agent downloads, extracts, and executes a service
-configuration routine written by the application designer.</p>
-<p>Readers familiar with configuration management services such as Chef should approach
-services in a similar way to a recipe. Services are deployed onto virtual machines that
-are configured accoring to their launch configuration.</p>
+  <div class="section" id="id1">
+<h1>3. サービス<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>3.1. 概要<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>3.1.1. サービスとは何であり、中にに何があるのか？<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>サービスは、クラウド ファイルの記憶域に格納されたファイルです。サービスは、層に接続することができ、
+依存関係と呼ばれる特別な関係でお互いに接続されています。</p>
+<p>enStratus自動化を使用して、サーバがラン状態を実行に到達したとき、
+サービスがサーバーにダウンロードされます。 enStratusエージェントはダウンロード、抽出、およびアプリケーション設計者に
+よって書かれたサービス構成ルーチンを実行します。</p>
+<p>シェフなどの構成管理サービスに精通している読者は同様の方法でサービスをレシピに近づけます。
+サービスは、起動構成に従って構成されている仮想マシンに配備されます。</p>
 </div>
-<div class="section" id="services-logically">
-<h3>3.1.2. Services: Logically<a class="headerlink" href="#services-logically" title="Permalink to this headline">¶</a></h3>
-<p>enStratus makes a logical connection between tiers and services. Services are tied to
-tiers because tiers are able to span across cloud regions, for example a tier that spans
-AWS region US-East and AWS region US-West.</p>
-<p>Beyond spanning tiers across regions within a single cloud, tiers are capable of spanning
-across several clouds as shown in the diagram below.</p>
+<div class="section" id="id4">
+<h3>3.1.2. サービス：論理的に<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>enStratusは、階層とサービス間の論理的な接続を行います。層は、クラウドリージョン間に
+またがることができるのでサービスは、層に関連付けられています。
+例えば、米国東部地域のAWSリージョンと米国西部地域のAWSリージョンにまたがる層です。</p>
+<p>単一のクラウド内のリージョンの間にまたがるだけでなく、層は、更に広がることが可能です。
+次の図に示すように、いくつかのクラウドをまたがることが可能です。</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/spanningClouds1.png"><img alt="Tier Spanning Clouds" src="../_images/spanningClouds1.png" style="width: 792.0px; height: 297.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/spanningClouds.png"><img alt="Tier Spanning Clouds" src="../_images/spanningClouds.png" style="width: 792.0px; height: 297.0px;" /></a>
 <p class="caption">Tier Spanning Clouds</p>
 </div>
-<p>This implementation depicts a tier spanning between two public clouds, in this case Amazon
-AWS and Rackspace. It is equally possible to span a tier into a private cloud as well.</p>
+<p>この実装は1つの層が、2つのパブリック　クラウドの間にまたがっていることを示しています。このケースでは、
+アマゾンAWSとRackspaceです。それだけでなく、プライベート　クラウド内に広がることも同様に可能です。</p>
 </div>
-<div class="section" id="services-physically">
-<h3>3.1.3. Services: Physically<a class="headerlink" href="#services-physically" title="Permalink to this headline">¶</a></h3>
-<p>Physically, services are stored in cloud storage and downloaded as part of the start of a
-deployment. Once downloaded, services are installed onto servers that are running within
-a tier.</p>
+<div class="section" id="id5">
+<h3>3.1.3. サービス：物理的に<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>物理的に、サービスは、クラウド　ストレージに格納されていて、配備の開始の一部としてダウンロードされます。
+ダウンロードされると、サービスは、層内で実行されているサーバにインストールされます。</p>
 </div>
 </div>
-<div class="section" id="anatomy">
-<h2>3.2. Anatomy<a class="headerlink" href="#anatomy" title="Permalink to this headline">¶</a></h2>
-<p>The anatomy of a service is very free-form. This allows for great flexibility in designing
-or adapting an application for use in a multi-cloud environment.</p>
-<p>An enStratus service should have the following structure:</p>
-<div class="section" id="bin">
-<h3>3.2.1. bin<a class="headerlink" href="#bin" title="Permalink to this headline">¶</a></h3>
-<p>Inside the bin/ directory, minimally 3 files:</p>
+<div class="section" id="id6">
+<h2>3.2. 構造の解剖<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>サービスの解剖学は、非常に自由形式です。このことは設計またはアプリケーション使用の
+マルチクラウド環境での適応に大きな柔軟性を提供します。</p>
+<p>bin/　ディレクトリ</p>
+<p>bin/　ディレクトリ内には最低限の3つのファイルがあります。：</p>
 <ol class="arabic simple">
 <li>enstratus-start</li>
 <li>enstratus-stop</li>
 <li>enstratus-configure</li>
 </ol>
-<p>The bin/ directory provides a known path for leveraging the enstratus orchestration and
-automation sections. When a service is deployed enStratus will, using the enStratus agent,
-trigger events to configure each service in the appropriate order.</p>
-</div>
+<p>bin/　ディレクトリは、enstratusオーケストレーションと自動化のセクションを活用するための
+既知のパスを提供します。
+サービスが配備されると、enStratusはenStratusエージェントを使用して、
+各サービスが適切な順序で設定されるようにイベントをトリガします。</p>
 <div class="section" id="cfg">
-<h3>3.2.2. cfg<a class="headerlink" href="#cfg" title="Permalink to this headline">¶</a></h3>
-<p>The cfg directory is a directory where enStratus writes configuration files generated at
-run time with information the application will need to operate in the cloud. This
-directory is a good place for putting configuration file &#8220;templates&#8221;.</p>
+<h3>3.2.1. cfg<a class="headerlink" href="#cfg" title="Permalink to this headline">¶</a></h3>
+<p>cfgディレクトリは、enStratusが実行時に生成した構成ファイルおよびアプリケーションがクラウド内で
+動作するために必要な情報を書き込むディレクトリです。
+このディレクトリは、設定ファイル &#8220;templates&#8221;を置くのに良い場所です。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The astute chef user/reader will recognize the word template as a very useful
-construct from the Chef/Opscode world and that&#8217;s precisely correct. As deployers of
-cloud applications, we use this cfg directory to stage files that will be written
-dynamically with ephemeral cloud information.</p>
+<p class="last">chef/ Opscodeワールドから構築するのは正確です。クラウドアプリケーションのデプロイヤとして、
+我々は、cfgディレクトリを一時的なクラウド情報が動的に書き込まれるステージファイルとして使用します。</p>
 </div>
-<p>And...that&#8217;s it. Questions? :)</p>
-<p>The bin/ and the cfg/ directories are the two primary directories used by the enStratus
-management system. Beyond that, additional directories can be added to suit the
-application. For example, a third directory might be:</p>
+<p>そして...それだけです。質問は？ :)</p>
+<p>bin/ とcfg/ ディレクトリはenStratus管理システムによって使用される2つの主要なディレクトリです。
+それに加えて、アプリケーションに合わせて追加のディレクトリを追加することができます
+たとえば、3番目のディレクトリは次のようになります。:</p>
 </div>
 <div class="section" id="app">
-<h3>3.2.3. app<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h3>
+<h3>3.2.2. app<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h3>
 <p>index.html</p>
-<p>Where the application directory holds the application files, in this case a lonely
-index.html.</p>
+<p>アプリケーションディレクトリ、このケースでは、アプリケーション ファイルを保持している
+場所は唯一 index.html です。</p>
 </div>
 <div class="section" id="mysql-service">
-<h3>3.2.4. MySQL Service<a class="headerlink" href="#mysql-service" title="Permalink to this headline">¶</a></h3>
-<p>The MySQL service structure looks like this:</p>
+<h3>3.2.3. MySQL Service<a class="headerlink" href="#mysql-service" title="Permalink to this headline">¶</a></h3>
+<p>MySQL サービスの構造は このようなものです。:</p>
 <p>bin/</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li>addDataSource</li>
@@ -225,16 +218,11 @@ index.html.</p>
 </td></tr></table>
 </div>
 </div>
-<div class="section" id="behavior">
-<h2>3.3. Behavior<a class="headerlink" href="#behavior" title="Permalink to this headline">¶</a></h2>
-<p>During an orchestrated, automated launch of an application stack, enStratus ensures the
-proper ordering of events, including the download of service files to each instance.</p>
-</div>
 <div class="section" id="managing">
-<h2>3.4. Managing<a class="headerlink" href="#managing" title="Permalink to this headline">¶</a></h2>
+<h2>3.3. Managing<a class="headerlink" href="#managing" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="files">
-<h2>3.5. Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<h2>3.4. Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -251,7 +239,7 @@ proper ordering of events, including the download of service files to each insta
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		3. Services
+		3. サービス
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Anatomy &mdash; The enStratus Documentation Project</title>
+    <title>構造の解剖 &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Anatomy</h1></div>
+	<div id="title"><h1>構造の解剖</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,9 +50,9 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">2. Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services.html">3. Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">1. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">2. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">3. サービス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deployment_configuration/deployment_configuration.html">4. Deployment Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deployment_operation/deployment_operation.html">5. Deployment Operation</a></li>
 </ul>
@@ -93,49 +93,45 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="anatomy">
-<h1>Anatomy<a class="headerlink" href="#anatomy" title="Permalink to this headline">¶</a></h1>
-<p>The anatomy of a service is very free-form. This allows for great flexibility in designing
-or adapting an application for use in a multi-cloud environment.</p>
-<p>An enStratus service should have the following structure:</p>
-<div class="section" id="bin">
-<h2>bin<a class="headerlink" href="#bin" title="Permalink to this headline">¶</a></h2>
-<p>Inside the bin/ directory, minimally 3 files:</p>
+  <div class="section" id="id1">
+<h1>構造の解剖<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>サービスの解剖学は、非常に自由形式です。このことは設計またはアプリケーション使用の
+マルチクラウド環境での適応に大きな柔軟性を提供します。</p>
+<p>bin/　ディレクトリ</p>
+<p>bin/　ディレクトリ内には最低限の3つのファイルがあります。：</p>
 <ol class="arabic simple">
 <li>enstratus-start</li>
 <li>enstratus-stop</li>
 <li>enstratus-configure</li>
 </ol>
-<p>The bin/ directory provides a known path for leveraging the enstratus orchestration and
-automation sections. When a service is deployed enStratus will, using the enStratus agent,
-trigger events to configure each service in the appropriate order.</p>
-</div>
+<p>bin/　ディレクトリは、enstratusオーケストレーションと自動化のセクションを活用するための
+既知のパスを提供します。
+サービスが配備されると、enStratusはenStratusエージェントを使用して、
+各サービスが適切な順序で設定されるようにイベントをトリガします。</p>
 <div class="section" id="cfg">
 <h2>cfg<a class="headerlink" href="#cfg" title="Permalink to this headline">¶</a></h2>
-<p>The cfg directory is a directory where enStratus writes configuration files generated at
-run time with information the application will need to operate in the cloud. This
-directory is a good place for putting configuration file &#8220;templates&#8221;.</p>
+<p>cfgディレクトリは、enStratusが実行時に生成した構成ファイルおよびアプリケーションがクラウド内で
+動作するために必要な情報を書き込むディレクトリです。
+このディレクトリは、設定ファイル &#8220;templates&#8221;を置くのに良い場所です。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The astute chef user/reader will recognize the word template as a very useful
-construct from the Chef/Opscode world and that&#8217;s precisely correct. As deployers of
-cloud applications, we use this cfg directory to stage files that will be written
-dynamically with ephemeral cloud information.</p>
+<p class="last">chef/ Opscodeワールドから構築するのは正確です。クラウドアプリケーションのデプロイヤとして、
+我々は、cfgディレクトリを一時的なクラウド情報が動的に書き込まれるステージファイルとして使用します。</p>
 </div>
-<p>And...that&#8217;s it. Questions? :)</p>
-<p>The bin/ and the cfg/ directories are the two primary directories used by the enStratus
-management system. Beyond that, additional directories can be added to suit the
-application. For example, a third directory might be:</p>
+<p>そして...それだけです。質問は？ :)</p>
+<p>bin/ とcfg/ ディレクトリはenStratus管理システムによって使用される2つの主要なディレクトリです。
+それに加えて、アプリケーションに合わせて追加のディレクトリを追加することができます
+たとえば、3番目のディレクトリは次のようになります。:</p>
 </div>
 <div class="section" id="app">
 <h2>app<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <p>index.html</p>
-<p>Where the application directory holds the application files, in this case a lonely
-index.html.</p>
+<p>アプリケーションディレクトリ、このケースでは、アプリケーション ファイルを保持している
+場所は唯一 index.html です。</p>
 </div>
 <div class="section" id="mysql-service">
 <h2>MySQL Service<a class="headerlink" href="#mysql-service" title="Permalink to this headline">¶</a></h2>
-<p>The MySQL service structure looks like this:</p>
+<p>MySQL サービスの構造は このようなものです。:</p>
 <p>bin/</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li>addDataSource</li>
@@ -192,7 +188,7 @@ index.html.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Anatomy
+		構造の解剖
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
