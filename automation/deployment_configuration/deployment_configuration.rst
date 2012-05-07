@@ -1,35 +1,53 @@
-Deployment Configuration
+.. Deployment Configuration
+配備構成
 ========================
 
-.. note:: Some of the screenshots may look different than the ones shown here. The
-   difference in all cases should be cosmetic and not affect operations.
+.. note:: .. Some of the screenshots may look different than the ones shown here. The
+             difference in all cases should be cosmetic and not affect operations.
+   スクリーンショットの一部はここに示すものと異なる場合があります。
+   すべてのケースの違いは、修飾的なもので操作に影響を及ぼしません。
 
-The purpose of this section is to walk through the deployment configuration options in
-enStratus. 
+.. The purpose of this section is to walk through the deployment configuration options in
+   enStratus. 
+このセクションの目的は、enStratusの配備構成オプションの中を歩きまわることです。
 
-In the `Overview <../introduction/overview.html>`_ section, we covered the concepts
-involved with creating an enStratus deployment.
+.. In the `Overview <../introduction/overview.html>`_ section, we covered the concepts
+   involved with creating an enStratus deployment.
+`Overview <../introduction/overview.html>`セクションでは、我々は、enStratus配備の作成に関与した
+概念を説明しました。
+。
 
 .. note:: 
-  Before approaching deployment configuration, you should have in hand the
-  following components:
+  .. Before approaching deployment configuration, you should have in hand the
+     following components:
+  配備構成にアプローチする前に、次のコンポーネンを手に入れる必要があります。：
 
-  #. Working machine images/templates with the enStratus agent installed and tested.
-  #. Service images for each application/database to be installed.
+  #. .. Working machine images/templates with the enStratus agent installed and tested.
+     作業するマシンイメージ/テンプレートが有って、enStratusエージェントがインストールされてテストされていること。
+  #. .. Service images for each application/database to be installed.
+     インストールすべき各アプリケーション/データベースのサービスイメージ。
 
-enStratus knows about is the environment in which your application/database runs and it
-will inform your services about that environment. 
+.. enStratus knows about is the environment in which your application/database runs and it
+   will inform your services about that environment. 
+enStratusはアプリケーション/データベースが実行される環境について知っていて、
+その環境についての情報をサービスに通知します。
 
-enStratus gives you all the tools to deploy and manage a fully automated environment.
+.. enStratus gives you all the tools to deploy and manage a fully automated environment.
+enStratusは完全に自動化された環境を配備、管理するすべてのツールを提供します。
 
-User Interface
+.. User Interface
+ユーザー　インタフェース
 ~~~~~~~~~~~~~~
-The enStratus automation interface is designed to be intuitive and easy to operate. There
-are several sections of the enStratus console that are relevant to interacting with and
-configuring automation.
+.. The enStratus automation interface is designed to be intuitive and easy to operate. There
+   are several sections of the enStratus console that are relevant to interacting with and
+   configuring automation.
+enStratus自動化インターフェイスは、直感的で操作しやすいように設計されています。enStratusコンソールには
+対話作業と構成の自動化に関連するいくつかのセクションがあります。
 
-The deployment designer interface allows the user to build an application architecture
-using the enStratus web console. 
+.. The deployment designer interface allows the user to build an application architecture
+   using the enStratus web console. 
+配備デザイナのインターフェイスでは、enStratusのWebコンソールを使用してユーザーがアプリケーションの
+アーキテクチャを構築します。
 
 Diagram
 %%%%%%%
@@ -46,8 +64,10 @@ Diagram
 Table
 %%%%%
 
-This deployment has two tiers tier and two launch configurations in one region. The
-graphical representation of the deployment can also be toggled to a table view.
+.. This deployment has two tiers tier and two launch configurations in one region. The
+   graphical representation of the deployment can also be toggled to a table view.
+この配備では、1つのリージョンで2階層の層と2つの起動構成を持っています。
+配備のグラフィカルな表現は、テーブルビューに切り替えることができます。
 
 .. figure:: ./images/deploymentTable.png
    :height: 450px
@@ -58,11 +78,13 @@ graphical representation of the deployment can also be toggled to a table view.
 
    Deployment Designer (Table View)
 
-Deployment Dashboard
+.. Deployment Dashboard
+配備ダッシュボード
 %%%%%%%%%%%%%%%%%%%%
 
-The deployment dashboard is meant to display relevant statistics and other information to
-deployment administrators.
+.. The deployment dashboard is meant to display relevant statistics and other information to
+   deployment administrators.
+配備ダッシュボードは、関連する統計情報やその他の情報を配備管理者に表示します。
 
 .. figure:: ./images/deploymentDashboard.png
    :height: 700px
@@ -73,7 +95,8 @@ deployment administrators.
 
    Deployment Dashboard
 
-Deployment Management
+.. Deployment Management
+配備管理
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: ./images/deploymentManagement.png
@@ -85,52 +108,71 @@ Deployment Management
 
    Deployment Management
 
-Deployment management and configuration starts  with the options shown in the figure
-above.
+.. Deployment management and configuration starts  with the options shown in the figure
+   above.
+配備の管理と構成が開始すると上記の図で示すオプションが表示されます。
 
 #. **Name**
 
-   The name of the deployment is simply the logical name that will be presented in the
-   enStratus console. 
-
+   .. The name of the deployment is simply the logical name that will be presented in the
+      enStratus console. 
+   配備の名前は、enStratusコンソールに単に提示される論理名です。
+      
 #. **Label**
 
-   An optional color code may be applied to the deployment.
+   .. An optional color code may be applied to the deployment.
+   任意のカラーコードを配備に適用可能。
 
 #. **Deployment Type**
 
-   The deployment type has two options:
+   .. The deployment type has two options:
+   配備タイプには、2つのオプションがあります。
    
-   * Dedicated. 
+   * .. Dedicated. 
+     専用
 
-     A dedicated deployment will track all deployments costs against the same
-     billing code.
+     .. A dedicated deployment will track all deployments costs against the same
+        billing code.
+     専用の配備は、同じ課金コードに対してすべての配備コストを追跡します。
 
-   * Shared. 
+     
+   * .. Shared. 
+     共用
 
-     A shared deployment will track deployment costs against multiple billing codes.
-     If a shared deployment is chosen, billing code usage will be tracked at the service level.
+     .. A shared deployment will track deployment costs against multiple billing codes.
+        If a shared deployment is chosen, billing code usage will be tracked at the service level.
+     共有の配備は、複数の課金コードに対して、配備コストを追跡します。
+     共有配備を選択した場合、課金コードの使用は、サービスレベルで追跡されます。
 
 #. **Disaster Recovery Storage**
 
-   Disaster recovery storage specifies a cloud storage option for backup files. It is
-   possible to run all or parts of a deployment in one cloud while performing backups via
-   /enstratus/bin/backupService to another cloud altogether for disaster recovery purposes.
+   .. Disaster recovery storage specifies a cloud storage option for backup files. It is
+      possible to run all or parts of a deployment in one cloud while performing backups via
+      /enstratus/bin/backupService to another cloud altogether for disaster recovery purposes.
+   ディザスタ　リカバリ　ストレージは、バックアップファイルにクラウド　ストレージ　オプションを指定します。
+   災害復旧目的で、/enstratus/bin/backupService を経由して1つのクラウド内のすべてまたは配備の一部を
+   他のクラウドに一括してバックアップ実行することが可能です。
 
 #. **Billing Code**
 
-   The billing code is the code against which all deployment charges will be made.
+   .. The billing code is the code against which all deployment charges will be made.
+   課金コードは、すべての配備料が行われる対象となるコードです。
 
 #. **Owner**
 
-   The owner specifies an optional owner for the deployment so that role based access
-   controls may apply to the deployment.
+   .. The owner specifies an optional owner for the deployment so that role based access
+      controls may apply to the deployment.
+   所有者は、ロールベースのアクセスコントロールが、配備に適用される場合があるので、
+   その配備のためのオプションの所有者を指定します。
+   
 
 #. **Description**
 
-   The description is a free form text field for describing the deployment.
+   .. The description is a free form text field for describing the deployment.
+   説明("description")は、配備を記述するための自由形式のテキストフィールドです。
 
-Backup/Maintenance
+.. Backup/Maintenance
+バックアップ/メンテナンス
 %%%%%%%%%%%%%%%%%%
 
 .. figure:: ./images/backupMaintenance.png
@@ -142,20 +184,27 @@ Backup/Maintenance
 
    Backup and Maintenance
 
-The backup options designate the times when enStratus will peform backups such as
-snapshots of attached volumes or service level backups via the agent script
-/enstratus/bin/backupService.
+.. The backup options designate the times when enStratus will peform backups such as
+   snapshots of attached volumes or service level backups via the agent script
+   /enstratus/bin/backupService.
+バックアップオプションでは、enStratusが何時バックアップを実行するかを設定します。
+(接続されたボリュームのスナップショットまたは/enstratus/bin/backupServiceのエージェントスクリプトを介したサービスレベルのバックアップのような)
 
-Manage Servers/Services
+.. Manage Servers/Services
+サーバ/サービスの管理
 %%%%%%%%%%%%%%%%%%%%%%%
 
-These tabs display an aggregated view of all servers running in the deployment and all of
-the services installed on the deployment.
+.. These tabs display an aggregated view of all servers running in the deployment and all of
+   the services installed on the deployment.
+これらのタブは配備で実行されている全てのサーバーの集約されたビューと配備にインストールされている全てのサービスを表示します。
 
-Load Balancers
+.. Load Balancers
+ロード·バランサ
 ~~~~~~~~~~~~~~
-A load balancer balances traffic typically to multiple application servers. enStratus
-supports multiple types of load balancers through different mechanisms.
+.. A load balancer balances traffic typically to multiple application servers. enStratus
+   supports multiple types of load balancers through different mechanisms.
+ロードバランサは通常、複数のアプリケーション·サーバーにトラフィックを分散させます。 enStratusは
+異なるメカニズムを介して複数のタイプのロードバランサをサポートしています。
 
 .. figure:: ./images/loadBalancer.png
    :height: 400px
@@ -166,34 +215,52 @@ supports multiple types of load balancers through different mechanisms.
 
    Load Balancer
 
-Physical
+.. Physical
+物理的な
 %%%%%%%%
 
-A virtual machine based load balancer can use HA-Proxy, mod-jk, or zeus as a load
-balancer. When a service is connected to a virtual machine based load balancer, The agent
-script /enstratus/bin/startProxy is used to signal the load balancer that a new
-application server has joined the pool. The agent script /enstratus/bin/stopProxy is used
-to signal the load balancer that an application server has left the pool.
+.. A virtual machine based load balancer can use HA-Proxy, mod-jk, or zeus as a load
+   balancer. When a service is connected to a virtual machine based load balancer, The agent
+   script /enstratus/bin/startProxy is used to signal the load balancer that a new
+   application server has joined the pool. The agent script /enstratus/bin/stopProxy is used
+   to signal the load balancer that an application server has left the pool.
+仮想マシンベースのロードバランサはロードバランサとして HA-Proxy、 mod-jk、 zeus を使用することができます。
+サービスが、仮想マシンベースのロードバランサに接続されている場合、エージェントスクリプト /enstratus/bin/startProxy が使用され、
+新しいアプリケーションサーバーがプールに参加したことをロードバランサに通知します。エージェントスクリプト /enstratus/bin/stopProxy が使用され、
+アプリケーションサーバーがプールから去ったことを、ロード·バランサに通知します。
 
-Virtual (Example: ELB)
+.. Virtual (Example: ELB)
+仮想（例：ELB）
 %%%%%%%%%%%%%%%%%%%%%%
 
-Some cloud providers support service-based load balancing in the from of a virtual load
-balancer. In AWS, this is called an Elastic Load Balancer (ELB). In cloudstack (cloud.com)
-clouds, sometimes this is called a Router Virtual Machine (RVM). If your cloud provider
-has this concept with API support, enStratus can support it.
+.. Some cloud providers support service-based load balancing in the from of a virtual load
+   balancer. In AWS, this is called an Elastic Load Balancer (ELB). In cloudstack (cloud.com)
+   clouds, sometimes this is called a Router Virtual Machine (RVM). If your cloud provider
+   has this concept with API support, enStratus can support it.
+いくつかのクラウド　プロバイダーは仮想ロードバランサの形でサービス　ベースのロードバランシング
+をサポートします。 AWSでは、これは弾性ロードバランサ（ELB）と呼ばれています。 cloudstackで（cloud.com）
+クラウドでは、時にはこれをルータ仮想マシン（RVM）と呼びます。もしクラウド　プロバイダーが
+この概念をAPIとしてサポートしているならば、enStratusはそれをサポートすることができます。
 
-If a service is tied to a virtual load balancer, the server upon which that service runs
-will be added to and dropped from the load balancer via api calls. Furthermore, if the
-load balancer is set to balance traffic to a specific zone or zones, enStratus will ensure
-that your application servers only start in those zones.
+.. If a service is tied to a virtual load balancer, the server upon which that service runs
+   will be added to and dropped from the load balancer via api calls. Furthermore, if the
+   load balancer is set to balance traffic to a specific zone or zones, enStratus will ensure
+   that your application servers only start in those zones.
+サービスが仮想ロードバランサに接続されていて、そのサービスが実行されている時にサーバーが
+ロードバランサに追加されたりそこから削除される際にAPIの呼び出しを介して行われます。さらに、もし
+ロードバランサは、特定のゾーンまたはゾーンへのトラフィックのバランスを取るために設定されているならば、
+enStratusはアプリケーション·サーバーがこれらのゾーンでのみ開始されることを保証します。
 
-Load balancing is connected to the deployment at the *service* level with enStratus. An
-important point which will be illustrated shortly.
+.. Load balancing is connected to the deployment at the *service* level with enStratus. An
+   important point which will be illustrated shortly.
+ロードバランシングは、enStratusで *service* レベルでの配備に接続されています。
+重要なポイントを手短に説明します。
 
-.. note:: It is possible to associate multiple load balancers with a deployment. This
-  feature is useful when working in a cross-cloud or in a massively scaled, geographically
-  disperse environment.
+.. note:: .. It is possible to associate multiple load balancers with a deployment. This
+             feature is useful when working in a cross-cloud or in a massively scaled, geographically
+             disperse environment.
+  配備で複数のロードバランサを関連付けることができます。この機能は
+  クラウドをまたがるときや大規模なスケール、地理的に分散して作業するときに便利です。
 
 .. figure:: ./images/addLoadBalancer.png
    :height: 600px
@@ -204,103 +271,182 @@ important point which will be illustrated shortly.
 
    Adding a Load Balancer
 
-Load balancer configuration options are:
+.. Load balancer configuration options are:
+ロードバランサのコンフィグレーションオプションは次のとおりです。
 
 #. **Account**
 
-   The account specifies the account to which the load balancer is provisioned. If the
-   administrator is a member of multiple accounts, there may be multiple options here.
-   One possibility here is to have a load balancer span across several clouds. For example, a
-   load balancer may be provisioned into a cloud.com cloud with application servers in both
-   EC2 and in cloud.com
-
+   .. The account specifies the account to which the load balancer is provisioned. If the
+      administrator is a member of multiple accounts, there may be multiple options here.
+      One possibility here is to have a load balancer span across several clouds. For example, a
+      load balancer may be provisioned into a cloud.com cloud with application servers in both
+      EC2 and in cloud.com
+   アカウントには、ロードバランサがプロビジョニングされているアカウントを指定します。もし
+   管理者が複数のアカウントのメンバーであれば、ここで複数のオプションがあるかもしれません。
+   ロード·バランサが複数のクラウドにまたがっている可能性があります。たとえば、ロードバランサを、
+   EC2とcloud.comの両方で cloud.com cloud アプリケーションサーバーにプロビジョニングすることができます。
+   
 #. **Region**
 
-   It is possible to have a load balancer span regions within a cloud. For example, the EC2
-   cloud has at the time of this writing 5 regions.
+   .. It is possible to have a load balancer span regions within a cloud. For example, the EC2
+      cloud has at the time of this writing 5 regions.
+   クラウド内のリージョンにまたがってロード·バランサを持つことが可能です。たとえば、EC2
+   クラウドはこれを書いている時点で5つのリージョンを持っています。
 
 #. **Scope**
 
-   The scope parameter has three different settings:
+   .. The scope parameter has three different settings:
+   スコープパラメータには、3つの異なる設定があります。
 
   * **Global**
     
-    A global setting will cause the load balancer to balance across regions, but is
-    nonsensical for virtual load balancing offerings such as an ELB.
+    .. A global setting will cause the load balancer to balance across regions, but is
+       nonsensical for virtual load balancing offerings such as an ELB.
+    グローバル設定は、ロードバランサを、リージョン間でバランスをとります。
+    しかしELBなどの仮想ロードバランシングオファリングには無意味です。
 
   *  **Regional** 
 
-     A regional load balancer will balance traffic to only one region, and evenly
-     to all data centers within that region.
+     .. A regional load balancer will balance traffic to only one region, and evenly
+        to all data centers within that region.
+     リージョンのロードバランサは、1つのリージョンでのトラフィックのバランスを取り、
+     そのリージョンの内のすべてのデータセンターで均等にします。
 
   * **Data Center** 
 
-    A data center setting will balance to specific data centers. This type of
-    load balancing only makes sense for virtual load balancing offerings such as an ELB where
-    data centers (zones) can be specified prior to launch. This setting is non-sensical for
-    VM-based load balancing where no such option exists.
+    .. A data center setting will balance to specific data centers. This type of
+       load balancing only makes sense for virtual load balancing offerings such as an ELB where
+       data centers (zones) can be specified prior to launch. This setting is non-sensical for
+       VM-based load balancing where no such option exists.
+    データセンターの設定は、特定のデータセンターでバランスをとります。このタイプの
+    ロードバランシングは、起動する前にデータセンター（ゾーン）を指定することができる、ELBのような
+    仮想ロードバランシングオファリングでのみ意味をもちます。この設定は、
+    そのようなオプションが存在しないVMベースのロードバランシングでは無意味です。。
 
-There are three types load balancer that can be provisioned within enStratus:
+.. There are three types load balancer that can be provisioned within enStratus:
+enStratus内では3つのタイプのプロビジョニング可能なロード·バランサがあります。
 
 #. **Cloud**
 
-   A cloud load balancer is a virtual load balancer such as an Amazon EC2 Elastic
-   Load Balancer. If the cloud provider has no such concept, there will be no option
-   presented.
+   .. A cloud load balancer is a virtual load balancer such as an Amazon EC2 Elastic
+      Load Balancer. If the cloud provider has no such concept, there will be no option
+      presented.
+   クラウドのロード バランサは、Amazon EC2の Elastic Load Balancerのような仮想ロードバランサです。
+   クラウド　プロバイダーがそのような概念を持たない場合は、オプションがありません。
 
-   In order for this option to be presented, a cloud load balancer must have already been
-   provisioned.
+   .. In order for this option to be presented, a cloud load balancer must have already been
+      provisioned.
+   オプションが提示されるには、クラウド　ロード　バランサがすでにプロビジョニング
+   されている必要があります。
 
 #. **VM Dynamic** 
 
-   A VM Dynamic load balancer means that at the time of deployment start,
-   enStratus will provision a virtual server from the specified template with the appropriate
-   resources, and launch it into the specified fireall. If a VM Dynamic load balancer is
-   provisioned, it will benefit from auto-recovery.
-
+   .. A VM Dynamic load balancer means that at the time of deployment start,
+      enStratus will provision a virtual server from the specified template with the appropriate
+      resources, and launch it into the specified fireall. If a VM Dynamic load balancer is
+      provisioned, it will benefit from auto-recovery.
+   VMの動的ロード　バランサは、その配備時にスタートすることを意味します。
+   enStratusは、仮想サーバを適切なリソースを使用した、指定されたテンプレートからのプロビジョニングをし、
+   指定されたファイアウォールにそれを起動します。VMの動的ロード　バランサがプロビジョニングされたならば、
+   自動回復の恩恵も受けます。
+   
 #. **VM Static** 
    
-   A VM Static load balancer will "convert" an existing virtual machine
-   into a load balancer by calling the /enstratus/bin/startProxy script on the VM specified
-   at the appropriate time.
+   .. A VM Static load balancer will "convert" an existing virtual machine
+      into a load balancer by calling the /enstratus/bin/startProxy script on the VM specified
+      at the appropriate time.
+   VMの静的ロード·バランサは、VM上の /enstratus/bin/startProxy スクリプトを適切な時期に呼び出すことにより、
+   既存の仮想マシンをロードバランサに"変換"します。
 
-   Currently, VM Static load balancer do not benefit from auto-recovery. If auto-recovery is
-   desired, use a VM Dynamic load balancer instead.
+   .. Currently, VM Static load balancer do not benefit from auto-recovery. If auto-recovery is
+      desired, use a VM Dynamic load balancer instead.
+   現在、VMの静的ロード バランサには、自動回復の恩恵はありません。自動回復が望まれる場合、
+   代わりにVMの動的ロードバランサを使用します。
 
-Machine Images/Templates
+.. Machine Images/Templates
+マシンイメージ/テンプレート
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. note:: Creating "golden" or "master" images is common practice. Best practice is to
-  utilize tools that are specially suited the task of configuration management. enStratus
-  can leverage the power of both Chef and/or Puppet. enStratus also offers its own
-  configuration management engine that is a good introduction to the concept.
+.. note:: .. Creating "golden" or "master" images is common practice. Best practice is to
+        utilize tools that are specially suited the task of configuration management. enStratus
+        can leverage the power of both Chef and/or Puppet. enStratus also offers its own
+        configuration management engine that is a good introduction to the concept.
+     "ゴールデン"または"マスター"イメージを作成するのが一般的です。ベストプラクティスは、
+     特別な構成管理のタスクに適しているツールを利用することです。 enStratus
+     は Chef そして/または Puppetの両方の力を活用するができます。 enStratusも
+     このコンセプトの良い入門書となる独自の構成管理エンジンを提供しています。
+  
+.. A machine image is a template from which servers are started. This document assumes a high
+   degree of familiarity with the process of image creation and maintenance. Methods for
+   maintaining machines with respect to versioning will be addressed. In an automated
+   environment, the enStratus agent *must* be installed on a template prior to configuring a
+   deployment.
+マシンのイメージは、サーバーが開始されるテンプレートです。このドキュメントでは、高度に
+イメージファイルの作成と保守のプロセスを熟知のしていることを想定しています。マシン保守の
+バージョン管理に関しての方法が関心対象です。自動化環境では、配備を構成する前にenStratusエージェント
+が、テンプレートにインストールされている *必要* があります。
 
-A machine image is a template from which servers are started. This document assumes a high
-degree of familiarity with the process of image creation and maintenance. Methods for
-maintaining machines with respect to versioning will be addressed. In an automated
-environment, the enStratus agent *must* be installed on a template prior to configuring a
-deployment.
-
-Versioning
+.. Versioning
+バージョン管理
 %%%%%%%%%%
 
-If you are operating in a deployment, enStratus can help you manage the version of machine
-image you are using in your launch configurations. This concept is addressed as part of
-the auto-rollout feature of enStratus.
+.. If you are operating in a deployment, enStratus can help you manage the version of machine
+   image you are using in your launch configurations. This concept is addressed as part of
+   the auto-rollout feature of enStratus.
+配備で操作をしている場合、enStratusは、起動構成で使用してるマシンイメージのバージョン管理を援助
+することができます。コンセプトはenStratusの自動展開機能の一部にあります。
 
-In short, you should patch servers running in your deployment as you see fit, and ensure
-you maintain an equally patched version of the AMI defined in your launch configuration so
-that when/if a scale or recovery event occurs, you utilize the correct machine image
-version for the newly created servers.
+.. In short, you should patch servers running in your deployment as you see fit, and ensure
+   you maintain an equally patched version of the AMI defined in your launch configuration so
+   that when/if a scale or recovery event occurs, you utilize the correct machine image
+   version for the newly created servers.
+要するに、配備において動作しているサーバーにパッチを当てます。そのパッチは、起動構成において
+同様にパッチを当てられたAMI定義に適合して維持できることを確認する必要があります。
+スケールまたは回復イベントが発生した場合に、新しく作成されたサーバのバージョンに
+正しいマシンイメージを使用できる必要がありますから。
 
-Dependencies
+.. Dependencies
+依存関係
 %%%%%%%%%%%%
-enStratus has very few true dependencies. It depends on Java, so ensure you have the
-latest JDK installed to support the Agent. Additionally, when you are operating in an
-automated deployment environment, we recommend installing the following software:
+.. enStratus has very few true dependencies. It depends on Java, so ensure you have the
+   latest JDK installed to support the Agent. Additionally, when you are operating in an
+   automated deployment environment, we recommend installing the following software:
+enStratusには本当の依存関係は非常に少ないです。Javaに依存しますので、エージェントのサポートに必要な、
+最新のJDKがインストールされていることを確認してください。自動化された配備環境で操作している時には
+以下のソフトウェアをインストールすることをお勧めします。:
 
+..
+    +-------------------+----------------------------------+--------------+
+    | Package           | Purpose                          | Note         |
+    +===================+==================================+==============+
+    | zip               | Backups                          | Recommended  |
+    +-------------------+----------------------------------+--------------+
+    | openssl           | Adding Users                     | **Required** |
+    +-------------------+----------------------------------+--------------+
+    | unzip             | Service install, backups         | Recommended  |
+    +-------------------+----------------------------------+--------------+
+    | build-essential   | OSSEC installation and more      | Optional     |
+    +-------------------+----------------------------------+--------------+
+    | xfsprogs          | XFS filesystem functionality     | Optional     |
+    +-------------------+----------------------------------+--------------+
+    | libapache2-mod-jk | mod_jk load balancing            | Optional     |
+    | postfix           | Sending mail notifications       | Optional     |
+    +-------------------+----------------------------------+--------------+
+    | cryptsetup        | Encryption (LUKS)                | Recommended  |
+    +-------------------+----------------------------------+--------------+
+    | haproxy           | Load Balancing                   | Optional     |
+    +-------------------+----------------------------------+--------------+
+    | cronolog          | Logging                          | Optional     |
+    +-------------------+----------------------------------+--------------+
+    | sysstat           | OS metrics                       | **Required** |
+    +-------------------+----------------------------------+--------------+
+    | secure-delete     | Securely delete files            | Recommended  |
+    +-------------------+----------------------------------+--------------+
+    | mysql-server      | Running MySQL Databases          | Optional     |
+    +-------------------+----------------------------------+--------------+
+    
 .. tabularcolumns:: |l|l|l|
 +-------------------+----------------------------------+--------------+
-| Package           | Purpose                          | Note         |
+| パッケージ        | 目的                             | 注意事項     |
 +===================+==================================+==============+
 | zip               | Backups                          | Recommended  |
 +-------------------+----------------------------------+--------------+
@@ -328,16 +474,22 @@ automated deployment environment, we recommend installing the following software
 +-------------------+----------------------------------+--------------+
 | mysql-server      | Running MySQL Databases          | Optional     |
 +-------------------+----------------------------------+--------------+
- 
-Services
-~~~~~~~~
-Services are software objects in the form of files, typically tarred, zipped, or gzipped.
-Services must be uploaded to cloud storage before configuring the deployment.
 
-A service "image" is a zip file that can be uploaded to enStratus and then selected for
-use in an automated deployment environment. Services are installed on tiers, and have
-several configuration options, one of which can accomplish the logical connections between
-services known as dependencies.
+.. Services
+サービス
+~~~~~~~~
+.. Services are software objects in the form of files, typically tarred, zipped, or gzipped.
+   Services must be uploaded to cloud storage before configuring the deployment.
+サービスは、通常、tarで圧縮、またはgzipされた、ファイルの形式でソフトウェアオブジェクトです。
+配備を設定する前に、サービスをクラウド　ストレージにアップロードする必要があります。
+
+.. A service "image" is a zip file that can be uploaded to enStratus and then selected for
+   use in an automated deployment environment. Services are installed on tiers, and have
+   several configuration options, one of which can accomplish the logical connections between
+   services known as dependencies.
+サービス "イメージ" はzipファイルで、enStratusにアップロードしてから、自動化配備環境を選択されて
+使用されます。サービスは、層にインストールされており、いくつかの構成オプションを持ち、そのうちの一つは
+依存関係として知られているサービス間の論理的な接続を達成することができます。
 
 .. figure:: ./images/addServiceImage.png
    :height: 300px
@@ -348,19 +500,28 @@ services known as dependencies.
 
    Add Service Image
 
-To upload a service image, navigate to Automation > Service Images and select a service
-image from your local file system. Once the service image is finished uploading, it will
-be available as an option for use in a tier.
+.. To upload a service image, navigate to Automation > Service Images and select a service
+   image from your local file system. Once the service image is finished uploading, it will
+   be available as an option for use in a tier.
+サービスイメージをアップロードするには、 Automation > Service Images に移動して、ローカル　ファイル　システム
+からサービスイメージを選択します。サービスイメージのアップロードが終了したら、層で
+使用するためのオプションとして利用可能になります。
 
-Data Sources
+.. Data Sources
+データ·ソース
 ~~~~~~~~~~~~
-To upload a data source into enStratus, navigate to Automation > Data Source Images and
-select add data source.
+.. To upload a data source into enStratus, navigate to Automation > Data Source Images and
+   select add data source.
+enStratusにデータソースをアップロードするには、 Automation > Data Source に移動し、
+データソースの追加を選択します。
 
-A data source can be a database backup file. For example, for a MySQL database, the data
-source may be represented by a file with a .sql extension. This file is downloaded from
-cloud storage during the start and configuration of a service that has associated a data
-source.
+.. A data source can be a database backup file. For example, for a MySQL database, the data
+   source may be represented by a file with a .sql extension. This file is downloaded from
+   cloud storage during the start and configuration of a service that has associated a data
+   source.
+データソースはデータベースのバックアップファイルにすることができます。たとえば、MySQLデータベースのデータ
+ソースは .sql の拡張子を持つファイルによって表現されます。このファイルは、データソースが関連付けられている
+サービスの開始および構成時にクラウドストレージからダウンロードされます。
 
 .. figure:: ./images/addDataSource.png
    :height: 300px
@@ -372,33 +533,58 @@ source.
    Add Data Source
 
 Using
+使用要領
 %%%%%
 
 Data sources are used when configuring a service. More is said about this in the
 section on Tiers, which hold services. A data source is a database backup file, typically
 in the form of a "dump" file of the form database1.sql. Data sources, like
 services, should be uploaded into cloud storage before configuring the deployment.
+サービスを設定するときにデータソースが使用されています。以上がこの程度と言われてい
+サービスを保持層、上のセクションを参照してください。データソースは、通常、データベースのバックアップファイルです。
+フォームdatabase1.sqlの"ダンプ"ファイルの形態であってもよい。データ·ソースのような
+サービスは、展開を構成する前に、クラウド·ストレージにアップロードする必要があります。
 
-Volumes
+.. Volumes
+ボリューム
 ~~~~~~~
-Volumes will be provisioned automatically by enStratus during deployment start according
-to the parameters set as part of the launch configuration. enStratus uses volumes if they
-exist with the cloud provider to execute scaling and recovery events.
+.. Volumes will be provisioned automatically by enStratus during deployment start according
+   to the parameters set as part of the launch configuration. enStratus uses volumes if they
+   exist with the cloud provider to execute scaling and recovery events.
+ボリュームは配備の開始時に起動構成の一部として設定されているパラメータに従って
+enStratusによって自動的にプロビジョニングされます。 enStratusは、それがクラウド　プロバイダに存在して、
+スケーリングおよびリカバリイベントを実行するとき、ボリュームを使用します。
 
-Volumes are mounted on servers running in a tier at /mnt/services for Linux servers and at
-H:/services for windows servers. Services are automatically assigned a serviceID which
-becomes a directory within /mnt/services or H:/services of the form a1234. The path to the
-service will be of the form /mnt/services/a1234, where a1234 is an automatically generated
-identifier.
+.. Volumes are mounted on servers running in a tier at /mnt/services for Linux servers and at
+   H:/services for windows servers. Services are automatically assigned a serviceID which
+   becomes a directory within /mnt/services or H:/services of the form a1234. The path to the
+   service will be of the form /mnt/services/a1234, where a1234 is an automatically generated
+   identifier.
 
-Launch Configuration
+ボリュームは、Linuxサーバーでは /mnt/services 上、そしてindowsサーバーでは H:/services 上にある
+層で実行中のサーバーにマウントされています。サービスは自動的に serviceID が割り当てられ、
+それは /mnt/services もしくは H:/services の a1234 形式のディレクトリになります。サービスへのパスは
+フォーム /mnt/services/a1234 で、ここで a1234 は、自動的に生成された識別子になります。
+
+.. Launch Configuration
+起動構成
 ~~~~~~~~~~~~~~~~~~~~
 
-A launch configuration is a definition that governs the resources provisioned to support a
-virtual machine. At one level, this is roughly analogous to the size definitions provided
-for by some clouds, such as in Amazon AWS small, medium, large, etc.  For enStratus a
-launch configuration includes this definition, but goes beyond to include attaching,
-raiding, and encrypting volumes as well as the firewall into which the server is started.
+.. A launch configuration is a definition that governs the resources provisioned to support a
+   virtual machine. At one level, this is roughly analogous to the size definitions provided
+   for by some clouds, such as in Amazon AWS small, medium, large, etc.  For enStratus a
+   launch configuration includes this definition, but goes beyond to include attaching,
+   raiding, and encrypting volumes as well as the firewall into which the server is started.
+
+起動構成は仮想マシンをサポートするためにプロビジョニングされたリソースを管理する定義です。
+1つのレベルでは、おおまかに言って、アマゾン AWS の small, medium, large, その他のような
+クラウドによるサイズの定義とほぼ類似しています。
+enStratusにとって、起動構成には、この定義が含まれていますが、それを超えてサーがーがその中でスタートする
+ファイアウォールは勿論、ボリュームへの接続、レイディング、ボリュームの暗号化を含みます。
+
+..
+   Launch Configuration
+
 
 .. figure:: ./images/launchConfigurationHighlighted.png
    :height: 600px
@@ -407,10 +593,13 @@ raiding, and encrypting volumes as well as the firewall into which the server is
    :alt: Launch Configuration
    :align: center
 
-   Launch Configuration
+   起動構成
 
 Manage Launch Configuration, General Information
+起動構成の管理、一般情報
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   .. Launch Configuration (General Information)
 
 .. figure:: ./images/launchConfigurationGeneralInformation.png
    :height: 450px
@@ -419,39 +608,64 @@ Manage Launch Configuration, General Information
    :alt: Launch Configuration (General)
    :align: center
 
-   Launch Configuration (General Information)
+   起動構成 (一般情報)
 
-#. **Server Name Template**
+#. .. **Server Name Template**
+   **サーバー名テンプレート**
 
-   The server name template controls the name that is applied to servers that are started
-   according to the launch configuration. There are two approaches to naming servers as part
-   of the launch configuration.
+   .. The server name template controls the name that is applied to servers that are started
+      according to the launch configuration. There are two approaches to naming servers as part
+      of the launch configuration.
+   サーバー名テンプレートは起動構成に従って開始されているサーバーに適用される名前をコントロールします。
+   起動構成の一部として、サーバー名の命名には、2つのアプローチがあります。
    
-   The first approach is to just hard code a value for this field. The implications of this
-   are if the tier scales to include many servers, they will all be named the same thing,
-   which is allowed, and not always desirable.
+   .. The first approach is to just hard code a value for this field. The implications of this
+      are if the tier scales to include many servers, they will all be named the same thing,
+      which is allowed, and not always desirable.
+   最初のアプローチは、このフィールドに単にハードコードに値をつけることです。その意味は
+   層が多くのサーバーを含んでスケールすることがあれば、それらはすべて許可された同じ名前が付けられますが、
+   、それはいつも望ましいわけではありません
    
-   The second approach is to use parameters as shown in the figure above. The available
-   parameters are:
+   .. The second approach is to use parameters as shown in the figure above. The available
+      parameters are:
+   上記の図に示すように、2番目のアプローチは、パラメータを使用することです。利用できる
+   パラメータは次のとおりです。
+
+   .. * {tier} name of the tier this server is running in.
+      * {group} currently resolves to tier name, for backwards compatibility.
+      * {count} count of this server (sequential numbering from 1 for a tier.)
+      * {role} one of: CLUSTER NODE, INDEPENDENT NODE, MASTER, REPLICANT, STANDALONE (converted
+        to lowercase string)
+      * {type} one of: LOAD, SERVICE, CLUSTERED DATABASE, REPLICATED DATABASE, UNKNOWN
+        (converted to lowercase string)
+      * {zone} the provider zone ID where the server is running.
+      * {dc} resolves the same as zone above.
+      * {region} the provider region ID where the server is running.
+      * {ip} reserved address (public IP) of the server.
+      * {year} launch year of the server.
+      * {day} launch day of the server.
+      * {hour} launch hour of the server.
+      * {minute} launch minute of the server.
    
-   * {tier} name of the tier this server is running in.
-   * {group} currently resolves to tier name, for backwards compatibility.
-   * {count} count of this server (sequential numbering from 1 for a tier.)
-   * {role} one of: CLUSTER NODE, INDEPENDENT NODE, MASTER, REPLICANT, STANDALONE (converted
-     to lowercase string)
-   * {type} one of: LOAD, SERVICE, CLUSTERED DATABASE, REPLICATED DATABASE, UNKNOWN
-     (converted to lowercase string)
-   * {zone} the provider zone ID where the server is running.
-   * {dc} resolves the same as zone above.
-   * {region} the provider region ID where the server is running.
-   * {ip} reserved address (public IP) of the server.
-   * {year} launch year of the server.
-   * {day} launch day of the server.
-   * {hour} launch hour of the server.
-   * {minute} launch minute of the server.
-   
-   This approach has the advantage of uniquely naming servers as they join/leave a tier in an
-   intelligent manner.
+   * {tier} このサーバーが実行されている層の名前
+   * {group} 後方互換性のために、現在のところ層名で解決されます。
+   * {count} このサーバーのカウント（層の1からの連続番号）。
+   * {role} クラスタノード、独立したノード、MASTER、レプリカント、STANDALONEのうちのどれか一つ：
+     （文字列を小文字に変換する）
+   * {type} 負荷、サービス、クラスタデータベース、複製データベース、UNKNOWNのいずれか：
+     （文字列を小文字に変換）
+   * {zone} サーバが動作しているプロバイダのゾーンID。
+   * {dc} 上記のゾーンと同じように解決します。
+   * {region} サーバが動作しているプロバイダのリージョンID。
+   * {ip} サーバの予約済みアドレス（パブリックIP）。
+   * {year} サーバの起動時刻の年。
+   * {day} サーバの起動時刻の日。
+   * {hour} サーバの起動時刻の時間。
+   * {minute} サーバの起動時刻の分。
+    
+   .. This approach has the advantage of uniquely naming servers as they join/leave a tier in an
+      intelligent manner.
+   このアプローチはサーバーに一意の名前を付けるという、サーバーがインテリジェントな方法で[層に参加する/層から去る]利点があります。
 
 #. **Recovery Point**
 

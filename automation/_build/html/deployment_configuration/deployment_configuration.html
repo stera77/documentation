@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>4. Deployment Configuration &mdash; The enStratus Documentation Project</title>
+    <title>4. 配備構成 &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
     <link rel="next" title="5. Deployment Operation" href="../deployment_operation/deployment_operation.html" />
-    <link rel="prev" title="3. Services" href="../services/services.html" />
+    <link rel="prev" title="3. サービス" href="../services/services.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -35,13 +35,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>4. Deployment Configuration</h1></div>
+	<div id="title"><h1>4. 配備構成</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
 			<div class="headerButton"><a href="../deployment_operation/deployment_operation.html" title="5. Deployment Operation" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="../services/services.html" title="3. Services" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="../services/services.html" title="3. サービス" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -56,16 +56,16 @@
 	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">1. はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">2. 概要</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../services/services.html">3. Services</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">4. Deployment Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#user-interface">4.1. User Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#deployment-management">4.2. Deployment Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#load-balancers">4.3. Load Balancers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#machine-images-templates">4.4. Machine Images/Templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#services">4.5. Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-sources">4.6. Data Sources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#volumes">4.7. Volumes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#launch-configuration">4.8. Launch Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/services.html">3. サービス</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">4. 配備構成</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id4">4.1. ユーザー　インタフェース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">4.2. 配備管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">4.3. ロード·バランサ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">4.4. マシンイメージ/テンプレート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">4.5. サービス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">4.6. データ·ソース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">4.7. ボリューム</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">4.8. 起動構成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tier">4.9. Tier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ssl">4.10. SSL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#backups">4.11. Backups</a></li>
@@ -110,36 +110,34 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="deployment-configuration">
-<h1>4. Deployment Configuration<a class="headerlink" href="#deployment-configuration" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>4. 配備構成<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Some of the screenshots may look different than the ones shown here. The
-difference in all cases should be cosmetic and not affect operations.</p>
+<p class="last">スクリーンショットの一部はここに示すものと異なる場合があります。
+すべてのケースの違いは、修飾的なもので操作に影響を及ぼしません。</p>
 </div>
-<p>The purpose of this section is to walk through the deployment configuration options in
-enStratus.</p>
-<p>In the <a class="reference external" href="../introduction/overview.html">Overview</a> section, we covered the concepts
-involved with creating an enStratus deployment.</p>
+<p>このセクションの目的は、enStratusの配備構成オプションの中を歩きまわることです。</p>
+<p><a href="#id2"><span class="problematic" id="id3">`</span></a>Overview &lt;../introduction/overview.html&gt;`セクションでは、我々は、enStratus配備の作成に関与した
+概念を説明しました。
+。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Before approaching deployment configuration, you should have in hand the
-following components:</p>
+<p>配備構成にアプローチする前に、次のコンポーネンを手に入れる必要があります。：</p>
 <ol class="last arabic simple">
-<li>Working machine images/templates with the enStratus agent installed and tested.</li>
-<li>Service images for each application/database to be installed.</li>
+<li>作業するマシンイメージ/テンプレートが有って、enStratusエージェントがインストールされてテストされていること。</li>
+<li>インストールすべき各アプリケーション/データベースのサービスイメージ。</li>
 </ol>
 </div>
-<p>enStratus knows about is the environment in which your application/database runs and it
-will inform your services about that environment.</p>
-<p>enStratus gives you all the tools to deploy and manage a fully automated environment.</p>
-<div class="section" id="user-interface">
-<h2>4.1. User Interface<a class="headerlink" href="#user-interface" title="Permalink to this headline">¶</a></h2>
-<p>The enStratus automation interface is designed to be intuitive and easy to operate. There
-are several sections of the enStratus console that are relevant to interacting with and
-configuring automation.</p>
-<p>The deployment designer interface allows the user to build an application architecture
-using the enStratus web console.</p>
+<p>enStratusはアプリケーション/データベースが実行される環境について知っていて、
+その環境についての情報をサービスに通知します。</p>
+<p>enStratusは完全に自動化された環境を配備、管理するすべてのツールを提供します。</p>
+<div class="section" id="id4">
+<h2>4.1. ユーザー　インタフェース<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>enStratus自動化インターフェイスは、直感的で操作しやすいように設計されています。enStratusコンソールには
+対話作業と構成の自動化に関連するいくつかのセクションがあります。</p>
+<p>配備デザイナのインターフェイスでは、enStratusのWebコンソールを使用してユーザーがアプリケーションの
+アーキテクチャを構築します。</p>
 <div class="section" id="diagram">
 <h3>4.1.1. Diagram<a class="headerlink" href="#diagram" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
@@ -149,211 +147,198 @@ using the enStratus web console.</p>
 </div>
 <div class="section" id="table">
 <h3>4.1.2. Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
-<p>This deployment has two tiers tier and two launch configurations in one region. The
-graphical representation of the deployment can also be toggled to a table view.</p>
+<p>この配備では、1つのリージョンで2階層の層と2つの起動構成を持っています。
+配備のグラフィカルな表現は、テーブルビューに切り替えることができます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deploymentTable.png"><img alt="Deployment Designer (Table View)" src="../_images/deploymentTable.png" style="width: 450.0px; height: 225.0px;" /></a>
 <p class="caption">Deployment Designer (Table View)</p>
 </div>
 </div>
-<div class="section" id="deployment-dashboard">
-<h3>4.1.3. Deployment Dashboard<a class="headerlink" href="#deployment-dashboard" title="Permalink to this headline">¶</a></h3>
-<p>The deployment dashboard is meant to display relevant statistics and other information to
-deployment administrators.</p>
+<div class="section" id="id5">
+<h3>4.1.3. 配備ダッシュボード<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>配備ダッシュボードは、関連する統計情報やその他の情報を配備管理者に表示します。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deploymentDashboard.png"><img alt="Deployment Dashboard" src="../_images/deploymentDashboard.png" style="width: 650.0px; height: 350.0px;" /></a>
 <p class="caption">Deployment Dashboard</p>
 </div>
 </div>
 </div>
-<div class="section" id="deployment-management">
-<h2>4.2. Deployment Management<a class="headerlink" href="#deployment-management" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>4.2. 配備管理<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deploymentManagement.png"><img alt="Deployment Management" src="../_images/deploymentManagement.png" style="width: 780.0px; height: 300.0px;" /></a>
 <p class="caption">Deployment Management</p>
 </div>
-<p>Deployment management and configuration starts  with the options shown in the figure
-above.</p>
+<p>配備の管理と構成が開始すると上記の図で示すオプションが表示されます。</p>
 <ol class="arabic">
 <li><p class="first"><strong>Name</strong></p>
-<p>The name of the deployment is simply the logical name that will be presented in the
-enStratus console.</p>
+<p>配備の名前は、enStratusコンソールに単に提示される論理名です。</p>
 </li>
 <li><p class="first"><strong>Label</strong></p>
-<p>An optional color code may be applied to the deployment.</p>
+<p>任意のカラーコードを配備に適用可能。</p>
 </li>
 <li><p class="first"><strong>Deployment Type</strong></p>
-<p>The deployment type has two options:</p>
+<p>配備タイプには、2つのオプションがあります。</p>
 <ul>
-<li><p class="first">Dedicated.</p>
-<p>A dedicated deployment will track all deployments costs against the same
-billing code.</p>
+<li><p>専用</p>
+<p>専用の配備は、同じ課金コードに対してすべての配備コストを追跡します。</p>
 </li>
-<li><p class="first">Shared.</p>
-<p>A shared deployment will track deployment costs against multiple billing codes.
-If a shared deployment is chosen, billing code usage will be tracked at the service level.</p>
+<li><p>共用</p>
+<p>共有の配備は、複数の課金コードに対して、配備コストを追跡します。
+共有配備を選択した場合、課金コードの使用は、サービスレベルで追跡されます。</p>
 </li>
 </ul>
 </li>
 <li><p class="first"><strong>Disaster Recovery Storage</strong></p>
-<p>Disaster recovery storage specifies a cloud storage option for backup files. It is
-possible to run all or parts of a deployment in one cloud while performing backups via
-/enstratus/bin/backupService to another cloud altogether for disaster recovery purposes.</p>
+<p>ディザスタ　リカバリ　ストレージは、バックアップファイルにクラウド　ストレージ　オプションを指定します。
+災害復旧目的で、/enstratus/bin/backupService を経由して1つのクラウド内のすべてまたは配備の一部を
+他のクラウドに一括してバックアップ実行することが可能です。</p>
 </li>
 <li><p class="first"><strong>Billing Code</strong></p>
-<p>The billing code is the code against which all deployment charges will be made.</p>
+<p>課金コードは、すべての配備料が行われる対象となるコードです。</p>
 </li>
 <li><p class="first"><strong>Owner</strong></p>
-<p>The owner specifies an optional owner for the deployment so that role based access
-controls may apply to the deployment.</p>
+<p>所有者は、ロールベースのアクセスコントロールが、配備に適用される場合があるので、
+その配備のためのオプションの所有者を指定します。</p>
 </li>
 <li><p class="first"><strong>Description</strong></p>
-<p>The description is a free form text field for describing the deployment.</p>
+<p>説明(&#8220;description&#8221;)は、配備を記述するための自由形式のテキストフィールドです。</p>
 </li>
 </ol>
-<div class="section" id="backup-maintenance">
-<h3>4.2.1. Backup/Maintenance<a class="headerlink" href="#backup-maintenance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>4.2.1. バックアップ/メンテナンス<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/backupMaintenance.png"><img alt="Backup and Maintenance" src="../_images/backupMaintenance.png" style="width: 750.0px; height: 300.0px;" /></a>
 <p class="caption">Backup and Maintenance</p>
 </div>
-<p>The backup options designate the times when enStratus will peform backups such as
-snapshots of attached volumes or service level backups via the agent script
-/enstratus/bin/backupService.</p>
+<p>バックアップオプションでは、enStratusが何時バックアップを実行するかを設定します。
+(接続されたボリュームのスナップショットまたは/enstratus/bin/backupServiceのエージェントスクリプトを介したサービスレベルのバックアップのような)</p>
 </div>
-<div class="section" id="manage-servers-services">
-<h3>4.2.2. Manage Servers/Services<a class="headerlink" href="#manage-servers-services" title="Permalink to this headline">¶</a></h3>
-<p>These tabs display an aggregated view of all servers running in the deployment and all of
-the services installed on the deployment.</p>
+<div class="section" id="id8">
+<h3>4.2.2. サーバ/サービスの管理<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>これらのタブは配備で実行されている全てのサーバーの集約されたビューと配備にインストールされている全てのサービスを表示します。</p>
 </div>
 </div>
-<div class="section" id="load-balancers">
-<h2>4.3. Load Balancers<a class="headerlink" href="#load-balancers" title="Permalink to this headline">¶</a></h2>
-<p>A load balancer balances traffic typically to multiple application servers. enStratus
-supports multiple types of load balancers through different mechanisms.</p>
+<div class="section" id="id9">
+<h2>4.3. ロード·バランサ<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>ロードバランサは通常、複数のアプリケーション·サーバーにトラフィックを分散させます。 enStratusは
+異なるメカニズムを介して複数のタイプのロードバランサをサポートしています。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/loadBalancer.png"><img alt="Load Balancer" src="../_images/loadBalancer.png" style="width: 200.0px; height: 200.0px;" /></a>
 <p class="caption">Load Balancer</p>
 </div>
-<div class="section" id="physical">
-<h3>4.3.1. Physical<a class="headerlink" href="#physical" title="Permalink to this headline">¶</a></h3>
-<p>A virtual machine based load balancer can use HA-Proxy, mod-jk, or zeus as a load
-balancer. When a service is connected to a virtual machine based load balancer, The agent
-script /enstratus/bin/startProxy is used to signal the load balancer that a new
-application server has joined the pool. The agent script /enstratus/bin/stopProxy is used
-to signal the load balancer that an application server has left the pool.</p>
+<div class="section" id="id10">
+<h3>4.3.1. 物理的な<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>仮想マシンベースのロードバランサはロードバランサとして HA-Proxy、 mod-jk、 zeus を使用することができます。
+サービスが、仮想マシンベースのロードバランサに接続されている場合、エージェントスクリプト /enstratus/bin/startProxy が使用され、
+新しいアプリケーションサーバーがプールに参加したことをロードバランサに通知します。エージェントスクリプト /enstratus/bin/stopProxy が使用され、
+アプリケーションサーバーがプールから去ったことを、ロード·バランサに通知します。</p>
 </div>
-<div class="section" id="virtual-example-elb">
-<h3>4.3.2. Virtual (Example: ELB)<a class="headerlink" href="#virtual-example-elb" title="Permalink to this headline">¶</a></h3>
-<p>Some cloud providers support service-based load balancing in the from of a virtual load
-balancer. In AWS, this is called an Elastic Load Balancer (ELB). In cloudstack (cloud.com)
-clouds, sometimes this is called a Router Virtual Machine (RVM). If your cloud provider
-has this concept with API support, enStratus can support it.</p>
-<p>If a service is tied to a virtual load balancer, the server upon which that service runs
-will be added to and dropped from the load balancer via api calls. Furthermore, if the
-load balancer is set to balance traffic to a specific zone or zones, enStratus will ensure
-that your application servers only start in those zones.</p>
-<p>Load balancing is connected to the deployment at the <em>service</em> level with enStratus. An
-important point which will be illustrated shortly.</p>
+<div class="section" id="elb">
+<h3>4.3.2. 仮想（例：ELB）<a class="headerlink" href="#elb" title="Permalink to this headline">¶</a></h3>
+<p>いくつかのクラウド　プロバイダーは仮想ロードバランサの形でサービス　ベースのロードバランシング
+をサポートします。 AWSでは、これは弾性ロードバランサ（ELB）と呼ばれています。 cloudstackで（cloud.com）
+クラウドでは、時にはこれをルータ仮想マシン（RVM）と呼びます。もしクラウド　プロバイダーが
+この概念をAPIとしてサポートしているならば、enStratusはそれをサポートすることができます。</p>
+<p>サービスが仮想ロードバランサに接続されていて、そのサービスが実行されている時にサーバーが
+ロードバランサに追加されたりそこから削除される際にAPIの呼び出しを介して行われます。さらに、もし
+ロードバランサは、特定のゾーンまたはゾーンへのトラフィックのバランスを取るために設定されているならば、
+enStratusはアプリケーション·サーバーがこれらのゾーンでのみ開始されることを保証します。</p>
+<p>ロードバランシングは、enStratusで <em>service</em> レベルでの配備に接続されています。
+重要なポイントを手短に説明します。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">It is possible to associate multiple load balancers with a deployment. This
-feature is useful when working in a cross-cloud or in a massively scaled, geographically
-disperse environment.</p>
+<p class="last">配備で複数のロードバランサを関連付けることができます。この機能は
+クラウドをまたがるときや大規模なスケール、地理的に分散して作業するときに便利です。</p>
 </div>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/addLoadBalancer.png"><img alt="Adding a Load Balancer" src="../_images/addLoadBalancer.png" style="width: 550.0px; height: 300.0px;" /></a>
 <p class="caption">Adding a Load Balancer</p>
 </div>
-<p>Load balancer configuration options are:</p>
+<p>ロードバランサのコンフィグレーションオプションは次のとおりです。</p>
 <ol class="arabic">
 <li><p class="first"><strong>Account</strong></p>
-<p>The account specifies the account to which the load balancer is provisioned. If the
-administrator is a member of multiple accounts, there may be multiple options here.
-One possibility here is to have a load balancer span across several clouds. For example, a
-load balancer may be provisioned into a cloud.com cloud with application servers in both
-EC2 and in cloud.com</p>
+<p>アカウントには、ロードバランサがプロビジョニングされているアカウントを指定します。もし
+管理者が複数のアカウントのメンバーであれば、ここで複数のオプションがあるかもしれません。
+ロード·バランサが複数のクラウドにまたがっている可能性があります。たとえば、ロードバランサを、
+EC2とcloud.comの両方で cloud.com cloud アプリケーションサーバーにプロビジョニングすることができます。</p>
 </li>
 <li><p class="first"><strong>Region</strong></p>
-<p>It is possible to have a load balancer span regions within a cloud. For example, the EC2
-cloud has at the time of this writing 5 regions.</p>
+<p>クラウド内のリージョンにまたがってロード·バランサを持つことが可能です。たとえば、EC2
+クラウドはこれを書いている時点で5つのリージョンを持っています。</p>
 </li>
 <li><p class="first"><strong>Scope</strong></p>
-<p>The scope parameter has three different settings:</p>
+<p>スコープパラメータには、3つの異なる設定があります。</p>
 </li>
 </ol>
 <blockquote>
 <div><ul>
 <li><p class="first"><strong>Global</strong></p>
-<p>A global setting will cause the load balancer to balance across regions, but is
-nonsensical for virtual load balancing offerings such as an ELB.</p>
+<p>グローバル設定は、ロードバランサを、リージョン間でバランスをとります。
+しかしELBなどの仮想ロードバランシングオファリングには無意味です。</p>
 </li>
 <li><p class="first"><strong>Regional</strong></p>
-<p>A regional load balancer will balance traffic to only one region, and evenly
-to all data centers within that region.</p>
+<p>リージョンのロードバランサは、1つのリージョンでのトラフィックのバランスを取り、
+そのリージョンの内のすべてのデータセンターで均等にします。</p>
 </li>
 <li><p class="first"><strong>Data Center</strong></p>
-<p>A data center setting will balance to specific data centers. This type of
-load balancing only makes sense for virtual load balancing offerings such as an ELB where
-data centers (zones) can be specified prior to launch. This setting is non-sensical for
-VM-based load balancing where no such option exists.</p>
+<p>データセンターの設定は、特定のデータセンターでバランスをとります。このタイプの
+ロードバランシングは、起動する前にデータセンター（ゾーン）を指定することができる、ELBのような
+仮想ロードバランシングオファリングでのみ意味をもちます。この設定は、
+そのようなオプションが存在しないVMベースのロードバランシングでは無意味です。。</p>
 </li>
 </ul>
 </div></blockquote>
-<p>There are three types load balancer that can be provisioned within enStratus:</p>
+<p>enStratus内では3つのタイプのプロビジョニング可能なロード·バランサがあります。</p>
 <ol class="arabic">
 <li><p class="first"><strong>Cloud</strong></p>
-<p>A cloud load balancer is a virtual load balancer such as an Amazon EC2 Elastic
-Load Balancer. If the cloud provider has no such concept, there will be no option
-presented.</p>
-<p>In order for this option to be presented, a cloud load balancer must have already been
-provisioned.</p>
+<p>クラウドのロード バランサは、Amazon EC2の Elastic Load Balancerのような仮想ロードバランサです。
+クラウド　プロバイダーがそのような概念を持たない場合は、オプションがありません。</p>
+<p>オプションが提示されるには、クラウド　ロード　バランサがすでにプロビジョニング
+されている必要があります。</p>
 </li>
 <li><p class="first"><strong>VM Dynamic</strong></p>
-<p>A VM Dynamic load balancer means that at the time of deployment start,
-enStratus will provision a virtual server from the specified template with the appropriate
-resources, and launch it into the specified fireall. If a VM Dynamic load balancer is
-provisioned, it will benefit from auto-recovery.</p>
+<p>VMの動的ロード　バランサは、その配備時にスタートすることを意味します。
+enStratusは、仮想サーバを適切なリソースを使用した、指定されたテンプレートからのプロビジョニングをし、
+指定されたファイアウォールにそれを起動します。VMの動的ロード　バランサがプロビジョニングされたならば、
+自動回復の恩恵も受けます。</p>
 </li>
 <li><p class="first"><strong>VM Static</strong></p>
-<p>A VM Static load balancer will &#8220;convert&#8221; an existing virtual machine
-into a load balancer by calling the /enstratus/bin/startProxy script on the VM specified
-at the appropriate time.</p>
-<p>Currently, VM Static load balancer do not benefit from auto-recovery. If auto-recovery is
-desired, use a VM Dynamic load balancer instead.</p>
+<p>VMの静的ロード·バランサは、VM上の /enstratus/bin/startProxy スクリプトを適切な時期に呼び出すことにより、
+既存の仮想マシンをロードバランサに&#8221;変換&#8221;します。</p>
+<p>現在、VMの静的ロード バランサには、自動回復の恩恵はありません。自動回復が望まれる場合、
+代わりにVMの動的ロードバランサを使用します。</p>
 </li>
 </ol>
 </div>
 </div>
-<div class="section" id="machine-images-templates">
-<h2>4.4. Machine Images/Templates<a class="headerlink" href="#machine-images-templates" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h2>4.4. マシンイメージ/テンプレート<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Creating &#8220;golden&#8221; or &#8220;master&#8221; images is common practice. Best practice is to
-utilize tools that are specially suited the task of configuration management. enStratus
-can leverage the power of both Chef and/or Puppet. enStratus also offers its own
-configuration management engine that is a good introduction to the concept.</p>
+<p class="last">&#8220;ゴールデン&#8221;または&#8221;マスター&#8221;イメージを作成するのが一般的です。ベストプラクティスは、
+特別な構成管理のタスクに適しているツールを利用することです。 enStratus
+は Chef そして/または Puppetの両方の力を活用するができます。 enStratusも
+このコンセプトの良い入門書となる独自の構成管理エンジンを提供しています。</p>
 </div>
-<p>A machine image is a template from which servers are started. This document assumes a high
-degree of familiarity with the process of image creation and maintenance. Methods for
-maintaining machines with respect to versioning will be addressed. In an automated
-environment, the enStratus agent <em>must</em> be installed on a template prior to configuring a
-deployment.</p>
-<div class="section" id="versioning">
-<h3>4.4.1. Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h3>
-<p>If you are operating in a deployment, enStratus can help you manage the version of machine
-image you are using in your launch configurations. This concept is addressed as part of
-the auto-rollout feature of enStratus.</p>
-<p>In short, you should patch servers running in your deployment as you see fit, and ensure
-you maintain an equally patched version of the AMI defined in your launch configuration so
-that when/if a scale or recovery event occurs, you utilize the correct machine image
-version for the newly created servers.</p>
+<p>マシンのイメージは、サーバーが開始されるテンプレートです。このドキュメントでは、高度に
+イメージファイルの作成と保守のプロセスを熟知のしていることを想定しています。マシン保守の
+バージョン管理に関しての方法が関心対象です。自動化環境では、配備を構成する前にenStratusエージェント
+が、テンプレートにインストールされている <em>必要</em> があります。</p>
+<div class="section" id="id12">
+<h3>4.4.1. バージョン管理<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>配備で操作をしている場合、enStratusは、起動構成で使用してるマシンイメージのバージョン管理を援助
+することができます。コンセプトはenStratusの自動展開機能の一部にあります。</p>
+<p>要するに、配備において動作しているサーバーにパッチを当てます。そのパッチは、起動構成において
+同様にパッチを当てられたAMI定義に適合して維持できることを確認する必要があります。
+スケールまたは回復イベントが発生した場合に、新しく作成されたサーバのバージョンに
+正しいマシンイメージを使用できる必要がありますから。</p>
 </div>
-<div class="section" id="dependencies">
-<h3>4.4.2. Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
-<p>enStratus has very few true dependencies. It depends on Java, so ensure you have the
-latest JDK installed to support the Agent. Additionally, when you are operating in an
-automated deployment environment, we recommend installing the following software:</p>
+<div class="section" id="id13">
+<h3>4.4.2. 依存関係<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>enStratusには本当の依存関係は非常に少ないです。Javaに依存しますので、エージェントのサポートに必要な、
+最新のJDKがインストールされていることを確認してください。自動化された配備環境で操作している時には
+以下のソフトウェアをインストールすることをお勧めします。:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="28%" />
@@ -361,9 +346,9 @@ automated deployment environment, we recommend installing the following software
 <col width="21%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Package</th>
-<th class="head">Purpose</th>
-<th class="head">Note</th>
+<tr class="row-odd"><th class="head">パッケージ</th>
+<th class="head">目的</th>
+<th class="head">注意事項</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -423,99 +408,101 @@ automated deployment environment, we recommend installing the following software
 </table>
 </div>
 </div>
-<div class="section" id="services">
-<h2>4.5. Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h2>
-<p>Services are software objects in the form of files, typically tarred, zipped, or gzipped.
-Services must be uploaded to cloud storage before configuring the deployment.</p>
-<p>A service &#8220;image&#8221; is a zip file that can be uploaded to enStratus and then selected for
-use in an automated deployment environment. Services are installed on tiers, and have
-several configuration options, one of which can accomplish the logical connections between
-services known as dependencies.</p>
+<div class="section" id="id14">
+<h2>4.5. サービス<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>サービスは、通常、tarで圧縮、またはgzipされた、ファイルの形式でソフトウェアオブジェクトです。
+配備を設定する前に、サービスをクラウド　ストレージにアップロードする必要があります。</p>
+<p>サービス &#8220;イメージ&#8221; はzipファイルで、enStratusにアップロードしてから、自動化配備環境を選択されて
+使用されます。サービスは、層にインストールされており、いくつかの構成オプションを持ち、そのうちの一つは
+依存関係として知られているサービス間の論理的な接続を達成することができます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/addServiceImage.png"><img alt="Add Service Image" src="../_images/addServiceImage.png" style="width: 300.0px; height: 150.0px;" /></a>
 <p class="caption">Add Service Image</p>
 </div>
-<p>To upload a service image, navigate to Automation &gt; Service Images and select a service
-image from your local file system. Once the service image is finished uploading, it will
-be available as an option for use in a tier.</p>
+<p>サービスイメージをアップロードするには、 Automation &gt; Service Images に移動して、ローカル　ファイル　システム
+からサービスイメージを選択します。サービスイメージのアップロードが終了したら、層で
+使用するためのオプションとして利用可能になります。</p>
 </div>
-<div class="section" id="data-sources">
-<h2>4.6. Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline">¶</a></h2>
-<p>To upload a data source into enStratus, navigate to Automation &gt; Data Source Images and
-select add data source.</p>
-<p>A data source can be a database backup file. For example, for a MySQL database, the data
-source may be represented by a file with a .sql extension. This file is downloaded from
-cloud storage during the start and configuration of a service that has associated a data
-source.</p>
+<div class="section" id="id15">
+<h2>4.6. データ·ソース<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>enStratusにデータソースをアップロードするには、 Automation &gt; Data Source に移動し、
+データソースの追加を選択します。</p>
+<p>データソースはデータベースのバックアップファイルにすることができます。たとえば、MySQLデータベースのデータ
+ソースは .sql の拡張子を持つファイルによって表現されます。このファイルは、データソースが関連付けられている
+サービスの開始および構成時にクラウドストレージからダウンロードされます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/addDataSource.png"><img alt="Add Data Source" src="../_images/addDataSource.png" style="width: 300.0px; height: 150.0px;" /></a>
 <p class="caption">Add Data Source</p>
 </div>
-<div class="section" id="using">
-<h3>4.6.1. Using<a class="headerlink" href="#using" title="Permalink to this headline">¶</a></h3>
+<p>Using
+使用要領
+%%%%%</p>
 <p>Data sources are used when configuring a service. More is said about this in the
 section on Tiers, which hold services. A data source is a database backup file, typically
 in the form of a &#8220;dump&#8221; file of the form database1.sql. Data sources, like
-services, should be uploaded into cloud storage before configuring the deployment.</p>
+services, should be uploaded into cloud storage before configuring the deployment.
+サービスを設定するときにデータソースが使用されています。以上がこの程度と言われてい
+サービスを保持層、上のセクションを参照してください。データソースは、通常、データベースのバックアップファイルです。
+フォームdatabase1.sqlの&#8221;ダンプ&#8221;ファイルの形態であってもよい。データ·ソースのような
+サービスは、展開を構成する前に、クラウド·ストレージにアップロードする必要があります。</p>
 </div>
+<div class="section" id="id16">
+<h2>4.7. ボリューム<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<p>ボリュームは配備の開始時に起動構成の一部として設定されているパラメータに従って
+enStratusによって自動的にプロビジョニングされます。 enStratusは、それがクラウド　プロバイダに存在して、
+スケーリングおよびリカバリイベントを実行するとき、ボリュームを使用します。</p>
+<p>ボリュームは、Linuxサーバーでは /mnt/services 上、そしてindowsサーバーでは H:/services 上にある
+層で実行中のサーバーにマウントされています。サービスは自動的に serviceID が割り当てられ、
+それは /mnt/services もしくは H:/services の a1234 形式のディレクトリになります。サービスへのパスは
+フォーム /mnt/services/a1234 で、ここで a1234 は、自動的に生成された識別子になります。</p>
 </div>
-<div class="section" id="volumes">
-<h2>4.7. Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">¶</a></h2>
-<p>Volumes will be provisioned automatically by enStratus during deployment start according
-to the parameters set as part of the launch configuration. enStratus uses volumes if they
-exist with the cloud provider to execute scaling and recovery events.</p>
-<p>Volumes are mounted on servers running in a tier at /mnt/services for Linux servers and at
-H:/services for windows servers. Services are automatically assigned a serviceID which
-becomes a directory within /mnt/services or H:/services of the form a1234. The path to the
-service will be of the form /mnt/services/a1234, where a1234 is an automatically generated
-identifier.</p>
-</div>
-<div class="section" id="launch-configuration">
-<h2>4.8. Launch Configuration<a class="headerlink" href="#launch-configuration" title="Permalink to this headline">¶</a></h2>
-<p>A launch configuration is a definition that governs the resources provisioned to support a
-virtual machine. At one level, this is roughly analogous to the size definitions provided
-for by some clouds, such as in Amazon AWS small, medium, large, etc.  For enStratus a
-launch configuration includes this definition, but goes beyond to include attaching,
-raiding, and encrypting volumes as well as the firewall into which the server is started.</p>
+<div class="section" id="id17">
+<h2>4.8. 起動構成<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<p>起動構成は仮想マシンをサポートするためにプロビジョニングされたリソースを管理する定義です。
+1つのレベルでは、おおまかに言って、アマゾン AWS の small, medium, large, その他のような
+クラウドによるサイズの定義とほぼ類似しています。
+enStratusにとって、起動構成には、この定義が含まれていますが、それを超えてサーがーがその中でスタートする
+ファイアウォールは勿論、ボリュームへの接続、レイディング、ボリュームの暗号化を含みます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/launchConfigurationHighlighted.png"><img alt="Launch Configuration" src="../_images/launchConfigurationHighlighted.png" style="width: 250.0px; height: 300.0px;" /></a>
-<p class="caption">Launch Configuration</p>
+<p class="caption">起動構成</p>
 </div>
-<div class="section" id="manage-launch-configuration-general-information">
-<h3>4.8.1. Manage Launch Configuration, General Information<a class="headerlink" href="#manage-launch-configuration-general-information" title="Permalink to this headline">¶</a></h3>
+<p>Manage Launch Configuration, General Information
+起動構成の管理、一般情報
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</p>
+<blockquote>
+<div></div></blockquote>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/launchConfigurationGeneralInformation.png"><img alt="Launch Configuration (General)" src="../_images/launchConfigurationGeneralInformation.png" style="width: 800.0px; height: 225.0px;" /></a>
-<p class="caption">Launch Configuration (General Information)</p>
+<p class="caption">起動構成 (一般情報)</p>
 </div>
 <ol class="arabic">
-<li><p class="first"><strong>Server Name Template</strong></p>
-<p>The server name template controls the name that is applied to servers that are started
-according to the launch configuration. There are two approaches to naming servers as part
-of the launch configuration.</p>
-<p>The first approach is to just hard code a value for this field. The implications of this
-are if the tier scales to include many servers, they will all be named the same thing,
-which is allowed, and not always desirable.</p>
-<p>The second approach is to use parameters as shown in the figure above. The available
-parameters are:</p>
+<li><p><strong>サーバー名テンプレート</strong></p>
+<p>サーバー名テンプレートは起動構成に従って開始されているサーバーに適用される名前をコントロールします。
+起動構成の一部として、サーバー名の命名には、2つのアプローチがあります。</p>
+<p>最初のアプローチは、このフィールドに単にハードコードに値をつけることです。その意味は
+層が多くのサーバーを含んでスケールすることがあれば、それらはすべて許可された同じ名前が付けられますが、
+、それはいつも望ましいわけではありません</p>
+<p>上記の図に示すように、2番目のアプローチは、パラメータを使用することです。利用できる
+パラメータは次のとおりです。</p>
 <ul class="simple">
-<li>{tier} name of the tier this server is running in.</li>
-<li>{group} currently resolves to tier name, for backwards compatibility.</li>
-<li>{count} count of this server (sequential numbering from 1 for a tier.)</li>
-<li>{role} one of: CLUSTER NODE, INDEPENDENT NODE, MASTER, REPLICANT, STANDALONE (converted
-to lowercase string)</li>
-<li>{type} one of: LOAD, SERVICE, CLUSTERED DATABASE, REPLICATED DATABASE, UNKNOWN
-(converted to lowercase string)</li>
-<li>{zone} the provider zone ID where the server is running.</li>
-<li>{dc} resolves the same as zone above.</li>
-<li>{region} the provider region ID where the server is running.</li>
-<li>{ip} reserved address (public IP) of the server.</li>
-<li>{year} launch year of the server.</li>
-<li>{day} launch day of the server.</li>
-<li>{hour} launch hour of the server.</li>
-<li>{minute} launch minute of the server.</li>
+<li>{tier} このサーバーが実行されている層の名前</li>
+<li>{group} 後方互換性のために、現在のところ層名で解決されます。</li>
+<li>{count} このサーバーのカウント（層の1からの連続番号）。</li>
+<li>{role} クラスタノード、独立したノード、MASTER、レプリカント、STANDALONEのうちのどれか一つ：
+（文字列を小文字に変換する）</li>
+<li>{type} 負荷、サービス、クラスタデータベース、複製データベース、UNKNOWNのいずれか：
+（文字列を小文字に変換）</li>
+<li>{zone} サーバが動作しているプロバイダのゾーンID。</li>
+<li>{dc} 上記のゾーンと同じように解決します。</li>
+<li>{region} サーバが動作しているプロバイダのリージョンID。</li>
+<li>{ip} サーバの予約済みアドレス（パブリックIP）。</li>
+<li>{year} サーバの起動時刻の年。</li>
+<li>{day} サーバの起動時刻の日。</li>
+<li>{hour} サーバの起動時刻の時間。</li>
+<li>{minute} サーバの起動時刻の分。</li>
 </ul>
-<p>This approach has the advantage of uniquely naming servers as they join/leave a tier in an
-intelligent manner.</p>
+<p>このアプローチはサーバーに一意の名前を付けるという、サーバーがインテリジェントな方法で[層に参加する/層から去る]利点があります。</p>
 </li>
 <li><p class="first"><strong>Recovery Point</strong></p>
 <p>The recovery point parameter sets the amount of time enStratus will wait to begin a
@@ -558,9 +545,8 @@ frequency, this limit may result in errors. Typically one snapshot per day is su
 for most applications.</p>
 </li>
 </ol>
-</div>
 <div class="section" id="machine-images">
-<h3>4.8.2. Machine Images<a class="headerlink" href="#machine-images" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.1. Machine Images<a class="headerlink" href="#machine-images" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/launchConfigurationMachineImage.png"><img alt="Launch Configuration Machine Images" src="../_images/launchConfigurationMachineImage.png" style="width: 950.0px; height: 250.0px;" /></a>
 <p class="caption">Launch Configuration Machine Images</p>
@@ -589,8 +575,8 @@ manner as the primary product.</p>
 </li>
 </ol>
 </div>
-<div class="section" id="id1">
-<h3>4.8.3. Volumes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="volumes">
+<h3>4.8.2. Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The volumes option is only present if the cloud provider features block storage.</p>
@@ -610,7 +596,7 @@ general configuration above.</p>
 configuration are started.</p>
 </div>
 <div class="section" id="manage-servers-servers">
-<h3>4.8.4. Manage Servers, Servers<a class="headerlink" href="#manage-servers-servers" title="Permalink to this headline">¶</a></h3>
+<h3>4.8.3. Manage Servers, Servers<a class="headerlink" href="#manage-servers-servers" title="Permalink to this headline">¶</a></h3>
 <p>Selecting this tab will show the servers running as part of the selected launch
 configuration.</p>
 </div>
@@ -812,8 +798,8 @@ via a file called /mnt/tmp/stats.properties, that is a product of the
 /enstratus/bin/calculateAgentData script.</p>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>4.9.5. Manage Servers, Servers<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3>4.9.5. Manage Servers, Servers<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <p>Selecting this tab will show the servers running as part of the selected tier. The view
 will aggregate the server list across all regions in the tier.</p>
 <div class="figure align-center">
@@ -1000,8 +986,8 @@ serviceKey.admin.password<span class="o">=</span>trustno1
 enstratus.cfg file. What happens to this information is determined by the actions
 specified in the enstratus-configure script written by your application architect.</p>
 </div>
-<div class="section" id="id3">
-<h3>4.9.12. Data Sources<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="data-sources">
+<h3>4.9.12. Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/serviceDataSources.png"><img alt="Service, Data Soruce" src="../_images/serviceDataSources.png" style="width: 400.0px; height: 200.0px;" /></a>
 <p class="caption">Service, Data Soruce</p>
@@ -1057,8 +1043,8 @@ used.</p>
 </li>
 </ol>
 </div>
-<div class="section" id="id4">
-<h3>4.9.13. Dependencies<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="dependencies">
+<h3>4.9.13. Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/serviceDependencies.png"><img alt="Service, Dependencies" src="../_images/serviceDependencies.png" style="width: 500.0px; height: 150.0px;" /></a>
 <p class="caption">Service, Dependencies</p>
@@ -1087,8 +1073,8 @@ changes occur such as a scale or recovery of a server that is running an affecte
 <h3>4.9.14. Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
 <p>Deleting a service will remove it from a tier.</p>
 </div>
-<div class="section" id="id5">
-<h3>4.9.15. Versioning<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="versioning">
+<h3>4.9.15. Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h3>
 <p>Maintaining the most recent version of a service is dependent somewhat on the cloud
 provider. If your cloud provider has a concept of attachable block storage devices and
 your services are installed upon one of them that is regularly being snapshotted, it may
@@ -1153,8 +1139,8 @@ shown:</p>
 <p>To update your SSL certificate, choose an existing certificate from the list and update
 the necessary fields, then save.</p>
 </div>
-<div class="section" id="id6">
-<h3>4.10.4. Using<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="using">
+<h3>4.10.4. Using<a class="headerlink" href="#using" title="Permalink to this headline">¶</a></h3>
 <p>Data sources are used when configuring a service. More is said about this in the section
 on Tiers, which hold services.</p>
 </div>
@@ -1184,7 +1170,7 @@ of the enStratus console.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		4. Deployment Configuration
+		4. 配備構成
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
