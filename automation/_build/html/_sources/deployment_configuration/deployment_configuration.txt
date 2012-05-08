@@ -669,50 +669,81 @@ Manage Launch Configuration, General Information
 
 #. **Recovery Point**
 
-   The recovery point parameter sets the amount of time enStratus will wait to begin a
-   recovery event of a failed server. A server is assumed to have failed if the agent is
-   unreachable, and the server is un-ping-able, or the server has stopped altogether and is
-   no longer being counted in the min/max.
-
+   .. The recovery point parameter sets the amount of time enStratus will wait to begin a
+      recovery event of a failed server. A server is assumed to have failed if the agent is
+      unreachable, and the server is un-ping-able, or the server has stopped altogether and is
+      no longer being counted in the min/max.
+   リカバリポイントのパラメータはenStratusが失敗したサーバの回復イベントを開始するまでの待機時間を設定します。
+   サーバーは、エージェントに到達できない、サーバにピングできない、またはサーバーが完全に停止した場合は失敗したと
+   想定し、もはやはmin/ maxに数えません。
+   
 #. **Use Encryption**
 
-   This setting determines whether volumes attached to servers are encrypted. This option is
-   currently only meaningful for Linux-based servers that can employ the Linux Unified Key
-   Setup. This type of encryption is file-system based encryption.
-
+   .. This setting determines whether volumes attached to servers are encrypted. This option is
+      currently only meaningful for Linux-based servers that can employ the Linux Unified Key
+      Setup. This type of encryption is file-system based encryption.
+   この設定は、サーバーに接続されたボリュームが暗号化されているかどうかを決定します。このオプションは、
+   現在Linuxの統一キーセットアップを採用することができるLinuxベースのサーバでのみ意義があります。
+   このタイプの暗号化は、ファイルシステムベースの暗号化です。
+   
 #. **Server Type**
 
-   There are five options for Server Type:
+   .. There are five options for Server Type:
+   サーバータイプには5つのオプションがあります。
 
-   * Load balancer. This option specifies a launch configuration as a load balancer so
-     that servers in this tier will be treated as such.
-   * Service General Service. This option identifies the servers governed by this launch
-     configuration as a generic service such as a web application.
-   * Clustered Database A clustered database is a database that is not using replication and
-     is therefore treated as an independent entity.
-   * Replicated Database A replicated database is a database that is set up to perform
-     replication.
-   * Unknown Similar to a service, this is a generic entry for a service.
+   * .. Load balancer. This option specifies a launch configuration as a load balancer so
+        that servers in this tier will be treated as such.
+     ロードバランサ。このオプションは、この層内のサーバーのロード·バランサとして起動設定を指定します。
+     
+   * .. Service General Service. This option identifies the servers governed by this launch
+        configuration as a generic service such as a web application.
+     サービス全般サービス。このオプションは、起動構成でWebアプリケーションなどの汎用サービスとして構成された
+     サーバとして識別されています。
+     
+   * .. Clustered Database A clustered database is a database that is not using replication and
+        is therefore treated as an independent entity.
+     クラスタ化データベース。クラスタ化データベースは、レプリケーションを使用していないデータベースで、
+     独立したエンティティとして扱われます。
+     
+   * .. Replicated Database A replicated database is a database that is set up to perform
+        replication.
+     レプリケーティドデータベース。レプリケーティドデータベースはレプリケーションを実行するように設定されているデータベースです。
+     
+     
+   * .. Unknown Similar to a service, this is a generic entry for a service.
+     未知のサービス。これは汎用のサービスへのエントリです。
 
 #. **Snapshot Frequency**
 
-   This parameter sets the frequency with which enStratus automatically performs snapshots of
-   the attached volume. It is important to note that although there may be multiple servers
-   running as part of a tier, each with its own volume attached, enStratus will only snapshot
-   one of the volumes.
+   .. This parameter sets the frequency with which enStratus automatically performs snapshots of
+      the attached volume. It is important to note that although there may be multiple servers
+      running as part of a tier, each with its own volume attached, enStratus will only snapshot
+      one of the volumes.
+   このパラメータは、enStratusが、自動的に接続されたボリュームのスナップショットを実行する頻度を設定します。
+   層の一部として複数のサーバが実行されており、それぞれ独自のボリュームが接続されているかもしれませんが
+   enStratusは、そのうちの一つのボリュームだけのスナップショットをとることに注意してください。
    
-   This highlights an important architectural consideration. Each server running in a tier
-   should be identical, as should the attached volumes. If variation is required in the
-   architecture between servers, that is an indication that an extra tier should be
-   configured.
+   .. This highlights an important architectural consideration. Each server running in a tier
+      should be identical, as should the attached volumes. If variation is required in the
+      architecture between servers, that is an indication that an extra tier should be
+      configured.
+   これは重要なアーキテクチャの配慮を強調しています。層で実行されている各サーバは
+   同一である必要があり、接続されたボリュームも同様です。サーバ間のアーキテクチャにバリエーションが
+   求められるとすれば、それは追加の層を構成するかどうかです。
    
-   Take care not to set the snapshot frequency too low. Snapshots lock the file system until
-   they are complete, which can impact your application performance. Additionally, most cloud
-   providers limit the number of snapshots that can be stored and if the setting is to a high
-   frequency, this limit may result in errors. Typically one snapshot per day is sufficient
-   for most applications.
+   .. Take care not to set the snapshot frequency too low. Snapshots lock the file system until
+      they are complete, which can impact your application performance. Additionally, most cloud
+      providers limit the number of snapshots that can be stored and if the setting is to a high
+      frequency, this limit may result in errors. Typically one snapshot per day is sufficient
+      for most applications.
+   低すぎるスナップショットの頻度を設定しないように注意してください。スナップショットが完了するまで
+   ファイルシステムをロックします。それはアプリケーションのパフォーマンスに影響を与えることがあります。
+   また、ほとんどのクラウドプロバイダは、保存することができるスナップショットの数を制限し、設定頻度が高い
+   場合、この制限はエラーになる場合があります。通常、ほとんどのアプリケーションの場合一日あたり、
+   1つのスナップショットで十分です。
 
-Machine Images
+.. Machine Images
+マシン　イメージ
 %%%%%%%%%%%%%%
 
 .. figure:: ./images/launchConfigurationMachineImage.png
@@ -726,35 +757,47 @@ Machine Images
 
 #. **Primary Machine Image**
 
-   The primary machine image specifies the machine image that enStratus will use to start
-   servers in the tier.
+   .. The primary machine image specifies the machine image that enStratus will use to start
+      servers in the tier.
+   プライマリマシンイメージはenStratusが層でサーバを開始するために使用するマシン·イメージを指定します。
 
 
 #. **Primary Product**
 
-   The primary product will contain a list of options that is very cloud-specific. The figure
-   shows an option that is specific to the AWS EC2 provider. If you are using a different
+   .. The primary product will contain a list of options that is very cloud-specific. The figure
+      shows an option that is specific to the AWS EC2 provider. If you are using a different
    cloud provider you will see other options present here.
+   プライマリプロダクトは非常にクラウド固有のものでオプションのリストが含まれています。この図は
+   AWS EC2プロバイダ固有のオプションを示しています。別のクラウド·プロバイダーを使用している場合
+   、これとは別のオプションが表示されます。
 
 #. **Secondary Machine Image**
 
-   The secondary machine image is a machine image of an optionally unique definition that 
-   enStratus will use to launch subsequent servers from the secondary machine image definition.
+   .. The secondary machine image is a machine image of an optionally unique definition that 
+      enStratus will use to launch subsequent servers from the secondary machine image definition.
+   セカンダリマシンイメージは、enStratusが、その定義から後続のサーバーを起動するために使用する
+   固有の定義オプションを持ったマシンイメージです。
    
-   The most logical implementation for using a secondary machine image is in the case of
-   replicated databases. The primary machine image would be used by enStratus to launch the
-   master database and all subsequent servers would function as slaves using the secondary
-   machine image.
+   .. The most logical implementation for using a secondary machine image is in the case of
+      replicated databases. The primary machine image would be used by enStratus to launch the
+      master database and all subsequent servers would function as slaves using the secondary
+      machine image.
+   セカンダリマシンイメージを使用する最も論理的な実装の例はレプリケーティドデータベースです。
+   enStratusによってプライマリマシンのイメージが使用されてマスターデータベースが起動し、
+   後続のすべてのサーバが、セカンダリマシンイメージを使用してスレーブとして機能します。
 
 #. **Secondary Product**
 
-   The secondary product defines the amount of virtual hardware provisioned in the same
-   manner as the primary product.
+   .. The secondary product defines the amount of virtual hardware provisioned in the same
+      manner as the primary product.
+   セカンダリプロダクトは、プライマリプロダクトと同じようにでプロビジョニングされた仮想ハードウェアの量を定義します。
 
-Volumes
+.. Volumes
+ボリューム
 %%%%%%%
 
-.. note:: The volumes option is only present if the cloud provider features block storage.
+.. note:: .. The volumes option is only present if the cloud provider features block storage.
+          ボリュームのオプションはクラウド　プロバイダーがブロック　ストレージを備えている場合にのみ存在します。
 
 .. figure:: ./images/launchConfigurationVolumes.png
    :height: 400px
@@ -765,9 +808,11 @@ Volumes
 
    Launch Configuration, Volumes
 
-The volumes specification determines the number and size of volumes that will be attached
-to servers in the tier. The option to encrypt these volumes is specified as part of the
-general configuration above.
+.. The volumes specification determines the number and size of volumes that will be attached
+   to servers in the tier. The option to encrypt these volumes is specified as part of the
+   general configuration above.
+ボリュームの仕様は、層内でサーバーに接続されるボリュームの数とサイズを決定します。
+これらのボリュームの暗号化オプションが一般的な構成の一部として指定されます。
 
 .. figure:: ./images/launchConfigurationFirewalls.png
    :height: 400px
@@ -778,24 +823,33 @@ general configuration above.
 
    Launch Configuration, Firewalls
 
-The firewall definition specifies the firewall into which servers in this launch
-configuration are started.
+.. The firewall definition specifies the firewall into which servers in this launch
+   configuration are started.
+ファイアウォールの定義は、その中でサーバーが開始されるファイアウォールを指定します。
 
-Manage Servers, Servers
+.. Manage Servers, Servers
+サーバーの管理、サーバー
 %%%%%%%%%%%%%%%%%%%%%%%
 
-Selecting this tab will show the servers running as part of the selected launch
-configuration.
+.. Selecting this tab will show the servers running as part of the selected launch
+   configuration.
+このタブを選択すると、選択した起動構成の一部として実行しているサーバーが表示されます。
 
-Tier
+.. Tier
+層
 ~~~~
-A tier is a logically and physically scalable division that contain servers running. Tiers
-may span one or more clouds, so it is possible to have a tier that starts by provisioning
-servers in your private data center but "bursts" when demand dictates additional
-infrastructure into a public cloud provider.
+.. A tier is a logically and physically scalable division that contain servers running. Tiers
+   may span one or more clouds, so it is possible to have a tier that starts by provisioning
+   servers in your private data center but "bursts" when demand dictates additional
+   infrastructure into a public cloud provider.
+層は、実行中のサーバーを含む論理的かつ物理的にスケーラブルな部門です。層は
+1つまたは複数のクラウドに跨る可能性がありますので、それは、プライベート　データセンターに
+プロビジョニングしてサーバーを開始することもあり、需要によっては追加のインフラストラクチャを
+パブリック　クラウド　プロバイダーに爆発的に拡大することも可能です。。
 
-A launch configuration is logically contained within a tier. In fact, a tier cannot exist
-in any region without a corresponding launch configuration.
+.. A launch configuration is logically contained within a tier. In fact, a tier cannot exist
+   in any region without a corresponding launch configuration.
+起動設定は、層内に論理的に含まれています。実際には、対応する起動設定なしにはどのリージョンにも存在することはできません。
 
 .. figure:: ./images/tierHighlighted.png
    :height: 400px
@@ -806,7 +860,8 @@ in any region without a corresponding launch configuration.
 
    Tier
 
-Manage Tier, General Information
+.. Manage Tier, General Information
+層の管理、一般情報
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 .. figure:: ./images/tierGeneralInformation.png
@@ -818,12 +873,17 @@ Manage Tier, General Information
 
    Tier, General Information
 
-Managing a tier includes the capability to delete the tier or grant shell access for the
-tier. If the tier is deleted, any associated launch configurations will also be deleted.
-If the shell access option is selected, a dialog box will be presented to the
-administrator for adding shell access to servers running in the tier.
+.. Managing a tier includes the capability to delete the tier or grant shell access for the
+   tier. If the tier is deleted, any associated launch configurations will also be deleted.
+   If the shell access option is selected, a dialog box will be presented to the
+   administrator for adding shell access to servers running in the tier.
+層の管理には層を削除する機能と層に対するシェルアクセスを認める機能が含まれています。
+層が削除された場合、すべての関連した起動設定も削除されます。
+シェルアクセスオプションが選択された場合は、管理者に層で実行されているサーバーへのシェルアクセスを
+追加するためのダイアログボックスが表示されます。
 
-Manage Tier, Shell Access
+.. Manage Tier, Shell Access
+層の管理、シェルアクセス
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 .. figure:: ./images/tierShellAccess.png
@@ -835,15 +895,20 @@ Manage Tier, Shell Access
 
    Tier, Shell Access
 
-When servers are started as part of ongoing tier operations, Users designated for shell
-access will be granted shell access shortly after the server has registered with the
-enStratus provisioning server.
+.. When servers are started as part of ongoing tier operations, Users designated for shell
+   access will be granted shell access shortly after the server has registered with the
+   enStratus provisioning server.
+サーバが継続中な層の操作の一部として開始されている場合、シェルに指定されたユーザーは
+サーバがnStratusプロビジョニングサーバで登録された直後にシェルアクセスを許可されます。
 
-The same requirements for shell access in individual servers apply, namely that the
-firewall must be open on the port where SSH is running, and the user must have a public
-key as part of their profile.
+.. The same requirements for shell access in individual servers apply, namely that the
+   firewall must be open on the port where SSH is running, and the user must have a public
+   key as part of their profile.
+シェルアクセスのためには個々のサーバで同じ要件、すなわちファイアウォールはSSHが実行されているポート上で開いておく必要があり、
+ユーザーは自分のプロファイルの一部としてパブリックキーを持っている必要があります。
 
-Tier Scaling Rules, Scaling Rules
+.. Tier Scaling Rules, Scaling Rules
+層のスケーリング　ルール、スケーリング　ルール
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 .. figure:: ./images/tierScalingRules.png
@@ -855,118 +920,177 @@ Tier Scaling Rules, Scaling Rules
 
    Tier, Scaling Rules
 
-Scaling rules are where the parameters that govern the scaling of tier resources.
+.. Scaling rules are where the parameters that govern the scaling of tier resources.
+スケーリングルールには、層のリソースのスケーリングを管理するパラメータが存在します。
 
 #. **Minimum Servers**
 
-   The minimum servers specification sets the minimum required number of servers that must be
-   kept running in the tier at all times. If the total number of running servers in the tier
-   falls below this threshold, an auto-recovery event will be triggered.
+   .. The minimum servers specification sets the minimum required number of servers that must be
+      kept running in the tier at all times. If the total number of running servers in the tier
+      falls below this threshold, an auto-recovery event will be triggered.
+   最小サーバー数は常時、層で実行され続けなければならないサーバーの最小必要数の仕様です。
+   もし層で実行中のサーバーの合計数がこのしきい値を下回ると、自動回復イベントがトリガされます。
 
 #. **Maximum Servers**
 
-   The maximum servers specification sets the maximum allowable number of servers for a tier.
-   If the demand on the tier is such that additional server resources are required, enStratus
-   will scale up to, but not exceed, this value.
+   .. The maximum servers specification sets the maximum allowable number of servers for a tier.
+      If the demand on the tier is such that additional server resources are required, enStratus
+      will scale up to, but not exceed, this value.
+   最大サーバ数の仕様では、層が許容できるサーバーの最大数を設定します。
+   層に追加サーバーのリソース要求があれば、enStratusはスケールアップしますが、
+   この最大値を超えることはありません。
 
 #. **Scaling Rules**
 
-There are three options for scaling rules:
+.. There are three options for scaling rules:
+スケーリングルールには3つのオプションがあります。
 
    1. **enStratus** 
 
-      enStratus scaling options are the ones shown by default. Scaling behavior is
-      governed by certain "hardware" parameters described here.
+      .. enStratus scaling options are the ones shown by default. Scaling behavior is
+         governed by certain "hardware" parameters described here.
+      enStratusのスケーリングオプションはデフォルトで示すものです。スケーリングの動作では、
+      ここで説明する特定の "ハードウェア"パラメータによって管理されます。。
    
-      enStratus can govern scaling events by monitoring the CPU load of the servers. The CPU
-      load is equal to: 15-minute load average/# of CPU. For example, if the system has 2 CPU
-      and the load average is 0.89, the CPU threshold reading is 0.445*100 = 44.5.
+      .. enStratus can govern scaling events by monitoring the CPU load of the servers. The CPU
+         load is equal to: 15-minute load average/# of CPU. For example, if the system has 2 CPU
+         and the load average is 0.89, the CPU threshold reading is 0.445*100 = 44.5.
+      enStratusは、サーバーのCPU負荷を監視することにより、スケーリングイベントを管理できます。CPU
+      負荷は [15分間の平均負荷 / CPUの数] です。：たとえば、システムが2つのCPUを持っていて、
+      負荷の平均が0.89である場合、CPUしきい値の読み取りは、 0.445*100 = 44.5です。
    
-      * Lower CPU Threshold. 
-        The lower bound on CPU threshold. If the threshold drops
-        below this level and there are more than the minimum number of servers running, 
-        servers will be terminated due to the decreased demand.
+      * Lower CPU Threshold.
+       
+        .. The lower bound on CPU threshold. If the threshold drops
+           below this level and there are more than the minimum number of servers running, 
+           servers will be terminated due to the decreased demand.
+        CPUの下限しきい値。このレベルを下回ってしきい値が低下して、かつ
+        実行中のサーバー数が最小サーバー数よりも多くあるときは、サーバーは、需要減少のために終了されます。
    
       * Upper CPU Threshold
    
-        The upper bound on CPU threshold. If the threshold rises above this level and there are
-        less than the maximum number of servers running, servers will be started to meet increased
-        demand.
+        .. The upper bound on CPU threshold. If the threshold rises above this level and there are
+           less than the maximum number of servers running, servers will be started to meet increased
+           demand.
+        CPUの上限しきい値。このレベルを超えてしきい値が上昇して、かつ
+        実行中のサーバー数が最大最大数より少ない場合、サーバは需要増加を満たすために開始されます。
    
       * Lower RAM Threshold
    
-        The lower RAM threshold sets the lower bound on RAM usage on a percentage used basis. If
-        the threshold drops below this level and there are more than the minimum number of
-        required servers running, servers will be scaled down due to decreased demand.
+        .. The lower RAM threshold sets the lower bound on RAM usage on a percentage used basis. If
+           the threshold drops below this level and there are more than the minimum number of
+           required servers running, servers will be scaled down due to decreased demand.
+        RAMの下限しきい値。これはRAMの使用量の下限をパーセントで設定します。
+        このレベルを下回ってしきい値が低下して、かつ実行中のサーバー数が最小サーバー数よりも多くあるときは、
+        実行中のサーバは、需要減によってスケールダウンされます。
    
       * Upper RAM Threshold
    
-        The upper RAM threshold set the upper bound on RAM usage on a percentage used basis. If
-        the threshold is above this threshold and there is room available to scale, servers will
+        .. The upper RAM threshold set the upper bound on RAM usage on a percentage used basis. If
+           the threshold is above this threshold and there is room available to scale, servers will
         be scaled up due to increased demand.
+        RAMの上限しきい値。これはRAMの使用量の上限をパーセントで設定します。
+        このレベルを上回ってしきい値が上がり、かつスケールアップする余裕が有るとき、
+        サーバは、需要増によってスケールアップされます。
    
    2. **Cloud**
    
-      enStratus can also trigger scaling events based on the properties of the cloud provider.
-      If your cloud provider has mechanisms in place to govern scaling, enStratus will defer to
-      them if the cloud option is selected.
+      .. enStratus can also trigger scaling events based on the properties of the cloud provider.
+         If your cloud provider has mechanisms in place to govern scaling, enStratus will defer to
+         them if the cloud option is selected.
+      enStratusまた、クラウドプロバイダのプロパティに基づいてスケーリングイベントをトリガすることができます。
+      クラウドプロバイダーが、スケーリングを支配するための適したメカニズムを持っている場合は、クラウドオプションが
+      クラウドオプションが選択されていれば、enStratusはそれを延期します。
    
    3. **Custom**
    
-      Custom scaling rules are by far the most powerful method for controlling scaling events.
-      There are inherent problems with reading CPU load by default as CPU isn't really all
-      that meaningful of a concept when working in a multi-tenant cloud environment where actual
-      CPU are load shared.
+      .. Custom scaling rules are by far the most powerful method for controlling scaling events.
+         There are inherent problems with reading CPU load by default as CPU isn't really all
+         that meaningful of a concept when working in a multi-tenant cloud environment where actual
+         CPU are load shared.
+      カスタムスケーリングルールは、スケールイベントを制御するための圧倒的に最も強力な方法です。
+      実際のCPUやCPU負荷が共有されるマルチテナントクラウド環境で作業する際に、
+      本当に意味のあるコンセプトでCPU負荷を読むことにデフォルトでは固有の問題があります。
    
-      In short, custom scaling with enStratus means that on an interval of about 30s, enStratus
-      will read the output of a script called /enstratus/bin/scaleCheck. The scaleCheck script
-      that controls scaling behavior signals enStratus to scale up, do nothing, or scale down by
-      returning 1, 0, or -1, respectively.
+      .. In short, custom scaling with enStratus means that on an interval of about 30s, enStratus
+         will read the output of a script called /enstratus/bin/scaleCheck. The scaleCheck script
+         that controls scaling behavior signals enStratus to scale up, do nothing, or scale down by
+         returning 1, 0, or -1, respectively.
+      端的に言うと、enStratusのカスタムスケールとは約30秒の間にenStratusが/enstratus/bin/scaleCheckと呼ばれる
+      スクリプトの出力を読み込むことを意味します。enStratusのスケーリング動作を制御するscaleCheckスクリプトは
+      enStratusに信号を送ります。その信号は [スケールアップ、何もしない、またはスケールダウン] それぞれに対応して
+      、1、0、または-1を返します。
+      
+      .. A voting mechanism is used by enStratus to determine whether or not to scale the number of
+         servers in a group. Essentially, if the majority of servers in a server group
+         "vote" to scale up by returning 1, a new server will be started. If the majority
+         of servers in a server group vote to scale down by returning -1, a random server in that
+         group will be terminated. If most servers vote 0, no scaling will occur.
+      enStratusによってグループ内のサーバ数をスケーリングするかどうかを判断するたの投票機構が使用されます。
+      基本的に、もしサーバグループのサーバの大半が1を返すことによってスケールアップの "投票"をすれば、新規の
+      サーバーが開始されます。もしサーバグループのサーバの大半が-1を返すことによってスケールダウンの "投票"をすれば、
+      グループ内のランダムに選択されて終了します。ほとんどのサーバーが0に投票する場合、スケーリングは行われません。
    
-      A voting mechanism is used by enStratus to determine whether or not to scale the number of
-      servers in a group. Essentially, if the majority of servers in a server group
-      "vote" to scale up by returning 1, a new server will be started. If the majority
-      of servers in a server group vote to scale down by returning -1, a random server in that
-      group will be terminated. If most servers vote 0, no scaling will occur.
-   
-      Here is an example of a scaleCheck script that was written to provide a mechanism for
-      applying a normalization factor to "small" servers running in EC2.
+      .. Here is an example of a scaleCheck script that was written to provide a mechanism for
+         applying a normalization factor to "small" servers running in EC2.
+      ここにEC2で動作中の"small"サーバーに正規化係数を適用するメカニズムを提供するために書かれた
+      scaleCheckスクリプトの例があります。
 
-.. note:: In all cases, enStratus manages the actions of initiating the scale. Each
-   scaling event is a server launch, and all of the orchestration/automation around that
-   launch is controlled using the parameters set in enStratus 
+.. note:: .. In all cases, enStratus manages the actions of initiating the scale. Each
+      scaling event is a server launch, and all of the orchestration/automation around that
+      launch is controlled using the parameters set in enStratus 
+   すべてのケースで、enStratusは、スケールを主導するアクションを管理します。各
+   スケーリングイベントは、サーバーの起動であり、その周りの調整/自動化されたの全ての
+   起動はenStratusで設定したパラメータセットを使用して制御されています。
 
 .. literalinclude:: ./files/scaleCheck
    :language: bash
 
-Scaling Sensitivity
+.. Scaling Sensitivity
+スケーリング感度
 %%%%%%%%%%%%%%%%%%%
 
-#. **Breach Period**
+#. .. **Breach Period**
+   **違反期間(Breach Period)**
 
-   The amount of time for which the load average must exceed the upper CPU threshold before a
-   scaling event will occur resulting in more servers.
+   .. The amount of time for which the load average must exceed the upper CPU threshold before a
+      scaling event will occur resulting in more servers.
+   スケーリングイベントが発生する前に負荷平均が、[CPUの上限しきい値]を超えるにちがいない時間の量のことで、
+   結果としてサーバが多いことになります。
+   
+#. .. **Cooldown Period**
+   **クールダウン期間(Cooldown Period)**
 
-#. **Cooldown Period**
+   .. The amount of time for which the load average must be below the lower CPU threshold before
+      a scaling event will occur resulting in less servers.
+      The breach and cooldown periods control the "sensitivity" of the scaling behavior.
+   スケーリングイベントが発生する前に負荷平均が、[CPUの下限しきい値]を下回るにちがいない時間の量のことで、
+   結果としてサーバが少ないことになります。
+   違反とクールダウン期間は、スケーリング動作の "感度"を制御します。
+   
+#. .. **Breach Increment**
+   **違反インクリメント(Breach Increment)**
 
-   The amount of time for which the load average must be below the lower CPU threshold before
-   a scaling event will occur resulting in less servers.
-   The breach and cooldown periods control the "sensitivity" of the scaling behavior.
+   .. The breach increment controls the size of the "step" enStratus uses to scale up or
+      down. If the minimum and maximum number of servers specification is such that there is
+      room to scale, enStratus will do so by the number of servers specified in the breach
+      increment.
+   違反インクリメントは、enStratusがスケールアップまたはダウンするのに使用する "step" のサイズ
+   を制御します。サーバの最小数と最大数の仕様はenStratusがスケールするときの部屋、enStratusが
+   違反インクリメントで指定されたサーバーの数でそれを行います。
 
-#. **Breach Increment**
+   .. For example if the minimum and maximum values are 2 and 10, respectively, and the breach
+      increment is 2, if demand requires extra resources, the first scaling action will result
+      in 4 servers. The same principle applies to scaling down as it does when scaling up.
+   例えば、最小値と最大値がそれぞれ2と10で、違反インクリメントが2であるときに、
+   追加リソースを必要とする需要があれば、最初のスケーリングアクションが発生し、4サーバーとなります。
+   スケールダウンするときにもスケールアップの時と同様の原理が適用されます。
 
-   The breach increment controls the size of the "step" enStratus uses to scale up or
-   down. If the minimum and maximum number of servers specification is such that there is
-   room to scale, enStratus will do so by the number of servers specified in the breach
-   increment.
-
-   For example if the minimum and maximum values are 2 and 10, respectively, and the breach
-   increment is 2, if demand requires extra resources, the first scaling action will result
-   in 4 servers. The same principle applies to scaling down as it does when scaling up.
-
-.. note:: If enStratus scaling rules are in place, enStratus reads the values presented to it
-  via a file called /mnt/tmp/stats.properties, that is a product of the
-  /enstratus/bin/calculateAgentData script.
+.. note:: .. If enStratus scaling rules are in place, enStratus reads the values presented to it
+     via a file called /mnt/tmp/stats.properties, that is a product of the
+     /enstratus/bin/calculateAgentData script.
+  enStratusスケーリングルールが所定の位置にあれば、enStratusは /mnt/tmp/stats.propertiesで
+  提示された値を読み取ります。これは /enstratus/bin/calculateAgentData スクリプトの産物です。
 
 Manage Servers, Servers
 %%%%%%%%%%%%%%%%%%%%%%%
