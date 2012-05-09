@@ -1092,11 +1092,14 @@ Manage Launch Configuration, General Information
   enStratusスケーリングルールが所定の位置にあれば、enStratusは /mnt/tmp/stats.propertiesで
   提示された値を読み取ります。これは /enstratus/bin/calculateAgentData スクリプトの産物です。
 
-Manage Servers, Servers
+.. Manage Servers, Servers
+サーバー管理、サーバー
 %%%%%%%%%%%%%%%%%%%%%%%
 
-Selecting this tab will show the servers running as part of the selected tier. The view
-will aggregate the server list across all regions in the tier.
+.. electing this tab will show the servers running as part of the selected tier. The view
+   will aggregate the server list across all regions in the tier.
+このタブを選択すると、選択した層の一部として実行しているサーバーが表示されます。ビューでは
+層のすべてのリージョンでサーバーリストを集めます。
 
 .. figure:: ./images/tierServers.png
    :height: 400px
@@ -1107,12 +1110,15 @@ will aggregate the server list across all regions in the tier.
 
    Tier, Servers
 
-Manage Services, Services
+.. Manage Services, Services
+サービス管理、サービス
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-From here it is possible to interact with services. To add a service to a tier, first
-select the tier from the diagram. Next navigate to the Manage Service tab shown above.
-Choose Add Service.
+.. From here it is possible to interact with services. To add a service to a tier, first
+   select the tier from the diagram. Next navigate to the Manage Service tab shown above.
+   Choose Add Service.
+ここからは、サービスと対話することが可能です。層にサービスを追加するには、図から層を選択します。
+上記のサービス管理タブに移動してサービスの追加を選択します。
 
 .. figure:: ./images/addServiceToTier.png
    :height: 500px
@@ -1123,10 +1129,13 @@ Choose Add Service.
 
    Tier, Add Service
 
-A list of available services will be presented. Adding a service requires fairly minimal
-information. The more interesting part of services is in the configuration.
+.. A list of available services will be presented. Adding a service requires fairly minimal
+   information. The more interesting part of services is in the configuration.
+利用可能なサービスのリストが表示されます。サービスの追加には、最小限の情報が必要です。
+サービスのより興味深い部分は、構成です。
 
-Selecting this option will present the services that are connected to this tier.
+.. Selecting this option will present the services that are connected to this tier.
+このオプションを選択すると、この層に接続されているサービスを紹介します。
 
 .. figure:: ./images/tierManageService.png
    :height: 400px
@@ -1137,9 +1146,12 @@ Selecting this option will present the services that are connected to this tier.
 
    Tier, Services
 
-Using the same process, a service was also added to the Database tier. To view all
-services, select the deployment and choose Manage Services. This will cause the console to
-display all of the services installed in all tiers on the deployment.
+.. Using the same process, a service was also added to the Database tier. To view all
+   services, select the deployment and choose Manage Services. This will cause the console to
+   display all of the services installed in all tiers on the deployment.
+同じプロセスを使用して、サービスも、データベース層に追加されました。すべてのサービスを表示するには、
+配備を選択し、[サービス管理]を選択します。すると配備上の層にインストールされているすべてのサービスが
+コンソールに表示されます。
 
 .. figure:: ./images/allServices.png
    :height: 400px
@@ -1150,12 +1162,16 @@ display all of the services installed in all tiers on the deployment.
 
    Tier, All Services
 
-Configuring Services
+.. Configuring Services
+サービスの構成
 %%%%%%%%%%%%%%%%%%%%
 
-Configuring services controls options such as the port upon which the services listen for
-incoming traffic, credentials, and dependencies. To view the configuration options
-associated with a service, click on the green action button for the service:
+.. Configuring services controls options such as the port upon which the services listen for
+   incoming traffic, credentials, and dependencies. To view the configuration options
+   associated with a service, click on the green action button for the service:
+サービスの構成は、サービスが着信トラフィック、資格情報、および依存関係をリッスンする時のポートなどの
+オプションを制御します。サービスに関連付けられた構成オプションを表示するには、
+サービスの緑色のアクションボタンをクリックしてください。
 
 .. figure:: ./images/serviceActions.png
    :height: 600px
@@ -1166,16 +1182,21 @@ associated with a service, click on the green action button for the service:
 
    Service, Actions
 
-Launch
+.. Launch
+起動
 %%%%%%
 
-   Launch is an option that is reserved for starting services on an already running
-   deployment. On the service, enStratus will call the script called
-   /mnt/services/$serviceID/bin/enstratus-start.
+   .. Launch is an option that is reserved for starting services on an already running
+      deployment. On the service, enStratus will call the script called
+      /mnt/services/$serviceID/bin/enstratus-start.
+   起動は、すでに実行中の配備上でサービスを開始するために予約されているオプションです。
+   サービスで、enStratusは /mnt/services/$serviceID/bin/enstratus-start と呼ばれるスクリプトを呼び出します。
 
-.. note::  If the deployment is not running, this action is meaningless.
+.. note::  .. If the deployment is not running, this action is meaningless.
+           配備が実行されていない場合、このアクションは無意味です。
 
-Edit
+.. Edit
+編集
 %%%%
 
 .. figure:: ./images/editService.png
@@ -1187,62 +1208,92 @@ Edit
 
    Service, Edit
 
-Editing a service presents several options. The options presented here control how
-enStratus treats your service and what information is passed to your service when changes
-occur.
+.. Editing a service presents several options. The options presented here control how
+   enStratus treats your service and what information is passed to your service when changes
+   occur.
+サービスの編集には、いくつかのオプションが表示されます。ここで提示されるオプションは、
+enStratusが、サービスをどのように扱い、変化が発生した場合にどの情報をサービスに渡すかを制御します。
 
-3. **Backup Frequency**
+3. .. **Backup Frequency**
+   **バックアップの頻度**
 
-   The backup frequency setting controls the frequency with which enStratus calls any custom
-   backup script located in /mnt/services/$serviceID/enstratus/bin/enstratus-backupService.
-   This is a service level backup and enStratus will store the resulting backup file in
-   cloud storage.
+   .. The backup frequency setting controls the frequency with which enStratus calls any custom
+      backup script located in /mnt/services/$serviceID/enstratus/bin/enstratus-backupService.
+      This is a service level backup and enStratus will store the resulting backup file in
+      cloud storage.
+   バックアップ頻度の設定はenStratusが、 /mnt/services/$serviceID/enstratus/bin/enstratus-backupService に
+   ある任意のカスタムバックアップスクリプトを呼び出す頻度を制御します。
+   これは、サービス　レベルのバックアップであり、enStratusは、結果としてクラウドストレージに
+   バックアップファイルを保存します。
 
-4. **Configuration**
+4. .. **Configuration**
+   **構成**
 
-   Configuration is a free form text field that allows an administrator to pass in sensitive
-   information to the service. This information makes its way directly into the
-   enstratus.cfg file that is passed as an argument to the
-   /mnt/services/$serviceID/bin/enstratus-configure as necessary during scaling and starting
-   events. Remember that the enstratus.cfg file is securely erased after it is used.
+   .. Configuration is a free form text field that allows an administrator to pass in sensitive
+      information to the service. This information makes its way directly into the
+      enstratus.cfg file that is passed as an argument to the
+      /mnt/services/$serviceID/bin/enstratus-configure as necessary during scaling and starting
+      events. Remember that the enstratus.cfg file is securely erased after it is used.
+   構成は、管理者がサービスに渡す機密情報で、自由形式のテキストフィールドです。
+   この情報はスケーリング中とイベントの開始時に必要に応じて直接 enstratus.cfgファイルに
+   /mnt/services/$serviceID/bin/enstratus-configure への引数として渡されます。
+   enstratus.cfgファイルは、使用された後確実に消去されることに注意してください。
 
-5. Run as User
+5. .. Run as User
+   ユーザーとして実行
 
-   The run as user controls the user enStratus will use to start the service.
+   .. The run as user controls the user enStratus will use to start the service.
+   ユーザーとして実行では、ユーザーがenStratusを使用してサービスを開始するように制御するのに使用されます。
 
-6. Service Image
+6. .. Service Image
+   サービスイメージ
 
-   The service image is the service image that will be used for the specified service.
-   Service images must first be uploaded via Automation > Service Images.
+   .. The service image is the service image that will be used for the specified service.
+      Service images must first be uploaded via Automation > Service Images.
+   サービスイメージは、指定されたサービスのために使用されるサービスのイメージです。
+   サービスイメージは、最初に Automation > Service Images を介してアップロードされる必要があります。
 
-7. Scaling Model
+7. .. Scaling Model
+   スケーリングモデル
 
-   The scaling model has four options:
+   .. The scaling model has four options:
+   スケーリングモデルでは、4つのオプションがあります。
 
       1. **None** 
 
-         This option means that no special action will be taken during scaling beyond the
-         normal scaling mechanism.
+         .. This option means that no special action will be taken during scaling beyond the
+            normal scaling mechanism.
+         このオプションは、通常のスケーリングのメカニズムを越えてスケーリングにとられる特別な
+         アクションは無いこと意味します
 
       2. **Load Balanced** 
 
-         This option tells enStratus to notify a load balancer when a scaling
-         event occurs that affects this service.
+         .. This option tells enStratus to notify a load balancer when a scaling
+            event occurs that affects this service.
+         このオプションは、enStratusがロード·バランサに何時、このサービスに影響を与えるスケーリングイベントを
+         発生させるかを通知するかを指示します。
 
       3. **Replicated Database** 
 
-         This option tells enStratus to treat the first server started in a tier as a master
-         and all subsequent servers as slaves. Please refer to the MySQL service image for
-         more information about this process.
+         .. This option tells enStratus to treat the first server started in a tier as a master
+            and all subsequent servers as slaves. Please refer to the MySQL service image for
+            more information about this process.
+         このオプションは、enStratusが層で最初に開始したサーバーをマスターとして、後続のすべてのサーバー
+         をスレーブとして扱うように指示します。このプロセスの詳細についてはMySQLサービスイメージを
+         参照してください。
 
       4. **Clustered Database** 
 
-         This option tells enStratus to treat all database servers as peers with no
-         master/slave relationship.
+         .. This option tells enStratus to treat all database servers as peers with no
+            master/slave relationship.
+         このオプションは、enStratusにすべてのデータベースサーバを
+         マスター/スレーブ関係の無いピアとして扱うように指示します。
 
-8. SSL Certificate
+8. .. SSL Certificate
+   SSL証明書
 
-   SSL Certificates may be uploaded to enStratus via the interface at Infrastructure > SSL.
+   .. SSL Certificates may be uploaded to enStratus via the interface at Infrastructure > SSL.
+   SSL証明書は、 Infrastructure > SSL でのインターフェースを介してenStratusにアップロードすることができます。
 
 .. figure:: ./images/sslCertificate.png
    :height: 600px
@@ -1253,32 +1304,45 @@ occur.
 
    SSL, Add
 
-If a certificate has been uploaded to enStratus, it will be present as an option and
-securely passed in to the servers at launch via the /enstratus/bin/configureService script
-and ultimately to the user-defined /mnt/services/$serviceID/bin/enstratus-configure script
-for use in configuring the service.
+.. If a certificate has been uploaded to enStratus, it will be present as an option and
+   securely passed in to the servers at launch via the /enstratus/bin/configureService script
+   and ultimately to the user-defined /mnt/services/$serviceID/bin/enstratus-configure script
+   for use in configuring the service.
+証明書がenStratusにアップロードされている場合は、オプションとして存在することとなり、
+起動時に /enstratus/bin/configureService スクリプトを介して確実ににサーバに渡され、
+そして最終的に、サービス構成に使用するためユーザー定義の /mnt/services/$serviceID/bin/enstratus-configure スクリプト
+に渡されます。
 
-In this option, the SSL certificates are passed to the application servers.
+.. In this option, the SSL certificates are passed to the application servers.
+このオプションでは、SSL証明書はアプリケーション·サーバーに渡されます。
 
 7. **Load Balancer SSL**
 
-   Checking this option will allow the administrator to specify the load balancer as a target
-   for the SSL certificate. This option is only available for virtual machine based load
-   balancers.
-
-   SSL certificates may be available to cloud based load balancers, and must be configured
-   via your cloud provider as not all cloud support this option.
+   .. Checking this option will allow the administrator to specify the load balancer as a target
+      for the SSL certificate. This option is only available for virtual machine based load
+      balancers.
+   このオプションをオンにすると、管理者はSSL証明書のターゲットとしてロードバランサを指定することができます。
+   このオプションは、仮想マシンベースのロードバランサでのみ使用可能です。
+   
+   .. SSL certificates may be available to cloud based load balancers, and must be configured
+   .. via your cloud provider as not all cloud support this option.
+   SSL証明書はクラウドベースのロードバランサにも利用できるかもしれませんが、すべてのクラウドが、
+   このオプションをサポートしているわけではないのでクラウド　プロバイダを介して構成する必要があります。
 
 8. **Billing Code**
 
-   It is possible to track tier costs against a billing code. Different tiers within the same
-   deployment may have different billing codes.
+   .. It is possible to track tier costs against a billing code. Different tiers within the same
+      deployment may have different billing codes.
+   課金コードに対して層のコストを追跡することが可能です。同じ配備内の異なる層は
+   、異なる課金コードを持つことができます。
 
 9. **Owning Group**
 
-   The owning group will specify the group attribute for the service.
+   ..  The owning group will specify the group attribute for the service.
+   所有グループは、サービスのグループ属性を指定します。
 
-Ports
+.. Ports
+ポート
 %%%%%
 
 .. figure:: ./images/servicePorts.png
@@ -1290,22 +1354,33 @@ Ports
 
    Service, Ports
 
-Adding a service port to a service will configure enStratus to pass in the relevant port
-information to the service via the enstratus.cfg file. If there is a load balancer
-connected to the deployment, it will appear in the Load Balancers selection window. If a
-load balancer is selected, enStratus will ensure that servers that have this service
-installed upon them are connected to the load balancer upon start.
+.. Adding a service port to a service will configure enStratus to pass in the relevant port
+   information to the service via the enstratus.cfg file. If there is a load balancer
+   connected to the deployment, it will appear in the Load Balancers selection window. If a
+   load balancer is selected, enStratus will ensure that servers that have this service
+   installed upon them are connected to the load balancer upon start.
+サービスにサービスポートを追加すると、該当するポートに enstratus.cfg ファイルを介してサービスへの
+情報を渡すようにenStratusを設定します。配備に接続されているロードバランサがある場合、
+それはロードバランサの選択ウィンドウに表示されます。ロードバランサが選択されるとenStratusは、
+確実にスタート時にそのサービスをインストールされたサーバーをロードバランサーに接続します。
 
-More specifically, if you have virtual machine-based load balancer specified, and an
-application server has a service installed that is connected to the load balancer,
-enStratus will call /enstratus/bin/startProxy on the load balancer after the service is
-configured on the application server.
+.. More specifically, if you have virtual machine-based load balancer specified, and an
+   application server has a service installed that is connected to the load balancer,
+   enStratus will call /enstratus/bin/startProxy on the load balancer after the service is
+   configured on the application server.
+より具体的には、もし仮想マシンベースのロードバランサが指定されていて、アプリケーションサーバーに、
+ロードバランサに接続されているサービスがインストールされている場合、enStratusは、サービスが
+プリケーション·サーバー上で構成された後にロードバランサ上の /enstratus/bin/startProxy を呼び出します。
+   
+.. If a cloud based load balancer such as an elastic load balancer (ELB), enStratus will call
+   the correct API command to connect that server to the ELB. The cloud based load balancer
+   must be configured beforehand to pass traffic on the correct ports and protocols.
+elastic load balancer （ELB）のようなクラウドベースのロードバランサの場合、enStratusは
+ELBにそのサーバーを接続する正しいAPIのコマンドを呼び出します。クラウドベースのロードバランサ
+は、あらかじめ適切なポートとプロトコル上でトラフィックを渡されるように設定されている必要があります。
 
-If a cloud based load balancer such as an elastic load balancer (ELB), enStratus will call
-the correct API command to connect that server to the ELB. The cloud based load balancer
-must be configured beforehand to pass traffic on the correct ports and protocols.
-
-The relevant section of the enstratus.cfg file for ports is shown here: 
+.. The relevant section of the enstratus.cfg file for ports is shown here: 
+ポートの enstratus.cfg ファイルの関連セクションはここに示されています：
 
 .. code-block:: bash
 
@@ -1314,17 +1389,24 @@ The relevant section of the enstratus.cfg file for ports is shown here:
   port.80.publicPort=80 
   port.80.privatePort=80 
 
-Credentials are also securely passed to the service via the enstratus.cfg file during
-deployment start. What happens to these credentials is determined by the actions taken by
-the enstratus-configure script which should be written by the application/service architect.
+.. Credentials are also securely passed to the service via the enstratus.cfg file during
+   deployment start. What happens to these credentials is determined by the actions taken by
+   the enstratus-configure script which should be written by the application/service architect.
+資格証明も確実に enstratus.cfg ファイルを介してサービスに配備の開始時に渡されます。これらの資格証明に
+何が起こるかはアプリケーション/サービスのアーキテクトによって書かれたはずの enstratus-configure スクリプト
+アクションによって決まります。
 
-Credentials
+.. Credentials
+資格証明
 %%%%%%%%%%%
 
-Credentials are also securely passed to the service via the enstratus.cfg file during
-deployment start. What happens to these credentials is determined by the actions taken by
-the enstratus-configure script which should be written by the application/service
-architect.
+.. Credentials are also securely passed to the service via the enstratus.cfg file during
+   deployment start. What happens to these credentials is determined by the actions taken by
+   the enstratus-configure script which should be written by the application/service
+   architect.
+資格証明も確実に enstratus.cfg ファイルを介してサービスに配備の開始時に渡されます。これらの資格証明に
+何が起こるかはアプリケーション/サービスのアーキテクトによって書かれたはずの enstratus-configure スクリプト
+アクションによって決まります。
 
 .. figure:: ./images/serviceCredentials.png
    :height: 600px
@@ -1335,7 +1417,8 @@ architect.
 
    Service, Credentials
 
-The relevant section of the enstratus.cfg file for credentials is here: 
+.. The relevant section of the enstratus.cfg file for credentials is here: 
+資格情報　enstratus.cfg　ファイルの関連セクションはここです。：
 
 .. code-block:: bash
 
@@ -1344,11 +1427,15 @@ The relevant section of the enstratus.cfg file for credentials is here:
   serviceKey.admin.user=adminUser
   serviceKey.admin.password=trustno1
 
-This configuration option controls the information that is passed to services via the
-enstratus.cfg file. What happens to this information is determined by the actions
-specified in the enstratus-configure script written by your application architect.
+.. This configuration option controls the information that is passed to services via the
+   enstratus.cfg file. What happens to this information is determined by the actions
+   specified in the enstratus-configure script written by your application architect.
+この設定オプションは、enstratus.cfg ファイルを経由してサービスに渡される情報を制御します。
+この情報がどうなるかはアプリケーションアーキテクトによって書かれた enstratus-configure スクリプト
+で指定されたアクションによって決まります。
 
-Data Sources
+.. Data Sources
+データソース
 %%%%%%%%%%%%
 
 .. figure:: ./images/serviceDataSources.png
@@ -1369,61 +1456,82 @@ Data Sources
 
    Data Source, Edit
 
-A data source is tied only to database services. Data sources are database backup files
-such as a datasource.sql file that have been uploaded to enStratus for use in deployments
-via Automation > Data Sources.
+.. A data source is tied only to database services. Data sources are database backup files
+   such as a datasource.sql file that have been uploaded to enStratus for use in deployments
+   via Automation > Data Sources.
+データソースは、データベースサービスにのみ接続されています。データソースは、配備で使用する
+ためにenStratusに Automation > Data Sources のwebインターフェースを経由してアップロード
+された datasource.sql のようなデータベースのバックアップファイルです。
 
-The figure above displays the data source configuration for a MySQL service. The available
-configuration options for data sources and their functions are described here:
+.. The figure above displays the data source configuration for a MySQL service. The available
+   configuration options for data sources and their functions are described here:
+上の図は、MySQLサービスのデータソースの構成を表示しています。利用できる
+データソースとその機能の構成オプションが、ここで説明されています。
 
 #. **Name**
 
-   The name is a logical name for the data source as it will appear in the enStratus console.
+   .. The name is a logical name for the data source as it will appear in the enStratus console.
+   名前は、enStratusコンソールに表示されますように、データソースの論理名です。
 
 #. **Name in Database**
 
-   This configuration option ultimately becomes the name of the database itself as in the
-   case of a MySQL service.
+   .. This configuration option ultimately becomes the name of the database itself as in the
+      case of a MySQL service.
+   この設定オプションは、最終的にMySQLサービスの場合のように、データベース自体の名前になります。
 
 #. **Description**
 
-   A text description of the service for human reference.
+   .. A text description of the service for human reference.
+   人が参照サービスに使用する説明テキスト。
 
 #. **Label**
 
-   An optional color code that will be applied to the service in the enStratus console.
+   .. An optional color code that will be applied to the service in the enStratus console.
+   enStratusコンソールのサービスに任意のカラーコードを適用できます。
 
 #. **Service User**
 
-   The service user will be the user on the server that owns the service.
+   .. The service user will be the user on the server that owns the service.
+   サービスユーザは、サービスを所有するサーバ上のユーザとなります。
 
 #. **Backup Frequency**
 
-   This configuration option specifies the frequency with which enStratus calls the agent
-   script called /enstratus/bin/backupService. The function of this script is to call a
-   user-configured script called /mnt/services/$serviceID/bin/enstratus-backupDataSource. If
-   this script exists, enStratus will execute it and place the resulting file into cloud
-   storage. If not, this is a nonoperational event.
+   .. This configuration option specifies the frequency with which enStratus calls the agent
+      script called /enstratus/bin/backupService. The function of this script is to call a
+      user-configured script called /mnt/services/$serviceID/bin/enstratus-backupDataSource. If
+      this script exists, enStratus will execute it and place the resulting file into cloud
+      storage. If not, this is a nonoperational event.
+   この設定オプションは、enStratusが、 /enstratus/bin/backupService と呼ばれるエージェントスクリプトを呼び出す
+   頻度を指定します。このスクリプトの機能はユーザが
+   設定した /mnt/services/$serviceID/bin/enstratus-backupDataSourceと呼ばれるスクリプト呼び出すことです。
+   このスクリプトが存在する場合、enStratusはそれを実行し、クラウドストレージに結果のファイルを配置します。
+   そうでない場合は、これは動作不能なイベントです。
 
 #. **Service Password**
 
-   This parameter will become the password that can be used to connect to the data source
+   .. This parameter will become the password that can be used to connect to the data source
+   このパラメータは、データソースへの接続に使用することができるパスワードになります
 
 #. **Custom Configuration**
 
-   The custom configuration option is a free-form text field that can be used to pass
-   information to the enstratus-configure script at the time of service configuration. This
-   information will be contained within the enstratus.cfg file.
+   .. The custom configuration option is a free-form text field that can be used to pass
+      information to the enstratus-configure script at the time of service configuration. This
+      information will be contained within the enstratus.cfg file.
+   カスタム構成オプションはサービスの構成時に enstratus-configure スクリプトに情報を渡すために使用する
+   ことができる、自由形式のテキストフィールドです。この情報は enstratus.cfg ファイル内に格納されます。
 
 #. **Data Source Image**
 
-   The data source image is the database dump file that will be used to initialize the
-   database named in the Name in Database field.
+   .. The data source image is the database dump file that will be used to initialize the
+      database named in the Name in Database field.
+   データソースイメージは、データベースフィールドでの名前のデータベース ダンプファイルで初期化時に使用されます。
+   。
 
 #. **Owning Group**
 
-   The owning group can be assigned to the service if role based access controls are being
-   used.
+   .. The owning group can be assigned to the service if role based access controls are being
+      used.
+   役割ベースのアクセスコントロールが使用されている場合は、所有グループは、サービスに割り当てることができます。
 
 Dependencies
 %%%%%%%%%%%%
