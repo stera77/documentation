@@ -1027,8 +1027,8 @@ Manage Launch Configuration, General Information
          of servers in a server group vote to scale down by returning -1, a random server in that
          group will be terminated. If most servers vote 0, no scaling will occur.
       enStratusによってグループ内のサーバ数をスケーリングするかどうかを判断するたの投票機構が使用されます。
-      基本的に、もしサーバグループのサーバの大半が1を返すことによってスケールアップの "投票"をすれば、新規の
-      サーバーが開始されます。もしサーバグループのサーバの大半が-1を返すことによってスケールダウンの "投票"をすれば、
+      基本的に、もしサーバグループのサーバの大多数が1を返すことによってスケールアップの "投票"をすれば、新規の
+      サーバーが開始されます。もしサーバグループのサーバの大多数が-1を返すことによってスケールダウンの "投票"をすれば、
       グループ内のランダムに選択されて終了します。ほとんどのサーバーが0に投票する場合、スケーリングは行われません。
    
       .. Here is an example of a scaleCheck script that was written to provide a mechanism for
@@ -1533,7 +1533,8 @@ ELBにそのサーバーを接続する正しいAPIのコマンドを呼び出�
       used.
    役割ベースのアクセスコントロールが使用されている場合は、所有グループは、サービスに割り当てることができます。
 
-Dependencies
+.. Dependencies
+依存関係
 %%%%%%%%%%%%
 
 .. figure:: ./images/serviceDependencies.png
@@ -1545,75 +1546,114 @@ Dependencies
 
    Service, Dependencies
 
-Creating an dependency means establishing a logical connection between services. For
-example, an application service may have a dependency on a database service. Perhaps even
-more meaningful than that, an application service may have a dependency on a database data
-source.
+.. Creating an dependency means establishing a logical connection between services. For
+   example, an application service may have a dependency on a database service. Perhaps even
+   more meaningful than that, an application service may have a dependency on a database data
+   source.
+依存関係を作成することは、サービス間の論理的な接続を確立することを意味します。
+たとえば、アプリケーションサービスは、データベースサービスに依存している可能性があります。
+それ以上に意味のあることは、アプリケーションサービスは、おそらくデータベースのデータソースに依存していることです。
 
-Operationally, if there exists a dependency between two services, when there are changes
-that affect either service such as an auto-recovery or an auto-scaling event, the other
-service is notified by enStratus of this environmental change.
 
-This notification process is conducted using the enstratus.cfg file which is passed to all
-affected services in a tier.
+.. Operationally, if there exists a dependency between two services, when there are changes
+   that affect either service such as an auto-recovery or an auto-scaling event, the other
+   service is notified by enStratus of this environmental change.
+運用上、2つのサービス間に依存関係が存在する場合、自動回復または自動スケーリングイベントのような、
+いずれかのサービスに影響を与える変更があるとき、他のサービスに、この環境変化がenStratusによって通知されます。
 
-In the figure above, an application service has a dependency on a data source installed on
-a database service. If there is an auto-recovery event on a database server housing the
-data source, the application services that depend on it will be notified when enStratus
-passes in a new enstratus.cfg file to each of them.
+.. This notification process is conducted using the enstratus.cfg file which is passed to all
+   affected services in a tier.
+この通知プロセスは、 enstratus.cfg ファイルを使用して行われ、層内の影響を受けたサービスすべてに渡されます。
 
-Similarly, when changes such as an auto-recovery or an auto-scaling event occur on servers
-housing the application service, the database service will be notified as well to grant or
-revoke database access as necessary to compensate for changes at the application tier.
-The takeaway message for dependencies is that dependencies establish logical relationships
-between services that ensure the required information is passed when environment
-changes occur such as a scale or recovery of a server that is running an affected service.
+.. In the figure above, an application service has a dependency on a data source installed on
+   a database service. If there is an auto-recovery event on a database server housing the
+   data source, the application services that depend on it will be notified when enStratus
+   passes in a new enstratus.cfg file to each of them.
+上記の図では、アプリケーションサービスがデータベースサービス上にインストールされている
+データソースに依存しています。データソースを内蔵するデータベースサーバーに自動回復イベントがある場合、
+それに依存する各々のアプリケーションサービスにenStratusが新しい enstratus.cfg ファイルを渡すときに通知がなされます。
 
-Delete
+.. Similarly, when changes such as an auto-recovery or an auto-scaling event occur on servers
+   housing the application service, the database service will be notified as well to grant or
+   revoke database access as necessary to compensate for changes at the application tier.
+   The takeaway message for dependencies is that dependencies establish logical relationships
+   between services that ensure the required information is passed when environment
+   changes occur such as a scale or recovery of a server that is running an affected service.
+同様に、このような自動回復または自動スケーリングイベントなどの変更が、アプリケーションサービスを内蔵する
+サーバーで発生すると、データベースサービスに通知され、同様にアプリケーション層での変化を補償するために
+必要に応じてデータベースアクセス権を付与するか、取消すかします。
+依存関係のお持ち帰りメッセージは、サービス間で、論理的な関係を確立する、そのような依存関係です。
+それは、スケールや影響を受けたサービスを実行しているサーバーの回復のような環境変化が発生したとき、
+必要な情報が渡されることを保証します。
+
+.. Delete
+削除
 %%%%%%
 
-Deleting a service will remove it from a tier.
+.. Deleting a service will remove it from a tier.
+サービスを削除すると、層からそれを削除します。
 
-Versioning
+.. Versioning
+バージョニング
 %%%%%%%%%%
 
-Maintaining the most recent version of a service is dependent somewhat on the cloud
-provider. If your cloud provider has a concept of attachable block storage devices and
-your services are installed upon one of them that is regularly being snapshotted, it may
-be acceptable to rely on this mechanism for maintaing the most recent software. Update
-your services on the running volumes, and the updates will persist once the next snapshot
-is taken.
+.. Maintaining the most recent version of a service is dependent somewhat on the cloud
+   provider. If your cloud provider has a concept of attachable block storage devices and
+   your services are installed upon one of them that is regularly being snapshotted, it may
+   be acceptable to rely on this mechanism for maintaing the most recent software. Update
+   your services on the running volumes, and the updates will persist once the next snapshot
+   is taken.
+サービスの最新バージョンを維持することはややクラウドプロバイダーに依存しています。
+クラウドプロバイダが取付け可能なブロックストレージデバイスの概念を持っていて、
+そのうちの１つにサービスがインストールされて、定期的にスナップショットが撮られていれば、
+最新版のソフトウェアを維持するのにこのメカニズムに頼ることは許容されます。
+動作中のボリューム上のサービスの更新、次のスナップショット取得後の更新は保持されます。
 
-This approach is dependent upon the enStratus auto-recovery and scaling procedures. It is
-advisable to also update the service images that are defined for each service in a tier by
-uploading a new service image via Infrastructure > Service Images and then pointing the
-service definition to the newest version.
+.. This approach is dependent upon the enStratus auto-recovery and scaling procedures. It is
+   advisable to also update the service images that are defined for each service in a tier by
+   uploading a new service image via Infrastructure > Service Images and then pointing the
+   service definition to the newest version.
+このアプローチは、enStratusの自動回復とスケーリング手順に依存しています。
+Infrastructure > Service Images を介して新たなサービスイメージをアップロードすることで層内の
+各サービスに対して定義されているサービスイメージを更新し、その後サービス定義が最新バージョンを
+指し示すようにすることをお勧めします。
 
-If your cloud provider has no concept of attachable block storage devices, the only option
-is to take the approach of uploading the new, updated service image via Infrastructure >
-Service images and then pointing the service definition to the newest version.
+.. If your cloud provider has no concept of attachable block storage devices, the only option
+   is to take the approach of uploading the new, updated service image via Infrastructure >
+   Service images and then pointing the service definition to the newest version.
+クラウドプロバイダが取付け可能なブロックストレージデバイスの概念を持っていない場合、
+唯一の選択肢は Infrastructure > Service images を経由して、新規の更新されたサービスイメージをアップロードして、
+サービスの定義を最新バージョンを指すようにするアプローチを取ることです。
 
 SSL
 ~~~
 
-SSL certificates may be uploaded to enStratus where they will be protected via the same
-encryption methods as any credentials for the customer account. SSL certificates should
-not be imaged onto servers, rather, they should be installed in an automated on-demand
-fashion at the time of server start.
+.. SSL certificates may be uploaded to enStratus where they will be protected via the same
+   encryption methods as any credentials for the customer account. SSL certificates should
+   not be imaged onto servers, rather, they should be installed in an automated on-demand
+   fashion at the time of server start.
+顧客アカウントの資格情報の暗号化方法と同じ暗号化方法で顧客が保護されているenStratusにSSL証明書を
+アップロードすることができます。 SSL証明書はイメージの形でサーバ上に置くべきではなく、むしろ、それらは
+自動的にオンデマンド風にサーバの起動時にインストールされるべきです。
 
-Creating
+.. Creating
+作成
 %%%%%%%%
 
-Create SSL certificates by any method you desire. enStratus will inform the administrator
-via an alert when the SSL cerfiticate is set to expire via a message of the form:
+.. Create SSL certificates by any method you desire. enStratus will inform the administrator
+   via an alert when the SSL cerfiticate is set to expire via a message of the form:
+望みの任意の方法によってSSL証明書を作成します。 enStratusは SSL証明書が、有効期限が切れるように
+設定されているときは、管理者にこのフォームのメッセージのアラートを介して通知します：
 
 .. literalinclude:: ./files/sslExpire
 
-Uploading
+.. Uploading
+アップロード
 %%%%%%%%%
 
-To upload your certificate to enStratus, navigate to Infrastructure > SSL Certificates as
-shown:
+.. To upload your certificate to enStratus, navigate to Infrastructure > SSL Certificates as
+   shown:
+enStratusに証明書をアップロードするには、図に示すように Infrastructure > SSL Certificates に移動します。：
 
 .. figure:: ./images/sslCertificate.png
    :height: 500px
@@ -1624,23 +1664,32 @@ shown:
 
    SSL, Upload
 
-Updating
+.. Updating
+更新
 %%%%%%%%
 
-To update your SSL certificate, choose an existing certificate from the list and update
-the necessary fields, then save.
+.. To update your SSL certificate, choose an existing certificate from the list and update
+   the necessary fields, then save.
+SSL証明書を更新するには、リストから既存の証明書を選択し、必要なフィールドを更新し、次に保存します。
 
-Using
+.. Using
+使用
 %%%%%
 
-Data sources are used when configuring a service. More is said about this in the section
-on Tiers, which hold services.
+.. Data sources are used when configuring a service. More is said about this in the section
+   on Tiers, which hold services.
+サービスを設定するときにデータソースが使用されています。サービスを保持する層においてはこのセクションについて
+もっと言うことがあります。
 
-Backups
+.. Backups
+バックアップ
 ~~~~~~~
-Backups occur according the the parameters specified in the Launch Configuration
-configuration. As snapshots and occur, they are tracked in the Automation > Backups part
-of the enStratus console.
+.. Backups occur according the the parameters specified in the Launch Configuration
+   configuration. As snapshots and occur, they are tracked in the Automation > Backups part
+   of the enStratus console.
+バックアップは、起動設定で指定されたパラメータに従って発生します。
+スナップショットと同じように発生し、それらはenStratusコンソールの Automation > Backupsの
+のパートで追跡できます。
 
 .. figure:: ./images/deploymentBackups.png
    :height: 500px

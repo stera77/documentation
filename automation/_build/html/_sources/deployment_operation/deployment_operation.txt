@@ -1,4 +1,5 @@
-Deployment Operation
+.. Deployment Operation
+配備操作
 ====================
 
 .. include:: launch.rst

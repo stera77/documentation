@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
-    <link rel="next" title="5. Deployment Operation" href="../deployment_operation/deployment_operation.html" />
+    <link rel="next" title="5. ?z???@????" href="../deployment_operation/deployment_operation.html" />
     <link rel="prev" title="3. サービス" href="../services/services.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
@@ -40,7 +40,7 @@
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
-			<div class="headerButton"><a href="../deployment_operation/deployment_operation.html" title="5. Deployment Operation" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="../deployment_operation/deployment_operation.html" title="5. ?z???@????" accesskey="N">next</a></div>
 			<div class="headerButton"><a href="../services/services.html" title="3. サービス" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
@@ -68,10 +68,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#id17">4.8. 起動構成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id21">4.9. 層</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ssl">4.10. SSL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#backups">4.11. Backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id41">4.11. バックアップ</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../deployment_operation/deployment_operation.html">5. Deployment Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_operation/deployment_operation.html">5. ?z???&#64;????</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -689,8 +689,8 @@ RAMの上限しきい値。これはRAMの使用量の上限をパーセント�
 enStratusに信号を送ります。その信号は [スケールアップ、何もしない、またはスケールダウン] それぞれに対応して
 、1、0、または-1を返します。</p>
 <p>enStratusによってグループ内のサーバ数をスケーリングするかどうかを判断するたの投票機構が使用されます。
-基本的に、もしサーバグループのサーバの大半が1を返すことによってスケールアップの &#8220;投票&#8221;をすれば、新規の
-サーバーが開始されます。もしサーバグループのサーバの大半が-1を返すことによってスケールダウンの &#8220;投票&#8221;をすれば、
+基本的に、もしサーバグループのサーバの大多数が1を返すことによってスケールアップの &#8220;投票&#8221;をすれば、新規の
+サーバーが開始されます。もしサーバグループのサーバの大多数が-1を返すことによってスケールダウンの &#8220;投票&#8221;をすれば、
 グループ内のランダムに選択されて終了します。ほとんどのサーバーが0に投票する場合、スケーリングは行われません。</p>
 <p>ここにEC2で動作中の&#8221;small&#8221;サーバーに正規化係数を適用するメカニズムを提供するために書かれた
 scaleCheckスクリプトの例があります。</p>
@@ -1013,63 +1013,57 @@ serviceKey.admin.password<span class="o">=</span>trustno1
 </li>
 </ol>
 </div>
-<div class="section" id="dependencies">
-<h3>4.9.13. Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id34">
+<h3>4.9.13. 依存関係<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/serviceDependencies.png"><img alt="Service, Dependencies" src="../_images/serviceDependencies.png" style="width: 500.0px; height: 150.0px;" /></a>
 <p class="caption">Service, Dependencies</p>
 </div>
-<p>Creating an dependency means establishing a logical connection between services. For
-example, an application service may have a dependency on a database service. Perhaps even
-more meaningful than that, an application service may have a dependency on a database data
-source.</p>
-<p>Operationally, if there exists a dependency between two services, when there are changes
-that affect either service such as an auto-recovery or an auto-scaling event, the other
-service is notified by enStratus of this environmental change.</p>
-<p>This notification process is conducted using the enstratus.cfg file which is passed to all
-affected services in a tier.</p>
-<p>In the figure above, an application service has a dependency on a data source installed on
-a database service. If there is an auto-recovery event on a database server housing the
-data source, the application services that depend on it will be notified when enStratus
-passes in a new enstratus.cfg file to each of them.</p>
-<p>Similarly, when changes such as an auto-recovery or an auto-scaling event occur on servers
-housing the application service, the database service will be notified as well to grant or
-revoke database access as necessary to compensate for changes at the application tier.
-The takeaway message for dependencies is that dependencies establish logical relationships
-between services that ensure the required information is passed when environment
-changes occur such as a scale or recovery of a server that is running an affected service.</p>
+<p>依存関係を作成することは、サービス間の論理的な接続を確立することを意味します。
+たとえば、アプリケーションサービスは、データベースサービスに依存している可能性があります。
+それ以上に意味のあることは、アプリケーションサービスは、おそらくデータベースのデータソースに依存していることです。</p>
+<p>運用上、2つのサービス間に依存関係が存在する場合、自動回復または自動スケーリングイベントのような、
+いずれかのサービスに影響を与える変更があるとき、他のサービスに、この環境変化がenStratusによって通知されます。</p>
+<p>この通知プロセスは、 enstratus.cfg ファイルを使用して行われ、層内の影響を受けたサービスすべてに渡されます。</p>
+<p>上記の図では、アプリケーションサービスがデータベースサービス上にインストールされている
+データソースに依存しています。データソースを内蔵するデータベースサーバーに自動回復イベントがある場合、
+それに依存する各々のアプリケーションサービスにenStratusが新しい enstratus.cfg ファイルを渡すときに通知がなされます。</p>
+<p>同様に、このような自動回復または自動スケーリングイベントなどの変更が、アプリケーションサービスを内蔵する
+サーバーで発生すると、データベースサービスに通知され、同様にアプリケーション層での変化を補償するために
+必要に応じてデータベースアクセス権を付与するか、取消すかします。
+依存関係のお持ち帰りメッセージは、サービス間で、論理的な関係を確立する、そのような依存関係です。
+それは、スケールや影響を受けたサービスを実行しているサーバーの回復のような環境変化が発生したとき、
+必要な情報が渡されることを保証します。</p>
 </div>
-<div class="section" id="delete">
-<h3>4.9.14. Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
-<p>Deleting a service will remove it from a tier.</p>
+<div class="section" id="id35">
+<h3>4.9.14. 削除<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<p>サービスを削除すると、層からそれを削除します。</p>
 </div>
-<div class="section" id="versioning">
-<h3>4.9.15. Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h3>
-<p>Maintaining the most recent version of a service is dependent somewhat on the cloud
-provider. If your cloud provider has a concept of attachable block storage devices and
-your services are installed upon one of them that is regularly being snapshotted, it may
-be acceptable to rely on this mechanism for maintaing the most recent software. Update
-your services on the running volumes, and the updates will persist once the next snapshot
-is taken.</p>
-<p>This approach is dependent upon the enStratus auto-recovery and scaling procedures. It is
-advisable to also update the service images that are defined for each service in a tier by
-uploading a new service image via Infrastructure &gt; Service Images and then pointing the
-service definition to the newest version.</p>
-<p>If your cloud provider has no concept of attachable block storage devices, the only option
-is to take the approach of uploading the new, updated service image via Infrastructure &gt;
-Service images and then pointing the service definition to the newest version.</p>
+<div class="section" id="id36">
+<h3>4.9.15. バージョニング<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<p>サービスの最新バージョンを維持することはややクラウドプロバイダーに依存しています。
+クラウドプロバイダが取付け可能なブロックストレージデバイスの概念を持っていて、
+そのうちの１つにサービスがインストールされて、定期的にスナップショットが撮られていれば、
+最新版のソフトウェアを維持するのにこのメカニズムに頼ることは許容されます。
+動作中のボリューム上のサービスの更新、次のスナップショット取得後の更新は保持されます。</p>
+<p>このアプローチは、enStratusの自動回復とスケーリング手順に依存しています。
+Infrastructure &gt; Service Images を介して新たなサービスイメージをアップロードすることで層内の
+各サービスに対して定義されているサービスイメージを更新し、その後サービス定義が最新バージョンを
+指し示すようにすることをお勧めします。</p>
+<p>クラウドプロバイダが取付け可能なブロックストレージデバイスの概念を持っていない場合、
+唯一の選択肢は Infrastructure &gt; Service images を経由して、新規の更新されたサービスイメージをアップロードして、
+サービスの定義を最新バージョンを指すようにするアプローチを取ることです。</p>
 </div>
 </div>
 <div class="section" id="ssl">
 <h2>4.10. SSL<a class="headerlink" href="#ssl" title="Permalink to this headline">¶</a></h2>
-<p>SSL certificates may be uploaded to enStratus where they will be protected via the same
-encryption methods as any credentials for the customer account. SSL certificates should
-not be imaged onto servers, rather, they should be installed in an automated on-demand
-fashion at the time of server start.</p>
-<div class="section" id="creating">
-<h3>4.10.1. Creating<a class="headerlink" href="#creating" title="Permalink to this headline">¶</a></h3>
-<p>Create SSL certificates by any method you desire. enStratus will inform the administrator
-via an alert when the SSL cerfiticate is set to expire via a message of the form:</p>
+<p>顧客アカウントの資格情報の暗号化方法と同じ暗号化方法で顧客が保護されているenStratusにSSL証明書を
+アップロードすることができます。 SSL証明書はイメージの形でサーバ上に置くべきではなく、むしろ、それらは
+自動的にオンデマンド風にサーバの起動時にインストールされるべきです。</p>
+<div class="section" id="id37">
+<h3>4.10.1. 作成<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
+<p>望みの任意の方法によってSSL証明書を作成します。 enStratusは SSL証明書が、有効期限が切れるように
+設定されているときは、管理者にこのフォームのメッセージのアラートを介して通知します：</p>
 <div class="highlight-python"><pre>New Cloud Event: Tue 07 Nov 2010 12:28:59 UTC
 Cloud: Rackspace
 Account: enStratus RS NOC
@@ -1095,31 +1089,29 @@ Twitter at http://www.twitter.com/enStratusStatus.
 </pre>
 </div>
 </div>
-<div class="section" id="uploading">
-<h3>4.10.2. Uploading<a class="headerlink" href="#uploading" title="Permalink to this headline">¶</a></h3>
-<p>To upload your certificate to enStratus, navigate to Infrastructure &gt; SSL Certificates as
-shown:</p>
+<div class="section" id="id38">
+<h3>4.10.2. アップロード<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
+<p>enStratusに証明書をアップロードするには、図に示すように Infrastructure &gt; SSL Certificates に移動します。：</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/sslCertificate.png"><img alt="SSL, Upload" src="../_images/sslCertificate.png" style="width: 400.0px; height: 250.0px;" /></a>
 <p class="caption">SSL, Upload</p>
 </div>
 </div>
-<div class="section" id="updating">
-<h3>4.10.3. Updating<a class="headerlink" href="#updating" title="Permalink to this headline">¶</a></h3>
-<p>To update your SSL certificate, choose an existing certificate from the list and update
-the necessary fields, then save.</p>
+<div class="section" id="id39">
+<h3>4.10.3. 更新<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
+<p>SSL証明書を更新するには、リストから既存の証明書を選択し、必要なフィールドを更新し、次に保存します。</p>
 </div>
-<div class="section" id="using">
-<h3>4.10.4. Using<a class="headerlink" href="#using" title="Permalink to this headline">¶</a></h3>
-<p>Data sources are used when configuring a service. More is said about this in the section
-on Tiers, which hold services.</p>
+<div class="section" id="id40">
+<h3>4.10.4. 使用<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
+<p>サービスを設定するときにデータソースが使用されています。サービスを保持する層においてはこのセクションについて
+もっと言うことがあります。</p>
 </div>
 </div>
-<div class="section" id="backups">
-<h2>4.11. Backups<a class="headerlink" href="#backups" title="Permalink to this headline">¶</a></h2>
-<p>Backups occur according the the parameters specified in the Launch Configuration
-configuration. As snapshots and occur, they are tracked in the Automation &gt; Backups part
-of the enStratus console.</p>
+<div class="section" id="id41">
+<h2>4.11. バックアップ<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h2>
+<p>バックアップは、起動設定で指定されたパラメータに従って発生します。
+スナップショットと同じように発生し、それらはenStratusコンソールの Automation &gt; Backupsの
+のパートで追跡できます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deploymentBackups.png"><img alt="Deployment Backups" src="../_images/deploymentBackups.png" style="width: 700.0px; height: 250.0px;" /></a>
 <p class="caption">Deployment Backups</p>
