@@ -4,10 +4,12 @@
    contain the root `toctree` directive.
 
 
-enStratus SaaS Documentation
+.. enStratus SaaS Documentation
+enStratus SaaS 文書
 ============================
 
-Contents:
+.. Contents:
+目次:
 
 .. toctree::
    :maxdepth: 2
