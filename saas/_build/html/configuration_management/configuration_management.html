@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2. Configuration Management &mdash; The enStratus Documentation Project</title>
+    <title>2. 構成管理 &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
-    <link rel="next" title="3. Pre-requisites" href="../automation/automation.html" />
-    <link rel="prev" title="1. Console" href="../console/console.html" />
+    <link rel="next" title="4. 自動化" href="../automation/automation.html" />
+    <link rel="prev" title="1. コンソール" href="../console/console.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -35,13 +35,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>2. Configuration Management</h1></div>
+	<div id="title"><h1>2. 構成管理</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
-			<div class="headerButton"><a href="../automation/automation.html" title="3. Pre-requisites" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="../console/console.html" title="1. Console" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="../automation/automation.html" title="4. 自動化" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="../console/console.html" title="1. コンソール" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -54,19 +54,27 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">2. Configuration Management</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#chef">2.1. Chef</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-chef">2.2. Using Chef</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">2. 構成管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.1. シェフ</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id4">3. シェフの使用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id5">3.1. はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">3.2. 構成管理サービスを追加</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">3.3. 構成管理アカウントの追加</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">3.4. シェフを使用するイメージを設定する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vm">3.5. 構成管理のアクションでVMを起動</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#runconfigurationmanagement-chef">3.6. エージェントスクリプト: runConfigurationManagement-CHEF</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -105,150 +113,159 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="configuration-management">
-<h1>2. Configuration Management<a class="headerlink" href="#configuration-management" title="Permalink to this headline">¶</a></h1>
-<p>This section provides information on using configuration management systems within the
-enStratus console.</p>
-<p>The enStratus console allows you to manage resources using two kinds of configuration
-management systems, Chef and Object Store.</p>
-<div class="section" id="chef">
-<h2>2.1. Chef<a class="headerlink" href="#chef" title="Permalink to this headline">¶</a></h2>
-<p>Chef is a configuration management tool created by Opscode. enStratus support both the
-hosted and private versions of Chef.</p>
-<p>Object Store is a simple script based Configuration Management System that allows you to
-upload custom scripts into a cloud storage account, groups scripts into personalities, and
-automatically download and run the scripts when a new server is launched in your cloud
-account.
-Services</p>
-<p>To implement configuration management, you must first configure a service under
-Configuration Management &gt; Services. If you choose Chef, you must supply an endpoint for
-the service. If you choose Object Store, you must choose a region and then a directory in
-which to store your scripts.</p>
-<div class="section" id="accounts">
-<h3>2.1.1. Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h3>
-<p>Once your service has been configured, you will need to create an account associated with
-that service under Configuration Management &gt; Accounts. When you set up an account for a
-Chef service you associate a set of credentials with that account. Credentials are not
-necessary for Object Store services.</p>
-<p>Multiple accounts may be attached to the same Chef service with different sets of
-credentials, but an Object Store service can be associated with only one configuration
-management account at a time.</p>
+  <div class="section" id="id1">
+<h1>2. 構成管理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>このセクションでは、enStratusコンソール内の構成管理システムを使用して情報を提供します。</p>
+<p>enStratusコンソールでは、シェフとオブジェクトストアの2つのタイプの構成管理システムを使用して
+リソースを管理することができます。</p>
+<div class="section" id="id2">
+<h2>2.1. シェフ<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>シェフはOpscodeによって作成された構成管理ツールです。 enStratusはシェフのホステッドとプライベートの
+両方のバージョンをサポートします。</p>
+<p>オブジェクトストアはシンプルなスクリプトベースの構成管理システムで、カスタムスクリプトを
+クラウドストレージアカウントに、グループスクリプトをパーソナリティにアップロードし、
+新規サーバーがクラウドアカウント内で起動されたときに自動的にダウンロードしてスクリプトを実行
+することができます。
+サービス</p>
+<p>構成管理を実装するには、まず Configuration Management &gt; Services でサービスを構成する必要があります。
+シェフを選択すると、サービスのエンドポイントを指定する必要があります。オブジェクトストアを選択すると、
+リージョンとその次にスクリプトを格納するディレクトリを選択しなければなりません</p>
+<div class="section" id="id3">
+<h3>2.1.1. アカウント<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>サービスが設定されたら、そのサービスに関連付けられたアカウントを Configuration Management &gt; Accounts で
+作成する必要があります。シェフサービスのアカウントを設定するとき、そのアカウントと資格情報のセットを
+関連付けます。オブジェクトストアのサービスには資格情報は必要ありません。</p>
+<p>複数のアカウントを、別の資格情報セットで同じシェフサービスに付加できますが、
+１つのオブジェクトストアサービスは1つの構成管理アカウントだけを関連付けることができます。</p>
 </div>
 </div>
-<div class="section" id="using-chef">
-<h2>2.2. Using Chef<a class="headerlink" href="#using-chef" title="Permalink to this headline">¶</a></h2>
-<p>Using Chef to configure instances requires the following software be installed:</p>
+</div>
+<div class="section" id="id4">
+<h1>3. シェフの使用<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id5">
+<h2>3.1. はじめに<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>インスタンスを設定するシェフを使用すると、次のソフトウェアがインストールされている必要があります。</p>
 <ol class="arabic">
-<li><p class="first">enStratus agent.</p>
-<p>Although Chef can be used to install the enStratus agent, in an automation enviroment
-where Chef is used to configure instances at run-time, the agent is used as a trigger
-point so that chef runs happen at the appropriate time and with the appropriate
-credentials.</p>
+<li><p class="first">enStratus エージェント.</p>
+<p>シェフは、enStratus エージェントをインストールするために使用することができますが、
+実行時にインスタンスを設定するために使用される、オートメーション環境では、トリガポイント
+として使用されます。それは、シェフの実行が適切な時期に、適切な資格情報を持って発生するためのトリガポイントです。</p>
 </li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Although the requirement for the enStratus agent seems like an unreasonable
-request at first, it actually allows for a great degree of flexibility in executing Chef
-client calls against Chef endpoints.</p>
+<p class="last">最初の要求は、実際にシェフクライアントの、シェフのエンドポイントに対する呼出しを実行する際に
+実に多大な柔軟性を可能にします。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">enStratus passes in a chef-endpoint, and the credentials for connecting to
-that endpoint at runtime to the instance via the agent. The agent dynamically writes
-the client.rb file with this information, making the image usable anywhere.</p>
+<p class="last">enStratusは実行時にシェフ-エンドポイントとエンドポイントに接続するための資格情報を
+インスタンスにエージェント経由で渡します。エージェントはclient.rbファイル
+をこの情報と一緒にどこででもイメージを使用可能にして動的に書き込みます。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>Use Case</strong></p>
-<p>enStratus engineers frequently do Chef server installations at client sites
-for POC. Often, the Chef server is a VM just like any other instance, and as such has all
-the ephemerality of instances running on a POC cloud project.</p>
-<p>enStratus solves the problem of moving Chef server targets by abstracting that process and
-using the agent to handle the passing of necessary information to each instance.</p>
-<p class="last">In summary, the standing up of Chef-enabled instances becomes trivial. Just install
-the Chef client with a templated client.rb (shown below) and let the agent kick off the
-Chef execution.</p>
+<p><strong>ユースケース</strong></p>
+<p>enStratusエンジニアは頻繁にクライアントのサイトでPOCのためにシェフサーバーのインストールを行います。
+多くの場合、シェフサーバは他のインスタンスのようなVMであり、すべてのPOCクラウドのプロジェクトで
+実行されているインスタンスのはかなさ持っています。</p>
+<p>enStratusは、そのプロセスを抽象化することにより、シェフサーバーターゲットの移動の問題を解決し、
+各インスタンスに必要な情報の受け渡しを処理するエージェントを使用します。</p>
+<p class="last">要約すると、シェフ対応インスタンスの立ち上げは些細なことになります。テンプレートclient.rb(下図)
+を持ったシェフクライアントをインストールして、エージェントにシェフの実行をキックオフさせるだけです。</p>
 </div>
 <ol class="arabic" start="2">
-<li><p class="first">Chef-client.</p>
-<p>The chef-client software is used to execute the Chef run.</p>
+<li><p class="first">シェフクライアント</p>
+<p>シェフクライアントソフトウェアがシェフの実行を実行するために使用されています。</p>
 </li>
 </ol>
-<p>Location: Configuration Management &gt; Services</p>
-<p>Create a new configuration management service of type Chef.</p>
+</div>
+<div class="section" id="id6">
+<h2>3.2. 構成管理サービスを追加<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>場所：Configuration Management &gt; Services</p>
+<p>タイプ シェフの新しい構成管理サービスを作成します。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/chefService1.png"><img alt="Add Configuration Management Service" src="../_images/chefService1.png" style="width: 475.0px; height: 380.0px;" /></a>
 <p class="caption">Add Configuration Management Service</p>
 </div>
-<p><strong>Service Added</strong></p>
+<p><strong>追加されたサービス</strong></p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/chefService21.png"><img alt="Add Configuration Management Service" src="../_images/chefService21.png" style="width: 975.0px; height: 260.0px;" /></a>
 <p class="caption">Configuration Management Service Added</p>
 </div>
-<p>Location: Configuration Management &gt; Accounts</p>
+</div>
+<div class="section" id="id7">
+<h2>3.3. 構成管理アカウントの追加<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>場所: Configuration Management &gt; Accounts</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/chefAccount1.png"><img alt="Add Configuration Management Account" src="../_images/chefAccount1.png" style="width: 570.0px; height: 475.0px;" /></a>
 <p class="caption">Add Configuration Management Account</p>
 </div>
-<p><strong>Account Added</strong></p>
+<p><strong>追加されたアカウント</strong></p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/chefAccount21.png"><img alt="Configuration Management Account Added" src="../_images/chefAccount21.png" style="width: 975.0px; height: 260.0px;" /></a>
 <p class="caption">Configuration Management Account Added</p>
 </div>
+</div>
+<div class="section" id="id8">
+<h2>3.4. シェフを使用するイメージを設定する<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Install the enStratus Agent.</li>
-<li>Install the chef client.</li>
-<li>Edit /etc/chef/client.rb (make it a &#8220;template&#8221; that the enStratus agent will re-write)</li>
+<li>enStratusエージェントをインストールします。</li>
+<li>シェフクライアントをインストールします。</li>
+<li>/etc/chef/client.rb (それをenStratusエージェントが再書き込みする &#8220;テンプレート&#8221;とする) を編集します。</li>
 </ol>
-<p>To trigger a vm launch and and accompanying chef action, launch a vm and choose the
-appropriate configuration management engine. For Chef, use the text window to paste in
-json that will be passed to the chef-client call as shown.</p>
-<p>Here, we&#8217;re passing in a chef role.</p>
+</div>
+<div class="section" id="vm">
+<h2>3.5. 構成管理のアクションでVMを起動<a class="headerlink" href="#vm" title="Permalink to this headline">¶</a></h2>
+<p>VMの起動ととそれに付随するシェフのアクションをトリガするために、VMを起動し、適切な構成管理
+エンジンを選択します。シェフのために、ここに示すように chef-client 呼び出しに json を渡すには、
+テキストウィンドウを使用して貼り付けて下さい。</p>
+<p>ここでは、シェフの役割で渡しています。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/launchWithRole1.png"><img alt="Launch VM with CM Action" src="../_images/launchWithRole1.png" style="width: 600.0px; height: 450.0px;" /></a>
 <p class="caption">Launch VM with Configuration Management Action</p>
 </div>
-<p>The process for launching a vm with a subsequent chef-client call is shown below.</p>
+<p>その後のシェフクライアントの呼び出しを使用してVMを起動するためのプロセスを以下に示します。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/chefLaunchProcess1.png"><img alt="Chef launch Process" src="../_images/chefLaunchProcess1.png" style="width: 600.0px; height: 450.0px;" /></a>
 <p class="caption">Launching a VM with a chef-client call</p>
 </div>
 <ol class="arabic simple">
-<li>A launch event is triggered using the Configuration Management tab with a run list.</li>
-<li>The VM must have the chef-client pre-installed and the enStratus agent pre-installed.</li>
-<li>enStratus will pass to the VM agent script:<ul>
+<li>起動イベントは、実行リストを持った構成管理タブを使用してトリガされます。</li>
+<li>VMは、シェフクライアントとenStratusエージェントが前もってインストールされている必要があります。</li>
+<li>enStratusは、VMエージェントにスクリプトを渡します：<ul>
 <li>validation.pem</li>
 <li>first-boot.json</li>
 </ul>
 </li>
 </ol>
 <ol class="arabic simple" start="4">
-<li>The agent script dynamically replaces the template variables in client.rb and copies the validation.pem to /etc/chef</li>
-<li>The agent triggers a chef-client call with the first-boot.json file as an argument</li>
-<li>Triggering a validation run for the client</li>
-<li>The client.pem file is returned and the chef run completes.</li>
+<li>エージェントスクリプトは、動的にclient.rbでテンプレート変数を置き換えて、/etc/chef に validation.pem をコピーします。</li>
+<li>エージェントは、 first-boot.json ファイルを引数としてシェフクライアントの呼び出しをトリガします。</li>
+<li>クライアントの検証の実行をトリガ</li>
+<li>で、client.pemファイルが返され、シェフの実行が完了します。</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">At first, it might seem like the dynamic re-writing of the client.rb variables
-is a hindrance to smooth operations, however, it makes images very portable should the
-chef endpoint change.</p>
+<p class="last">最初は、client.rb変数の動的な再書き込みが円滑な業務への支障のように見えるかもしれません
+、しかし、それはシェフのエンドポイントの変更のイメージの移植性を非常に高めているはずです。</p>
 </div>
-<p>This file is part of an agent installation and is located in the /enstratus/bin directory.
-enStratus passes the validation.pem file along with some json used to execute the
-chef-client procedure shown below.</p>
-<p>The agent script replaces the dummy variables in the client.rb and then it executes a
-chef-client call:</p>
+</div>
+<div class="section" id="runconfigurationmanagement-chef">
+<h2>3.6. エージェントスクリプト: runConfigurationManagement-CHEF<a class="headerlink" href="#runconfigurationmanagement-chef" title="Permalink to this headline">¶</a></h2>
+<p>このファイルは、エージェントのインストールの一部であり、 /enstratus/bin ディレクトリにあります。
+enStratusは、以下に示すシェフクライアント プロシージャの実行時に使用するいくつかのJSONと一緒
+にvalidation.pemファイルを渡します。</p>
+<p>エージェントスクリプトはダミー変数を client.rb に置き換えて、シェフクライアントの呼び出しを実行します。：</p>
 <div class="highlight-bash"><div class="highlight"><pre>sudo chef-client -j <span class="nv">$FIRST_BOOT</span>
 </pre></div>
 </div>
-<p>Where $FIRST_BOOT is a file with the contents specified via the enstratus console as json
-file for the chef client call. In the example below:</p>
+<p>ここで $FIRST_BOOT はシェフクライアント呼び出しのためのJSONファイルとしてenstratusコンソール
+を介して指定された内容を持つファイルです。以下の例では：</p>
 <div class="highlight-json"><div class="highlight"><pre><span class="p">{</span><span class="nt">&quot;run_list&quot;</span><span class="p">:[</span><span class="s2">&quot;role[cloudFoundry]&quot;</span><span class="p">]}</span>
 </pre></div>
 </div>
-<p><strong>Agent Script: /enstratus/bin/runConfigurationManagement-CHEF</strong></p>
+<p><strong>エージェントスクリプト: /enstratus/bin/runConfigurationManagement-CHEF</strong></p>
 <div class="highlight-bash"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -341,9 +358,9 @@ sudo rm -f /etc/chef/validation.pem &gt; /dev/null 2&gt;&amp;1
 </pre></div>
 </td></tr></table></div>
 <ol class="arabic simple">
-<li>Line 26: Rewrites the chef endpoint.</li>
-<li>Line 29: Rewrites the validator.</li>
-<li>Line 35: Executes the chef call.</li>
+<li>Line 26: シェフエンドポイントを書き換える。</li>
+<li>Line 29: バリデータを書き換える。</li>
+<li>Line 35: シェフコールを実行する。</li>
 </ol>
 <p><strong>Client.rb: /etc/chef/client.rb</strong></p>
 <div class="highlight-ruby"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -407,7 +424,7 @@ sudo rm -f /etc/chef/validation.pem &gt; /dev/null 2&gt;&amp;1
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		2. Configuration Management
+		2. 構成管理
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

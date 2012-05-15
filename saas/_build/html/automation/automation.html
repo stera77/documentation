@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3. 自動化 &mdash; The enStratus Documentation Project</title>
+    <title>4. 自動化 &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
-    <link rel="next" title="4. Infrastructure" href="../infrastructure/infrastructure.html" />
-    <link rel="prev" title="2. Configuration Management" href="../configuration_management/configuration_management.html" />
+    <link rel="next" title="5. Infrastructure" href="../infrastructure/infrastructure.html" />
+    <link rel="prev" title="2. 構成管理" href="../configuration_management/configuration_management.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -35,13 +35,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>3. 自動化</h1></div>
+	<div id="title"><h1>4. 自動化</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
-			<div class="headerButton"><a href="../infrastructure/infrastructure.html" title="4. Infrastructure" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="../configuration_management/configuration_management.html" title="2. Configuration Management" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="../infrastructure/infrastructure.html" title="5. Infrastructure" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="../configuration_management/configuration_management.html" title="2. 構成管理" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -54,19 +54,20 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">3. 自動化</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">3.1. はじめに</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">3.2. 前提条件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">4. 自動化</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">4.1. はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">4.2. 前提条件</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -106,9 +107,9 @@
           <div class="body">
             
   <div class="section" id="id1">
-<h1>3. 自動化<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>4. 自動化<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2>3.1. はじめに<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>4.1. はじめに<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>enStratus自動化は、インフラストラクチャの管理と統合の多くの側面を網羅しています。</p>
 <ol class="arabic simple">
 <li>自動バックアップ。 enStratusは、アプリケーションのバックアップ/メンテナンスの実行および
@@ -121,7 +122,7 @@
 </ol>
 </div>
 <div class="section" id="id3">
-<h2>3.2. 前提条件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>4.2. 前提条件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>自動化のための最も重要な前提条件は、enStratusエージェントのインストールです。
 enStratusエージェントは、enStratusクラウド管理ソフトウェアにとって、各実行中のインスタンスへの
@@ -150,7 +151,7 @@ enStratusエージェントをインストールする必要があります。</
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		3. 自動化
+		4. 自動化
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
