@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Notification Topics &mdash; The enStratus Documentation Project</title>
+    <title>通知トピック &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Notification Topics</h1></div>
+	<div id="title"><h1>通知トピック</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">6. プラットフォーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,52 +98,50 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="notification-topics">
-<h1>Notification Topics<a class="headerlink" href="#notification-topics" title="Permalink to this headline">¶</a></h1>
-<p>enStratus supports management of cloud based notification topic web services through the
-enStratus console. Notification topics are often applied to an application and can be used
-to automatically send messages to subscribers or other applications.</p>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>enStratus currently supports the creation and management of Amazon Simple Notification
-Service (Amazon SNS). See Amazon SNS for more information and current pricing.</p>
-<p>Notification topics makes it easy for the developer to send out important messages to
-applications or users. This allows for the developer to effectively communicate
-time-sensitive information in the form of a message.</p>
-<p>Creating Notification Topics:</p>
+  <div class="section" id="id1">
+<h1>通知トピック<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>enStratusは、クラウドベースの通知トピックWebサービスの管理をenStratusコンソールを通じてサポートします。
+通知トピックは、しばしばアプリケーションに適用され、自動的に加入者または他のアプリケーションに
+メッセージを送信するのに使用することができます。</p>
+<div class="section" id="id2">
+<h2>概要<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>enStratusは、現在 Amazon Simple Notification Service (Amazon SNS)の作成と管理をサポートしています。
+詳細と現在の価格は、Amazon SNSを参照してください。</p>
+<p>通知トピックは、簡単に開発者が、重要なメッセージをアプリケーションまたはユーザーに送信できるようにします。
+これにより開発者が効率的に時間に敏感な情報をメッセージの形で送信することができます。</p>
+<p>通知トピックの作成：</p>
 <p>Screenshot</p>
-<p>To create a new Notification Topic click on Platform &gt; Notification Topics, then click on
-+ add Topic.</p>
+<p>新規の通知トピックを作成するには &#8220;Platform &gt; Notification Topics&#8221; をクリックして、次に&#8221;+ add Topic&#8221;をクリックします。</p>
 <p>Screenshot</p>
-<p>The <strong>Name</strong> field is for a custom name to associate with your topic.</p>
-<p>The <strong>Description</strong> field can be a custom description for your topic.</p>
-<p>The <strong>Label</strong> field helps you organize your topics by providing a unique color label.</p>
-<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
-will use to track billing charges and access rights tied to the user management and
-billing code offerings of enStratus.</p>
-<p>Upon save your topic will be created and will appear shortly.</p>
+<p><strong>名前</strong> フィールドには、トピックに関連付けるためのカスタム名を対象とします。</p>
+<p><strong>説明</strong> フィールドには、トピックのためのカスタム記述することができます。</p>
+<p><strong>ラベル</strong> フィールドには、独自のカラーラベルを提供することによって、トピックを整理するのに役立ちます。</p>
+<p><strong>課金コード</strong> と <strong>ユーザグループ</strong> はenStratusが請求料金とアクセス権を追跡し、
+enStratusのユーザー管理と課金コードオファリングと
+関連付けるために使用する課金コードおよびユーザグループの属性です。</p>
+<p>保存時にトピックが作成され、すぐに表示されます。</p>
 </div>
-<div class="section" id="subscribing-to-notification-topics">
-<h2>Subscribing To Notification Topics<a class="headerlink" href="#subscribing-to-notification-topics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>通知トピックをサブスクライブ<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Screenshot</p>
-<p>After the topic has been created you can add subscribers to the topic by clicking on
-actions &gt; subscriptions.</p>
+<p>トピックの作成された後、&#8221;actions &gt; subscriptions&#8221; をクリックしてトピックに購読者を追加できます。</p>
 <p>Screenshot</p>
-<p><strong>End point</strong> is where you can enter the end point as an email address, web services URL, or
-the Amazon Resource Name string on a SQS (Simple Queue Service) queue.</p>
-<p><strong>Data Format</strong> is currently supported in JSON and plain text formats.</p>
-<p>Clicking Subscribe to Topic will add the subscriber.</p>
+<p><strong>エンドポイント</strong> は電子メールアドレス、WebサービスのURL、
+または SQS (Simple Queue Service) queue に Amazon Resource Name string などを
+入力することができる場所です。</p>
+<p><strong>データ形式</strong> 現在JSONやプレーンテキスト形式もサポートされています。</p>
+<p>&#8221; Subscribe to Topic &#8220;をクリックして、購読者を追加します。</p>
 </div>
-<div class="section" id="publishing-to-notification-topics">
-<h2>Publishing To Notification Topics<a class="headerlink" href="#publishing-to-notification-topics" title="Permalink to this headline">¶</a></h2>
-<p>To publish a message to your subscribers click on actions &gt; publish.</p>
+<div class="section" id="id4">
+<h2>通知トピックへの発行<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>購読者に対してメッセージを発行するにはアクションで &#8220;actions &gt; publish&#8221; をクリックします。</p>
 <p>Screenshot</p>
-<p>The Subject field can be any custom subject for your message.</p>
-<p>The Message field will be where you provide your custom message.</p>
+<p>[件名]フィールドは、メッセージの任意のカスタムテーマです。</p>
+<p>メッセージフィールドはカスタムメッセージの提供場所です。</p>
 </div>
-<div class="section" id="deleting-notification-topics">
-<h2>Deleting Notification Topics<a class="headerlink" href="#deleting-notification-topics" title="Permalink to this headline">¶</a></h2>
-<p>To delete a notification topic click actions &gt; delete in the Notification Topics table.</p>
+<div class="section" id="id5">
+<h2>通知トピックの削除<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>通知トピックを削除するには通知トピックテーブルで &#8220;actions &gt; delete&#8221; をクリックします。</p>
 </div>
 </div>
 
@@ -159,7 +158,7 @@ the Amazon Resource Name string on a SQS (Simple Queue Service) queue.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Notification Topics
+		通知トピック
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

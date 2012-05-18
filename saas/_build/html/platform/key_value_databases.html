@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Key Value Databases &mdash; The enStratus Documentation Project</title>
+    <title>キー バリュー データベース &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Key Value Databases</h1></div>
+	<div id="title"><h1>キー バリュー データベース</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">6. プラットフォーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,41 +98,38 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="key-value-databases">
-<h1>Key Value Databases<a class="headerlink" href="#key-value-databases" title="Permalink to this headline">¶</a></h1>
-<p>enStratus Key/Value Databases (KV Databases or KVDB) are a simple solution for storing
-your data for high availability and scalability. With a KV database you get only what you
-need. You can simply query your data and return the results without having to manage
-different schemas for your stored data sets. You do not need to worry when storing new
-data because it is automatically indexed for you.</p>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>enStratus currently supports the creation and termination of Amazon SimpleDB domains. See
-Amazon SimpleDB for more information and current pricing.</p>
-<p>KV databases are large collections of data organized into separate domains. The data is
-stored in hash tables that contain key to value pairs. The key to value pairs are
-attributes that can be searched in lexicographical queries.</p>
+  <div class="section" id="id1">
+<h1>キー バリュー データベース<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>enStratusのキー/バリュー データベース（KVデータベースまたはKVDB）は高可用性とスケーラビリティのための
+データを格納するための簡単なソリューションです。
+KVデータベースを使用して必要なものだけを獲得します。
+単にデータを照会して、保存されたデータセットの異なるスキーマを管理することなく結果を返すことができます。
+新規のデータを保存するときに自動的にインデックスが作成されるため、心配する必要はありません。</p>
+<div class="section" id="id2">
+<h2>概要<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>enStratusは、現在、 Amazon SimpleDB domains の作成と終了をサポートしています。
+詳細と現在の価格については、Amazon SimpleDBをご覧ください。</p>
+<p>KVデータベースは別々のドメインに編成されたデータの大規模なコレクションがあります。データは
+キーと値のペアが含まれたハッシュテーブルに格納されています。キー　バリューのペアは
+辞書式クエリで検索可能な属性です。</p>
 </div>
-<div class="section" id="creating-a-key-value-database">
-<h2>Creating a Key/Value Database<a class="headerlink" href="#creating-a-key-value-database" title="Permalink to this headline">¶</a></h2>
-<p>To launch a new KV database in the enStratus console click on Platform &gt; Key/Value
-Databases. Then click  +add key/value database.</p>
+<div class="section" id="id3">
+<h2>キー/バリュー　データベースの作成<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>enStratusコンソールで新規のKVデータベースを起動するには、プラットフォーム上で Platform &gt; Key/Value Databases をクリックします。
+次に +add をクリックし、キー/バリュー　データベースを追加します。</p>
 <p>Screenshot 1</p>
-<p>In the Create Key/Value Database form you will see the different fields for creating the
-KVDB.</p>
+<p>Create  Key/Value Database フォームでは、KVDBを作成するための異なるフィールドが表示されます。</p>
 <p>Screenshot 2</p>
-<p>The <strong>Name</strong> field is for a custom name to associate with your database.</p>
-<p>The <strong>Description</strong> field can be a custom description for your database.</p>
-<p>The <strong>Label</strong> field helps you organize your KVDB instances by providing a unique color label.</p>
-<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
-will use to track billing charges and access rights tied to the user management and
-billing code offerings of enStratus.</p>
-<p>Upon save the KV database is launched. It can take up to 15 minutes to appear in the
-enStratus console.</p>
+<p><strong>Name</strong> フィールドには、データベースに関連付けるためのカスタム名を対象とします。</p>
+<p><strong>Description</strong> フィールドは、データベースのカスタム記述することができます。</p>
+<p><strong>Label</strong> フィールドには、独自のカラーラベルを提供することにより、KVDBインスタンスを整理するのに役立ちます。</p>
+<p><strong>課金コード</strong> と <strong>ユーザグループ</strong> はenStratusが請求料金とアクセス権を追跡し、enStratusの
+ユーザー管理と課金コードオファリングに関連付けるために使用する課金コードおよびユーザグループの属性です。</p>
+<p>保存時にKVデータベースが起動されます。それがにenStratusコンソール表示されるまでに最大15分かかることがあります。</p>
 </div>
-<div class="section" id="terminating-key-value-databases">
-<h2>Terminating Key/Value Databases<a class="headerlink" href="#terminating-key-value-databases" title="Permalink to this headline">¶</a></h2>
-<p>To terminate a KVDB click actions &gt; terminate in the Key/Value Databases table.</p>
+<div class="section" id="id4">
+<h2>キー/バリュー　データベースの終了<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>KVDBクリックアクションを終了するには キー/バリュー データベース テーブルの actions &gt; terminate をクリックします。</p>
 <p>Screenshot 3.</p>
 </div>
 </div>
@@ -149,7 +147,7 @@ enStratus console.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Key Value Databases
+		キー バリュー データベース
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

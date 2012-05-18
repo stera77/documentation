@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>6. Platform &mdash; The enStratus Documentation Project</title>
+    <title>6. プラットフォーム &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
     <link rel="next" title="7. Users" href="../users/users.html" />
-    <link rel="prev" title="5. Infrastructure" href="../infrastructure/infrastructure.html" />
+    <link rel="prev" title="5. インフラストラクチャ" href="../infrastructure/infrastructure.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -35,13 +35,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>6. Platform</h1></div>
+	<div id="title"><h1>6. プラットフォーム</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
 			<div class="headerButton"><a href="../users/users.html" title="7. Users" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="../infrastructure/infrastructure.html" title="5. Infrastructure" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="../infrastructure/infrastructure.html" title="5. インフラストラクチャ" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -58,11 +58,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. Infrastructure</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">6. Platform</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#relational-databases">6.1. Relational Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#key-value-databases">6.2. Key Value Databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#notification-topics">6.3. Notification Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">6. プラットフォーム</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">6.1. リレーショナルデータベース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">6.2. キー バリュー データベース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">6.3. 通知トピック</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#distributions">6.4. Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cloud-files">6.5. Cloud Files</a></li>
 </ul>
@@ -109,170 +109,154 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="platform">
-<h1>6. Platform<a class="headerlink" href="#platform" title="Permalink to this headline">¶</a></h1>
-<p>Many clouds support Platform-as-a-Service (PaaS) offerings such as cloud files/object
-storage, databases, and content distribution systems. Accessing PaaS offerings using
-enStratus is done via the Platform menu.</p>
-<div class="section" id="relational-databases">
-<h2>6.1. Relational Databases<a class="headerlink" href="#relational-databases" title="Permalink to this headline">¶</a></h2>
-<p>enStratus supports cloud based relational database management services through enStratus
-Relational Databases (RDBMS). This service allows the end user to operate, scale and
-manage their relational databases in the cloud. Relational database instances give you the
-full capabilities and features you would normally find on a familiar RDBMS.</p>
-<div class="section" id="overview">
-<h3>6.1.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
-<p>enStratus currently supports cloud based relational database management with Amazon
-Relational Database Service (Amazon RDS). With a relational database instance you get the
-functions of a traditional database, plus scalability and redundancy in the cloud.</p>
-</div>
-<div class="section" id="creating-a-relational-database">
-<h3>6.1.2. Creating a Relational Database<a class="headerlink" href="#creating-a-relational-database" title="Permalink to this headline">¶</a></h3>
-<p>To create a new relational database in the enStratus console navigate to Platform &gt;
-Relational Databases. Click on +add database in the right corner of the table.</p>
+  <div class="section" id="id1">
+<h1>6. プラットフォーム<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>多くのクラウドはクラウドファイル/オブジェクト、ストレージ、データベース、およびコンテンツ
+配信システムなどの Platform-as-a-Service (PaaS) オファリングをサポートします。
+enStratusでは、プラットフォームメニューを介してパースオファリングにアクセスします。</p>
+<div class="section" id="id2">
+<h2>6.1. リレーショナルデータベース<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>enStratusはenStratusリレーショナルデータベース（RDBMS）を通じて、クラウドベースのリレーショナルデータベース管理サービス
+をサポートしています。このサービスで、エンドユーザーは、クラウドでリレーショナルデータベースの
+運用、スケールそして管理をすることができます。リレーショナルデータベースインスタンスは、通常おなじみのRDBMSに
+見られる完全な機能を与えてくれます。</p>
+<div class="section" id="id3">
+<h3>6.1.1. 概要<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>enStratusは現在、Amazonリレーショナル·データベース·サービス（Amazon RDS）でクラウドベースの
+リレーショナルデータベース管理をサポートしています。リレーショナルデータベースインスタンスを使用すると、
+従来のデータベースの機能に加えて、クラウドのスケーラビリティと冗長性を取得します。</p>
+<p>リレーショナルデータベースの作成</p>
+<p>enStratusコンソールで新規のリレーショナルデータベースを作成するには Platform &gt; Relational Databases に移動します。
+テーブルの右上隅にある +add database クリック追加します。</p>
 <p>Screenshot 1.</p>
-<p>Under the configuration tab you will see the fields for creating a database.</p>
+<p>設定タブの下には、データベースを作成するためのフィールドが表示されます。</p>
 <p>Screenshot 2.</p>
-<p>The <strong>Name</strong> field is for a custom name to associate with your database.</p>
-<p>The <strong>Description</strong> field can be a custom description of your database.</p>
-<p>The <strong>Label</strong> field helps you organize your RDBMS instances by providing a unique color label.</p>
-<p>The <strong>Engine</strong> field currently supports MySQL 5.1 relational databases. More options will be
-provided as they become available.</p>
-<p>The <strong>Product</strong> field displays the different sizes available for the RDBMS and should be
-chosen to fit your needs. Database operating costs are proportional to the size, measured
-in compute power, of the provisioned datbase. See Amazon RDS for more information and
-current pricing.</p>
-<p>The <strong>Port</strong> number is restricted to ranges 1150 – 65535.</p>
-<p>For the <strong>Zone</strong> field it is highly recommended that you choose a zone that is in the same
-location as your primary application server.</p>
-<p>Another Zone option is high availability. In AWS this is know as a Multi-AZ deployment.
-The high availability option improves database durability and takes extra measures to
-ensure the RDBMS has minimal down time. This involves provisioning and maintaining a
-running backup of the primary instance in another zone. If there is planned maintenance,
-instance failure or availability zone failure in the primary zone the RDBMS will
-automatically failover to the backup instance.</p>
-<p>The size you specify in the Storage field must be in the 5GB to 1TB range.</p>
-<p>After the above fields have been completed proceed to the permissions tab.</p>
+<p><strong>Name</strong> フィールドには、データベースに関連付けるためのカスタム名を対象とします。</p>
+<p><strong>Description</strong> フィールドは、データベースのカスタム記述をすることができます。</p>
+<p><strong>Label</strong> フィールドには、独自のカラーラベルを提供することにより、RDBMSインスタンスを整理するのに役立ちます。</p>
+<p><strong>Engine</strong> フィールドでは、現在MySQL 5.1 リレーショナルデータベースをサポートしています。
+より多くの利用可能なオプションが提供されています。</p>
+<p><strong>Product</strong> フィールドには、RDBMSのために利用可能でニーズに合うように選ばれた異なるサイズを表示します。
+データベース運用コストは配備されたdatbaseのコンピューティングパワーで量られたサイズに比例します。
+詳細および現在の価格については、Amazon RDSを参照してください。</p>
+<p><strong>*Port</strong> 番号は 1150 – 6553 の範囲に制限されています。</p>
+<p><strong>Zone</strong> フィールドには、プライマリのアプリケーションサーバーと同じ場所のゾーンを選択することを強力にお勧めします。</p>
+<p>別のゾーンのオプションは、高可用性です。 AWSでは、これはマルチAZ配備として知られています。
+高可用性オプションは、RDBMSに特別な措置を講じダウンタイムを最小限に抑えることを保証して、
+データベースの耐久性を向上させています。これは、別のゾーンでのプロビジョニングとプライマリインスタンスの
+バックアップの実行保守を含みます。メンテナンスが予定されている場合やプライマリゾーン内のインスタンス障害または
+アベイラビリティゾーンの障害時は、RDBMSは、バックアップインスタンスに自動的にフェイルオーバーします。</p>
+<p>Storageフィールドで指定したサイズは5ギガバイトから1TBの範囲である必要があります。</p>
+<p>上記のフィールドが完了した後は &#8220;permissions&#8221; タブに進みます。</p>
 <p>Screenshot 3</p>
-<p>The <strong>Admin User</strong> and <strong>Admin Password</strong> fields are required.</p>
-<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
-will use to track billing charges and access rights tied to the user management and
-billing code offerings of enStratus.</p>
-<p>Upon save the RDBMS is launched and could take up to 15 minutes to show up in the
-enStratus console.</p>
-<p><strong>Connecting to a Relational Database</strong></p>
-<p>First you need to allow connections between your local ip and the database you want to
-connect to.</p>
-<p>On the Platform &gt; Relational Databases page, select actions &gt; network access for the
-database you want to use.</p>
+<p><strong>管理者ユーザ</strong> と <strong>管理者パスワード</strong> は必須項目です。</p>
+<p><strong>課金コード</strong> と <strong>ユーザグループ</strong> はenStratusが請求料金とアクセス権を追跡し
+enStratusのユーザー管理と課金コードオファリングに関連付ける課金コードおよびユーザグループの属性です。</p>
+<p>保存時にはRDBMSが起動され、enStratusコンソールに表示するまだに最大15分かかることがあります。</p>
+<p><strong>リレーショナルデータベースに接続</strong></p>
+<p>最初に接続したいローカルIPアドレスとデータベース間の接続を許可する必要があります。</p>
+<p>Platform &gt; Relational Databases のページの、 actions &gt; network access で使いたいデータベース
+にアクセスします。</p>
 <p>Screenshot 4</p>
-<p>If you have created a standard network (on the Company Settings &gt; Standard Networks page)
-for the IP you want to connect to your database from you can select your standard network
-from the Source drop-down. If you have not created a standard network you can make a new
-one on the Company Settings &gt; Standard Networks page or you can type your CIDR in the CIDR
-field and the Source will be labeled Custom. Click the Allow Access button and you will
-have network access to the database in 5 minutes or less.</p>
+<p>標準のネットワークを作成した（ Company Settings &gt; Standard Networks ページで）場合、
+データベースに接続するIPはソースドロップダウンリストから選択することができます。
+標準のネットワークをまだ作成していない場合、 Company Settings &gt; Standard Networks ページで
+新規のネットワークを作成するか、CIDRフィールドでCIDRを入力することができます。すると
+ソースには、カスタムラベルが付けられます。アクセスの[許可]ボタンをクリックすると、
+5分以内にデータベースへのネットワークアクセス権を持っています。</p>
 <p>Screenshot 5</p>
-<p>Next, view the info page for your database by selecting actions &gt; info in the relational
-databases table.</p>
-<p>You can then connect to your database using a MySQL client, the Admin User, Admin Password
-and Port you specified in the Create RDBMS form, and the DNS/Host specified in the Info
-page.</p>
+<p>次に、リレーショナルデータベーステーブルで actions &gt; info を選択して、データベースの情報ページを表示します。</p>
+<p>次に、RDBMS作成フォームで指定したMySQLのクライアント、管理者ユーザー、管理者パスワードおよびポートと
+情報ページに指定されたDNS /ホストを使用してデータベースに接続することができます。</p>
 </div>
-<div class="section" id="other-actions">
-<h3>6.1.3. Other Actions<a class="headerlink" href="#other-actions" title="Permalink to this headline">¶</a></h3>
-<p>To change the admin password for your relational database instance click on actions &gt;
-change password in the Relational Databases table. You can&#8217;t change the admin user name,
-but you can change the password by typing a new password in the Admin Password box and
-clicking the &#8220;Change RDBMS Password&#8221; button.</p>
-<p>To terminate a relational database instance click on actions &gt; terminate in the Relational
-Databases table.</p>
+<div class="section" id="id4">
+<h3>6.1.2. その他のアクション<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>リレーショナルデータベースインスタンスの管理者パスワードを変更するには、リレーショナルデータベーステーブル
+内の actions &gt; change password をクリックします。管理者ユーザー名を変更することはできませんが
+管理者パスワードボックスに新しいパスワードを入力して &#8220;Change RDBMS Password&#8221; ボタンをクリック
+することでパスワードを変更することができます。</p>
+<p>リレーショナルデータベース·ンスタンスを終了するにはリレーショナルデータベーステーブルの actions &gt; terminate をクリックします。</p>
 </div>
 </div>
-<div class="section" id="key-value-databases">
-<h2>6.2. Key Value Databases<a class="headerlink" href="#key-value-databases" title="Permalink to this headline">¶</a></h2>
-<p>enStratus Key/Value Databases (KV Databases or KVDB) are a simple solution for storing
-your data for high availability and scalability. With a KV database you get only what you
-need. You can simply query your data and return the results without having to manage
-different schemas for your stored data sets. You do not need to worry when storing new
-data because it is automatically indexed for you.</p>
-<div class="section" id="id1">
-<h3>6.2.1. Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>enStratus currently supports the creation and termination of Amazon SimpleDB domains. See
-Amazon SimpleDB for more information and current pricing.</p>
-<p>KV databases are large collections of data organized into separate domains. The data is
-stored in hash tables that contain key to value pairs. The key to value pairs are
-attributes that can be searched in lexicographical queries.</p>
+<div class="section" id="id5">
+<h2>6.2. キー バリュー データベース<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>enStratusのキー/バリュー データベース（KVデータベースまたはKVDB）は高可用性とスケーラビリティのための
+データを格納するための簡単なソリューションです。
+KVデータベースを使用して必要なものだけを獲得します。
+単にデータを照会して、保存されたデータセットの異なるスキーマを管理することなく結果を返すことができます。
+新規のデータを保存するときに自動的にインデックスが作成されるため、心配する必要はありません。</p>
+<div class="section" id="id6">
+<h3>6.2.1. 概要<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>enStratusは、現在、 Amazon SimpleDB domains の作成と終了をサポートしています。
+詳細と現在の価格については、Amazon SimpleDBをご覧ください。</p>
+<p>KVデータベースは別々のドメインに編成されたデータの大規模なコレクションがあります。データは
+キーと値のペアが含まれたハッシュテーブルに格納されています。キー　バリューのペアは
+辞書式クエリで検索可能な属性です。</p>
 </div>
-<div class="section" id="creating-a-key-value-database">
-<h3>6.2.2. Creating a Key/Value Database<a class="headerlink" href="#creating-a-key-value-database" title="Permalink to this headline">¶</a></h3>
-<p>To launch a new KV database in the enStratus console click on Platform &gt; Key/Value
-Databases. Then click  +add key/value database.</p>
+<div class="section" id="id7">
+<h3>6.2.2. キー/バリュー　データベースの作成<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>enStratusコンソールで新規のKVデータベースを起動するには、プラットフォーム上で Platform &gt; Key/Value Databases をクリックします。
+次に +add をクリックし、キー/バリュー　データベースを追加します。</p>
 <p>Screenshot 1</p>
-<p>In the Create Key/Value Database form you will see the different fields for creating the
-KVDB.</p>
+<p>Create  Key/Value Database フォームでは、KVDBを作成するための異なるフィールドが表示されます。</p>
 <p>Screenshot 2</p>
-<p>The <strong>Name</strong> field is for a custom name to associate with your database.</p>
-<p>The <strong>Description</strong> field can be a custom description for your database.</p>
-<p>The <strong>Label</strong> field helps you organize your KVDB instances by providing a unique color label.</p>
-<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
-will use to track billing charges and access rights tied to the user management and
-billing code offerings of enStratus.</p>
-<p>Upon save the KV database is launched. It can take up to 15 minutes to appear in the
-enStratus console.</p>
+<p><strong>Name</strong> フィールドには、データベースに関連付けるためのカスタム名を対象とします。</p>
+<p><strong>Description</strong> フィールドは、データベースのカスタム記述することができます。</p>
+<p><strong>Label</strong> フィールドには、独自のカラーラベルを提供することにより、KVDBインスタンスを整理するのに役立ちます。</p>
+<p><strong>課金コード</strong> と <strong>ユーザグループ</strong> はenStratusが請求料金とアクセス権を追跡し、enStratusの
+ユーザー管理と課金コードオファリングに関連付けるために使用する課金コードおよびユーザグループの属性です。</p>
+<p>保存時にKVデータベースが起動されます。それがにenStratusコンソール表示されるまでに最大15分かかることがあります。</p>
 </div>
-<div class="section" id="terminating-key-value-databases">
-<h3>6.2.3. Terminating Key/Value Databases<a class="headerlink" href="#terminating-key-value-databases" title="Permalink to this headline">¶</a></h3>
-<p>To terminate a KVDB click actions &gt; terminate in the Key/Value Databases table.</p>
+<div class="section" id="id8">
+<h3>6.2.3. キー/バリュー　データベースの終了<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>KVDBクリックアクションを終了するには キー/バリュー データベース テーブルの actions &gt; terminate をクリックします。</p>
 <p>Screenshot 3.</p>
 </div>
 </div>
-<div class="section" id="notification-topics">
-<h2>6.3. Notification Topics<a class="headerlink" href="#notification-topics" title="Permalink to this headline">¶</a></h2>
-<p>enStratus supports management of cloud based notification topic web services through the
-enStratus console. Notification topics are often applied to an application and can be used
-to automatically send messages to subscribers or other applications.</p>
-<div class="section" id="id2">
-<h3>6.3.1. Overview<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>enStratus currently supports the creation and management of Amazon Simple Notification
-Service (Amazon SNS). See Amazon SNS for more information and current pricing.</p>
-<p>Notification topics makes it easy for the developer to send out important messages to
-applications or users. This allows for the developer to effectively communicate
-time-sensitive information in the form of a message.</p>
-<p>Creating Notification Topics:</p>
+<div class="section" id="id9">
+<h2>6.3. 通知トピック<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>enStratusは、クラウドベースの通知トピックWebサービスの管理をenStratusコンソールを通じてサポートします。
+通知トピックは、しばしばアプリケーションに適用され、自動的に加入者または他のアプリケーションに
+メッセージを送信するのに使用することができます。</p>
+<div class="section" id="id10">
+<h3>6.3.1. 概要<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>enStratusは、現在 Amazon Simple Notification Service (Amazon SNS)の作成と管理をサポートしています。
+詳細と現在の価格は、Amazon SNSを参照してください。</p>
+<p>通知トピックは、簡単に開発者が、重要なメッセージをアプリケーションまたはユーザーに送信できるようにします。
+これにより開発者が効率的に時間に敏感な情報をメッセージの形で送信することができます。</p>
+<p>通知トピックの作成：</p>
 <p>Screenshot</p>
-<p>To create a new Notification Topic click on Platform &gt; Notification Topics, then click on
-+ add Topic.</p>
+<p>新規の通知トピックを作成するには &#8220;Platform &gt; Notification Topics&#8221; をクリックして、次に&#8221;+ add Topic&#8221;をクリックします。</p>
 <p>Screenshot</p>
-<p>The <strong>Name</strong> field is for a custom name to associate with your topic.</p>
-<p>The <strong>Description</strong> field can be a custom description for your topic.</p>
-<p>The <strong>Label</strong> field helps you organize your topics by providing a unique color label.</p>
-<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
-will use to track billing charges and access rights tied to the user management and
-billing code offerings of enStratus.</p>
-<p>Upon save your topic will be created and will appear shortly.</p>
+<p><strong>名前</strong> フィールドには、トピックに関連付けるためのカスタム名を対象とします。</p>
+<p><strong>説明</strong> フィールドには、トピックのためのカスタム記述することができます。</p>
+<p><strong>ラベル</strong> フィールドには、独自のカラーラベルを提供することによって、トピックを整理するのに役立ちます。</p>
+<p><strong>課金コード</strong> と <strong>ユーザグループ</strong> はenStratusが請求料金とアクセス権を追跡し、
+enStratusのユーザー管理と課金コードオファリングと
+関連付けるために使用する課金コードおよびユーザグループの属性です。</p>
+<p>保存時にトピックが作成され、すぐに表示されます。</p>
 </div>
-<div class="section" id="subscribing-to-notification-topics">
-<h3>6.3.2. Subscribing To Notification Topics<a class="headerlink" href="#subscribing-to-notification-topics" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>6.3.2. 通知トピックをサブスクライブ<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>Screenshot</p>
-<p>After the topic has been created you can add subscribers to the topic by clicking on
-actions &gt; subscriptions.</p>
+<p>トピックの作成された後、&#8221;actions &gt; subscriptions&#8221; をクリックしてトピックに購読者を追加できます。</p>
 <p>Screenshot</p>
-<p><strong>End point</strong> is where you can enter the end point as an email address, web services URL, or
-the Amazon Resource Name string on a SQS (Simple Queue Service) queue.</p>
-<p><strong>Data Format</strong> is currently supported in JSON and plain text formats.</p>
-<p>Clicking Subscribe to Topic will add the subscriber.</p>
+<p><strong>エンドポイント</strong> は電子メールアドレス、WebサービスのURL、
+または SQS (Simple Queue Service) queue に Amazon Resource Name string などを
+入力することができる場所です。</p>
+<p><strong>データ形式</strong> 現在JSONやプレーンテキスト形式もサポートされています。</p>
+<p>&#8221; Subscribe to Topic &#8220;をクリックして、購読者を追加します。</p>
 </div>
-<div class="section" id="publishing-to-notification-topics">
-<h3>6.3.3. Publishing To Notification Topics<a class="headerlink" href="#publishing-to-notification-topics" title="Permalink to this headline">¶</a></h3>
-<p>To publish a message to your subscribers click on actions &gt; publish.</p>
+<div class="section" id="id12">
+<h3>6.3.3. 通知トピックへの発行<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>購読者に対してメッセージを発行するにはアクションで &#8220;actions &gt; publish&#8221; をクリックします。</p>
 <p>Screenshot</p>
-<p>The Subject field can be any custom subject for your message.</p>
-<p>The Message field will be where you provide your custom message.</p>
+<p>[件名]フィールドは、メッセージの任意のカスタムテーマです。</p>
+<p>メッセージフィールドはカスタムメッセージの提供場所です。</p>
 </div>
-<div class="section" id="deleting-notification-topics">
-<h3>6.3.4. Deleting Notification Topics<a class="headerlink" href="#deleting-notification-topics" title="Permalink to this headline">¶</a></h3>
-<p>To delete a notification topic click actions &gt; delete in the Notification Topics table.</p>
+<div class="section" id="id13">
+<h3>6.3.4. 通知トピックの削除<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>通知トピックを削除するには通知トピックテーブルで &#8220;actions &gt; delete&#8221; をクリックします。</p>
 </div>
 </div>
 <div class="section" id="distributions">
@@ -352,7 +336,7 @@ been implemented.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		6. Platform
+		6. プラットフォーム
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

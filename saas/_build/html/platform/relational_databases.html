@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Relational Databases &mdash; The enStratus Documentation Project</title>
+    <title>リレーショナルデータベース &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Relational Databases</h1></div>
+	<div id="title"><h1>リレーショナルデータベース</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">6. プラットフォーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,79 +98,68 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="relational-databases">
-<h1>Relational Databases<a class="headerlink" href="#relational-databases" title="Permalink to this headline">¶</a></h1>
-<p>enStratus supports cloud based relational database management services through enStratus
-Relational Databases (RDBMS). This service allows the end user to operate, scale and
-manage their relational databases in the cloud. Relational database instances give you the
-full capabilities and features you would normally find on a familiar RDBMS.</p>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>enStratus currently supports cloud based relational database management with Amazon
-Relational Database Service (Amazon RDS). With a relational database instance you get the
-functions of a traditional database, plus scalability and redundancy in the cloud.</p>
-</div>
-<div class="section" id="creating-a-relational-database">
-<h2>Creating a Relational Database<a class="headerlink" href="#creating-a-relational-database" title="Permalink to this headline">¶</a></h2>
-<p>To create a new relational database in the enStratus console navigate to Platform &gt;
-Relational Databases. Click on +add database in the right corner of the table.</p>
+  <div class="section" id="id1">
+<h1>リレーショナルデータベース<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>enStratusはenStratusリレーショナルデータベース（RDBMS）を通じて、クラウドベースのリレーショナルデータベース管理サービス
+をサポートしています。このサービスで、エンドユーザーは、クラウドでリレーショナルデータベースの
+運用、スケールそして管理をすることができます。リレーショナルデータベースインスタンスは、通常おなじみのRDBMSに
+見られる完全な機能を与えてくれます。</p>
+<div class="section" id="id2">
+<h2>概要<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>enStratusは現在、Amazonリレーショナル·データベース·サービス（Amazon RDS）でクラウドベースの
+リレーショナルデータベース管理をサポートしています。リレーショナルデータベースインスタンスを使用すると、
+従来のデータベースの機能に加えて、クラウドのスケーラビリティと冗長性を取得します。</p>
+<p>リレーショナルデータベースの作成</p>
+<p>enStratusコンソールで新規のリレーショナルデータベースを作成するには Platform &gt; Relational Databases に移動します。
+テーブルの右上隅にある +add database クリック追加します。</p>
 <p>Screenshot 1.</p>
-<p>Under the configuration tab you will see the fields for creating a database.</p>
+<p>設定タブの下には、データベースを作成するためのフィールドが表示されます。</p>
 <p>Screenshot 2.</p>
-<p>The <strong>Name</strong> field is for a custom name to associate with your database.</p>
-<p>The <strong>Description</strong> field can be a custom description of your database.</p>
-<p>The <strong>Label</strong> field helps you organize your RDBMS instances by providing a unique color label.</p>
-<p>The <strong>Engine</strong> field currently supports MySQL 5.1 relational databases. More options will be
-provided as they become available.</p>
-<p>The <strong>Product</strong> field displays the different sizes available for the RDBMS and should be
-chosen to fit your needs. Database operating costs are proportional to the size, measured
-in compute power, of the provisioned datbase. See Amazon RDS for more information and
-current pricing.</p>
-<p>The <strong>Port</strong> number is restricted to ranges 1150 – 65535.</p>
-<p>For the <strong>Zone</strong> field it is highly recommended that you choose a zone that is in the same
-location as your primary application server.</p>
-<p>Another Zone option is high availability. In AWS this is know as a Multi-AZ deployment.
-The high availability option improves database durability and takes extra measures to
-ensure the RDBMS has minimal down time. This involves provisioning and maintaining a
-running backup of the primary instance in another zone. If there is planned maintenance,
-instance failure or availability zone failure in the primary zone the RDBMS will
-automatically failover to the backup instance.</p>
-<p>The size you specify in the Storage field must be in the 5GB to 1TB range.</p>
-<p>After the above fields have been completed proceed to the permissions tab.</p>
+<p><strong>Name</strong> フィールドには、データベースに関連付けるためのカスタム名を対象とします。</p>
+<p><strong>Description</strong> フィールドは、データベースのカスタム記述をすることができます。</p>
+<p><strong>Label</strong> フィールドには、独自のカラーラベルを提供することにより、RDBMSインスタンスを整理するのに役立ちます。</p>
+<p><strong>Engine</strong> フィールドでは、現在MySQL 5.1 リレーショナルデータベースをサポートしています。
+より多くの利用可能なオプションが提供されています。</p>
+<p><strong>Product</strong> フィールドには、RDBMSのために利用可能でニーズに合うように選ばれた異なるサイズを表示します。
+データベース運用コストは配備されたdatbaseのコンピューティングパワーで量られたサイズに比例します。
+詳細および現在の価格については、Amazon RDSを参照してください。</p>
+<p><strong>*Port</strong> 番号は 1150 – 6553 の範囲に制限されています。</p>
+<p><strong>Zone</strong> フィールドには、プライマリのアプリケーションサーバーと同じ場所のゾーンを選択することを強力にお勧めします。</p>
+<p>別のゾーンのオプションは、高可用性です。 AWSでは、これはマルチAZ配備として知られています。
+高可用性オプションは、RDBMSに特別な措置を講じダウンタイムを最小限に抑えることを保証して、
+データベースの耐久性を向上させています。これは、別のゾーンでのプロビジョニングとプライマリインスタンスの
+バックアップの実行保守を含みます。メンテナンスが予定されている場合やプライマリゾーン内のインスタンス障害または
+アベイラビリティゾーンの障害時は、RDBMSは、バックアップインスタンスに自動的にフェイルオーバーします。</p>
+<p>Storageフィールドで指定したサイズは5ギガバイトから1TBの範囲である必要があります。</p>
+<p>上記のフィールドが完了した後は &#8220;permissions&#8221; タブに進みます。</p>
 <p>Screenshot 3</p>
-<p>The <strong>Admin User</strong> and <strong>Admin Password</strong> fields are required.</p>
-<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
-will use to track billing charges and access rights tied to the user management and
-billing code offerings of enStratus.</p>
-<p>Upon save the RDBMS is launched and could take up to 15 minutes to show up in the
-enStratus console.</p>
-<p><strong>Connecting to a Relational Database</strong></p>
-<p>First you need to allow connections between your local ip and the database you want to
-connect to.</p>
-<p>On the Platform &gt; Relational Databases page, select actions &gt; network access for the
-database you want to use.</p>
+<p><strong>管理者ユーザ</strong> と <strong>管理者パスワード</strong> は必須項目です。</p>
+<p><strong>課金コード</strong> と <strong>ユーザグループ</strong> はenStratusが請求料金とアクセス権を追跡し
+enStratusのユーザー管理と課金コードオファリングに関連付ける課金コードおよびユーザグループの属性です。</p>
+<p>保存時にはRDBMSが起動され、enStratusコンソールに表示するまだに最大15分かかることがあります。</p>
+<p><strong>リレーショナルデータベースに接続</strong></p>
+<p>最初に接続したいローカルIPアドレスとデータベース間の接続を許可する必要があります。</p>
+<p>Platform &gt; Relational Databases のページの、 actions &gt; network access で使いたいデータベース
+にアクセスします。</p>
 <p>Screenshot 4</p>
-<p>If you have created a standard network (on the Company Settings &gt; Standard Networks page)
-for the IP you want to connect to your database from you can select your standard network
-from the Source drop-down. If you have not created a standard network you can make a new
-one on the Company Settings &gt; Standard Networks page or you can type your CIDR in the CIDR
-field and the Source will be labeled Custom. Click the Allow Access button and you will
-have network access to the database in 5 minutes or less.</p>
+<p>標準のネットワークを作成した（ Company Settings &gt; Standard Networks ページで）場合、
+データベースに接続するIPはソースドロップダウンリストから選択することができます。
+標準のネットワークをまだ作成していない場合、 Company Settings &gt; Standard Networks ページで
+新規のネットワークを作成するか、CIDRフィールドでCIDRを入力することができます。すると
+ソースには、カスタムラベルが付けられます。アクセスの[許可]ボタンをクリックすると、
+5分以内にデータベースへのネットワークアクセス権を持っています。</p>
 <p>Screenshot 5</p>
-<p>Next, view the info page for your database by selecting actions &gt; info in the relational
-databases table.</p>
-<p>You can then connect to your database using a MySQL client, the Admin User, Admin Password
-and Port you specified in the Create RDBMS form, and the DNS/Host specified in the Info
-page.</p>
+<p>次に、リレーショナルデータベーステーブルで actions &gt; info を選択して、データベースの情報ページを表示します。</p>
+<p>次に、RDBMS作成フォームで指定したMySQLのクライアント、管理者ユーザー、管理者パスワードおよびポートと
+情報ページに指定されたDNS /ホストを使用してデータベースに接続することができます。</p>
 </div>
-<div class="section" id="other-actions">
-<h2>Other Actions<a class="headerlink" href="#other-actions" title="Permalink to this headline">¶</a></h2>
-<p>To change the admin password for your relational database instance click on actions &gt;
-change password in the Relational Databases table. You can&#8217;t change the admin user name,
-but you can change the password by typing a new password in the Admin Password box and
-clicking the &#8220;Change RDBMS Password&#8221; button.</p>
-<p>To terminate a relational database instance click on actions &gt; terminate in the Relational
-Databases table.</p>
+<div class="section" id="id3">
+<h2>その他のアクション<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>リレーショナルデータベースインスタンスの管理者パスワードを変更するには、リレーショナルデータベーステーブル
+内の actions &gt; change password をクリックします。管理者ユーザー名を変更することはできませんが
+管理者パスワードボックスに新しいパスワードを入力して &#8220;Change RDBMS Password&#8221; ボタンをクリック
+することでパスワードを変更することができます。</p>
+<p>リレーショナルデータベース·ンスタンスを終了するにはリレーショナルデータベーステーブルの actions &gt; terminate をクリックします。</p>
 </div>
 </div>
 
@@ -186,7 +176,7 @@ Databases table.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Relational Databases
+		リレーショナルデータベース
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
