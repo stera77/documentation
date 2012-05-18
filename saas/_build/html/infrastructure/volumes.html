@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Volumes &mdash; The enStratus Documentation Project</title>
+    <title>ボリューム &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Volumes</h1></div>
+	<div id="title"><h1>ボリューム</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,46 +98,45 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="volumes">
-<h1>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>Volumes represent block storage. Conceptually, storage devices can be used to store data in a persistent manner in the cloud.</p>
+  <div class="section" id="id1">
+<h1>ボリューム<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>概要<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>ボリュームは、ブロックストレージを表します。概念的には、ストレージデバイスは、クラウド内のデータを永続的な方法で
+格納するために使用することができます。</p>
 </div>
-<div class="section" id="creating-volumes">
-<h2>Creating Volumes<a class="headerlink" href="#creating-volumes" title="Permalink to this headline">¶</a></h2>
-<p>To create a new volume, navigate to Infrastructure &gt; Volumes. If volumes had been
-previously created either within enStratus or via the cloud provider, they will be listed
-in the volumes table. Select +create_volume and complete the resulting dialog box.</p>
+<div class="section" id="id3">
+<h2>ボリュームの作成<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>新規のボリュームを作成するには、 Infrastructure &gt; Volumes に移動します。
+ボリュームが以前にenStratus内またはクラウドプロバイダのいずれかを介して作成されていた場合、それらは
+ボリュームテーブルに表示されます。 +create_volume を選択し、表示されるダイアログボックスを完了します。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/createVolume1.png"><img alt="Create Volume" src="../_images/createVolume1.png" style="width: 380.0px; height: 285.0px;" /></a>
 <p class="caption">Create Volume</p>
 </div>
-<p>The name of the volume is a logical name that will be used within enStratus to reference
-the volume. The size of the volume is should be between 1 and 1000 gigabytes (1 Tb).</p>
-<p>The Zone in which a volume is created is important because volumes may only be attached to
-servers in the same zone. Billing code and group complete the creation options for a
-volume.</p>
-<p>Volume creation takes only a few minutes to complete. Once the volume is created it will
-be added to the list of volumes. Since newly created volumes are not attached to a server,
-the Device and Current Server columns will be blank.</p>
+<p>ボリュームの名前はenStratus内でボリュームを参照するために使用される論理名です。
+ボリュームのサイズは1〜1000ギガバイト（1 TB）である必要があります。</p>
+<p>ボリュームは同じゾーン内のサーバーのみに取り付けることができるため、ボリュームが作成されるゾーンは重要です。
+課金コードとグループはボリュームの作成オプションを完了します。</p>
+<p>ボリュームの作成が完了するまでほんの数分しかかかりません。一度ボリュームが作成されると、それは、
+ボリュームのリストに追加されます。新しく作成されたボリュームは、サーバーに接続されていないので、
+デバイスと現在のサーバーのカラムは空白になります。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/finishedVolume1.png"><img alt="Volume Created" src="../_images/finishedVolume1.png" style="width: 800.0px; height: 200.0px;" /></a>
 <p class="caption">Volume Created</p>
 </div>
 </div>
-<div class="section" id="attaching-volumes">
-<h2>Attaching Volumes<a class="headerlink" href="#attaching-volumes" title="Permalink to this headline">¶</a></h2>
-<p>Volumes and servers must share an availability zone for volume attachment to succeed.
-Volumes are attached as block storage devices and are neither partitioned nor formatted
-when attached. enStratus allows for automated attachment, formatting, and mounting of new
-volumes only when starting a new server.</p>
-<p>To attach a volume to a server, select the volume for attachment and select the green
-actions button. The only required information to attach a volume is the name of the server
-to which the volume will be attached. The list of servers that share an availability zone
-will populate the dropdown selector.</p>
-<p>Optionally, a device name may be selected for the volume. In this case, I have chosen a
-device name of sdh, which means the device will appear as /dev/sdh on the server:</p>
+<div class="section" id="id4">
+<h2>ボリュームの接続<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>ボリュームとサーバーは、ボリュームの接続が成功するためには可用性ゾーンを共有する必要があります。
+ボリュームは、ブロックストレージデバイスとして接続された時は、パーティション作成もフォーマットもされていません。
+enStratusは、新規サーバーを起動する場合にのみ自動化された接続、フォーマッティング、新規ボリュームのマウンティングを
+可能にします。</p>
+<p>サーバーへボリュームをアタッチするには、接続するボリュームを選択し、緑色のアクションボタンを選択します。
+ボリュームをアタッチするための唯一の必要な情報はボリュームが接続されるサーバーの名前です。
+アベイラビリティゾーンを共有するサーバーのリストはドロップダウンセレクタに存在します。</p>
+<p>オプションとして、デバイス名を、ボリュームのために選択することができます。このケースでは、選択した
+デバイス名の sdh は、デバイスがサーバー上では /dev/sdh として表示されることを意味します。</p>
 <div class="highlight-bash"><pre>p335@ApplicationServer:~$ sudo fdisk -l
 
 Disk /dev/sdh: 2147 MB, 2147483648 bytes 255 heads, 63 sectors/track, 261 cylinders Units
@@ -145,32 +145,31 @@ bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disk identifier: 0x00000
 
 Disk /dev/sdh doesn't contain a valid partition table</pre>
 </div>
-<p>Once the volume is attached, it can be considered and treated somewhat like an external
-hard drive attached to the server. Standard hard drive activities are available including
-partitioning, formatting, and mounting.</p>
+<p>ボリュームが接続されれば、やや外部ハードドライブがサーバーに接続されているかのようにみなして、
+扱うことができます。パーティショニング、フォーマット、およびマウントを含む標準的な
+ハードディスクドライブのアクティビティを利用できます。</p>
 </div>
-<div class="section" id="creating-snapshots">
-<h2>Creating Snapshots<a class="headerlink" href="#creating-snapshots" title="Permalink to this headline">¶</a></h2>
-<p>Snapshots are created from volumes and volumes are created from snapshots.</p>
-<p>A snapshot of a volume represents a differential backup of the data contained on the
-volume. This means that only the blocks that have changed are saved each time a snapshot
-is created. To create a snapshot, select the green actions button for the volume, and
-choose make_snapshot. The only required information to create the snapshot is a logical
-name for the snapshot. Once the snapshot is saved, the snapshot will appear in the
-snapshots page in the enStratus console.</p>
+<div class="section" id="id5">
+<h2>スナップショットの作成<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>スナップショットはボリュームから作成され、ボリュームがスナップショットから作成されます。</p>
+<p>ボリュームのスナップショットはボリュームに含まれるデータの差分バックアップを表します。
+これは、変更されたブロックのみがスナップショットが作成されるたびにを保存されることを意味します。
+スナップショットを作成するには、ボリュームの緑色のアクションボタンを選択し、
+make_snapshotを選択します。スナップショットを作成するために必要な情報はスナップショットの論理的名前だけです。
+スナップショットが保存されると、スナップショットは、enStratusコンソールのスナップショットのページで表示されます。</p>
 </div>
-<div class="section" id="deleting-volumes">
-<h2>Deleting Volumes<a class="headerlink" href="#deleting-volumes" title="Permalink to this headline">¶</a></h2>
-<p>To delete a volume, click on the green action button associated with the volume and choose
-delete. A dialog box will prompt you to confirm the action and the volume will be removed
-from the volumes list.</p>
+<div class="section" id="id6">
+<h2>ボリュームの削除<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>ボリュームを削除するには、ボリュームに関連付けられた緑色のアクションボタンをクリックして[削除]を選択します。
+現れたダイアログボックスで、表示されたプロンプトに応じてアクションを確認すると
+ボリュームがボリュームリストから削除されます。</p>
 </div>
-<div class="section" id="volume-strategies">
-<h2>Volume Strategies<a class="headerlink" href="#volume-strategies" title="Permalink to this headline">¶</a></h2>
-<p>Volume storage is often persistent beyond the life of the server to which it was attached.
-This makes volumes a very useful item for managing data storage in the cloud. In a
-high-availability failure-tolerant automated environment, enStratus leverages volumes to
-restore applications to an operational state without data loss.</p>
+<div class="section" id="id7">
+<h2>ボリューム戦略<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>ボリュームストレージは、しばしば、それが接続されたサーバの寿命を超えて永続的です。
+これはボリュームがクラウドでデータストレージを管理するための非常に有用なアイテムになります。
+高可用性の障害トレラント自動化された環境において、enStratusは、データ損失することなく
+アプリケーションを復元しボリュームを動作状態に戻すことに活用します。</p>
 </div>
 </div>
 
@@ -187,7 +186,7 @@ restore applications to an operational state without data loss.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Volumes
+		ボリューム
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

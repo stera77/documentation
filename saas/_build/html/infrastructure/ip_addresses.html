@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>IP Addresses &mdash; The enStratus Documentation Project</title>
+    <title>IPアドレス &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>IP Addresses</h1></div>
+	<div id="title"><h1>IPアドレス</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,35 +98,33 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="ip-addresses">
-<h1>IP Addresses<a class="headerlink" href="#ip-addresses" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p><em>IP Addresses allow for reservation of static ip addresses which can then be assigned to running servers.</em></p>
+  <div class="section" id="ip">
+<h1>IPアドレス<a class="headerlink" href="#ip" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>概要<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><em>IPアドレス 実行中のサーバに割り当てることができる静的IPアドレスの予約を可能にします。</em></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">IP address reservation is a feature not available in all clouds. If it&#8217;s not a
-feature supported by your cloud provider, enStratus will not present it in the console.</p>
+<p class="last">IPアドレスの予約は全てクラウドの中で利用できるとは限らない機能です。もしそれが、クラウドプロバイダに
+よってサポートされている機能でない場合は、enStratusはコンソールにそれを提示しません。</p>
 </div>
-<p>To reserve an IP Address, click on + reserve_address in the menu window and select Reserve
-IP Address. A new IP address will be added to the list of Active Addresses.</p>
+<p>IPアドレスを予約するには、メニューウィンドウ内の+ reserve_addressをクリックして、eserve IP Address を選択します。
+新規のIPアドレスがアクティブなアドレスのリストに追加されます。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">In the Amazon cloud, there is a limit of 5 reserved IP addresses. To reserve
-more, you must contact Amazon Web Services.</p>
+<p class="last">Amazonのクラウドでは、5個の予約済みIPアドレスの制限があります。もっと多く予約する場合は、
+Amazon Webサービスに問い合わせる必要があります。</p>
 </div>
-<p>Once the IP address has been reserved it is available for use by assigning it to a running
-server. To assign the IP address to a server, select the green actions button and choose
-assign. A dialog box will appear with a dropdown list of available servers. Select your
-server from the list and choose Assign address. It will take a few moments for the
-assignment to be made.</p>
-<p>If an addresses is already assigned to a server and is set for removal instead, click on
-the actions button and choose the release option. This action will also take a few
-moments.</p>
-<p>Hint: Unused reserved IP addresses still cost money even though they are not assigned to
-running server. To delete an IP address, click on the actions button and choose delete.
-Confirm the deletion in the resulting dialog box and the IP address will be removed from
-your account.</p>
+<p>IPアドレスが予約されたならば、実行中のサーバに割り当てて使用することが可能です。
+サーバーにIPアドレスを割り当てるには、緑色のアクションボタンを選択し、アサインを選択します。
+使用可能なサーバーのドロップダウンリストを持つダイアログボックスがで表示されます。
+リストからサーバを選択し、割り当てアドレスを選択します。
+割り当てが行われるには少し時間がかかります。</p>
+<p>アドレスがすでにサーバーに割り当てられ、代わりに除去するために設定されている場合は、アクションボタン
+をクリックしてリリースオプションを選択します。このアクションはまた、いくらかの時間を要します。</p>
+<p>ヒント：未使用の予約されたIPは、それらが割り当てられていないにもかかわらず、実行中のサーバには依然として
+コストがかかります。IPアドレスを削除するには、アクションボタンをクリックし、[削除]を選択します。
+結果表示のダイアログボックスで、削除を確認するとあなたのアカウントからIPアドレスが削除されます。</p>
 </div>
 </div>
 
@@ -142,7 +141,7 @@ your account.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		IP Addresses
+		IPアドレス
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

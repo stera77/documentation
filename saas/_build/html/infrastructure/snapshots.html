@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Snapshots &mdash; The enStratus Documentation Project</title>
+    <title>スナップショット &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Snapshots</h1></div>
+	<div id="title"><h1>スナップショット</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,55 +98,53 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="snapshots">
-<h1>Snapshots<a class="headerlink" href="#snapshots" title="Permalink to this headline">¶</a></h1>
-<p>Snapshots are the reciprocal of volumes. When a snapshot of a volume is created, a
-differential backup of the devices is created and stored in S3. From this snapshot, a
-clone of the original volume can be created. enStratus leverages this property of
-snapshots when automating application deployments. At the time of this writing, snapshot
-creation is only supported by the Amazon EC2 cloud.</p>
-<div class="section" id="creating-volumes-from-snapshots">
-<h2>Creating Volumes from Snapshots<a class="headerlink" href="#creating-volumes-from-snapshots" title="Permalink to this headline">¶</a></h2>
-<p>Creating volumes from snapshots is a way to create an exact duplicate of the volume from
-which the snapshot came. If the filesystem on the volume supports increasing the size of
-the volume, the volume created from the snapshot may be increased in size.</p>
-<p>The volume created from the snapshot must be at least the size of the original volume.</p>
-<p>To create a volume from a snapshot, navigate to Infrastructure &gt; Snaphots and select a
-snapshot. Click on the appropriate actions button and choose create_volume. The resulting
-dialog box allows for the customization of several options, including standard enStratus
-options of name, group, and billing code.</p>
-<p>The size field will automatically be populated with the size of the original volume, but
-can be increased. For Amazon, volumes are specific to an availability zone, so a zone is
-required for volume creation.</p>
+  <div class="section" id="id1">
+<h1>スナップショット<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>スナップショットはボリュームの相反です。ボリュームのスナップショットが作成されたときに、
+デバイスの差分バックアップが作成され、S3に格納されます。このスナップショットから、
+元のボリュームのクローンを作成することができます。 enStratusは、スナップショットのプロパティを
+アプリケーション配備の自動化に利用しています。これを書いている時点でスナップショットの作成は、
+Amazon EC2クラウドでのみサポートされています。</p>
+<div class="section" id="id2">
+<h2>スナップショットからのボリュームの作成<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>スナップショットからボリュームを作成することは、スナップショットが来たボリュームの正確な複製を
+作成する方法です。ボリューム上のファイルシステムがボリュームのサイズを大きくすることがサポート
+されている場合、スナップショットから作成されたボリュームのサイズを増加することができます。</p>
+<p>スナップショットから作成されたボリュームは、元のボリュームのサイズ以上でなければなりません。</p>
+<p>スナップショットからボリュームを作成するには、 Infrastructure &gt; Snaphots に移動してスナップショットを
+選択します。適切なアクションボタンをクリックし create_volume を選択します。現れたダイアログボックスでは
+標準enStratusオプションの名前、グループ、および課金コードを含む、いくつかのオプションをカスタマイズする
+ことができます。</p>
+<p>sizeフィールドは自動的に元のボリュームのサイズが割り当てられますが、増加することができます。
+アマゾンでは、ボリュームはアベイラビリティゾーンに固有であり、それでゾーンはボリュームの作成に必要です。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/createVolumeFromSnapshot1.png"><img alt="Create Volume from Snapshot" src="../_images/createVolumeFromSnapshot1.png" style="width: 475.0px; height: 285.0px;" /></a>
 <p class="caption">Create Volume from Snapshot</p>
 </div>
-<p>The created volume will soon appear in the Infrastructure &gt; Volumes page for selection and
-attachment to servers.</p>
+<p>作成されたボリュームは、すぐに Infrastructure &gt; Volumes page で選択とサーバーへの接続のために表示されます。</p>
 </div>
-<div class="section" id="sharing-snapshots">
-<h2>Sharing Snapshots<a class="headerlink" href="#sharing-snapshots" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes it is advantageous to share snapshots to another account for ease of data
-transfer. Sharing snapshots in enStratus is accomplished by selecting the snapshot to
-share and clicking on the action button choosing sharing.</p>
-<p>A dialog box with two primary options is presented. The first share type is Private.
-Private sharing enables an enStratus user who is a part of several accounts to share
-snapshots between those accounts. The accounts of which the user is a part will populate a
-dropdown window. Once the snapshot is shared, the snapshot will appear in the other
-account.</p>
-<p>The second share type is Public. Public sharing enables an enStratus user to add a
-snapshot to the publicly available pool of snapshots. This is an option that carries the
-risk of making publicly available private data, so this action should be restricted using
-enStratus groups and roles.</p>
+<div class="section" id="id3">
+<h2>共有スナップショット<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>時には別のアカウントと、スナップショットを共有することはデータ転送を容易にするために有利です。
+enStratusで共有スナップショットは、&#8221;snapshot to share&#8221; を選択してアクションボタンをクリックする
+ことによって達成されます。</p>
+<p>2つの主要オプションを持ったダイアログボックスが表示されます。最初の共有タイプはPrivateです。
+プライベート共有は、複数のアカウントの一部であるenStratusユーザーがこれらのアカウントの間で
+スナップショットを共有することを可能にします。ユーザーが属しているグループのアカウントにはドロップダウンウィンドウが
+置かれます。スナップショットが共有されると、スナップショットは、他のアカウントにも表示されます。</p>
+<p>２番目の共有タイプは、Publicです。パブリックの共有はenStratusユーザーがスナップショットを
+パブリックに利用可能なスナップショットのプールに追加することを可能にします。これは公的に利用可能な
+プライベートデータを作るリスクを運ぶオプションですので、このアクションをenStratusのグループと
+ロールに使用するのは制限すべきです。</p>
 </div>
-<div class="section" id="snapshot-strategies">
-<h2>Snapshot Strategies<a class="headerlink" href="#snapshot-strategies" title="Permalink to this headline">¶</a></h2>
-<p>Because snapshots are differential backups, the time snapshots take to create varies based
-on the amount of changed information since the last snapshot was taken. Frequent snapshots
-will generally be created more quickly than infrequent ones.</p>
-<p>In an automated environment with enStratus, it is possible to have enStratus automate both
-the creation of snapshots and recovery volumes according to a customizable schedule.</p>
+<div class="section" id="id4">
+<h2>スナップショットの戦略<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>スナップショットは差分バックアップであるため、スナップショット作成にかかる時間は最後のスナップショットが
+取られて以来変更された情報の量に基づいて異なります。頻繁なスナップショットは一般的に、
+まれなものよりもより迅速に作成されます。</p>
+<p>enStratusで自動化された環境では、enStratusがカスタマイズ可能なスケジュールに従っての、スナップショット作成
+および復元ボリューム作成の両方を自動化することは可能です。
+。</p>
 </div>
 </div>
 
@@ -162,7 +161,7 @@ the creation of snapshots and recovery volumes according to a customizable sched
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Snapshots
+		スナップショット
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

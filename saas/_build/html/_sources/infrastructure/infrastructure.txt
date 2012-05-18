@@ -1,4 +1,5 @@
-Infrastructure
+.. Infrastructure
+インフラストラクチャ
 ==============
 
 .. include:: servers.rst

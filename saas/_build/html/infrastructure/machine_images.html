@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Machine Images &mdash; The enStratus Documentation Project</title>
+    <title>マシンイメージ &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Machine Images</h1></div>
+	<div id="title"><h1>マシンイメージ</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,65 +98,63 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="machine-images">
-<h1>Machine Images<a class="headerlink" href="#machine-images" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>A machine image is a saved template of a server. Running servers are started from machine images.</p>
-<p>If you are going to be utilizing enStratus images to begin your cloud work, please follow this workflow:</p>
+  <div class="section" id="id1">
+<h1>マシンイメージ<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>概要<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>マシンのイメージは、サーバの保存されたテンプレートです。実行しているサーバーは、マシンのイメージから起動されます。</p>
+<p>enStratusイメージを利用してクラウドの作業を開始するしようとしている場合は、このワークフローに従ってください。</p>
 <ol class="arabic simple">
-<li>Start a server from one of the provided enStratus templates (machine images).</li>
-<li>Next, create a machine image from the server you have started.</li>
-<li>Use the resulting image in your work, not the provided enStratus image.</li>
+<li>提供されたenStratusテンプレート（マシンイメージ）のいずれかからサーバーを起動します。</li>
+<li>次に、開始したサーバからマシンイメージを作成します。</li>
+<li>提供されたenStratusイメージではなく、仕事で得られたイメージを使用します。</li>
 </ol>
-<p><em>Why?</em></p>
-<p>We update the available enStratus images periodically, and when we do, we delete the old
-images to be good stewards of cloud resources. If the backing image of a running server is
-deleted, it can lead to imaging problems going forward. It will not affect the running
-server.</p>
-<p>The functionality included with machine images varies depending on the underlying cloud
-provider. Some cloud providers allow access to a public database of images from which
-private servers can be started. enStratus allows searching and starting of any publicly
-available machine images.</p>
+<p><a href="#id3"><span class="problematic" id="id4">*</span></a>なぜ*？</p>
+<p>我々は定期的に使用可能なenStratusイメージを更新し、それを行うとき、我々はクラウドリソースの良い
+スチュワードで有るべく、古いものを削除します。実行中のサーバのバッキングイメージが削除された場合、
+それは今後のイメージングの問題につながる可能性があります。それは実行中のサーバには影響しません。</p>
+<p>マシンイメージに含まれる機能は、基盤となるクラウドプロバイダーにより異なります。
+いくつかのクラウドプロバイダーは、イメージの公開データベースへのアクセスが許可していますから
+それからプライベートサーバを開始することができます。enStratusはマシンイメージを公開しているので
+検索し、任意の使用可能なマシンイメージを開始できます。</p>
 </div>
-<div class="section" id="renaming">
-<h2>Renaming<a class="headerlink" href="#renaming" title="Permalink to this headline">¶</a></h2>
-<p>To rename a machine image, click on the image name indicated by a brown dashed line. A
-text window will appear. Enter the desired name and select OK.</p>
-<p>To change the label color of a machine image, click on the label color and choose the
-desired color from the resulting choices.</p>
+<div class="section" id="id5">
+<h2>名前の変更<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>マシンイメージの名前を変更するには、茶色の点線で示されたイメージ名をクリックします。
+テキストウィンドウが表示されます。希望する名前を入力し、[OK]を選択します。</p>
+<p>マシンイメージのラベルの色を変更するには、ラベルの色をクリックして選択して
+得られた選択肢の中から色を希望します。</p>
 </div>
-<div class="section" id="starting">
-<h2>Starting<a class="headerlink" href="#starting" title="Permalink to this headline">¶</a></h2>
-<p>To start a server from a machine image, click on the green action button and select
-launch. A dialog box will appear allowing for customization of launch options.</p>
-<p>Some of the launch parameters are governed by the functionality provided for by the
-underlying cloud provider. Most cloud providers allow for customization of the amount of
-hardware (CPU, Memory, storage) provisioned for the server.</p>
+<div class="section" id="id6">
+<h2>出発<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>マシンイメージからサーバーを起動するには、緑色のアクションボタンをクリックして起動を選択します。
+ダイアログボックスには、カスタマイズ可能な起動オプションが表示されます。</p>
+<p>いくつかの起動パラメータが基盤となるクラウドプロバイダーから提供される機能によって管理されています。
+ほとんどのクラウドプロバイダーは、サーバにプロビジョニングされるハードウェア（CPU、メモリ、ストレージ）
+の量のカスタマイズを可能にしています。</p>
 </div>
-<div class="section" id="security-group">
-<h2>Security Group<a class="headerlink" href="#security-group" title="Permalink to this headline">¶</a></h2>
-<p>Security parameters in the form of firewall or security group are also chosen at the time
-of server launch.</p>
-<p>enStratus layers additional functionality in the form of groups and billing codes into
-server launch for all cloud providers.</p>
+<div class="section" id="id7">
+<h2>セキュリティグループ<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>ファイアウォール形式のセキュリティパラメータまたはセキュリティグループも同じくサーバ起動時に選択されます。</p>
+<p>enStratusはグループ化および課金コードの形で追加機能をすべてのクラウドプロバイダーのサーバーの起動に置きます。</p>
 </div>
-<div class="section" id="key-pair">
-<h2>Key Pair<a class="headerlink" href="#key-pair" title="Permalink to this headline">¶</a></h2>
-<p>Some cloud providers allow servers to be started with a root keypair. enStratus provides
-for this functionality by allowing the user to choose from a set of existing keypairs or
-to create a new keypair at launch.</p>
+<div class="section" id="id8">
+<h2>キーペア<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>いくつかのクラウドプロバイダーでは、サーバーがルートキーペアを持って開始することができます。enStratusでも
+このような機能を提供でき、ユーザーが既存のキーペアセットから選択することや、起動時に新規キーペアを作成することができます。</p>
 </div>
-<div class="section" id="volumes">
-<h2>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">¶</a></h2>
-<p>Additionally, through some cloud providers it is possible to specify a volume group to be
-attached, formatted, put into a RAID configuration, and optionally encrypted at launch
-time.</p>
-<p>Once the server is launched, it will usually take less than 20 minutes for the server to
-be ready for use.</p>
-<p>To do:
-#. Launch process
-#. Screenshots</p>
+<div class="section" id="id9">
+<h2>ボリューム<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>さらに、いくつかのクラウドプロバイダーを介してボリュームグループを接続するように指定し、
+フォーマット、RAID構成に入れる、オプションで起動時に暗号化することが可能です。</p>
+<p>サーバが起動すれば、通常20分未満でサーバーの使用準備ができます。</p>
+</div>
+<div class="section" id="id10">
+<h2>やること:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>起動プロセス</li>
+<li>スクリーンショット</li>
+</ol>
 </div>
 </div>
 
@@ -172,7 +171,7 @@ be ready for use.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Machine Images
+		マシンイメージ
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

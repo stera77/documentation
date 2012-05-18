@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Servers &mdash; The enStratus Documentation Project</title>
+    <title>サーバ &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Servers</h1></div>
+	<div id="title"><h1>サーバ</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,65 +98,62 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="servers">
-<h1>Servers<a class="headerlink" href="#servers" title="Permalink to this headline">¶</a></h1>
-<p>enStratus monitors all servers in your account. Use the green actions button to access
-your server. If the enStratus agent is not installed on the server, the options available
-are limited to getting information, rebooting, pausing/starting, or terminating the
-server. If the enStratus agent is installed on a running server, additional functionality
-is included in the actions menu.</p>
-<div class="section" id="expanded-information">
-<h2>Expanded information<a class="headerlink" href="#expanded-information" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="id1">
+<h1>サーバ<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>enStratusは、アカウント内のすべてのサーバーを監視します。緑色のアクションボタンを使用してサーバにアクセスします。
+サーバにenStratusエージェントがインストールされていない場合、利用できるオプションは、サーバ情報の取得、再起動、
+一時停止/起動、または終了に限定されています。enStratusエージェントが実行中のサーバーにインストールされている場合は、
+追加機能がアクションメニューに含まれています。</p>
+<div class="section" id="id2">
+<h2>補足情報<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Info: Expanded information regarding server attributes. Including comprehensive hardware information such as logical volumes attached, filesystems used, encryption, and memory.</li>
-<li>Analytics: A graphical representation of CPU Load (in %) over the last hour.</li>
-<li>Console: Hypervisor information.</li>
-<li>Agent: Agent logging capturing events such as adding/removing users, Host Intrusion Detection System alerts, and customizable information messages.</li>
+<li>情報：サーバの属性に関する拡張情報を表示します。接続された論理ボリューム、使用されたファイルシステム、暗号化、メモリなどの包括的なハードウェア情報を含みます。</li>
+<li>分析：過去1時間のCPU負荷のグラフィカルな表現（％）です。</li>
+<li>コンソール：ハイパーバイザ情報。</li>
+<li>エージェント：エージェントロギングは、ユーザーの追加/削除、ホスト侵入検知システムのアラート、およびカスタマイズ可能な情報メッセージをなどのイベントをキャプチャしています。</li>
 </ul>
 </div>
-<div class="section" id="make-image">
-<h2>Make Image<a class="headerlink" href="#make-image" title="Permalink to this headline">¶</a></h2>
-<p>Making a machine image means making a saved copy of the server state for future use.
-Machine images will show up in the tab. Machine images should be made whenever changes are
-made to the operating system such as patches or updates.</p>
+<div class="section" id="id3">
+<h2>イメージの作成<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>マシンのイメージを作ることは将来の使用のためにサーバの状態の保存されたコピーを作ることを意味します。
+マシンのイメージは、タブに表示されます。パッチやアップデートなどのオペレーティングシステムに加えられた変更があるたびに
+マシンのイメージは作られるべきです。</p>
 </div>
-<div class="section" id="make-snapshot">
-<h2>Make Snapshot<a class="headerlink" href="#make-snapshot" title="Permalink to this headline">¶</a></h2>
-<p>Making a snapshot means create a differential backup of any attached volumes.</p>
+<div class="section" id="id4">
+<h2>スナップショットの作成<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>スナップショットを作ることは接続されているすべてのボリュームの差分バックアップの作成を意味します。</p>
 </div>
-<div class="section" id="shell-remote-access">
-<h2>Shell/Remote Access<a class="headerlink" href="#shell-remote-access" title="Permalink to this headline">¶</a></h2>
-<p>Shell (Linux) and remote (Windows) access refers to creating user accounts on running
-servers. Each user in enStratus is assigned a user code of the form p123. When remote
-access is granted on a Linux server, a home user account is created on that server and the
-public ssh credentials defined in the enStratus user profile are set for the user. On
-Windows, a home account is created and the user can access the running server using the
-RDP password set in the enStratus profile.</p>
+<div class="section" id="id5">
+<h2>シェル/リモートアクセス<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>シェル（Linux）とリモート（Windows）のアクセスは、実行中のサーバにユーザーアカウントを作成することです。
+enStratus内の各ユーザーは、フォーム P123 のユーザーコードが割り当てられています。リモートアクセスが
+Linuxサーバに許可された時、ホームユーザーアカウントが、そのサーバー上で作成され、enStratusの
+ユーザープロファイルで定義されたパブリックSSH資格情がユーザに設定されています。Windows上で、
+ホームアカウントが作成され、ユーザはenStratusプロファイルに設定されたRDPパスワード使用して、
+実行中のサーバーにアクセスすることができます。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Before granting shell/remote access to a server, the user must define their
-public ssh key and RDP password in their user profile. If the credentials change, the
-remote servers are not notified of the change. To ensure the new credentials are used, the
-user must first be removed and re-added to remote access so the changes can propagate to
-their account.</p>
+<p class="last">シェル/サーバへのリモートアクセスを許可する前に、ユーザーは自分のユーザープロファイル内に
+SSH公開鍵とのRDPパスワードを定義する必要があります。資格情報の変更されても、リモートサーバーに変更が通知されません。新しい資格情報が
+使用されていることを確実に知らせるには、変更がアカウントに伝播できるように、最初にユーザーを削除し、
+リモートアクセスに再度追加する必要があります。</p>
 </div>
 </div>
-<div class="section" id="reboot">
-<h2>Reboot<a class="headerlink" href="#reboot" title="Permalink to this headline">¶</a></h2>
-<p>Reboot the running server. Rebooting does not change the IP address of the server.</p>
+<div class="section" id="id6">
+<h2>再起動<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>実行中のサーバーを再起動します。再起動は、サーバのIPアドレスを変更しません。</p>
 </div>
-<div class="section" id="pause">
-<h2>Pause<a class="headerlink" href="#pause" title="Permalink to this headline">¶</a></h2>
-<p>Pause the running server. enStratus still monitors the server. IP address will change upon starting.</p>
+<div class="section" id="id7">
+<h2>一時停止<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>実行中のサーバーを一時停止します。enStratusはまだサーバーを監視しています。 IPアドレスは、起動時に変更されます。</p>
 </div>
-<div class="section" id="terminate">
-<h2>Terminate<a class="headerlink" href="#terminate" title="Permalink to this headline">¶</a></h2>
-<p>Terminate the instance. No data on the instance will be saved.</p>
-<p>To rename a running server, click on the server name indicated by a brown dashed line. A
-text window will appear. Enter the desired name and select OK. The hostname of the server
-will be changed.</p>
-<p>To change the label color of a running server, click on the label color and choose the
-desired color from the resulting choices.</p>
+<div class="section" id="id8">
+<h2>終了<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>インスタンスを終了します。インスタンス上のデータは保存されません。</p>
+<p>実行中のサーバーの名前を変更するには、茶色の点線で示されたサーバー名をクリックします。
+テキストウィンドウが表示されます。希望する名前を入力し、[OK]を選択します。サーバのホスト名が
+変更されます。</p>
+<p>実行中のサーバーのラベルの色を変更するには、ラベルの色をクリックして得られた選択肢の中から希望する色を選択します。</p>
 </div>
 </div>
 
@@ -172,7 +170,7 @@ desired color from the resulting choices.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Servers
+		サーバ
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

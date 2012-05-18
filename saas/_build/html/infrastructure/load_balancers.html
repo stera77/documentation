@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Load Balancers &mdash; The enStratus Documentation Project</title>
+    <title>ロード·バランサ &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Load Balancers</h1></div>
+	<div id="title"><h1>ロード·バランサ</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,204 +98,195 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="load-balancers">
-<h1>Load Balancers<a class="headerlink" href="#load-balancers" title="Permalink to this headline">¶</a></h1>
-<p>Successful application load balancing involves dynamically adding and removing application
-nodes from the load balanced pool. This discussion is limited to addressing the activity
-that takes place on the load balancer.</p>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>enStratus supports a wide range of load balancers. In the Amazon Cloud, Elastic Load
-Balancers are available for provisioning and use from within enStratus. Server-based load
-balancers can be started for use or an existing server can be purposed as a load balancer
-via HA-Proxy or ajp (mod_jk). Finally, third party load balancing solutions are available
-in the form of the Zeus load balancer.</p>
+  <div class="section" id="id1">
+<h1>ロード·バランサ<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>成功したアプリケーションのロードバランシングは負荷分散プールにアプリケーションノードを動的に
+追加したり、そこから削除することを含みます。この議論は、ロードバランサ上の動作にのみ関心を制限します。</p>
+<div class="section" id="id2">
+<h2>概要<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>enStratusは、広い範囲のロードバランサをサポートしています。Amazonのクラウドでは、 Elastic Load Balancers を
+、enStratus内からプロビジョニングして利用可能です。サーバベースのロードバランサを使用するために開始する
+ことができ、または既存のサーバーをHA-ProxyまたはAJP（mod_jk）経由でロードバランサとして利用する
+ことができます。最後に、サードパーティ製の負荷分散ソリューションが Zeus load balancer の形態で利用可能です。</p>
 </div>
 <div class="section" id="elastic-load-balancer">
 <h2>Elastic Load Balancer<a class="headerlink" href="#elastic-load-balancer" title="Permalink to this headline">¶</a></h2>
-<p>Elastic load balancers are an offering from Amazon Web Services that are well supported in
-enStratus. ELB are advantagous because they can be cheaper to operate than server based
-solutions. The configuration requirements for ELB is often simpler than using server-based
-load balancing.</p>
-<p>To provision a new elastic load balancer using enStratus, navigate to Infrastructure, Load
-Balancers. Select + create_load_balancer. A single dialog box will present the required
-configuration options for the load balancer.</p>
+<p>Elastic Load Balancer は、Amazon Webサービスからのオファリングで、enStratusでも良くサポートされています。
+ELBはサーバーベースのソリューションより安く動作できますので、有利です。
+ELBの構成要件は、多くの場合、サーバーベースのロード·バランシングを使用するよりも簡単です。</p>
+<p>enStratusを使用して、新規の elastic load balancer をプロビジョンするには、インフラストラクチャに移動し、ロード
+バランサに移動します。 + create_load_balancerを選択します。１つのダイアログボックスがロードバランサ必要な構成
+オプションを提示します。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/createELB1.png"><img alt="Create ELB" src="../_images/createELB1.png" style="width: 380.0px; height: 285.0px;" /></a>
 <p class="caption">Create ELB</p>
 </div>
 </div>
-<div class="section" id="elb-discussion">
-<h2>ELB Discussion<a class="headerlink" href="#elb-discussion" title="Permalink to this headline">¶</a></h2>
-<p>The Name, Label, and Description fields should be self-explanatory. More care should be
-taken when configuring the Data Center portion of the dialog. Each configured data center
-will receive an equal portion of the traffic entering the load balancer. This means that
-for each data center configured, there should be a &#8220;listening&#8221; application server to field
-the load balanced traffic.</p>
-<p>For example, let&#8217;s assume we have a load balancer configured for data centers us-east-1a
-and us-east-1b. This means that 50% of the inbound traffic that reaches the load balancer
-will be sent to associated servers in east-1a and 50% of the inbound traffic will be sent
-to servers in east-1b. If no servers are provisioned in a data center, the traffic will
-manifest as an error.</p>
+<div class="section" id="elb">
+<h2>ELBディスカッション<a class="headerlink" href="#elb" title="Permalink to this headline">¶</a></h2>
+<p>名前、ラベル、および説明フィールドが自明でなければなりません。ダイアログボックスのデータセンターの部分を
+構成するときにはより多くのケアがなければならないことに注意。それぞれの構成されたデータセンターは
+ロードバランサに入るトラフィックの等しい部分を受け取ることになります。これは、設定されている
+各データセンターでは、負荷分散されたトラフィックをてきぱき処理する &#8220;listening&#8221; アプリケーション
+サーバーがあるはずという意味です。</p>
+<p>たとえば、我々は us-east-1a と us-east-1b のデータセンターのために設定されたロードバランサを
+持っていると仮定しましょう。つまり、ロードバランサに到達したインバウンドトラフィックの50％が us-east-1a に
+関連したサーバーに送信され、着信トラフィックの50％が us-east-1b 内のサーバーに送信されます。
+どのサーバーもデータセンターでプロビジョニングされていない場合、トラフィックはエラーとして明示されます。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">It is possible to re-configure additional data centers after the load balancer has
-been created. Additionally, in a clustered environment, enStratus knows not to start any
-servers in a data center that is unassociated with the load balancer.</p>
+<p class="last">ロードバランサが作成された後でも追加のデータセンターを再構成することは可能です。
+さらに、クラスタ環境で、enStratusは、ロードバランサと関連付けられていないデータセンター内
+のどのサーバーも開始する必要がないことを認識しています。</p>
 </div>
-<p>Billing code and user group are the billing code and user group attributes that enStratus
-will use to track billing charges and access rights tied to the user management and
-billing code offering of enStratus.</p>
-<p>The last step in configuring an elastic load balancer is to configure the protocols that
-pass through the load balancer. Several protocols are available for configuration
-including HTTP, HTTPS, AJP, and RAW TCP. At the time of this writing, it is not possible
-to terminate SSL traffic on an elastic load balancer. To configure SSL traffic to utilize
-an ELB, use the RAW TCP protocol and pass through port 443, or whatever port you will use
-for SSL traffic.</p>
-<p>Once the ELB has been configured, it will appear as an available load balancer in the Load
-Balancer list.</p>
-<p>The action button for the load balancer allows for changing the configuration of the ELB.
-Manage servers allows currently running servers to be associated with the running ELB.
-Manage zones allows for adding or dropping zone associations. For example, if there are no
-longer any server running in a currently balanced zone, that zone should be removed from
-the ELB.</p>
-<p>Lastly, to delete an existing ELB, choose the delete option under the actions menu.</p>
+<p>課金コードとユーザーグループは、課金コードとユーザーグループの属性で、enStratusが
+ユーザー管理とenStratusの課金コードオファリングに関連付けられた請求料金とアクセス権を追跡
+するために使用します。</p>
+<p>elastic load balancer を構成する最後のステップは、ロードバランサを通過するプロトコルを設定
+することです。設定にはHTTP、HTTPS、AJP、およびRAW TCPを含むいくつかのプロトコルが使用可能です。
+この記事の執筆時点で、 elastic load balancer でSSLトラフィックの終点となることは可能ではありません。
+SSLトラフィック利用するようにELBを設定するには、RAW TCPプロトコルを使用して、ポート443を通過するか、
+またはSSLトラフィックに使用する任意のポートを利用することです。</p>
+<p>ELBが設定されていると、それはロードバランサリスト内で利用できるロードバランサとして表示されます。
+。</p>
+<p>ロードバランサのアクションボタンをクリックすると、ELBの設定を変更することができます。
+サーバー管理は現在実行中のサーバーを実行中のELBに関連付けることができます。
+管理ゾーンは、ゾーンの関連付けを追加または削除が可能になります。たとえば、もはや現在のバランサーが動作
+しているゾーンで実行中のサーバーがなくなった場合は、そのゾーンからELBを削除する必要があります。</p>
+<p>最後に、既存のELBを削除するには、アクションメニューの下にある[削除]オプションを選択します。</p>
 </div>
-<div class="section" id="elb-and-cname">
-<h2>ELB and CNAME<a class="headerlink" href="#elb-and-cname" title="Permalink to this headline">¶</a></h2>
-<p>One more item of interest with respect to ELB is the way domain names are resolved. Each
-ELB has a host name of the form: CompanyName-LB-1234567890.us-east-1.elb.amazonaws.com.</p>
-<p>Here is the step-by-step flow of what happens when a client requests a URL served by your
-application:</p>
-<p>When a name resolution request for a domain name is attempted for your webserver,
-www.yourdomain.com, DNS will respond with the CNAME alias of
-CompanyName-LB-1234567890.us-east-1.elb.amazonaws.com. Next, the client request will
-attempt to resolve the name of the ELB,
-CompanyName-LB-1234567890.us-east-1.elb.amazonaws.com.</p>
-<p>Amazon web services controls this domain name since it is part of the domain
-amazonaws.com. Amazon DNS servers return an address of the ELB, 111.222.222.111. The
-client connection starts with this IP address. The ELB will pass traffic as directed
-through this IP address to the balanced pool of servers.</p>
+<div class="section" id="elb-cname">
+<h2>ELB と CNAME<a class="headerlink" href="#elb-cname" title="Permalink to this headline">¶</a></h2>
+<p>ELBに関してもう1つの重要な項目は、ドメイン名が解決される方法です。各ELBは、
+次の形式のホスト名を持っています。：CompanyName-LB-1234567890.us-east-1.elb.amazonaws.com.</p>
+<p>ここで、クライアントがアプリケーションによって提供されるURLを要求したときに何が起こるかの
+ステップバイステップのフローは：</p>
+<p>ドメイン名の名前解決要求は、あなたのウェブサーバ www.yourdomain.com に対して試行されている場合、
+DNSは CompanyName-LB-1234567890.us-east-1.elb.amazonaws.com. のCNAMEエイリアスを使用して応答します。
+次に、クライアントの要求はELBの名前 CompanyName-LB-1234567890.us-east-1.elb.amazonaws.com. を解決
+しようとします。</p>
+<p>それがドメイン amazonaws.com の一部であるので、Amazon Web Servicesがこのドメイン名を制御します。
+アマゾンのDNSサーバーはELB、111.222.222.111のアドレスを返します。
+クライアント接続がこのIPアドレスから始まります。ELBは指示通りにこのIPアドレスを介してサーバの
+バランスのとれたプールにトラフィックを渡すことができます。</p>
 </div>
 <div class="section" id="mod-jk">
 <h2>mod-jk<a class="headerlink" href="#mod-jk" title="Permalink to this headline">¶</a></h2>
-<p>A second popular method for load balancing applications is to use mod_jk. Using mod_jk is
-one of two types of virtual machine based load balancing currently supported by enStratus.
-enStratus manages mod_jk balanced applications via the 5 mod_jk scripts that are a part of
-the enStratus agent. These scripts are located in /enstratus/bin/</p>
+<p>ロードバランシングアプリケーションでの第2の一般的な方法は、mod_jkを使用することです。 mod_jkの使用は
+現在enStratusでサポートされている仮想マシンベースの負荷分散の2つのタイプの一つです。
+enStratusはenStratusエージェントの一部である5つの mod_jk スクリプト経由でmod_jkでバランスがとられた
+アプリケーションを管理します。これらのスクリプトは、 /enstratus/bin/ に配置されています。</p>
 <ol class="arabic simple">
-<li>modjk-addAddress &#8211; Adds an address to the worker pool.</li>
-<li>modjk-buildWorkers &#8211; Creates the workers.list file.</li>
-<li>modjk-removeAddress &#8211; Removes an address from the worker pool.</li>
-<li>modjk-startProxy &#8211; Calls modjk-addAddress with the necessary parameters to add a worker to the pool.</li>
-<li>modjk-stopProxy &#8211; Calls modjk-removeAddress with the necessary parameters to remove a worker from the pool.</li>
+<li>modjk-addAddress &#8211; ワーカープールにアドレスを追加します。</li>
+<li>modjk-buildWorkers &#8211; workers.listファイルを作成します。</li>
+<li>modjk-removeAddress &#8211; ワーカープールからアドレスを削除します。</li>
+<li>modjk-startProxy &#8211; プールにワーカーを追加するために必要なパラメータを指定してmodjk-addAddressを呼び出します。</li>
+<li>modjk-stopProxy &#8211; プールからワーカーを削除するために必要なパラメータを指定してmodjk-removeAddressを呼び出します。</li>
 </ol>
 </div>
-<div class="section" id="modjk-agent-scripts">
-<h2>modjk Agent Scripts<a class="headerlink" href="#modjk-agent-scripts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modjk">
+<h2>modjk エージェント　スクリプト<a class="headerlink" href="#modjk" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="19%" />
 <col width="81%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Agent Script</th>
-<th class="head">Function</th>
+<tr class="row-odd"><th class="head">ｴｰｼﾞｪﾝﾄ ｽｸﾘﾌﾟﾄ</th>
+<th class="head">機能</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>modjk-addAddress</td>
-<td>Adds an address to the worker pool.</td>
+<td>ワーカープールにアドレスを追加します。</td>
 </tr>
 <tr class="row-odd"><td>modjk-buildWorkers</td>
-<td>Creates the workers.list file.</td>
+<td>workers.listファイルを作成します。</td>
 </tr>
 <tr class="row-even"><td>modjk-removeAddress</td>
-<td>Removes an address from the worker pool.</td>
+<td>ワーカープールからアドレスを削除します。</td>
 </tr>
 <tr class="row-odd"><td>modjk-startProxy</td>
-<td>Calls modjk-addAddress with the necessary parameters to add a worker to the pool.</td>
+<td>プールにワーカーを追加するために必要なパラメータを指定してmodjk-addAddressを呼び出します。</td>
 </tr>
 <tr class="row-even"><td>modjk-stopProxy</td>
-<td>Calls modjk-removeAddress with the necessary parameters to remove a worker from the pool.</td>
+<td>ﾌﾟｰﾙ からワーカーを削除するために必要なﾊﾟﾗﾒｰﾀを指定してmodjk-removeAddressを呼び出します。</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The drop-in point for this and the other types of load balancing are the
-/enstratus/bin/startProxy and /enstratus/bin/stopProxy scripts.</p>
+<p class="last">このための drop-in point と他の種類のロードバランシングがあります。スクリプト /enstratus/bin/startProxy と
+スクリプト /enstratus/bin/stopProxy です。</p>
 </div>
 </div>
 <div class="section" id="ha-proxy">
 <h2>HA-Proxy<a class="headerlink" href="#ha-proxy" title="Permalink to this headline">¶</a></h2>
-<p>Another popular method for load balancing is using the High Availability Proxy or HA-Proxy
-method. This method is the other type of virtual machine based load in active support by
-enstratus. Although HA-Proxy is highly customizable and extensible, the support scripts
-are arranged for the most basic proxying. However, the scripts are open for customization
-and extension. They are located in /enstratus/bin/</p>
-<p>haproxy-addService &#8211; Adds a balanced node to /etc/haproxy.cfg and auto-increments.
-haproxy-runLb &#8211; Ensures haproxy runs at start.  haproxy-startProxy &#8211; Creates a basic
-/etc/haproxy.cfg script to control the proxy service.  haproxy-stopProxy &#8211; Removes a
-balanced node from /etc/haproxy.cfg.</p>
+<p>負荷分散のための別の一般的な方法は、高可用性のプロキシまたはHA-Proxyを使用方法です。
+このメソッドは、enstratusが積極的に支援する、他のタイプの仮想マシンベースのロードです。
+HA-Proxyはカスタマイズ性と拡張性に優れていますが、サポートスクリプトは、
+最も基本的なプロキシのために配置されています。ただし、スクリプトは、カスタマイズと拡張性の
+ために開かれています。これらは /enstratus/bin/に配置されています。</p>
+<p>haproxy-addService &#8211; バランスされたノードに/etc/haproxy.cfg と自動インクリメントを追加します。
+haproxy-runLb &#8211; 開始時に haproxy が動作することを保証します。 haproxy-startProxy &#8211; ﾌﾟﾛｷｼｻｰﾋﾞｽを
+制御するための基本的な /etc/haproxy.cfg ｽｸﾘﾌﾟﾄを作成します。 haproxy-stopProxy &#8211; /etc/haproxy.cfg から
+バランスされたノードを削除します。</p>
 </div>
-<div class="section" id="ha-proxy-agent-scripts">
-<h2>HA-Proxy Agent Scripts<a class="headerlink" href="#ha-proxy-agent-scripts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>HA-Proxy エージェント　スクリプト<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="23%" />
-<col width="77%" />
+<col width="22%" />
+<col width="78%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Agent Script</th>
-<th class="head">Function</th>
+<tr class="row-odd"><th class="head">ｴｰｼﾞｪﾝﾄ ｽｸﾘﾌﾟﾄ</th>
+<th class="head">機能</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>haproxy-addService</td>
-<td>Adds a balanced node to /etc/haproxy.cfg and auto-increments.</td>
+<td>バランスされたノードに/etc/haproxy.cfg と自動インクリメントを追加します。</td>
 </tr>
 <tr class="row-odd"><td>haproxy-runLb</td>
-<td>Ensures haproxy runs at start.</td>
+<td>開始時に haproxy が動作することを保証します。</td>
 </tr>
 <tr class="row-even"><td>haproxy-startProxy</td>
-<td>Creates a basic /etc/haproxy.cfg script to control the proxy service.</td>
+<td>ﾌﾟﾛｷｼｻｰﾋﾞｽを制御するための基本的な /etc/haproxy.cfg ｽｸﾘﾌﾟﾄを作成します。</td>
 </tr>
 <tr class="row-odd"><td>haproxy-stopProxy</td>
-<td>Removes a balanced node from /etc/haproxy.cfg.</td>
+<td>/etc/haproxy.cfg からバランスされたノードを削除します。</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The drop-in point for this and the other types of load balancing are the
-/enstratus/bin/startProxy and /enstratus/bin/stopProxy scripts.</p>
+<p class="last">このための drop-in point と他の種類のロードバランシングあります。
+スクリプト /enstratus/bin/startProxy と /enstratus/bin/stopProxy です。</p>
 </div>
-<p>Using any type of virtual machine-based load balancing requires that the underlying
-machine image have the supporting binaries imaged onto it. The advantages to using a
-virtual machine to perform load balancing are:</p>
-<p>SSL-termination is possible on the load balancer.  Fine-grained control of load balancer
-configuration. Third party plugin extensions.  Adding additional load balancers in a DNS
-round robin configuration.  The disadvantages to using a virtual machine to perform load
-balancing are:</p>
-<p>Costs for running a virtual machine are generally higher than using an ELB.  Increased
-configuration complexity</p>
+<p>いずれのタイプの仮想マシン·ベースのロードバランシングも、その基本となるマシンイメージが、
+その中にサポートしているバイナリが入っている必要があります。
+ロードバランシングを実行するのに仮想マシンを使用する利点は次のとおりです。:</p>
+<p>ロードバランサで SSL終端が可能です。細粒度のロードバランサの構成制御。
+サードパーティ製のプラグインの拡張機能。 DNSラウンドロビン構成の中で新規にロードバランサを追加する。
+ロードバランサを実行するのに仮想マシンを使用する欠点は、次のとおりです。:
+。</p>
+<p>仮想マシンを実行するためのコストは、一般的にELBを使用する場合よりも高くなっています。
+構成の複雑さが増加します。</p>
 </div>
 <div class="section" id="zeus">
 <h2>Zeus<a class="headerlink" href="#zeus" title="Permalink to this headline">¶</a></h2>
-<p>The final method of application load balancing for this discussion is the Zeus Load Balancer.</p>
-<p>Zeus is a very powerful solution for high-availability and high-performance load
-balancing. It is available for use with enStratus and a demonstration of the auto-scaling
-and recovery behavior can be viewed here:</p>
-<p><a class="reference external" href="http://www.youtube.com/watch?v=jRPNhQSPrws">Zeus Load Balancing in Rackspace</a></p>
-<p>The agent scripts that control the functionality of the zeus load balancer are locate in
-/enstratus/bin/</p>
+<p>この議論のためのアプリケーションの負荷分散の最後の方法は、ゼウスのロードバランサです。</p>
+<p>ゼウスは、高可用性と高パフォーマンスの負荷分散のための非常に強力なソリューションです。
+それはenStratusで利用可能です。自動スケーリングとリカバリ動作のデモはここで見ることができます。:</p>
+<p><cite>Rackspaceでのゼウスのロード·バランシング &lt;http://www.youtube.com/watch?v=jRPNhQSPrws&gt;</cite> _</p>
+<p>ゼウスのロードバランサの機能を制御するエージェントスクリプトは、/enstratus/bin/ にあります。。</p>
 </div>
-<div class="section" id="to-do">
-<h2>To Do:<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>やること:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Links to tutorials</li>
-<li>Links to agent discussion</li>
+<li>tutorials へのリンク</li>
+<li>エージェントディスカッション へのリンク</li>
 </ol>
 </div>
 </div>
@@ -312,7 +304,7 @@ and recovery behavior can be viewed here:</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Load Balancers
+		ロード·バランサ
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
