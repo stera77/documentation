@@ -1,2 +1,3 @@
-Summary
+.. Summary
+要約
 -------

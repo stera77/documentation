@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Access Rights &mdash; The enStratus Documentation Project</title>
+    <title>アクセス権 &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Access Rights</h1></div>
+	<div id="title"><h1>アクセス権</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. プラットフォーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users.html">7. ユーザー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,45 +98,42 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="access-rights">
-<h1>Access Rights<a class="headerlink" href="#access-rights" title="Permalink to this headline">¶</a></h1>
-<p><strong>The real power of the enStratus user security approach is unlocked when working with
-Roles.</strong></p>
-<p>Roles control user access to the enStratus console. Roles are assigned to Groups in a
-one-to-one relationship. Each role contains a customizable collection of access rights.
-Each access right provides access to a certain element of the enStratus console.</p>
-<div class="section" id="terms">
-<h2>Terms<a class="headerlink" href="#terms" title="Permalink to this headline">¶</a></h2>
-<p><strong>RESOURCE:</strong></p>
-<p>Every page, link and action in the enStratus console is controlled by at
-least one resource. In most cases, resources correspond to pages. For example, access to
-the actions available on the Machine Images page is controlled by the IMAGE resource and
-access to the actions available on the Servers page is controlled by the SERVER resource.
-Read access and account administration is controlled by the CONSOLE resource.</p>
-<p><strong>ACTION:</strong></p>
-<p>Resources are divided into actions. If you want access to all actions within a
-resource use the ANY action. If you want the role to have more granular permissions select
-the specific actions you want users to be able to perform. For example, if you want users
-with your role to be able to start deployments and services add the Deployment-Launch action.
-Some console actions require multiple resource-action pairs. These are documented in the
-Important Combinations sections for each resource.</p>
-<p><strong>QUALIFIER:</strong></p>
-<p>There are five different qualifiers: ANY, GROUP, THIS GROUP, BILLING, and
-MINE. These represent ownership of resources such as servers and machine images. For exam-
-ple, when a user launches a server they can associate it with a group and a billing code.
-The server that is launched is owned by the group and billing code assigned to it and the
-user who launched it. With access rights you can limit access to the server to users who
-belong to the group you chose, the chosen billing code, or the user who launched the
-server.</p>
-<p>If you want users in your role to have access to all servers you can use the ANY
-qualifier. For some resources, such as console and firewall, the group, this group,
-billing, and mine qualifiers have no meaning because there is no ownership associated with
-the resource. In these cases you should always use ANY when adding access rights.</p>
-<p>Note: Ownership of some resources are still under development.</p>
+  <div class="section" id="id1">
+<h1>アクセス権<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p><strong>ロールで作業するとき、enStratusユーザーセキュリティアプローチの真の力のロックが解除されます。</strong></p>
+<p>ロールは、enStratusコンソールへのユーザーアクセスを制御します。ロールは、一対一の関係のグループに
+割り当てられています。各ロールには、カスタマイズ可能なアクセス権のコレクションが含まれています。
+それぞれのアクセス権は、enStratusコンソールの特定の要素へのアクセスを提供します。</p>
+<div class="section" id="id2">
+<h2>用語<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><strong>リソース</strong></p>
+<p>enStratusコンソールのすべてのページ、リンク、アクションは少なくとも1つのリソースによって制御されます。
+ほとんどの場合、リソースは、ページに対応しています。例えば、マシンイメージのページで使用可能なアクション
+へのアクセスはIMAGEリソースによって制御されています。サーバーページで使用可能なアクションへのアクセスは、
+サーバーリソースによって制御されます。Read アクセスおよびアカウント管理はコンソールリソースによって制御されます。</p>
+<p><strong>アクション</strong></p>
+<p>リソースは、アクションに分かれています。リソースのすべてのアクションにアクセスする場合 &#8220;ANY&#8221; アクション
+を使用します。より細かなアクセス許可のロールを望むならばユーザーが実行できるようにしたい特定のアクション
+を選択します。たとえば、配備とサービスを開始できるロールを持ったユーザーが欲しい場合
+は、&#8221;Deployment-Launch&#8221; アクションを追加します。
+いくつかのコンソールアクションは、複数のリソースアクションのペアを必要とします。これらに記載されています
+各リソースの重要な組み合わせのセクションを参照してください。</p>
+<p><strong>修飾子</strong></p>
+<p>ANY、GROUP、 THIS GROUP、 BILLING、および MINE の5つの異なる修飾子があります。
+これらは、サーバーやマシンイメージなどのリソースの所有権を表します。たとえば、ユーザーがサーバーを
+起動したとき、それらをグループおよび課金コードに関連付けることができます。
+起動されたサーバは、それに割り当てられたグループおよび課金コードとそれを起動したユーザーによって所有されています。
+アクセス権を使用すると、ユーザーのサーバーへのアクセスを次の属性によって制限することができます。
+選択したグループに誰が属するか、選択した課金コード、またはサーバを起動したユーザー。</p>
+<p>ロール内のユーザーがすべてのサーバーへのアクセスを持ちたいのであれば、 ANY 修飾子を使用します。
+コンソールやファイアウォールのようないくつかのリソースにとって、GROUP、 THIS GROUP、 BILLING、および MINE の
+修飾子は意味がありません。なぜならそれにはリソースに関連付けられた所有権がありません。
+このケースでは、アクセス権を追加するときに常に ANY を使用する必要があります。</p>
+<p>注：いくつかのリソースの所有権はまだ開発中です。</p>
 </div>
-<div class="section" id="roles-example">
-<h2>Roles Example<a class="headerlink" href="#roles-example" title="Permalink to this headline">¶</a></h2>
-<p>You have three servers with the following ownership:</p>
+<div class="section" id="id3">
+<h2>ロールの例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>次の所有権を持つ3つのサーバーがあります。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="20%" />
@@ -171,23 +169,22 @@ the resource. In these cases you should always use ANY when adding access rights
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><em>Objective</em></p>
-<p>You are adding an access right to your QA Role, which is associated with your
-QA Group, using the resource SERVER and the action Image. This is what each qualifier will
-allow members of the QA group to do:</p>
+<p><em>目的</em></p>
+<p>QAグループに関連付けられているQAロールに SERVER サーバーと Image アクションを使用してアクセス権を追加します。
+これは各修飾子がQAグループのメンバーに何をすることを許可するのかを示します。</p>
 <p><strong>ANY</strong></p>
-<p>QA users can image Server 1, Server 2, and Server 3.</p>
+<p>QAユーザーは、Server 1、 Server 2、と Server 3 に対して Image アクションをできます。</p>
 <p><strong>GROUP</strong></p>
-<p>QA users can image Server 1. They can image Server 2 and Server 3 if they are
-also members of the Dev group.</p>
+<p>QAユーザーは、Server 1 に対して Image アクションをできます。彼らがDevグループのメンバーでもあれば、
+Server 2、と Server 3 に対して Image アクションをできます。</p>
 <p><strong>THIS_GROUP</strong></p>
-<p>QA users can only image Server 1.</p>
+<p>QAユーザーは、Server 1 に対してのみ Image アクションをできます</p>
 <p><strong>BILLING</strong></p>
-<p>QA users can image Server 1 and Server 2 if they are associated with the
-Default billing code. They can image Server 3 if they are associated with the Imaging
-billing code.</p>
+<p>QAユーザーはデフォルトの課金コードに関連づけられていれば、Server 1、 Server 2 に対して Image アクションをできます。
+彼らはイメージング課金コードに関連付けられている場合、Server 3 に対して Image アクションをできます。
+。</p>
 <p><strong>MINE</strong></p>
-<p>Erik can image Server 1, Jeff can image Server 2, and Greg can image Server 3.</p>
+<p>エリックは Server 1 に対して、ジェフは Server 2 に対して、グレッグは Server 3 に対して Image アクションをできます。</p>
 </div>
 </div>
 
@@ -204,7 +201,7 @@ billing code.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Access Rights
+		アクセス権
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

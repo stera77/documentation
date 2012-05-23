@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>7. Users &mdash; The enStratus Documentation Project</title>
+    <title>7. ユーザー &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
     <link rel="next" title="8. Budget" href="../budget/budget.html" />
-    <link rel="prev" title="6. Platform" href="../platform/platform.html" />
+    <link rel="prev" title="6. プラットフォーム" href="../platform/platform.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -35,13 +35,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>7. Users</h1></div>
+	<div id="title"><h1>7. ユーザー</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
 			<div class="headerButton"><a href="../budget/budget.html" title="8. Budget" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="../platform/platform.html" title="6. Platform" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="../platform/platform.html" title="6. プラットフォーム" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -58,14 +58,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. Platform</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">7. Users</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#managing-users">7.1. Managing Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#roles">7.2. Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#access-rights">7.3. Access Rights</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#available-access-rights">7.4. Available Access Rights</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example-roles">7.5. Example Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. プラットフォーム</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">7. ユーザー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">7.1. ユーザーの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">7.2. ロール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">7.3. アクセス権</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">7.4. 利用可能なアクセス権</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">7.5. ロールの例</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
@@ -109,110 +109,100 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="users">
-<h1>7. Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h1>
-<p>User management with enStratus is tightly integrated with enStratus accounts, groups,
-roles, and budget codes. Let&#8217;s define a few terms that will help provide useful
-context for understanding how users work.</p>
+  <div class="section" id="id1">
+<h1>7. ユーザー<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>enStratusを使用してユーザー管理がenStratusアカウント、グループ、ロール、および予算コードとしっかり統合されています。
+ここでユーザーがどのように働くかを理解するのに便利なコンテキストを提供するのに役立つ
+いくつかの用語を定義しましょう。</p>
 <ol class="arabic simple">
-<li>Company. A company is a logical entity in enStratus that contains one or more accounts.
-When the first account is created, a company name is required.</li>
-<li>Account. A account has a one to one relationship with a set of cloud credentials tied
-to a cloud provider.</li>
-<li>Group. A group is visible company-wide. Users can be assigned one or more groups. Each
-group can have 0 or 1 role applied to it.</li>
-<li>Role. A role is also visible company-wide. Roles are the mechanism through which access
-rights are managed. A role of the same name may have different access rights applied on
-the account level.</li>
-<li>Budget Code. Budget codes are visible company-wide and costs are aggregated across all
-accounts.</li>
+<li>会社。会社は、1つまたは複数のアカウントを含むenStratus内の論理エンティティです。
+最初のアカウントが作成されたときに、会社名が必要になります。</li>
+<li>アカウント。アカウントはクラウドプロバイダーと1対1の関係を関連付けられたクラウドの資格情報のセットを持ちます。</li>
+<li>グループ。グループは、全社的に可視化されています。ユーザーは、1つまたは複数のグループを割り当てることができます。
+各グループはそれに適用される0または1の役割を持つことができます。</li>
+<li>ロール。ロールは、全社的に可視化されています。ロールはそれを介してアクセス権を管理するメカニズムです。
+同じ名前のロールは、アカウントレベルに応じて、別のアクセス権を適用されている場合があります
+。</li>
+<li>予算コード。予算コードは、全社的に可視化されていて、費用はアカウント全体で集約されています。</li>
 </ol>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/companies.png"><img alt="Companies and Accounts" src="../_images/companies.png" style="width: 500.0px; height: 400.0px;" /></a>
 <p class="caption">Companies and Accounts</p>
 </div>
-<p>In the above example, we have two companies being managed through enStratus and tied to one
-or more cloud accounts. Let&#8217;s take a closer look at each company.</p>
+<p>上記の例では、我々はenStratusを介して管理されている2社を持っており、1個以上のクラウドアカウントと
+結びつけらりれています。各企業を詳しく見てみましょう。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/companyOne.png"><img alt="Company One" src="../_images/companyOne.png" style="width: 500.0px; height: 400.0px;" /></a>
 <p class="caption">Company One</p>
 </div>
-<p>The first company example is a simple example showing one company and one account. Here
-there are only two users, each having potentially differing levels of access to the
-underlying cloud depending on how their respective roles are configured. Group one is
-assigned role one and group two is assigned role 2.</p>
-<p>It is possible that role 1 and role 2 are identical and therefore each user will have the
-same capabilities, although doing so is not practical.</p>
-<p>The other primary difference between these two users is at the level of the bugdet code.
-User 1 has only one budget code against which to charge, in this case the code called DEV.
-User 2 has access to both the DEV and PRD budget codes.</p>
+<p>最初の会社の例では、一つの会社と一つのアカウントを示す簡単な例です。ここでは2人だけのユーザーいて、
+基本となるクラウドへの異なるアクセス権のレベルを持ちます。それは、それぞれのロールが設定されている
+方法によって異なります。グループ1はロール1に、グループ2はロール2にアサインされています。</p>
+<p>ロール1とロール2が同一であるため、各ユーザーが同じ機能を持つことが可能ですが、
+、そうすることは実用的ではありません。</p>
+<p>この2人のユーザーの間のその他の主な違いは、予算コードのレベルです。
+ユーザー1は、課金する対象となる唯1つの予算コードを持っていて、このケースではコードはDEVと呼ばれます。
+ユーザー2は、DEVおよびPRDの両方の予算コードにアクセスすることができます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/companyTwo.png"><img alt="Company Two" src="../_images/companyTwo.png" style="width: 500.0px; height: 400.0px;" /></a>
 <p class="caption">Company Two</p>
 </div>
-<p>Company two displays a more complex account relationship with more users, groups, and
-roles. Here, there are two groups and three roles.</p>
-<p>The first highlight to notice is that the group definitions for group 1 are different in
-each account. In account 1, group one is assigned role 1, in account 2, group one is
-assigned role 3. The practicality of such a design depends on what you’re trying to
-accomplish in each account.</p>
-<p>The effect of such a group and role mapping is on User 1. If User 1 is operating in the
-first account, tied to AWS in this case, he or she will inherit the access rights from
-Role 1. If User 1 switches to the second account, tied to OpenStack, they inherit access
-rights from Role 2.</p>
-<p>The other interesting user in this case is User 3. This user as been assigned into two
-groups, Groups 1 and 2. When a user is assigned into two groups, the User inherits the sum
-of the access rights. So in this case, User 3 is inheriting access rights from role 3 and
-role 2, which are assigned to groups 1 and 2, respectively.</p>
-<p>Budget codes for company 2 are visible across the entire company. This means charges to
-the DEV and PRD budget codes, regardless of account, will aggregate and be shown in the
-companies budget code summary. Users can be assigned into one or many budget codes.</p>
-<div class="section" id="managing-users">
-<h2>7.1. Managing Users<a class="headerlink" href="#managing-users" title="Permalink to this headline">¶</a></h2>
-<p>The challenge of user management breaks down roughly along two boundaries. The first of
-which is enStratus console access and the second is access rights to an individual cloud
-resource such as a server.</p>
-<p>The elasticity inherent in cloud computing creates a unique challenge for enterprise shell
-and remote desktop access. enStratus operates as an arbiter between your authoritative
-user database and user access to cloud virtual machines. Because of this arbitration, your
-cloud virtual machines do not need to participate in any kind of trust relationship with
-a corporate directory service.</p>
-<p>enStratus acts as this arbiter by adding individual user accounts to virtual machines
-based on the users enStratus access rights to that VM. enStratus maintains a separate set
-of login credentials for VM access so that corporate passwords are never placed in a
-public cloud.</p>
-<p>Any enStratus user may be granted shell/remote desktop access to a cloud virtual machine
-if that user has shell access rights to that virtual machine. If you want to grant a user
-access to a virtual machine, they must have first created Linux (SSH) or Windows
-(password) credentials in enStratus. You can then select the virtual machine to which they
-should be granted access and then grant them access to the virtual machine. When you grant
-that access, a new user account is created on the virtual machine with that users
-authentication credentials.</p>
-<p>If you remove the user from enStratus, enStratus also removes all virtual machine access
-as well.</p>
-<p>To create a new user, navigate to User Manager &gt; Users. Click on the + add user link in
-the upper right of the User List and complete the resulting dialog box. After providing
-the required information the user will be added to the user list.</p>
+<p>2つ目の会社は、より多くのユーザ、グループ、およびロールを持ち、より複雑なアカウントの関係を表示します。
+ここでは、2つのグループと三つのロールがあります。</p>
+<p>最初に注目すべきハイライトは、グループ1のグループ定義がアカウント毎に異なることです。
+アカウント1では、グループ1はロール1が割り当てられ、アカウント2ではグループ1にロール3を割り当てられています。
+このような設計の実用性は各アカウント内で達成しようとしているものに
+依存しています。</p>
+<p>このようなグループとロールマッピングの効果は、ユーザ1にあります。ユーザー1がこのケースでは
+AWSに関連付けられている最初のアカウント内で動作している場合、彼または彼女は、ロール1からアクセス権を継承します。
+ユーザー1がOpenStackに関連付けられててるアカウント2へ切り替われば、ロール2からアクセス権を継承します。</p>
+<p>他の興味深いユーザーは、この場合はユーザー3です。このユーザーは、次の2つのグループ、グループ1および2に
+割り当てられています。ユーザーが、2つのグループに割り当てられている場合、ユーザーはアクセス権の合計を継承します。
+したがって、このケースでは、ユーザー3は、それぞれグループ1と2に割り当てられている、ロール3とロール2から
+アクセス権を継承します。</p>
+<p>会社2の予算コードは、全社的に可視化されています。これは、DEVおよびPRD予算コードの費用がアカウントに
+関係なく、集計されて会社の予算コードの要約で表示されることを意味します。
+ユーザーは、1つまたは多くの予算コードに割り当てることができます。</p>
+<div class="section" id="id2">
+<h2>7.1. ユーザーの管理<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>ユーザー管理の課題は、大まかに言って2つの境界に沿って分けられます。最初の課題はenStratusコンソールへのアクセス、
+2つ目はサーバのような個々のクラウドリソースへのアクセス権です。</p>
+<p>クラウド·コンピューティングに固有の弾力性は、企業のシェルアクセスとリモートデスクトップアクセスに
+固有の課題を作成します。
+enStratusは、正式なユーザーデータベースとクラウド仮想マシンへのユーザーアクセスとの間の調停者として動作します。
+このため、調停によって、クラウド仮想マシンは企業のディレクトリサービスとの
+あらゆる種類の信頼関係に参加する必要はありません。</p>
+<p>enStratusは、仮想マシンに個々のユーザーアカウントを追加することにより、この調停者として動作します。
+ユーザーはそのVMに対するenStratusアクセス権に基づいています。 enStratusはVMにアクセスするための
+別のログイン資格情報セットを保持していて、企業のパスワードはパブリッククラウドに置かれることはありません。</p>
+<p>ユーザーがその仮想マシンへのシェルアクセス権を持っている場合、すべてのenStratusユーザーはクラウド、
+仮想マシンにシェル/リモートデスクトップアクセスを付与されます。
+ユーザーに仮想マシンへのアクセス権を付与したい場合、最初にLinuxでは SSH の、Windowsではパスワードの資格情報を
+enStratusで作成しておく必要があります。次に、ユーザーがアクセス権を付与され、アクセスを許可されるべき
+仮想マシンを選択します。ユーザーにアクセスを許可すれば、新規のユーザーアカウントが
+そのユーザーの認証資格情報で仮想マシン上で作成されます。</p>
+<p>enStratusからユーザーを削除すれば、同様にenStratusはまた、すべての仮想マシンへのアクセスを削除します。</p>
+<p>新規のユーザーを作成するには、 User Manager &gt; Users に移動します。
+上部のユーザーリストの右側の &#8220;+ add user link&#8221; をクリックして、現れたダイアログボックスを完了します。
+必要な情報を入力後ユーザーがユーザーリストに追加されます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/newUserDialog1.png"><img alt="New User" src="../_images/newUserDialog1.png" style="width: 500.0px; height: 400.0px;" /></a>
 <p class="caption">New User</p>
 </div>
-<p>Once the user is added to the system, they will inherit the rights associated with the
-group(s) to which they have been added.</p>
-<p>A user must specify remote access credentials prior to gaining access to individual
-running servers in the cloud. To gain access to a running Windows server, the user must
-specify an RDP password. To access a Linux server, a user must specify a public SSH key.</p>
-<p>To associate these credentials, click on their name at the top of the console, and select
-Edit my profile. On the profile page, the RDP password should be entered twice before
-saving the changes to the profile. The SSH public key can be entered either as a string or
-uploaded as a file.</p>
+<p>ユーザがシステムに追加されると、追加されたグループに関連付けられている権限を継承します。</p>
+<p>ユーザーは個々のクラウド内の実行中のサーバにアクセスする前に、リモートアクセス資格情報を指定する必要があります。
+実行中のWindowsサーバにアクセスするには、ユーザーはRDPパスワードを指定する必要があります。
+Linuxサーバにアクセスするには、ユーザーはパブリックSSHキーを指定する必要があります。</p>
+<p>これらの資格情報を関連付けるには、コンソールの上部の自分の名前をクリックして、&#8221;Edit my profile&#8221; を選択します。
+プロフィールページで、RDPパスワードはプロファイルへの変更を保存する前に二度入力する必要があります。
+SSHのパブリックキーは、文字列としてするかまたはアップロードされたファイルとして入力することができます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/clickedUserName1.png"><img alt="Edit Profile" src="../_images/clickedUserName1.png" style="width: 500.0px; height: 150.0px;" /></a>
 <p class="caption">Edit Profile</p>
 </div>
-<p>Once the credentials have been entered and the profile is saved, the user can then access
-remote servers as outlined in the Infrastructure &gt; Servers section through Shell/Remote
-access provided they have the appropriate access rights to take this action.</p>
+<p>資格情報が入力されて、プロファイルが保存されると、ユーザーはリモートサーバにアクセスできます。
+ユーザーは &#8220;Infrastructure &gt; Servers section&#8221; セクションで概説されているように &#8220;Shell/Remote access&#8221; 経由で
+適切なアクセス権を持ってアクセスできます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/userProfileGeneral1.png"><img alt="General Profile Information" src="../_images/userProfileGeneral1.png" style="width: 650.0px; height: 300.0px;" /></a>
 <p class="caption">General Profile Information</p>
@@ -225,62 +215,58 @@ access provided they have the appropriate access rights to take this action.</p>
 <p class="caption">Profile Security Credentials</p>
 </div>
 </div>
-<div class="section" id="roles">
-<h2>7.2. Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="how-roles-affect-users">
-<h3>7.2.1. How roles affect users<a class="headerlink" href="#how-roles-affect-users" title="Permalink to this headline">¶</a></h3>
-<p>We&#8217;ve been saying that a user &#8216;inherit&#8217; access rights from the role assigned
-to the group(s) they are assigned. Roles have very granular access control definitions
-which are useful when defining the type and level of access users in a group should have.
-The enforcement of access controls is done through the enStratus console. A user may see a
-limited set of options when clicking on the actions link for a cloud resource.</p>
-<p>In the SaaS version of enStratus this is the method by which enStratus enforces access
-controls.</p>
-<p>In an on-premise deployment, customers may choose the option to completely hide cloud
-resources to which a user has no access. Again, this enforcement is done through the
-enStratus console, except in this case if a user has no access to a cloud resource, the
-resource is not presented to the user.</p>
+<div class="section" id="id3">
+<h2>7.2. ロール<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>7.2.1. ロールが、ユーザーに与える影響<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>ユーザーはユーザーに割り当てられたグループに割り当てられたロールからアクセス権限を&#8221;継承&#8221;しますと言ってきました。
+ロールは非常にきめ細かいアクセス制御の定義を持っており、これはグループ内のユーザーの
+アクセスタイプとレベルを定義するときに便利です。
+アクセスコントロールの実施はenStratusコンソールを介して行われます。
+クラウドリソースのアクション·リンクをクリックすると限られたオプションセットを見ることができます。。</p>
+<p>enStratusのSaaS版では、これはenStratusがアクセスコントロールを強制する方法です。</p>
+<p>オンプレミス配備で、顧客はユーザーがアクセス権を持たないクラウドリソースを完全に非表示にする
+オプションを選択することができます。再び、この施行はenStratusコンソールを介して
+、ユーザーがクラウドリソースへのアクセス権を持っていなくて、
+リソースは、ユーザに提示されていないこの場合を除いて行われます。</p>
 </div>
 </div>
-<div class="section" id="access-rights">
-<h2>7.3. Access Rights<a class="headerlink" href="#access-rights" title="Permalink to this headline">¶</a></h2>
-<p><strong>The real power of the enStratus user security approach is unlocked when working with
-Roles.</strong></p>
-<p>Roles control user access to the enStratus console. Roles are assigned to Groups in a
-one-to-one relationship. Each role contains a customizable collection of access rights.
-Each access right provides access to a certain element of the enStratus console.</p>
-<div class="section" id="terms">
-<h3>7.3.1. Terms<a class="headerlink" href="#terms" title="Permalink to this headline">¶</a></h3>
-<p><strong>RESOURCE:</strong></p>
-<p>Every page, link and action in the enStratus console is controlled by at
-least one resource. In most cases, resources correspond to pages. For example, access to
-the actions available on the Machine Images page is controlled by the IMAGE resource and
-access to the actions available on the Servers page is controlled by the SERVER resource.
-Read access and account administration is controlled by the CONSOLE resource.</p>
-<p><strong>ACTION:</strong></p>
-<p>Resources are divided into actions. If you want access to all actions within a
-resource use the ANY action. If you want the role to have more granular permissions select
-the specific actions you want users to be able to perform. For example, if you want users
-with your role to be able to start deployments and services add the Deployment-Launch action.
-Some console actions require multiple resource-action pairs. These are documented in the
-Important Combinations sections for each resource.</p>
-<p><strong>QUALIFIER:</strong></p>
-<p>There are five different qualifiers: ANY, GROUP, THIS GROUP, BILLING, and
-MINE. These represent ownership of resources such as servers and machine images. For exam-
-ple, when a user launches a server they can associate it with a group and a billing code.
-The server that is launched is owned by the group and billing code assigned to it and the
-user who launched it. With access rights you can limit access to the server to users who
-belong to the group you chose, the chosen billing code, or the user who launched the
-server.</p>
-<p>If you want users in your role to have access to all servers you can use the ANY
-qualifier. For some resources, such as console and firewall, the group, this group,
-billing, and mine qualifiers have no meaning because there is no ownership associated with
-the resource. In these cases you should always use ANY when adding access rights.</p>
-<p>Note: Ownership of some resources are still under development.</p>
+<div class="section" id="id5">
+<h2>7.3. アクセス権<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><strong>ロールで作業するとき、enStratusユーザーセキュリティアプローチの真の力のロックが解除されます。</strong></p>
+<p>ロールは、enStratusコンソールへのユーザーアクセスを制御します。ロールは、一対一の関係のグループに
+割り当てられています。各ロールには、カスタマイズ可能なアクセス権のコレクションが含まれています。
+それぞれのアクセス権は、enStratusコンソールの特定の要素へのアクセスを提供します。</p>
+<div class="section" id="id6">
+<h3>7.3.1. 用語<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><strong>リソース</strong></p>
+<p>enStratusコンソールのすべてのページ、リンク、アクションは少なくとも1つのリソースによって制御されます。
+ほとんどの場合、リソースは、ページに対応しています。例えば、マシンイメージのページで使用可能なアクション
+へのアクセスはIMAGEリソースによって制御されています。サーバーページで使用可能なアクションへのアクセスは、
+サーバーリソースによって制御されます。Read アクセスおよびアカウント管理はコンソールリソースによって制御されます。</p>
+<p><strong>アクション</strong></p>
+<p>リソースは、アクションに分かれています。リソースのすべてのアクションにアクセスする場合 &#8220;ANY&#8221; アクション
+を使用します。より細かなアクセス許可のロールを望むならばユーザーが実行できるようにしたい特定のアクション
+を選択します。たとえば、配備とサービスを開始できるロールを持ったユーザーが欲しい場合
+は、&#8221;Deployment-Launch&#8221; アクションを追加します。
+いくつかのコンソールアクションは、複数のリソースアクションのペアを必要とします。これらに記載されています
+各リソースの重要な組み合わせのセクションを参照してください。</p>
+<p><strong>修飾子</strong></p>
+<p>ANY、GROUP、 THIS GROUP、 BILLING、および MINE の5つの異なる修飾子があります。
+これらは、サーバーやマシンイメージなどのリソースの所有権を表します。たとえば、ユーザーがサーバーを
+起動したとき、それらをグループおよび課金コードに関連付けることができます。
+起動されたサーバは、それに割り当てられたグループおよび課金コードとそれを起動したユーザーによって所有されています。
+アクセス権を使用すると、ユーザーのサーバーへのアクセスを次の属性によって制限することができます。
+選択したグループに誰が属するか、選択した課金コード、またはサーバを起動したユーザー。</p>
+<p>ロール内のユーザーがすべてのサーバーへのアクセスを持ちたいのであれば、 ANY 修飾子を使用します。
+コンソールやファイアウォールのようないくつかのリソースにとって、GROUP、 THIS GROUP、 BILLING、および MINE の
+修飾子は意味がありません。なぜならそれにはリソースに関連付けられた所有権がありません。
+このケースでは、アクセス権を追加するときに常に ANY を使用する必要があります。</p>
+<p>注：いくつかのリソースの所有権はまだ開発中です。</p>
 </div>
-<div class="section" id="roles-example">
-<h3>7.3.2. Roles Example<a class="headerlink" href="#roles-example" title="Permalink to this headline">¶</a></h3>
-<p>You have three servers with the following ownership:</p>
+<div class="section" id="id7">
+<h3>7.3.2. ロールの例<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>次の所有権を持つ3つのサーバーがあります。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="20%" />
@@ -316,240 +302,240 @@ the resource. In these cases you should always use ANY when adding access rights
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><em>Objective</em></p>
-<p>You are adding an access right to your QA Role, which is associated with your
-QA Group, using the resource SERVER and the action Image. This is what each qualifier will
-allow members of the QA group to do:</p>
+<p><em>目的</em></p>
+<p>QAグループに関連付けられているQAロールに SERVER サーバーと Image アクションを使用してアクセス権を追加します。
+これは各修飾子がQAグループのメンバーに何をすることを許可するのかを示します。</p>
 <p><strong>ANY</strong></p>
-<p>QA users can image Server 1, Server 2, and Server 3.</p>
+<p>QAユーザーは、Server 1、 Server 2、と Server 3 に対して Image アクションをできます。</p>
 <p><strong>GROUP</strong></p>
-<p>QA users can image Server 1. They can image Server 2 and Server 3 if they are
-also members of the Dev group.</p>
+<p>QAユーザーは、Server 1 に対して Image アクションをできます。彼らがDevグループのメンバーでもあれば、
+Server 2、と Server 3 に対して Image アクションをできます。</p>
 <p><strong>THIS_GROUP</strong></p>
-<p>QA users can only image Server 1.</p>
+<p>QAユーザーは、Server 1 に対してのみ Image アクションをできます</p>
 <p><strong>BILLING</strong></p>
-<p>QA users can image Server 1 and Server 2 if they are associated with the
-Default billing code. They can image Server 3 if they are associated with the Imaging
-billing code.</p>
+<p>QAユーザーはデフォルトの課金コードに関連づけられていれば、Server 1、 Server 2 に対して Image アクションをできます。
+彼らはイメージング課金コードに関連付けられている場合、Server 3 に対して Image アクションをできます。
+。</p>
 <p><strong>MINE</strong></p>
-<p>Erik can image Server 1, Jeff can image Server 2, and Greg can image Server 3.</p>
+<p>エリックは Server 1 に対して、ジェフは Server 2 に対して、グレッグは Server 3 に対して Image アクションをできます。</p>
+<hr class="docutils" />
 </div>
 </div>
-<div class="section" id="available-access-rights">
-<h2>7.4. Available Access Rights<a class="headerlink" href="#available-access-rights" title="Permalink to this headline">¶</a></h2>
-<p><strong>CONSOLE</strong></p>
+<div class="section" id="id8">
+<h2>7.4. 利用可能なアクセス権<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p><strong>コンソール</strong></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="15%" />
 <col width="85%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Allows full access to the console.</td>
+<td>コンソールへのフルアクセスを許可します。</td>
 </tr>
 <tr class="row-odd"><td>ANY</td>
-<td>Allows full access to the console.</td>
+<td>コンソールへのフルアクセスを許可します。</td>
 </tr>
 <tr class="row-even"><td>Access</td>
-<td>Allows read-only access to the Console, Automation, Infrastructure &amp; Platform tabs.</td>
+<td>コンソール、自動化、インフラプラットフォームのタブへの読取り専用アクセスを許可します。</td>
 </tr>
 <tr class="row-odd"><td>CreateAPIKeys</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は、将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-even"><td>EditAccount</td>
-<td>Allows full access to the Company Settings &amp; Account Settings tabs.</td>
+<td>会社設定とアカウント設定のタブへのフルアクセスを許可します。</td>
 </tr>
 <tr class="row-odd"><td>EditBilling</td>
-<td>Allows full access to the Finance &gt; Billing Codes page.</td>
+<td>ファイナンス &gt; ビリングコードページへのフルアクセスを許可します。</td>
 </tr>
 <tr class="row-even"><td>ManageUsers</td>
-<td>Allows full access to the User Manager tab.</td>
+<td>ユーザーマネージャ タブへのフルアクセスを許可します。</td>
 </tr>
 <tr class="row-odd"><td>ViewInvoices</td>
-<td>Allows full access to the Finance &gt; Invoices page.</td>
+<td>ファイナンス &gt; 請求ページへのフルアクセスを許可します。</td>
 </tr>
 <tr class="row-even"><td>ViewBilling</td>
-<td>Allows read-only access to the Finance &gt; Billing Codes page.</td>
+<td>ファイナンス &gt; 請求ページへのフルアクセスを許可します。</td>
 </tr>
 </tbody>
 </table>
-<div class="section" id="deployment">
-<h3>7.4.1. Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h3>
-<p>Note: To view Automation you need the access right CONSOLE-Access-ANY</p>
+<div class="section" id="id9">
+<h3>7.4.1. 配備<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>注: 自動化をみるには CONSOLE-Access-ANY のアクセス権が必要です。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="15%" />
 <col width="85%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Allows full access to the Automation pages.</td>
+<td>オートメーションページへのフルアクセスを許可します。</td>
 </tr>
 <tr class="row-odd"><td>Configure</td>
-<td>Gives you an actions &gt; edit option for your deployments. However, does not give you
-access to view the edit page unless you have Deployment-Create rights.</td>
+<td>配備の actions &gt; edit オプションを編集します。
+ただし、 Deployment-Create 権がなければ編集ページを見る権利はありません。</td>
 </tr>
 <tr class="row-even"><td>Create</td>
-<td>Allows you to create new deployments and copy existing deployments (actions &gt; copy). It
-also allows you to view the Edit page if you have Deployment-Configure rights.</td>
+<td>新規の配備を作成し、既存の配備をコピー（アクション&gt;コピー）することができます。それは
+また、 Deployment-Configure の権限を持っている場合は、編集ページを見ることができます。</td>
 </tr>
 <tr class="row-odd"><td>Delete</td>
-<td>Allows you to delete deployments.</td>
+<td>配備を削除することができます。</td>
 </tr>
 <tr class="row-even"><td>Launch</td>
-<td>Allows you to launch deployments and services.</td>
+<td>配備とサービスを起動することができます。</td>
 </tr>
 <tr class="row-odd"><td>ManageSsl</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は、将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-even"><td>Pause</td>
-<td>Allows you to stop running deployments and services.</td>
+<td>実行中の配備とサービスを停止することができます。</td>
 </tr>
 <tr class="row-odd"><td>Resize</td>
-<td>Allows you to view the edit services page, but you are not allowed to save changes. You
-are allowed to create and edit data sources. Allows you to view the add server group and
-add service pages, but does not allow you to create the new server groups and services
-when you click Save. You can create server groups if you add the
-Deployment-Create access right. Also gives you an edit option for the server group(s)
-that Deployment-ManageUsers does not give you edit permissions for, and it does give
-you permission to view the edit screen and save your changes.</td>
+<td>編集サービスページを見ることができますが、変更内容を保存することはできません。データ
+ソースの作成および編集することが許可されています。追加サーバグループを見ることができ、
+サービスページを追加できますが、[保存]をクリックしたとき新規のサーバーグループおよび
+サービスを作成することはできません。Deployment-Create access 権を追加した場合は、
+サーバーグループを作成することができます。またこれは、Deployment-ManageUsers 権が
+許さないサーバーグループの編集も許可し、編集画面を表示し、
+変更内容を保存するためのアクセス許可も与えます。</td>
 </tr>
 <tr class="row-even"><td>UploadImages</td>
-<td>Allows you to add/upload service images and data source images.</td>
+<td>サービスイメージおよびデータソースイメージを追加/アップロードすることができます。</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Important Combinations</strong></p>
-<p>To edit a deployment - Cluster-Create &amp; Cluster-Configure</p>
-<p>To create a new server group - Cluster-Create &amp; Cluster-Resize</p>
-<p>To edit all server groups - Cluster-ManageUsers &amp; Cluster-Resize</p>
-<p>To create a new service - Cluster-Create, Cluster-Configure &amp; Cluster-Resize</p>
-<p>To edit a service - Cluster-Configure &amp; Cluster-Resize</p>
+<p><strong>重要なコンビネーション</strong></p>
+<p>配備を編集するには - クラスタ作成＆クラスタの設定</p>
+<p>新規のサーバーグループを作成するには - クラスタの作成とクラスタサイズの変更</p>
+<p>すべてのサーバーグループを編集するには -  Cluster-ManageUsers と Cluster-Resize</p>
+<p>新規のサービスを作成するには - クラスタの作成、クラスタ設定＆クラスタのサイズ変更</p>
+<p>サービスを編集するには - クラスタ設定＆クラスタリサイズ</p>
 </div>
-<div class="section" id="distribution">
-<h3>7.4.2. Distribution<a class="headerlink" href="#distribution" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>7.4.2. 配布<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="15%" />
 <col width="85%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Allows full access to the Platform &gt; Distributions page.</td>
+<td>プラットフォーム &gt; 配布 ページへのフルアクセスを許可します。</td>
 </tr>
 <tr class="row-odd"><td>Configure</td>
-<td>Gives you an edit option for your distributions. However, does not give you access to
-view the edit page unless you have Distribution-Create rights.</td>
+<td>配布用の編集オプションを提供します。ただし Distribution-Create 権限を持っていない限り
+、編集ページを閲覧にはアクセスできません 。</td>
 </tr>
 <tr class="row-even"><td>Create</td>
-<td>Allows you to create a new distribution. You are not allowed to view or edit any other
-distribution.</td>
+<td>新規の配布を作成することができます。他の配布を閲覧または編集することはできません</td>
 </tr>
 <tr class="row-odd"><td>Delete</td>
-<td>Allows you to deactivate/delete distributions.</td>
+<td>配布を無効化/削除することができます。</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Important Combination</strong></p>
-<p>To edit a distribution - Distribution-Create &amp; Distribution-Configure</p>
+<p><strong>重要なコンビネーション</strong></p>
+<p>配布を編集する -  Distribution-Create と Distribution-Configure</p>
 </div>
-<div class="section" id="firewall">
-<h3>7.4.3. Firewall<a class="headerlink" href="#firewall" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>7.4.3. ファイアウォール<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
-<col width="15%" />
-<col width="85%" />
+<col width="14%" />
+<col width="86%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Allows full access to the Infrastructure &gt; Firewalls page.</td>
+<td>インフラ &gt; ファイアウォールのページへのフルアクセスを許可します。</td>
 </tr>
 <tr class="row-odd"><td>AddRule</td>
-<td>Allows you to add firewall rules if you have FIREWALL-EditRule &amp; FIREWALL-Create.</td>
+<td>FIREWALL-EditRule と FIREWALL-Create を持っている場合は、 firewall rules を追加することができます。</td>
 </tr>
 <tr class="row-even"><td>Create</td>
-<td>Allows you to create new firewalls. Allows you to view the actions button.</td>
+<td>新規のファイアウォールを作成することができます。アクションボタンを閲覧することができます。</td>
 </tr>
 <tr class="row-odd"><td>Configure</td>
-<td>Allows you to change the color labels for firewalls.</td>
+<td>ファイアウォールのカラーラベルを変更することができます。</td>
 </tr>
 <tr class="row-even"><td>Delete</td>
-<td>Allows you to delete firewalls and firewall rules if you have FIREWALL-EditRule &amp;
-FIREWALL-Create.</td>
+<td>FIREWALL-EditRule と FIREWALL-Create を持っていれば、ファイアウォールやファイアウォールのルールを
+削除することができます。</td>
 </tr>
 <tr class="row-odd"><td>EditRule</td>
-<td>Allows you to view the firewall rules if you have FIREWALL-Create.</td>
+<td>FIREWALL-Create を持っている場合は、ファイアウォールのルールを閲覧することができます。</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Important Combinations</strong></p>
-<p>To View Firewall Rules - FIREWALL-EditRule &amp; FIREWALL-Create</p>
-<p>To Add A Rule - FIREWALL-AddRule, FIREWALL-EditRule &amp; FIREWALL-Create</p>
-<p>To Delete A Rule - FIREWALL-Delete, FIREWALL-EditRule &amp; FIREWALL-Create</p>
+<p><strong>重要なコンビネーション</strong></p>
+<p>ファイアウォールルールを表示するには - FIREWALL-EditRule &amp; FIREWALL-Create</p>
+<p>ルールを追加するには - FIREWALL-AddRule, FIREWALL-EditRule &amp; FIREWALL-Create</p>
+<p>ファイアウォールルールを削除するには - FIREWALL-Delete, FIREWALL-EditRule &amp; FIREWALL-Create</p>
+<hr class="docutils" />
 </div>
 <div class="section" id="image">
 <h3>7.4.4. Image<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
-<col width="22%" />
-<col width="78%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Allows full access to the Infrastructure &gt; Machine Images page.</td>
+<td>インフラ &gt; マシンイメージのページへのフルアクセスを可能にします。</td>
 </tr>
 <tr class="row-odd"><td>Delete</td>
-<td>Allows deletion of images that are not in use. Images are considered in use if there is
-a paused or running server that was launched from the image or if the image is being
-used in a deployment (the deployment does not need to be running).</td>
+<td>使用されていないイメージの削除を許可します。イメージから起動されたサーバーがある場合、
+または一時停止または実行中のサーバーがある場合またはサーバーイメージが配備で使用されて
+いる場合（配備が実行されている必要はありません）イメージが使用されているとみなされます。</td>
 </tr>
 <tr class="row-even"><td>DefineServer</td>
-<td>Allows launching of machine images from your account if your have Server-Start access.
-Note: Does not allow you to search for or launch public images unless they have been
-previously launched from your account.</td>
+<td>サーバースタートのアクセス権を持っている場合、アカウントからマシンイメージの起動を許可します。
+注：以前に自分のアカウントから起動されていない限り、検索や、パブリックイメージの起動を|
+許可しません。</td>
 </tr>
 <tr class="row-odd"><td>DefineServerFromPublic</td>
-<td>Allows searching for images. Allows launching of images in search results if you have
-Server-Start access.</td>
+<td>イメージを検索することができます。Server-Start access を持っている場合、検索結果内で
+イメージの起動ができます。</td>
 </tr>
 <tr class="row-even"><td>Configure</td>
-<td>Allows you to edit image names and color labels.</td>
+<td>イメージのと色のラベルを編集することができます。</td>
 </tr>
 <tr class="row-odd"><td>ShareLocal</td>
-<td>Allows sharing of images to other enStratus accounts.</td>
+<td>他のenStratusアカウントとイメージを共有できます。</td>
 </tr>
 <tr class="row-even"><td>SharePublic</td>
-<td>Allows images to be made public.</td>
+<td>イメージが公開されるようにします。</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Important Combination</strong></p>
-<p>To Launch A Server - Image-DefineServer (or DefineServerFromPublic) &amp; Server-Start</p>
+<p><strong>重要なコンビネーション</strong></p>
+<p>サーバを起動するには - Image-DefineServer (or DefineServerFromPublic) と Server-Start</p>
 </div>
 <div class="section" id="ip">
 <h3>7.4.5. IP<a class="headerlink" href="#ip" title="Permalink to this headline">¶</a></h3>
@@ -559,32 +545,32 @@ Server-Start access.</td>
 <col width="85%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Gives you full access to Infrastructure &gt; IP Addresses page. However, if IP addresses
-are already assigned you will not have access to them.</td>
+<td>インフラ &gt; IP Addresses ページにフルアクセスできます。ただし、IPアドレスが既に
+割り当てられている場合、そのページにアクセスできません。</td>
 </tr>
 <tr class="row-odd"><td>Assign</td>
-<td>Gives you access to assigning IP address.</td>
+<td>[IPアドレスを割り当てる]へのアクセスを提供します。</td>
 </tr>
 <tr class="row-even"><td>Configure</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-odd"><td>Create</td>
-<td>Gives you access to reserve ip addresses.</td>
+<td>[IPアドレスを予約する]にアクセスできます。</td>
 </tr>
 <tr class="row-even"><td>Delete</td>
-<td>Gives you access to deleting released ip addresses.</td>
+<td>[リリースされたIPアドレスを削除]へのアクセスを提供します。</td>
 </tr>
 <tr class="row-odd"><td>Forward</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は、将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-even"><td>StopForwarding</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は、将来のリリースで追加されます。</td>
 </tr>
 </tbody>
 </table>
@@ -593,26 +579,32 @@ are already assigned you will not have access to them.</td>
 <h3>7.4.6. KVDB<a class="headerlink" href="#kvdb" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
 <col width="15%" />
 <col width="85%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Gives you full access to all the actions on the Platform &gt; Key/Value Databases page.</td>
+<td>すべてのアクション [Platform &gt; キー/バリュー Databases] ページへのフルアクセスを与えます。</td>
 </tr>
 <tr class="row-odd"><td>Configure</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-even"><td>Create</td>
-<td>Gives you access to adding key/value databases.</td>
+<td>この機能は将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-odd"><td>Terminate</td>
-<td>Gives you access to terminating active key/value databases.</td>
+<td>[アクティブな キー/バリュー Databases を終了]へのアクセスを提供します。</td>
 </tr>
 </tbody>
 </table>
@@ -625,40 +617,40 @@ are already assigned you will not have access to them.</td>
 <col width="83%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Gives you full access to everything on the Infrastructure &gt; Load Balancers page.</td>
+<td>インフラ Infrastructure &gt; Load Balancers ページ上のすべてにフルアクセスを提供します。</td>
 </tr>
 <tr class="row-odd"><td>AddDataCenter</td>
-<td>Gives you access to the manage zones action.</td>
+<td>管理ゾーンのアクションへのアクセスを提供します。</td>
 </tr>
 <tr class="row-even"><td>AddListener</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は、将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-odd"><td>AddServer</td>
-<td>Gives you access to the manage servers action.</td>
+<td>管理サーバアクションにアクセスすることができます。</td>
 </tr>
 <tr class="row-even"><td>Configure</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-odd"><td>Create</td>
-<td>Gives you access to create load balancers.</td>
+<td>[ロードバランサの作成]にアクセスできます。</td>
 </tr>
 <tr class="row-even"><td>Delete</td>
-<td>Gives you access to delete active load balancer.</td>
+<td>[アクティブなロードバランサの削除]にアクセスすることができます。</td>
 </tr>
 <tr class="row-odd"><td>EditListener</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は、将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-even"><td>RemoveDataCenter</td>
-<td>Gives you access to removing zones within manage zones.</td>
+<td>[管理ゾーン内のゾーンを削除]にアクセスすることができます。</td>
 </tr>
 <tr class="row-odd"><td>RemoveServer</td>
-<td>Gives you access to removing servers within manage servers.</td>
+<td>[管理サーバー内のサーバーを削除]へのアクセスを提供します。</td>
 </tr>
 </tbody>
 </table>
@@ -667,35 +659,35 @@ are already assigned you will not have access to them.</td>
 <h3>7.4.8. RDBMS<a class="headerlink" href="#rdbms" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
-<col width="15%" />
-<col width="85%" />
+<col width="14%" />
+<col width="86%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Gives you full access to everything in the Platform &gt; Relational Databases page.</td>
+<td>プラットフォーム Platform &gt; Relational Databases ページの全てのフルアクセスを提供します。</td>
 </tr>
 <tr class="row-odd"><td>Configure</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-even"><td>Create</td>
-<td>Gives you access to the add database action.</td>
+<td>[ add database ]アクションへのアクセスを提供します。</td>
 </tr>
 <tr class="row-odd"><td>ManageNetwork</td>
-<td>Gives you access to the network access action.</td>
+<td>ネットワークアクセスのアクションにアクセスすることができます</td>
 </tr>
 <tr class="row-even"><td>Snapshot</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は将来のリリースで追加されます</td>
 </tr>
 <tr class="row-odd"><td>Terminate</td>
-<td>Gives you access to terminating relational databases that are active.</td>
+<td>[アクティブになっているリレーショナルデータベースを終了]へのアクセスを提供します。</td>
 </tr>
 <tr class="row-even"><td>ChangePassword</td>
-<td>Gives you access to changing passwords to relational databases that are active.</td>
+<td>[アクティブになっているリレーショナルデータベースのパスワードを変更する]へのアクセスを提供します。</td>
 </tr>
 </tbody>
 </table>
@@ -704,83 +696,86 @@ are already assigned you will not have access to them.</td>
 <h3>7.4.9. Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
-<col width="15%" />
-<col width="85%" />
+<col width="13%" />
+<col width="87%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Allows full access to the Infrastructure &gt; Servers page</td>
+<td>インフラ Infrastructure &gt; Servers ページへのフルアクセスを許可します。</td>
 </tr>
 <tr class="row-odd"><td>Configure</td>
-<td>Allows you to edit server names and server color labels. Allows you to view the info
-page.</td>
+<td>サーバー名とサーバーのカラーラベルを編集することができます。情報ページを閲覧することが
+できます。</td>
 </tr>
 <tr class="row-even"><td>Image</td>
-<td>Allows imaging and snapshotting of servers.</td>
+<td>イメージングとサーバのスナップショットを許可します。</td>
 </tr>
 <tr class="row-odd"><td>ManageUsers</td>
-<td>Allows managing of which users have shell/remote access and which users have admin
-access.</td>
+<td>どのユーザがシェル/リモート アクセスを持っており、どのユーザーが管理者 アクセスを
+持っているから管理することができます。</td>
 </tr>
 <tr class="row-even"><td>Pause</td>
-<td>Allows pausing of running servers. Allows rebooting of server if you have Server-Start.</td>
+<td>実行中のサーバーの一時停止をできます。サーバースタートを使用している場合、サーバーの再起動ができます。</td>
 </tr>
 <tr class="row-odd"><td>Prepay</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は、将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-even"><td>Start</td>
-<td>Allows starting of paused servers. Allows rebooting of servers if you have Server-Pause.
-Allows launching of servers if you have Image-DefineServer or DefineServerFromPublic.</td>
+<td><dl class="first last docutils">
+<dt>一時停止したサーバの起動を許可します。サーバを一時停止している場合のサーバーの再起動ができます。</dt>
+<dd>Image-DefineServer か DefineServerFromPublic している場合はサーバの起動を許可します。</dd>
+</dl>
+</td>
 </tr>
 <tr class="row-odd"><td>Terminate</td>
-<td>Allows terminating of servers.</td>
+<td>サーバの終了を許可します</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Important Combinations</strong></p>
-<p>To Launch A Server - Image-DefineServer (or DefineServerFromPublic) &amp; Server-Start</p>
-<p>To Reboot A Server - Server-Pause &amp; Server-Start</p>
+<p><strong>重要なコンビネーション</strong></p>
+<p>サーバを起動するには - Image-DefineServer (もしくは DefineServerFromPublic) と Server-Start</p>
+<p>サーバをリブートするには - Server-Pause と Server-Start</p>
 </div>
 <div class="section" id="snapshot">
 <h3>7.4.10. Snapshot<a class="headerlink" href="#snapshot" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
-<col width="15%" />
-<col width="85%" />
+<col width="14%" />
+<col width="86%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Gives you full access to everything in the Infrastructure &gt; Snapshots page.</td>
+<td>インフラ Infrastructure &gt; Snapshots ページ内のすべてへのフルアクセスを提供します</td>
 </tr>
 <tr class="row-odd"><td>Configure</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-even"><td>CreateVolume</td>
-<td>Allows you to perform the &#8220;create volume&#8221; action on the Infrastructure &gt; Snapshots page
-and the Automation &gt; Backups page. Also allows you to perform the &#8220;restore&#8221; option from
-the Automation &gt; Backups page.</td>
+<td>インフラ Infrastructure &gt; Snapshots ページと Automation &gt; Backups ページの &#8220;create volume&#8221; アクション
+の実行を許可します。また、 Automation &gt; Backups ページから &#8220;復元&#8221;オプションを
+実行することができます。</td>
 </tr>
 <tr class="row-odd"><td>Delete</td>
-<td>Allows you to delete snapshots using the delete action on the Infrastructure &gt; Snapshots
-page and the remove action on the Automation &gt; Backups page.</td>
+<td>インフラ Infrastructure &gt; Snapshots ページの&#8221;delete&#8221;アクションと Automation &gt; Backups ページの
+&#8220;remove&#8221;アクションを使用してスナップショットを削除することができます。</td>
 </tr>
 <tr class="row-even"><td>ShareLocal</td>
-<td>Allows you to make a snapshot private or share the snapshot with another enStratus
-account from the Infrastructure &gt; Snapshots and Automation &gt; Backups pages.</td>
+<td>別のenStratusアカウントとの間で Infrastructure &gt; Snapshots と Automation &gt; Backups ページによって
+スナップショットをプライベートにしたり共有にしたりすることができます。</td>
 </tr>
 <tr class="row-odd"><td>SharePublic</td>
-<td>Allows you to make a snapshot public from the Infrastructure &gt; Snapshots and Automation
-&gt; Backups pages.</td>
+<td>インフラ Infrastructure &gt; Snapshots and Automation Backups ページからスナップショットを
+パブリックにすることができます。</td>
 </tr>
 </tbody>
 </table>
@@ -793,25 +788,25 @@ account from the Infrastructure &gt; Snapshots and Automation &gt; Backups pages
 <col width="85%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Gives you full access to all the actions in the Platform &gt; Notification Topics page.</td>
+<td>プラットフォーム Platform &gt; Notification Topics ページへのフルアクセスが可能です。</td>
 </tr>
 <tr class="row-odd"><td>Create</td>
-<td>Gives you access to adding topics.</td>
+<td>トピックを追加へのアクセスを提供します。</td>
 </tr>
 <tr class="row-even"><td>Publish</td>
-<td>Gives you access to publishing topics.</td>
+<td>[トピックの発行]にアクセスすることができます。</td>
 </tr>
 <tr class="row-odd"><td>Subscribe</td>
-<td>Gives you access to subscribing to active topics.</td>
+<td>[アクティブなトピックの購読]へのアクセスを提供します。</td>
 </tr>
 <tr class="row-even"><td>Remove</td>
-<td>Gives you acces to removing active topics.</td>
+<td>[アクティブなトピックを除去]へのアクセスを提供します。</td>
 </tr>
 </tbody>
 </table>
@@ -824,50 +819,51 @@ account from the Infrastructure &gt; Snapshots and Automation &gt; Backups pages
 <col width="85%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Access Right</th>
-<th class="head">Effect</th>
+<tr class="row-odd"><th class="head">アクセス権</th>
+<th class="head">効果</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>ANY</td>
-<td>Gives you full access to everything in the Infrastructure &gt; Volumes page.</td>
+<td>インフラ Infrastructure &gt; Volumes ページへの全てへのフルアクセスを提供します。</td>
 </tr>
 <tr class="row-odd"><td>Attach</td>
-<td>Gives you access to attaching volumes.</td>
+<td>[ボリュームをアタッチする]にアクセスすることができます。</td>
 </tr>
 <tr class="row-even"><td>Configure</td>
-<td>This functionality will be added in a future release.</td>
+<td>この機能は将来のリリースで追加されます。</td>
 </tr>
 <tr class="row-odd"><td>Create</td>
-<td>Gives you access to creating volumes.</td>
+<td>[ボリュームを作成する]にアクセスすることができます。</td>
 </tr>
 <tr class="row-even"><td>Delete</td>
-<td>Gives you access to delete volumes.</td>
+<td>[ボリュームを削除する]にアクセスすることができます。</td>
 </tr>
 <tr class="row-odd"><td>Detach</td>
-<td>Gives you access to detach volumes.</td>
+<td>[ボリュームをデタッチする]にアクセスすることができます。</td>
 </tr>
 <tr class="row-even"><td>Snapshot</td>
-<td>Gives you access to making snapshots of volumes.</td>
+<td>[ボリュームのスナップショットを作成する]へのアクセスを提供します。</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div class="section" id="example-roles">
-<h2>7.5. Example Roles<a class="headerlink" href="#example-roles" title="Permalink to this headline">¶</a></h2>
-<p>The following four roles are examples you can implement in your enStratus account. The Admin role is created in every enStratus account by default. You can customize these roles or create your own.</p>
-<p><strong>Admin</strong> - Has full access over the entire system.</p>
+<div class="section" id="id12">
+<h2>7.5. ロールの例<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>次の4つのロールは、enStratusアカウントで実装することができる例です。
+Adminロールは、デフォルトですべてのenStratusアカウントで作成されます。
+これらのロールをカスタマイズしたり、独自に作成することができます。</p>
+<p><strong>Admin</strong> - 全てのシステムに渡ってフルアクセス権を持ちます。</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="34%" />
-<col width="28%" />
-<col width="38%" />
+<col width="33%" />
+<col width="27%" />
+<col width="40%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Resource</th>
-<th class="head">Action</th>
-<th class="head">Qualifier</th>
+<tr class="row-odd"><th class="head">リソース</th>
+<th class="head" colspan="2">アクション | 修飾子</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -877,20 +873,17 @@ account from the Infrastructure &gt; Snapshots and Automation &gt; Backups pages
 </tr>
 </tbody>
 </table>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<p><strong>CloudManager</strong> - Can manage all aspects of a cloud environment, but no account management.</p>
+<p><strong>CloudManager</strong> - クラウド環境の全ての側面を管理しますが、アカウント管理はできません。</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="42%" />
-<col width="24%" />
-<col width="33%" />
+<col width="44%" />
+<col width="31%" />
+<col width="25%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Resource</th>
-<th class="head">Action</th>
-<th class="head">Qualifier</th>
+<tr class="row-odd"><th class="head">リソース</th>
+<th class="head">アクション</th>
+<th class="head">修飾子</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -943,7 +936,7 @@ account from the Infrastructure &gt; Snapshots and Automation &gt; Backups pages
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><strong>Configurator</strong> - Can edit configurational elements that have no economic impact.</p>
+<p><strong>Configurator</strong> - 経済的な影響を及ぼさない構成要素を編集できます。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="39%" />
@@ -951,9 +944,9 @@ account from the Infrastructure &gt; Snapshots and Automation &gt; Backups pages
 <col width="31%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Resource</th>
-<th class="head">Action</th>
-<th class="head">Qualifier</th>
+<tr class="row-odd"><th class="head">リソース</th>
+<th class="head">アクション</th>
+<th class="head">修飾子</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -1002,17 +995,17 @@ account from the Infrastructure &gt; Snapshots and Automation &gt; Backups pages
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><strong>CSR</strong> - Has read-only access to the entire system.</p>
+<p><strong>CSR</strong> - システム全体への読み取り専用アクセス権を持っています。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="34%" />
-<col width="28%" />
-<col width="38%" />
+<col width="34%" />
+<col width="31%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Resource</th>
-<th class="head">Action</th>
-<th class="head">Qualifier</th>
+<tr class="row-odd"><th class="head">リソース</th>
+<th class="head">アクション</th>
+<th class="head">修飾子</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -1038,7 +1031,7 @@ account from the Infrastructure &gt; Snapshots and Automation &gt; Backups pages
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		7. Users
+		7. ユーザー
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

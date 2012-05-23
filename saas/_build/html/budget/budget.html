@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>8. Budget &mdash; The enStratus Documentation Project</title>
+    <title>8. 予算 &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
     <link rel="next" title="9. エージェント" href="../agent/agent.html" />
-    <link rel="prev" title="7. Users" href="../users/users.html" />
+    <link rel="prev" title="7. ユーザー" href="../users/users.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -35,13 +35,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>8. Budget</h1></div>
+	<div id="title"><h1>8. 予算</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
 			<div class="headerButton"><a href="../agent/agent.html" title="9. エージェント" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="../users/users.html" title="7. Users" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="../users/users.html" title="7. ユーザー" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -58,14 +58,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">8. Budget</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. プラットフォーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. ユーザー</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">8. 予算</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#budget-codes">8.1. Budget Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#invoices">8.2. Invoices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#reports">8.3. Reports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#summary">8.4. Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">8.4. 要約</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
@@ -108,10 +108,9 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="budget">
-<h1>8. Budget<a class="headerlink" href="#budget" title="Permalink to this headline">¶</a></h1>
-<p>enStratus financial controls allow for a useful feature for setting quotas and
-limiting/tracking costs incurred in the cloud.</p>
+  <div class="section" id="id1">
+<h1>8. 予算<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>enStratus財務コントロールは、クォータ(割当て量)を設定してクラウド内で発生した費用を制限/追跡する便利な機能を可能にします。</p>
 <div class="section" id="budget-codes">
 <h2>8.1. Budget Codes<a class="headerlink" href="#budget-codes" title="Permalink to this headline">¶</a></h2>
 <p>enStratus tracks infrastructure costs based on the costs reported by the cloud provider or
@@ -357,22 +356,24 @@ filter text box.</p>
 </div>
 </div>
 </div>
-<div class="section" id="summary">
-<h2>8.4. Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>8.4.1. Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>enStratus has the concept of billing codes, which can have soft and hard quotas. A soft
-quota will alert when it has been reached, but the code is still allowed to have charges
-against it. A hard quota will also alert, but when it has been reached no more
-infrastructure or resources may be charged against that code.</p>
-<p>We looked at some definitions related to billing codes as well as some examples of
-alerting messages for both soft and hard quotas, We saw the functionality around how
-billing codes are enforced. We covered creating and editing billing codes as well as what
-happens when a billing code is deactivated. We also looked at viewing invoices.</p>
-<p>Finally, we looked at a very granular method for obtaining information about cloud
-resource usage in the form of reports. Using reports it is possible to filter and sort
-usage based on billing code, resource, user, and group. Reports are a very powerful method
-for learning how cloud resources are being used.</p>
+<div class="section" id="id2">
+<h2>8.4. 要約<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>8.4.1. 要約<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>enStratusは、ソフトとハードクォータを持つことができる課金コードの概念を持っています。
+ソフトクォータは、それが割り当てに達したとき、しかしそのコードがそれに対してまだ引き受けることが
+できるときに警告が表示されます。
+ハードクォータはまた、警告が発しますが、もはやそれ以上インフラやリソースが、そのコードに対して
+引き受けることができない量に達してしまったときです。</p>
+<p>我々はソフトとハード両方のクォータが警告メッセージを発するいくつかの例だけではなく、
+課金コードに関連するいくつかの定義を見ましたし、
+我々はどのように課金コードが適用されるかの周辺の機能を見ました。
+我々は、課金コードが無効になるとなにが起きるかだけでなく課金コードの作成および編集を説明しました。
+また、請求書閲覧を見ました。</p>
+<p>最後に、我々はクラウドリソースの使用状況に関する情報をレポートの形式で取得するための非常に
+きめ細かな方法を見ました。レポートを使用することにより、請求コード、リソース、ユーザー、およびグループに基づいて
+使用量のフィルタリングおよびソートすることが可能です。
+レポートはどのようにクラウドリソースが使用されているかを学ぶ非常に強力な方法です。</p>
 </div>
 </div>
 </div>
@@ -390,7 +391,7 @@ for learning how cloud resources are being used.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		8. Budget
+		8. 予算
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

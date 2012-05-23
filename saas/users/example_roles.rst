@@ -1,406 +1,772 @@
-Available Access Rights
+.. Available Access Rights
 -----------------------
 
-**CONSOLE**
+.. **CONSOLE**
+
+.. .. tabularcolumns:: |l|l|
+   +---------------+-------------------------------------------------------------------------------------+
+   | Access Right  | Effect                                                                              |
+   +===============+=====================================================================================+
+   | ANY           | Allows full access to the console.                                                  |
+   +---------------+-------------------------------------------------------------------------------------+
+   | ANY           | Allows full access to the console.                                                  |
+   +---------------+-------------------------------------------------------------------------------------+
+   | Access        | Allows read-only access to the Console, Automation, Infrastructure & Platform tabs. |
+   +---------------+-------------------------------------------------------------------------------------+
+   | CreateAPIKeys | This functionality will be added in a future release.                               |
+   +---------------+-------------------------------------------------------------------------------------+
+   | EditAccount   | Allows full access to the Company Settings & Account Settings tabs.                 |
+   +---------------+-------------------------------------------------------------------------------------+
+   | EditBilling   | Allows full access to the Finance > Billing Codes page.                             |
+   +---------------+-------------------------------------------------------------------------------------+
+   | ManageUsers   | Allows full access to the User Manager tab.                                         |
+   +---------------+-------------------------------------------------------------------------------------+
+   | ViewInvoices  | Allows full access to the Finance > Invoices page.                                  |
+   +---------------+-------------------------------------------------------------------------------------+
+   | ViewBilling   | Allows read-only access to the Finance > Billing Codes page.                        |
+   +---------------+-------------------------------------------------------------------------------------+
+利用可能なアクセス権
+-----------------------
+
+**コンソール**
 
 .. tabularcolumns:: |l|l|
-+---------------+-------------------------------------------------------------------------------------+
-| Access Right  | Effect                                                                              |
-+===============+=====================================================================================+
-| ANY           | Allows full access to the console.                                                  |
-+---------------+-------------------------------------------------------------------------------------+
-| ANY           | Allows full access to the console.                                                  |
-+---------------+-------------------------------------------------------------------------------------+
-| Access        | Allows read-only access to the Console, Automation, Infrastructure & Platform tabs. |
-+---------------+-------------------------------------------------------------------------------------+
-| CreateAPIKeys | This functionality will be added in a future release.                               |
-+---------------+-------------------------------------------------------------------------------------+
-| EditAccount   | Allows full access to the Company Settings & Account Settings tabs.                 |
-+---------------+-------------------------------------------------------------------------------------+
-| EditBilling   | Allows full access to the Finance > Billing Codes page.                             |
-+---------------+-------------------------------------------------------------------------------------+
-| ManageUsers   | Allows full access to the User Manager tab.                                         |
-+---------------+-------------------------------------------------------------------------------------+
-| ViewInvoices  | Allows full access to the Finance > Invoices page.                                  |
-+---------------+-------------------------------------------------------------------------------------+
-| ViewBilling   | Allows read-only access to the Finance > Billing Codes page.                        |
-+---------------+-------------------------------------------------------------------------------------+
++---------------+----------------------------------------------------------------------------------------+
+|  アクセス権   |   効果                                                                                 |
++===============+========================================================================================+
+| ANY           | コンソールへのフルアクセスを許可します。                                               |
++---------------+----------------------------------------------------------------------------------------+
+| ANY           | コンソールへのフルアクセスを許可します。                                               |
++---------------+----------------------------------------------------------------------------------------+
+| Access        | コンソール、自動化、インフラプラットフォームのタブへの読取り専用アクセスを許可します。 |
++---------------+----------------------------------------------------------------------------------------+
+| CreateAPIKeys | この機能は、将来のリリースで追加されます。                                             |
++---------------+----------------------------------------------------------------------------------------+
+| EditAccount   | 会社設定とアカウント設定のタブへのフルアクセスを許可します。                           |
++---------------+----------------------------------------------------------------------------------------+
+| EditBilling   | ファイナンス > ビリングコードページへのフルアクセスを許可します。                      |
++---------------+----------------------------------------------------------------------------------------+
+| ManageUsers   | ユーザーマネージャ タブへのフルアクセスを許可します。                                  |
++---------------+----------------------------------------------------------------------------------------+
+| ViewInvoices  | ファイナンス > 請求ページへのフルアクセスを許可します。                                |
++---------------+----------------------------------------------------------------------------------------+
+| ViewBilling   | ファイナンス > 請求ページへのフルアクセスを許可します。                                |
++---------------+----------------------------------------------------------------------------------------+
 
-Deployment
+.. .. Deployment
+   ~~~~~~~~~~
+
+.. .. Note: To view Automation you need the access right CONSOLE-Access-ANY
+
+.. .. tabularcolumns:: |l|l|
+   +----------------+------------------------------------------------------------------------------------------+
+   | Access Right   | Effect                                                                                   |
+   +================+==========================================================================================+
+   | ANY            | Allows full access to the Automation pages.                                              |
+   +----------------+------------------------------------------------------------------------------------------+
+   | Configure      | Gives you an actions > edit option for your deployments. However, does not give you      |
+   |                | access to view the edit page unless you have Deployment-Create rights.                   |
+   +----------------+------------------------------------------------------------------------------------------+
+   | Create         | Allows you to create new deployments and copy existing deployments (actions > copy). It  |
+   |                | also allows you to view the Edit page if you have Deployment-Configure rights.           |
+   +----------------+------------------------------------------------------------------------------------------+
+   | Delete         | Allows you to delete deployments.                                                        |
+   +----------------+------------------------------------------------------------------------------------------+
+   | Launch         | Allows you to launch deployments and services.                                           |
+   +----------------+------------------------------------------------------------------------------------------+
+   | ManageSsl      | This functionality will be added in a future release.                                    |
+   +----------------+------------------------------------------------------------------------------------------+
+   | Pause          | Allows you to stop running deployments and services.                                     |
+   +----------------+------------------------------------------------------------------------------------------+
+   | Resize         | Allows you to view the edit services page, but you are not allowed to save changes. You  |
+   |                | are allowed to create and edit data sources. Allows you to view the add server group and |
+   |                | add service pages, but does not allow you to create the new server groups and services   |
+   |                | when you click Save. You can create server groups if you add the                         |
+   |                | Deployment-Create access right. Also gives you an edit option for the server group(s)    |
+   |                | that Deployment-ManageUsers does not give you edit permissions for, and it does give     |
+   |                | you permission to view the edit screen and save your changes.                            |
+   +----------------+------------------------------------------------------------------------------------------+
+   | UploadImages   | Allows you to add/upload service images and data source images.                          |
+   +----------------+------------------------------------------------------------------------------------------+
+
+配備
 ~~~~~~~~~~
 
-Note: To view Automation you need the access right CONSOLE-Access-ANY
+注: 自動化をみるには CONSOLE-Access-ANY のアクセス権が必要です。
 
 .. tabularcolumns:: |l|l|
 +----------------+------------------------------------------------------------------------------------------+
-| Access Right   | Effect                                                                                   |
+|  アクセス権    |   効果                                                                                   |
 +================+==========================================================================================+
-| ANY            | Allows full access to the Automation pages.                                              |
+| ANY            | オートメーションページへのフルアクセスを許可します。                                     |
 +----------------+------------------------------------------------------------------------------------------+
-| Configure      | Gives you an actions > edit option for your deployments. However, does not give you      |
-|                | access to view the edit page unless you have Deployment-Create rights.                   |
+| Configure      | 配備の actions > edit オプションを編集します。                                           |
+|                | ただし、 Deployment-Create 権がなければ編集ページを見る権利はありません。                |
 +----------------+------------------------------------------------------------------------------------------+
-| Create         | Allows you to create new deployments and copy existing deployments (actions > copy). It  |
-|                | also allows you to view the Edit page if you have Deployment-Configure rights.           |
+| Create         | 新規の配備を作成し、既存の配備をコピー（アクション>コピー）することができます。それは    |
+|                | また、 Deployment-Configure の権限を持っている場合は、編集ページを見ることができます。   |
 +----------------+------------------------------------------------------------------------------------------+
-| Delete         | Allows you to delete deployments.                                                        |
+| Delete         | 配備を削除することができます。                                                           |
 +----------------+------------------------------------------------------------------------------------------+
-| Launch         | Allows you to launch deployments and services.                                           |
+| Launch         | 配備とサービスを起動することができます。                                                 |
 +----------------+------------------------------------------------------------------------------------------+
-| ManageSsl      | This functionality will be added in a future release.                                    |
+| ManageSsl      | この機能は、将来のリリースで追加されます。                                               |
 +----------------+------------------------------------------------------------------------------------------+
-| Pause          | Allows you to stop running deployments and services.                                     |
+| Pause          | 実行中の配備とサービスを停止することができます。                                         |
 +----------------+------------------------------------------------------------------------------------------+
-| Resize         | Allows you to view the edit services page, but you are not allowed to save changes. You  |
-|                | are allowed to create and edit data sources. Allows you to view the add server group and |
-|                | add service pages, but does not allow you to create the new server groups and services   |
-|                | when you click Save. You can create server groups if you add the                         |
-|                | Deployment-Create access right. Also gives you an edit option for the server group(s)    |
-|                | that Deployment-ManageUsers does not give you edit permissions for, and it does give     |
-|                | you permission to view the edit screen and save your changes.                            |
+| Resize         | 編集サービスページを見ることができますが、変更内容を保存することはできません。データ     |
+|                | ソースの作成および編集することが許可されています。追加サーバグループを見ることができ、   |
+|                | サービスページを追加できますが、[保存]をクリックしたとき新規のサーバーグループおよび     |
+|                | サービスを作成することはできません。Deployment-Create access 権を追加した場合は、        |
+|                | サーバーグループを作成することができます。またこれは、Deployment-ManageUsers 権が        |
+|                | 許さないサーバーグループの編集も許可し、編集画面を表示し、                               |
+|                | 変更内容を保存するためのアクセス許可も与えます。                                         |
 +----------------+------------------------------------------------------------------------------------------+
-| UploadImages   | Allows you to add/upload service images and data source images.                          |
+| UploadImages   | サービスイメージおよびデータソースイメージを追加/アップロードすることができます。        |
 +----------------+------------------------------------------------------------------------------------------+
 
 
-**Important Combinations**
 
-To edit a deployment - Cluster-Create & Cluster-Configure
+.. **Important Combinations**
+**重要なコンビネーション**
 
-To create a new server group - Cluster-Create & Cluster-Resize
+.. To edit a deployment - Cluster-Create & Cluster-Configure
+配備を編集するには - クラスタ作成＆クラスタの設定
 
-To edit all server groups - Cluster-ManageUsers & Cluster-Resize
+.. To create a new server group - Cluster-Create & Cluster-Resize
+新規のサーバーグループを作成するには - クラスタの作成とクラスタサイズの変更
 
-To create a new service - Cluster-Create, Cluster-Configure & Cluster-Resize
+.. To edit all server groups - Cluster-ManageUsers & Cluster-Resize
+すべてのサーバーグループを編集するには -  Cluster-ManageUsers と Cluster-Resize
 
-To edit a service - Cluster-Configure & Cluster-Resize
+.. To create a new service - Cluster-Create, Cluster-Configure & Cluster-Resize
+新規のサービスを作成するには - クラスタの作成、クラスタ設定＆クラスタのサイズ変更
 
-Distribution
+.. To edit a service - Cluster-Configure & Cluster-Resize
+サービスを編集するには - クラスタ設定＆クラスタリサイズ
+
+.. Distribution
+配布
 ~~~~~~~~~~~~
 
+.. .. tabularcolumns:: |l|l|
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Access Right   | Effect                                                                                  |
+   +================+=========================================================================================+
+   | ANY            | Allows full access to the Platform > Distributions page.                                |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Configure      | Gives you an edit option for your distributions. However, does not give you access to   |
+   |                | view the edit page unless you have Distribution-Create rights.                          |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Create         | Allows you to create a new distribution. You are not allowed to view or edit any other  |
+   |                | distribution.                                                                           |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Delete         | Allows you to deactivate/delete distributions.                                          |
+   +----------------+-----------------------------------------------------------------------------------------+
+
 .. tabularcolumns:: |l|l|
 +----------------+-----------------------------------------------------------------------------------------+
-| Access Right   | Effect                                                                                  |
+| アクセス権     | 効果                                                                                    |
 +================+=========================================================================================+
-| ANY            | Allows full access to the Platform > Distributions page.                                |
+| ANY            | プラットフォーム > 配布 ページへのフルアクセスを許可します。                            |
 +----------------+-----------------------------------------------------------------------------------------+
-| Configure      | Gives you an edit option for your distributions. However, does not give you access to   |
-|                | view the edit page unless you have Distribution-Create rights.                          |
+| Configure      | 配布用の編集オプションを提供します。ただし Distribution-Create 権限を持っていない限り   |
+|                | 、編集ページを閲覧にはアクセスできません 。                                             |
 +----------------+-----------------------------------------------------------------------------------------+
-| Create         | Allows you to create a new distribution. You are not allowed to view or edit any other  |
-|                | distribution.                                                                           |
+| Create         | 新規の配布を作成することができます。他の配布を閲覧または編集することはできません        |
 +----------------+-----------------------------------------------------------------------------------------+
-| Delete         | Allows you to deactivate/delete distributions.                                          |
+| Delete         | 配布を無効化/削除することができます。                                                   |
 +----------------+-----------------------------------------------------------------------------------------+
 
 
-**Important Combination**
+.. **Important Combination**
+**重要なコンビネーション**
 
-To edit a distribution - Distribution-Create & Distribution-Configure
+.. To edit a distribution - Distribution-Create & Distribution-Configure
+配布を編集する -  Distribution-Create と Distribution-Configure
 
-Firewall
+.. Firewall
+ファイアウォール
 ~~~~~~~~
 
+.. .. tabularcolumns:: |l|l|
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Access Right   | Effect                                                                                  |
+   +================+=========================================================================================+
+   | ANY            | Allows full access to the Infrastructure > Firewalls page.                              |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | AddRule        | Allows you to add firewall rules if you have FIREWALL-EditRule & FIREWALL-Create.       |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Create         | Allows you to create new firewalls. Allows you to view the actions button.              |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Configure      | Allows you to change the color labels for firewalls.                                    |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Delete         | Allows you to delete firewalls and firewall rules if you have FIREWALL-EditRule &       |
+   |                | FIREWALL-Create.                                                                        |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | EditRule       | Allows you to view the firewall rules if you have FIREWALL-Create.                      |
+   +----------------+-----------------------------------------------------------------------------------------+
+
 .. tabularcolumns:: |l|l|
-+----------------+-----------------------------------------------------------------------------------------+
-| Access Right   | Effect                                                                                  |
-+================+=========================================================================================+
-| ANY            | Allows full access to the Infrastructure > Firewalls page.                              |
-+----------------+-----------------------------------------------------------------------------------------+
-| AddRule        | Allows you to add firewall rules if you have FIREWALL-EditRule & FIREWALL-Create.       |
-+----------------+-----------------------------------------------------------------------------------------+
-| Create         | Allows you to create new firewalls. Allows you to view the actions button.              |
-+----------------+-----------------------------------------------------------------------------------------+
-| Configure      | Allows you to change the color labels for firewalls.                                    |
-+----------------+-----------------------------------------------------------------------------------------+
-| Delete         | Allows you to delete firewalls and firewall rules if you have FIREWALL-EditRule &       |
-|                | FIREWALL-Create.                                                                        |
-+----------------+-----------------------------------------------------------------------------------------+
-| EditRule       | Allows you to view the firewall rules if you have FIREWALL-Create.                      |
-+----------------+-----------------------------------------------------------------------------------------+
++----------------+-----------------------------------------------------------------------------------------------------+
+| アクセス権     |  効果                                                                                               |
++================+=====================================================================================================+
+| ANY            | インフラ > ファイアウォールのページへのフルアクセスを許可します。                                   |
++----------------+-----------------------------------------------------------------------------------------------------+
+| AddRule        |  FIREWALL-EditRule と FIREWALL-Create を持っている場合は、 firewall rules を追加することができます。|
++----------------+-----------------------------------------------------------------------------------------------------+
+| Create         | 新規のファイアウォールを作成することができます。アクションボタンを閲覧することができます。          |
++----------------+-----------------------------------------------------------------------------------------------------+
+| Configure      | ファイアウォールのカラーラベルを変更することができます。                                            |
++----------------+-----------------------------------------------------------------------------------------------------+
+| Delete         |  FIREWALL-EditRule と FIREWALL-Create を持っていれば、ファイアウォールやファイアウォールのルールを  |
+|                |  削除することができます。                                                                           |
++----------------+-----------------------------------------------------------------------------------------------------+
+| EditRule       |  FIREWALL-Create を持っている場合は、ファイアウォールのルールを閲覧することができます。             |
++----------------+-----------------------------------------------------------------------------------------------------+
 
 
-**Important Combinations**
+.. **Important Combinations**
+**重要なコンビネーション**
 
-To View Firewall Rules - FIREWALL-EditRule & FIREWALL-Create
+.. To View Firewall Rules - FIREWALL-EditRule & FIREWALL-Create
+ファイアウォールルールを表示するには - FIREWALL-EditRule & FIREWALL-Create
 
-To Add A Rule - FIREWALL-AddRule, FIREWALL-EditRule & FIREWALL-Create
+.. To Add A Rule - FIREWALL-AddRule, FIREWALL-EditRule & FIREWALL-Create
+ルールを追加するには - FIREWALL-AddRule, FIREWALL-EditRule & FIREWALL-Create
 
-To Delete A Rule - FIREWALL-Delete, FIREWALL-EditRule & FIREWALL-Create
+.. To Delete A Rule - FIREWALL-Delete, FIREWALL-EditRule & FIREWALL-Create
+ファイアウォールルールを削除するには - FIREWALL-Delete, FIREWALL-EditRule & FIREWALL-Create
+
+.. Image
+~~~~~
+
+.. .. tabularcolumns:: |l|l|
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | Access Right            | Effect                                                                                  |
+   +=========================+=========================================================================================+
+   | ANY                     | Allows full access to the Infrastructure > Machine Images page.                         |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | Delete                  | Allows deletion of images that are not in use. Images are considered in use if there is |
+   |                         | a paused or running server that was launched from the image or if the image is being    |
+   |                         | used in a deployment (the deployment does not need to be running).                      |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | DefineServer            | Allows launching of machine images from your account if your have Server-Start access.  |
+   |                         | Note: Does not allow you to search for or launch public images unless they have been    |
+   |                         | previously launched from your account.                                                  |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | DefineServerFromPublic  | Allows searching for images. Allows launching of images in search results if you have   |
+   |                         | Server-Start access.                                                                    |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | Configure               | Allows you to edit image names and color labels.                                        |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | ShareLocal              | Allows sharing of images to other enStratus accounts.                                   |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | SharePublic             | Allows images to be made public.                                                        |
+   +-------------------------+-----------------------------------------------------------------------------------------+
 
 Image
 ~~~~~
 
 .. tabularcolumns:: |l|l|
-+-------------------------+-----------------------------------------------------------------------------------------+
-| Access Right            | Effect                                                                                  |
-+=========================+=========================================================================================+
-| ANY                     | Allows full access to the Infrastructure > Machine Images page.                         |
-+-------------------------+-----------------------------------------------------------------------------------------+
-| Delete                  | Allows deletion of images that are not in use. Images are considered in use if there is |
-|                         | a paused or running server that was launched from the image or if the image is being    |
-|                         | used in a deployment (the deployment does not need to be running).                      |
-+-------------------------+-----------------------------------------------------------------------------------------+
-| DefineServer            | Allows launching of machine images from your account if your have Server-Start access.  |
-|                         | Note: Does not allow you to search for or launch public images unless they have been    |
-|                         | previously launched from your account.                                                  |
-+-------------------------+-----------------------------------------------------------------------------------------+
-| DefineServerFromPublic  | Allows searching for images. Allows launching of images in search results if you have   |
-|                         | Server-Start access.                                                                    |
-+-------------------------+-----------------------------------------------------------------------------------------+
-| Configure               | Allows you to edit image names and color labels.                                        |
-+-------------------------+-----------------------------------------------------------------------------------------+
-| ShareLocal              | Allows sharing of images to other enStratus accounts.                                   |
-+-------------------------+-----------------------------------------------------------------------------------------+
-| SharePublic             | Allows images to be made public.                                                        |
-+-------------------------+-----------------------------------------------------------------------------------------+
++-------------------------+-------------------------------------------------------------------------------------------------+
+| アクセス権              |  効果                                                                                           |
++=========================+=================================================================================================+
+| ANY                     | インフラ > マシンイメージのページへのフルアクセスを可能にします。                               |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| Delete                  | 使用されていないイメージの削除を許可します。イメージから起動されたサーバーがある場合、          |
+|                         | または一時停止または実行中のサーバーがある場合またはサーバーイメージが配備で使用されて          |
+|                         | いる場合（配備が実行されている必要はありません）イメージが使用されているとみなされます。        |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| DefineServer            | サーバースタートのアクセス権を持っている場合、アカウントからマシンイメージの起動を許可します。  |
+|                         | 注：以前に自分のアカウントから起動されていない限り、検索や、パブリックイメージの起動を|         |
+|                         | 許可しません。                                                                                  |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| DefineServerFromPublic  | イメージを検索することができます。Server-Start access を持っている場合、検索結果内で            |
+|                         | イメージの起動ができます。                                                                      |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| Configure               | イメージのと色のラベルを編集することができます。                                                |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| ShareLocal              | 他のenStratusアカウントとイメージを共有できます。                                               |
++-------------------------+-------------------------------------------------------------------------------------------------+
+| SharePublic             | イメージが公開されるようにします。                                                              |
++-------------------------+-------------------------------------------------------------------------------------------------+
 
 
-**Important Combination**
+.. **Important Combination**
+**重要なコンビネーション**
 
-To Launch A Server - Image-DefineServer (or DefineServerFromPublic) & Server-Start
+.. To Launch A Server - Image-DefineServer (or DefineServerFromPublic) & Server-Start
+サーバを起動するには - Image-DefineServer (or DefineServerFromPublic) と Server-Start
 
 IP
 ~~
 
+.. .. tabularcolumns:: |l|l|
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Access Right   | Effect                                                                                  |
+   +================+=========================================================================================+
+   | ANY            | Gives you full access to Infrastructure > IP Addresses page. However, if IP addresses   |
+   |                | are already assigned you will not have access to them.                                  |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Assign         | Gives you access to assigning IP address.                                               |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Configure      | This functionality will be added in a future release.                                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Create         | Gives you access to reserve ip addresses.                                               |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Delete         | Gives you access to deleting released ip addresses.                                     |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Forward        | This functionality will be added in a future release.                                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | StopForwarding | This functionality will be added in a future release.                                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+
 .. tabularcolumns:: |l|l|
 +----------------+-----------------------------------------------------------------------------------------+
-| Access Right   | Effect                                                                                  |
+| アクセス権     |  効果                                                                                   |
 +================+=========================================================================================+
-| ANY            | Gives you full access to Infrastructure > IP Addresses page. However, if IP addresses   |
-|                | are already assigned you will not have access to them.                                  |
+| ANY            | インフラ > IP Addresses ページにフルアクセスできます。ただし、IPアドレスが既に          |
+|                | 割り当てられている場合、そのページにアクセスできません。                                |
 +----------------+-----------------------------------------------------------------------------------------+
-| Assign         | Gives you access to assigning IP address.                                               |
+| Assign         | [IPアドレスを割り当てる]へのアクセスを提供します。                                      |
 +----------------+-----------------------------------------------------------------------------------------+
-| Configure      | This functionality will be added in a future release.                                   |
+| Configure      | この機能は将来のリリースで追加されます。                                                |
 +----------------+-----------------------------------------------------------------------------------------+
-| Create         | Gives you access to reserve ip addresses.                                               |
+| Create         | [IPアドレスを予約する]にアクセスできます。                                              |
 +----------------+-----------------------------------------------------------------------------------------+
-| Delete         | Gives you access to deleting released ip addresses.                                     |
+| Delete         | [リリースされたIPアドレスを削除]へのアクセスを提供します。                              |
 +----------------+-----------------------------------------------------------------------------------------+
-| Forward        | This functionality will be added in a future release.                                   |
+| Forward        | この機能は、将来のリリースで追加されます。                                              |
 +----------------+-----------------------------------------------------------------------------------------+
-| StopForwarding | This functionality will be added in a future release.                                   |
+| StopForwarding | この機能は、将来のリリースで追加されます。                                              |
 +----------------+-----------------------------------------------------------------------------------------+
 
 KVDB
 ~~~~
 
+.. .. tabularcolumns:: |l|l|
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Access Right   | Effect                                                                                  |
+   +================+=========================================================================================+
+   | ANY            | Gives you full access to all the actions on the Platform > Key/Value Databases page.    |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Configure      | This functionality will be added in a future release.                                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Create         | Gives you access to adding key/value databases.                                         |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Terminate      | Gives you access to terminating active key/value databases.                             |
++----------------+-----------------------------------------------------------------------------------------+
+
 .. tabularcolumns:: |l|l|
-+----------------+-----------------------------------------------------------------------------------------+
-| Access Right   | Effect                                                                                  |
-+================+=========================================================================================+
-| ANY            | Gives you full access to all the actions on the Platform > Key/Value Databases page.    |
-+----------------+-----------------------------------------------------------------------------------------+
-| Configure      | This functionality will be added in a future release.                                   |
-+----------------+-----------------------------------------------------------------------------------------+
-| Create         | Gives you access to adding key/value databases.                                         |
-+----------------+-----------------------------------------------------------------------------------------+
-| Terminate      | Gives you access to terminating active key/value databases.                             |
-+----------------+-----------------------------------------------------------------------------------------+
++----------------+-------------------------------------------------------------------------------------------+
+|  アクセス権    |  効果                                                                                     |
++================+===========================================================================================+
+| ANY            | すべてのアクション [Platform > キー/バリュー Databases] ページへのフルアクセスを与えます。|
++----------------+-------------------------------------------------------------------------------------------+
+| Configure      | この機能は将来のリリースで追加されます。                                                  |
++----------------+-------------------------------------------------------------------------------------------+
+| Create         | この機能は将来のリリースで追加されます。                                                  |
++----------------+-------------------------------------------------------------------------------------------+
+| Terminate      | [アクティブな キー/バリュー Databases を終了]へのアクセスを提供します。                   |
++----------------+-------------------------------------------------------------------------------------------+
 
 LB
 ~~
 
+.. .. tabularcolumns:: |l|l|
+   +------------------+-----------------------------------------------------------------------------------------+
+   | Access Right     | Effect                                                                                  |
+   +==================+=========================================================================================+
+   | ANY              | Gives you full access to everything on the Infrastructure > Load Balancers page.        |
+   +------------------+-----------------------------------------------------------------------------------------+
+   | AddDataCenter    | Gives you access to the manage zones action.                                            |
+   +------------------+-----------------------------------------------------------------------------------------+
+   | AddListener      | This functionality will be added in a future release.                                   |
+   +------------------+-----------------------------------------------------------------------------------------+
+   | AddServer        | Gives you access to the manage servers action.                                          |
+   +------------------+-----------------------------------------------------------------------------------------+
+   | Configure        | This functionality will be added in a future release.                                   |
+   +------------------+-----------------------------------------------------------------------------------------+
+   | Create           | Gives you access to create load balancers.                                              |
+   +------------------+-----------------------------------------------------------------------------------------+
+   | Delete           | Gives you access to delete active load balancer.                                        |
+   +------------------+-----------------------------------------------------------------------------------------+
+   | EditListener     | This functionality will be added in a future release.                                   |
+   +------------------+-----------------------------------------------------------------------------------------+
+   | RemoveDataCenter | Gives you access to removing zones within manage zones.                                 |
+   +------------------+-----------------------------------------------------------------------------------------+
+   | RemoveServer     | Gives you access to removing servers within manage servers.                             |
+   +------------------+-----------------------------------------------------------------------------------------+
+
 .. tabularcolumns:: |l|l|
 +------------------+-----------------------------------------------------------------------------------------+
-| Access Right     | Effect                                                                                  |
+|  アクセス権      |  効果                                                                                   |
 +==================+=========================================================================================+
-| ANY              | Gives you full access to everything on the Infrastructure > Load Balancers page.        |
+| ANY              | インフラ Infrastructure > Load Balancers ページ上のすべてにフルアクセスを提供します。   |
 +------------------+-----------------------------------------------------------------------------------------+
-| AddDataCenter    | Gives you access to the manage zones action.                                            |
+| AddDataCenter    | 管理ゾーンのアクションへのアクセスを提供します。                                        |
 +------------------+-----------------------------------------------------------------------------------------+
-| AddListener      | This functionality will be added in a future release.                                   |
+| AddListener      | この機能は、将来のリリースで追加されます。                                              |
 +------------------+-----------------------------------------------------------------------------------------+
-| AddServer        | Gives you access to the manage servers action.                                          |
+| AddServer        | 管理サーバアクションにアクセスすることができます。                                      |
 +------------------+-----------------------------------------------------------------------------------------+
-| Configure        | This functionality will be added in a future release.                                   |
+| Configure        | この機能は将来のリリースで追加されます。                                                |
 +------------------+-----------------------------------------------------------------------------------------+
-| Create           | Gives you access to create load balancers.                                              |
+| Create           | [ロードバランサの作成]にアクセスできます。                                              |
 +------------------+-----------------------------------------------------------------------------------------+
-| Delete           | Gives you access to delete active load balancer.                                        |
+| Delete           | [アクティブなロードバランサの削除]にアクセスすることができます。                        |
 +------------------+-----------------------------------------------------------------------------------------+
-| EditListener     | This functionality will be added in a future release.                                   |
+| EditListener     | この機能は、将来のリリースで追加されます。                                              |
 +------------------+-----------------------------------------------------------------------------------------+
-| RemoveDataCenter | Gives you access to removing zones within manage zones.                                 |
+| RemoveDataCenter | [管理ゾーン内のゾーンを削除]にアクセスすることができます。                              |
 +------------------+-----------------------------------------------------------------------------------------+
-| RemoveServer     | Gives you access to removing servers within manage servers.                             |
+| RemoveServer     | [管理サーバー内のサーバーを削除]へのアクセスを提供します。                              |
 +------------------+-----------------------------------------------------------------------------------------+
 
 RDBMS
 ~~~~~
 
+.. .. tabularcolumns:: |l|l|
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Access Right   | Effect                                                                                  |
+   +================+=========================================================================================+
+   | ANY            | Gives you full access to everything in the Platform > Relational Databases page.        |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Configure      | This functionality will be added in a future release.                                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Create         | Gives you access to the add database action.                                            |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | ManageNetwork  | Gives you access to the network access action.                                          |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Snapshot       | This functionality will be added in a future release.                                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Terminate      | Gives you access to terminating relational databases that are active.                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | ChangePassword | Gives you access to changing passwords to relational databases that are active.         |
+   +----------------+-----------------------------------------------------------------------------------------+
+
 .. tabularcolumns:: |l|l|
-+----------------+-----------------------------------------------------------------------------------------+
-| Access Right   | Effect                                                                                  |
-+================+=========================================================================================+
-| ANY            | Gives you full access to everything in the Platform > Relational Databases page.        |
-+----------------+-----------------------------------------------------------------------------------------+
-| Configure      | This functionality will be added in a future release.                                   |
-+----------------+-----------------------------------------------------------------------------------------+
-| Create         | Gives you access to the add database action.                                            |
-+----------------+-----------------------------------------------------------------------------------------+
-| ManageNetwork  | Gives you access to the network access action.                                          |
-+----------------+-----------------------------------------------------------------------------------------+
-| Snapshot       | This functionality will be added in a future release.                                   |
-+----------------+-----------------------------------------------------------------------------------------+
-| Terminate      | Gives you access to terminating relational databases that are active.                   |
-+----------------+-----------------------------------------------------------------------------------------+
-| ChangePassword | Gives you access to changing passwords to relational databases that are active.         |
-+----------------+-----------------------------------------------------------------------------------------+
++----------------+---------------------------------------------------------------------------------------------------+
+|  アクセス権    |  効果                                                                                             |
++================+===================================================================================================+
+| ANY            | プラットフォーム Platform > Relational Databases ページの全てのフルアクセスを提供します。         |
++----------------+---------------------------------------------------------------------------------------------------+
+| Configure      | この機能は将来のリリースで追加されます。                                                          |
++----------------+---------------------------------------------------------------------------------------------------+
+| Create         | [ add database ]アクションへのアクセスを提供します。                                              |
++----------------+---------------------------------------------------------------------------------------------------+
+| ManageNetwork  | ネットワークアクセスのアクションにアクセスすることができます                                      |
++----------------+---------------------------------------------------------------------------------------------------+
+| Snapshot       | この機能は将来のリリースで追加されます                                                            |
++----------------+---------------------------------------------------------------------------------------------------+
+| Terminate      | [アクティブになっているリレーショナルデータベースを終了]へのアクセスを提供します。                |
++----------------+---------------------------------------------------------------------------------------------------+
+| ChangePassword | [アクティブになっているリレーショナルデータベースのパスワードを変更する]へのアクセスを提供します。|
++----------------+---------------------------------------------------------------------------------------------------+
 
 Server
 ~~~~~~
 
+.. .. tabularcolumns:: |l|l|
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Access Right   | Effect                                                                                  |
+   +================+=========================================================================================+
+   | ANY            | Allows full access to the Infrastructure > Servers page                                 |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Configure      | Allows you to edit server names and server color labels. Allows you to view the info    |
+   |                | page.                                                                                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Image          | Allows imaging and snapshotting of servers.                                             |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | ManageUsers    | Allows managing of which users have shell/remote access and which users have admin      |
+   |                | access.                                                                                 |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Pause          | Allows pausing of running servers. Allows rebooting of server if you have Server-Start. |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Prepay         | This functionality will be added in a future release.                                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Start          | Allows starting of paused servers. Allows rebooting of servers if you have Server-Pause.|
+   |                | Allows launching of servers if you have Image-DefineServer or DefineServerFromPublic.   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Terminate      | Allows terminating of servers.                                                          |
+   +----------------+-----------------------------------------------------------------------------------------+
+
 .. tabularcolumns:: |l|l|
-+----------------+-----------------------------------------------------------------------------------------+
-| Access Right   | Effect                                                                                  |
-+================+=========================================================================================+
-| ANY            | Allows full access to the Infrastructure > Servers page                                 |
-+----------------+-----------------------------------------------------------------------------------------+
-| Configure      | Allows you to edit server names and server color labels. Allows you to view the info    |
-|                | page.                                                                                   |
-+----------------+-----------------------------------------------------------------------------------------+
-| Image          | Allows imaging and snapshotting of servers.                                             |
-+----------------+-----------------------------------------------------------------------------------------+
-| ManageUsers    | Allows managing of which users have shell/remote access and which users have admin      |
-|                | access.                                                                                 |
-+----------------+-----------------------------------------------------------------------------------------+
-| Pause          | Allows pausing of running servers. Allows rebooting of server if you have Server-Start. |
-+----------------+-----------------------------------------------------------------------------------------+
-| Prepay         | This functionality will be added in a future release.                                   |
-+----------------+-----------------------------------------------------------------------------------------+
-| Start          | Allows starting of paused servers. Allows rebooting of servers if you have Server-Pause.|
-|                | Allows launching of servers if you have Image-DefineServer or DefineServerFromPublic.   |
-+----------------+-----------------------------------------------------------------------------------------+
-| Terminate      | Allows terminating of servers.                                                          |
-+----------------+-----------------------------------------------------------------------------------------+
++----------------+-------------------------------------------------------------------------------------------------------+
+|  アクセス権    |  効果                                                                                                 |
++================+=======================================================================================================+
+| ANY            | インフラ Infrastructure > Servers ページへのフルアクセスを許可します。                                |
++----------------+-------------------------------------------------------------------------------------------------------+
+| Configure      | サーバー名とサーバーのカラーラベルを編集することができます。情報ページを閲覧することが                |
+|                | できます。                                                                                            |
++----------------+-------------------------------------------------------------------------------------------------------+
+| Image          | イメージングとサーバのスナップショットを許可します。                                                  |
++----------------+-------------------------------------------------------------------------------------------------------+
+| ManageUsers    | どのユーザがシェル/リモート アクセスを持っており、どのユーザーが管理者 アクセスを                     |
+|                | 持っているから管理することができます。                                                                |
++----------------+-------------------------------------------------------------------------------------------------------+
+| Pause          | 実行中のサーバーの一時停止をできます。サーバースタートを使用している場合、サーバーの再起動ができます。|
++----------------+-------------------------------------------------------------------------------------------------------+
+| Prepay         | この機能は、将来のリリースで追加されます。                                                            |
++----------------+-------------------------------------------------------------------------------------------------------+
+| Start          | 一時停止したサーバの起動を許可します。サーバを一時停止している場合のサーバーの再起動ができます。      |
+|                |  Image-DefineServer か DefineServerFromPublic している場合はサーバの起動を許可します。                |
++----------------+-------------------------------------------------------------------------------------------------------+
+| Terminate      | サーバの終了を許可します                                                                              |
++----------------+-------------------------------------------------------------------------------------------------------+
 
 
-**Important Combinations**
+.. **Important Combinations**
+**重要なコンビネーション**
 
-To Launch A Server - Image-DefineServer (or DefineServerFromPublic) & Server-Start
+.. To Launch A Server - Image-DefineServer (or DefineServerFromPublic) & Server-Start
+サーバを起動するには - Image-DefineServer (もしくは DefineServerFromPublic) と Server-Start
 
-To Reboot A Server - Server-Pause & Server-Start
+.. To Reboot A Server - Server-Pause & Server-Start
+サーバをリブートするには - Server-Pause と Server-Start
 
 Snapshot
 ~~~~~~~~
 
+.. .. tabularcolumns:: |l|l|
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Access Right   | Effect                                                                                  |
+   +================+=========================================================================================+
+   | ANY            | Gives you full access to everything in the Infrastructure > Snapshots page.             |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Configure      | This functionality will be added in a future release.                                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | CreateVolume   | Allows you to perform the "create volume" action on the Infrastructure > Snapshots page |
+   |                | and the Automation > Backups page. Also allows you to perform the "restore" option from |
+   |                | the Automation > Backups page.                                                          |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Delete         | Allows you to delete snapshots using the delete action on the Infrastructure > Snapshots|
+   |                | page and the remove action on the Automation > Backups page.                            |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | ShareLocal     | Allows you to make a snapshot private or share the snapshot with another enStratus      |
+   |                | account from the Infrastructure > Snapshots and Automation > Backups pages.             |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | SharePublic    | Allows you to make a snapshot public from the Infrastructure > Snapshots and Automation |
+   |                | > Backups pages.                                                                        |
+   +----------------+-----------------------------------------------------------------------------------------+
+
 .. tabularcolumns:: |l|l|
-+----------------+-----------------------------------------------------------------------------------------+
-| Access Right   | Effect                                                                                  |
-+================+=========================================================================================+
-| ANY            | Gives you full access to everything in the Infrastructure > Snapshots page.             |
-+----------------+-----------------------------------------------------------------------------------------+
-| Configure      | This functionality will be added in a future release.                                   |
-+----------------+-----------------------------------------------------------------------------------------+
-| CreateVolume   | Allows you to perform the "create volume" action on the Infrastructure > Snapshots page |
-|                | and the Automation > Backups page. Also allows you to perform the "restore" option from |
-|                | the Automation > Backups page.                                                          |
-+----------------+-----------------------------------------------------------------------------------------+
-| Delete         | Allows you to delete snapshots using the delete action on the Infrastructure > Snapshots|
-|                | page and the remove action on the Automation > Backups page.                            |
-+----------------+-----------------------------------------------------------------------------------------+
-| ShareLocal     | Allows you to make a snapshot private or share the snapshot with another enStratus      |
-|                | account from the Infrastructure > Snapshots and Automation > Backups pages.             |
-+----------------+-----------------------------------------------------------------------------------------+
-| SharePublic    | Allows you to make a snapshot public from the Infrastructure > Snapshots and Automation |
-|                | > Backups pages.                                                                        |
-+----------------+-----------------------------------------------------------------------------------------+
++----------------+------------------------------------------------------------------------------------------------------+
+|  アクセス権    |  効果                                                                                                |
++================+======================================================================================================+
+| ANY            | インフラ Infrastructure > Snapshots ページ内のすべてへのフルアクセスを提供します                     |
++----------------+------------------------------------------------------------------------------------------------------+
+| Configure      | この機能は将来のリリースで追加されます。                                                             |
++----------------+------------------------------------------------------------------------------------------------------+
+| CreateVolume   | インフラ Infrastructure > Snapshots ページと Automation > Backups ページの "create volume" アクション|
+|                | の実行を許可します。また、 Automation > Backups ページから "復元"オプションを                        |
+|                | 実行することができます。                                                                             |
++----------------+------------------------------------------------------------------------------------------------------+
+| Delete         | インフラ Infrastructure > Snapshots ページの"delete"アクションと Automation > Backups ページの       |
+|                | "remove"アクションを使用してスナップショットを削除することができます。                               |
++----------------+------------------------------------------------------------------------------------------------------+
+| ShareLocal     | 別のenStratusアカウントとの間で Infrastructure > Snapshots と Automation > Backups ページによって    |
+|                | スナップショットをプライベートにしたり共有にしたりすることができます。                               |
++----------------+------------------------------------------------------------------------------------------------------+
+| SharePublic    | インフラ Infrastructure > Snapshots and Automation Backups ページからスナップショットを              |
+|                | パブリックにすることができます。                                                                     |
++----------------+------------------------------------------------------------------------------------------------------+
 
 Topic
 ~~~~~
 
+.. .. tabularcolumns:: |l|l|
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Access Right   | Effect                                                                                  |
+   +================+=========================================================================================+
+   | ANY            | Gives you full access to all the actions in the Platform > Notification Topics page.    |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Create         | Gives you access to adding topics.                                                      |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Publish        | Gives you access to publishing topics.                                                  |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Subscribe      | Gives you access to subscribing to active topics.                                       |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Remove         | Gives you acces to removing active topics.                                              |
+   +----------------+-----------------------------------------------------------------------------------------+
+
 .. tabularcolumns:: |l|l|
 +----------------+-----------------------------------------------------------------------------------------+
-| Access Right   | Effect                                                                                  |
+|  アクセス権    |  効果                                                                                   |
 +================+=========================================================================================+
-| ANY            | Gives you full access to all the actions in the Platform > Notification Topics page.    |
+| ANY            | プラットフォーム Platform > Notification Topics ページへのフルアクセスが可能です。      |
 +----------------+-----------------------------------------------------------------------------------------+
-| Create         | Gives you access to adding topics.                                                      |
+| Create         | トピックを追加へのアクセスを提供します。                                                |
 +----------------+-----------------------------------------------------------------------------------------+
-| Publish        | Gives you access to publishing topics.                                                  |
+| Publish        | [トピックの発行]にアクセスすることができます。                                          |
 +----------------+-----------------------------------------------------------------------------------------+
-| Subscribe      | Gives you access to subscribing to active topics.                                       |
+| Subscribe      | [アクティブなトピックの購読]へのアクセスを提供します。                                  |
 +----------------+-----------------------------------------------------------------------------------------+
-| Remove         | Gives you acces to removing active topics.                                              |
+| Remove         | [アクティブなトピックを除去]へのアクセスを提供します。                                  |
 +----------------+-----------------------------------------------------------------------------------------+
 
 Volume
 ~~~~~~
 
+.. .. tabularcolumns:: |l|l|
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Access Right   | Effect                                                                                  |
+   +================+=========================================================================================+
+   | ANY            | Gives you full access to everything in the Infrastructure > Volumes page.               |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Attach         | Gives you access to attaching volumes.                                                  |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Configure      | This functionality will be added in a future release.                                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Create         | Gives you access to creating volumes.                                                   |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Delete         | Gives you access to delete volumes.                                                     |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Detach         | Gives you access to detach volumes.                                                     |
+   +----------------+-----------------------------------------------------------------------------------------+
+   | Snapshot       | Gives you access to making snapshots of volumes.                                        |
+   +----------------+-----------------------------------------------------------------------------------------+
+
 .. tabularcolumns:: |l|l|
 +----------------+-----------------------------------------------------------------------------------------+
-| Access Right   | Effect                                                                                  |
+|  アクセス権    |  効果                                                                                   |
 +================+=========================================================================================+
-| ANY            | Gives you full access to everything in the Infrastructure > Volumes page.               |
+| ANY            | インフラ Infrastructure > Volumes ページへの全てへのフルアクセスを提供します。          |
 +----------------+-----------------------------------------------------------------------------------------+
-| Attach         | Gives you access to attaching volumes.                                                  |
+| Attach         | [ボリュームをアタッチする]にアクセスすることができます。                                |
 +----------------+-----------------------------------------------------------------------------------------+
-| Configure      | This functionality will be added in a future release.                                   |
+| Configure      | この機能は将来のリリースで追加されます。                                                |
 +----------------+-----------------------------------------------------------------------------------------+
-| Create         | Gives you access to creating volumes.                                                   |
+| Create         | [ボリュームを作成する]にアクセスすることができます。                                    |
 +----------------+-----------------------------------------------------------------------------------------+
-| Delete         | Gives you access to delete volumes.                                                     |
+| Delete         | [ボリュームを削除する]にアクセスすることができます。                                    |
 +----------------+-----------------------------------------------------------------------------------------+
-| Detach         | Gives you access to detach volumes.                                                     |
+| Detach         | [ボリュームをデタッチする]にアクセスすることができます。                                |
 +----------------+-----------------------------------------------------------------------------------------+
-| Snapshot       | Gives you access to making snapshots of volumes.                                        |
+| Snapshot       | [ボリュームのスナップショットを作成する]へのアクセスを提供します。                      |
 +----------------+-----------------------------------------------------------------------------------------+
 
-Example Roles
+.. Example Roles
+ロールの例
 -------------
 
-The following four roles are examples you can implement in your enStratus account. The Admin role is created in every enStratus account by default. You can customize these roles or create your own.
+.. The following four roles are examples you can implement in your enStratus account. The Admin role is created in every enStratus account by default. You can customize these roles or create your own.
+次の4つのロールは、enStratusアカウントで実装することができる例です。
+Adminロールは、デフォルトですべてのenStratusアカウントで作成されます。
+これらのロールをカスタマイズしたり、独自に作成することができます。
 
+.. **Admin** - Has full access over the entire system.
 
-**Admin** - Has full access over the entire system.
+.. .. tabularcolumns:: |l|l|l|
+   +----------+--------+-----------+
+   | Resource | Action | Qualifier |
+   +==========+========+===========+
+   | ANY      | ANY    | ANY       |
+   +----------+--------+-----------+
+
+**Admin** - 全てのシステムに渡ってフルアクセス権を持ちます。
 
 .. tabularcolumns:: |l|l|l|
-+----------+--------+-----------+
-| Resource | Action | Qualifier |
-+==========+========+===========+
-| ANY      | ANY    | ANY       |
-+----------+--------+-----------+
++----------+--------+------------+
+| リソース | アクション | 修飾子 |
++==========+========+============+
+| ANY      | ANY    | ANY        |
++----------+--------+------------+
+
+
+.. **CloudManager** - Can manage all aspects of a cloud environment, but no account management.
+
+.. .. tabularcolumns:: |l|l|l|
+   +--------------+--------+-----------+
+   | Resource     | Action | Qualifier |
+   +==============+========+===========+
+   | ANY          | ANY    | ANY       |
+   +--------------+--------+-----------+
+   | CONSOLE      | Access | ANY       |
+   +--------------+--------+-----------+
+   | CLUSTER      | ANY    | ANY       |
+   +--------------+--------+-----------+
+   | DISTRIBUTION | ANY    | ANY       |
+   +--------------+--------+-----------+
+   | FIREWALL     | ANY    | ANY       |
+   +--------------+--------+-----------+
+   | IMAGE        | ANY    | ANY       |
+   +--------------+--------+-----------+
+   | IP           | ANY    | ANY       |
+   +--------------+--------+-----------+
+   | LB           | ANY    | ANY       |
+   +--------------+--------+-----------+
+   | SERVER       | ANY    | ANY       |
+   +--------------+--------+-----------+
+   | SNAPSHOT     | ANY    | ANY       |
+   +--------------+--------+-----------+
+   | VOLUME       | ANY    | ANY       |
+   +--------------+--------+-----------+
+
+**CloudManager** - クラウド環境の全ての側面を管理しますが、アカウント管理はできません。
+
+.. tabularcolumns:: |l|l|l|
++--------------+----------+--------+
+|   リソース   |アクション| 修飾子 |
++==============+==========+========+
+| ANY          | ANY      | ANY    |
++--------------+----------+--------+
+| CONSOLE      | Access   | ANY    |
++--------------+----------+--------+
+| CLUSTER      | ANY      | ANY    |
++--------------+----------+--------+
+| DISTRIBUTION | ANY      | ANY    |
++--------------+----------+--------+
+| FIREWALL     | ANY      | ANY    |
++--------------+----------+--------+
+| IMAGE        | ANY      | ANY    |
++--------------+----------+--------+
+| IP           | ANY      | ANY    |
++--------------+----------+--------+
+| LB           | ANY      | ANY    |
++--------------+----------+--------+
+| SERVER       | ANY      | ANY    |
++--------------+----------+--------+
+| SNAPSHOT     | ANY      | ANY    |
++--------------+----------+--------+
+| VOLUME       | ANY      | ANY    |
++--------------+----------+--------+
 
 |
 
-**CloudManager** - Can manage all aspects of a cloud environment, but no account management.
+.. **Configurator** - Can edit configurational elements that have no economic impact.
 
-.. tabularcolumns:: |l|l|l|
-+--------------+--------+-----------+
-| Resource     | Action | Qualifier |
-+==============+========+===========+
-| ANY          | ANY    | ANY       |
-+--------------+--------+-----------+
-| CONSOLE      | Access | ANY       |
-+--------------+--------+-----------+
-| CLUSTER      | ANY    | ANY       |
-+--------------+--------+-----------+
-| DISTRIBUTION | ANY    | ANY       |
-+--------------+--------+-----------+
-| FIREWALL     | ANY    | ANY       |
-+--------------+--------+-----------+
-| IMAGE        | ANY    | ANY       |
-+--------------+--------+-----------+
-| IP           | ANY    | ANY       |
-+--------------+--------+-----------+
-| LB           | ANY    | ANY       |
-+--------------+--------+-----------+
-| SERVER       | ANY    | ANY       |
-+--------------+--------+-----------+
-| SNAPSHOT     | ANY    | ANY       |
-+--------------+--------+-----------+
-| VOLUME       | ANY    | ANY       |
-+--------------+--------+-----------+
+.. .. tabularcolumns:: |l|l|l|
+   +--------------+-----------+-----------+
+   | Resource     | Action    | Qualifier |
+   +==============+===========+===========+
+   | CONSOLE      | Access    | ANY       |
+   +--------------+-----------+-----------+
+   | CLUSTER      | Configure | ANY       |
+   +--------------+-----------+-----------+
+   | DISTRIBUTION | Configure | ANY       |
+   +--------------+-----------+-----------+
+   | FIREWALL     | Configure | ANY       |
+   +--------------+-----------+-----------+
+   | IMAGE        | Configure | ANY       |
+   +--------------+-----------+-----------+
+   | IP           | Configure | ANY       |
+   +--------------+-----------+-----------+
+   | LB           | Configure | ANY       |
+   +--------------+-----------+-----------+
+   | SERVER       | Configure | ANY       |
+   +--------------+-----------+-----------+
+   | SNAPSHOT     | Configure | ANY       |
+   +--------------+-----------+-----------+
+   | VOLUME       | Configure | ANY       |
+   +--------------+-----------+-----------+
 
-|
-
-**Configurator** - Can edit configurational elements that have no economic impact.
+**Configurator** - 経済的な影響を及ぼさない構成要素を編集できます。
 
 .. tabularcolumns:: |l|l|l|
 +--------------+-----------+-----------+
-| Resource     | Action    | Qualifier |
+|   リソース   | アクション| 修飾子    |
 +==============+===========+===========+
 | CONSOLE      | Access    | ANY       |
 +--------------+-----------+-----------+
@@ -425,12 +791,21 @@ The following four roles are examples you can implement in your enStratus accoun
 
 |
 
-**CSR** - Has read-only access to the entire system.
+.. **CSR** - Has read-only access to the entire system.
+
+.. .. tabularcolumns:: |l|l|l|
+   +----------+--------+-----------+
+   | Resource | Action | Qualifier |
+   +==========+========+===========+
+   | CONSOLE  | Access | ANY       |
+   +----------+--------+-----------+
+
+**CSR** - システム全体への読み取り専用アクセス権を持っています。
 
 .. tabularcolumns:: |l|l|l|
-+----------+--------+-----------+
-| Resource | Action | Qualifier |
-+==========+========+===========+
-| CONSOLE  | Access | ANY       |
-+----------+--------+-----------+
++----------+----------+---------+
+| リソース |アクション| 修飾子  |
++==========+==========+=========+
+| CONSOLE  | Access   | ANY     |
++----------+----------+---------+
 

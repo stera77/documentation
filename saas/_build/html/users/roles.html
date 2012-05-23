@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Roles &mdash; The enStratus Documentation Project</title>
+    <title>ロール &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Roles</h1></div>
+	<div id="title"><h1>ロール</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. プラットフォーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users.html">7. ユーザー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,21 +98,20 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="roles">
-<h1>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="how-roles-affect-users">
-<h2>How roles affect users<a class="headerlink" href="#how-roles-affect-users" title="Permalink to this headline">¶</a></h2>
-<p>We&#8217;ve been saying that a user &#8216;inherit&#8217; access rights from the role assigned
-to the group(s) they are assigned. Roles have very granular access control definitions
-which are useful when defining the type and level of access users in a group should have.
-The enforcement of access controls is done through the enStratus console. A user may see a
-limited set of options when clicking on the actions link for a cloud resource.</p>
-<p>In the SaaS version of enStratus this is the method by which enStratus enforces access
-controls.</p>
-<p>In an on-premise deployment, customers may choose the option to completely hide cloud
-resources to which a user has no access. Again, this enforcement is done through the
-enStratus console, except in this case if a user has no access to a cloud resource, the
-resource is not presented to the user.</p>
+  <div class="section" id="id1">
+<h1>ロール<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>ロールが、ユーザーに与える影響<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>ユーザーはユーザーに割り当てられたグループに割り当てられたロールからアクセス権限を&#8221;継承&#8221;しますと言ってきました。
+ロールは非常にきめ細かいアクセス制御の定義を持っており、これはグループ内のユーザーの
+アクセスタイプとレベルを定義するときに便利です。
+アクセスコントロールの実施はenStratusコンソールを介して行われます。
+クラウドリソースのアクション·リンクをクリックすると限られたオプションセットを見ることができます。。</p>
+<p>enStratusのSaaS版では、これはenStratusがアクセスコントロールを強制する方法です。</p>
+<p>オンプレミス配備で、顧客はユーザーがアクセス権を持たないクラウドリソースを完全に非表示にする
+オプションを選択することができます。再び、この施行はenStratusコンソールを介して
+、ユーザーがクラウドリソースへのアクセス権を持っていなくて、
+リソースは、ユーザに提示されていないこの場合を除いて行われます。</p>
 </div>
 </div>
 
@@ -128,7 +128,7 @@ resource is not presented to the user.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Roles
+		ロール
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

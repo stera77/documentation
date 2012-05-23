@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Cloud Files &mdash; The enStratus Documentation Project</title>
+    <title>クラウドファイル &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Cloud Files</h1></div>
+	<div id="title"><h1>クラウドファイル</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform.html">6. プラットフォーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,44 +98,46 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="cloud-files">
-<h1>Cloud Files<a class="headerlink" href="#cloud-files" title="Permalink to this headline">¶</a></h1>
-<p>enStratus supports cloud file storage via the enStratus console. File storage allows users
-to store and retrieve important data for easy and reliable access.</p>
-<p>enStratus supports cloud file storage in Amazon Simple Storage Service (Amazon S3),
-Windows Azure Storage Services, Google Storage, Eucalyptus Walrus, AT&amp;T Synaptic Storage,
-OpenStack Object Storage (Swift), and Rackspace Cloud Files.</p>
-<p>To create a new bucket through the enStratus console click on Platform &gt; Files, then click
-on +create root-level directory.</p>
+  <div class="section" id="id1">
+<h1>クラウドファイル<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>enStratusはenStratusコンソールを介してクラウドファイルの記憶域をサポートしています。
+ファイルストレージでは、ユーザーが簡単かつ信頼性の高いアクセスで重要なデータを
+格納および取得することができますことができます。</p>
+<p>enStratusは、いくつものクラウドファイルストレージをサポートしています。
+AmazonのSimple Storage Service (Amazon S3)、Windows Azureストレージサービス、
+Googleのストレージ、 Eucalyptus の Walrus、AT＆T の Synaptic Storage、
+OpenStack の Object Storage (Swift)と、Rackspaceのクラウド·ファイルです。</p>
+<p>enStratusコンソールを介して新規バケットを作成するにはプラットフォームで Platform &gt; Files をクリックし、
+次に &#8220;+create root-level directory&#8221; をクリックしてディレクトリを作成します。</p>
 <p>Screenshot</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">you can create multiple root-level directories</p>
+<p class="last">複数のルートレベルのディレクトリを作成することができます</p>
 </div>
-<p>The <strong>Name</strong> field is for a custom name to associate with your directory.</p>
-<p>The <strong>Label</strong> field helps you organize your directories by providing a unique color label.</p>
-<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
-will use to track billing charges and access rights tied to the user management and
-billing code offerings of enStratus.</p>
-<p>Once the directory is created you can create a hierarchy of directories within the
-root-level directory. Clicking on the actions tab next to the root-level directory will
-bring up options for that directory. These options include:</p>
-<p><strong>Info</strong>: Will provide information relating to the directory (e.g. directory name, user group,
-date created, parent directory, etc.)</p>
+<p><strong>Name</strong> フィールドは、ディレクトリに関連付けるためのカスタム名です。</p>
+<p><strong>Label</strong> フィールドには、独自のカラーラベルを提供することにより、ディレクトリを整理するのに役立ちます。</p>
+<p><strong>課金コード</strong> と <strong>ユーザグループ</strong> はenStratusが請求料金およびユーザー管理とenStratusのオファリングの課金コード
+に関連付けられているアクセス権を追跡するために使用する課金コードとユーザグループの属性です。</p>
+<p>ディレクトリが作成されたら、そのルートレベルのディレクトリ内のディレクトリの階層を作成できます。
+ルートレベルのディレクトリの横にある[アクション]タブをクリックすると
+そのディレクトリのオプションを起動します。これらのオプションは次のとおりです。</p>
+<p><strong>情報</strong>: この情報は、ディレクトリに関連するが提供されます。（例えば、ディレクトリ名、ユーザーグループ、
+作成日、親ディレクトリなど)</p>
 <p>Screenshot</p>
-<p><strong>Permissions</strong>: You can set access level permissions to each directory.</p>
-<p><strong>Upload Files</strong>: You can upload files to the given directory from your local machine.</p>
-<p><strong>New Directory</strong>: Will create a new directory within the current working directory.</p>
-<p><strong>Delete</strong>: Will remove the directory and it’s contents.</p>
-<p>After a file is uploaded, an action tab is placed next to the file and allows for you to
-manage the file. These options include:</p>
-<p>Info: Provides information about the file (e.g. creation date, last updated date, file
-size, etc.)</p>
-<p>Download: Will allow you to download the selected file to your local machine.</p>
-<p>Note: This can take some time depending on file size and currently no progress bar has
-been implemented.</p>
-<p>Rename: Gives you the option to rename the file.</p>
-<p>Delete: Permanently removes the file from the directory.</p>
+<p><strong>Permissions</strong>: 各ディレクトリへのアクセスレベルの権限を設定することができます。</p>
+<p><strong>Upload Files</strong>: ローカルマシンから指定されたディレクトリにファイルをアップロードすることができます。</p>
+<p><strong>New Directory</strong>: 現在の作業ディレクトリ内に新規のディレクトリを作成します。</p>
+<p><strong>Delete</strong>:ディレクトリとその内容も削除します。</p>
+<p>ファイルがアップロードされた後、アクションタブが、ファイルの横に配置され、ファイルを管理することができます。
+これらのオプションは次のとおりです。:</p>
+<p>情報：ファイルについての情報を提供します。（例えば、作成日、最終更新日付、ファイルサイズなど）</p>
+<p>Download: ローカルマシンに選択したファイルをダウンロードすることができます。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">注意：ファイルサイズに応じていくらかの時間がかかることがありますし、現在、進行状況バーが実装されてはいません。</p>
+</div>
+<p>Rename: ファイルの名前を変更するオプションを提供します。</p>
+<p>Delete: ディレクトリからファイルを永久に削除します。</p>
 </div>
 
 
@@ -150,7 +153,7 @@ been implemented.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Cloud Files
+		クラウドファイル
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

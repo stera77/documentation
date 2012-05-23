@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Managing Users &mdash; The enStratus Documentation Project</title>
+    <title>ユーザーの管理 &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Managing Users</h1></div>
+	<div id="title"><h1>ユーザーの管理</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -50,15 +50,16 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. コンソール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. 構成管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html#id4">3. シェフの使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">4. 自動化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. インフラストラクチャ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. プラットフォーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users.html">7. ユーザー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,52 +98,46 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="managing-users">
-<h1>Managing Users<a class="headerlink" href="#managing-users" title="Permalink to this headline">¶</a></h1>
-<p>The challenge of user management breaks down roughly along two boundaries. The first of
-which is enStratus console access and the second is access rights to an individual cloud
-resource such as a server.</p>
-<p>The elasticity inherent in cloud computing creates a unique challenge for enterprise shell
-and remote desktop access. enStratus operates as an arbiter between your authoritative
-user database and user access to cloud virtual machines. Because of this arbitration, your
-cloud virtual machines do not need to participate in any kind of trust relationship with
-a corporate directory service.</p>
-<p>enStratus acts as this arbiter by adding individual user accounts to virtual machines
-based on the users enStratus access rights to that VM. enStratus maintains a separate set
-of login credentials for VM access so that corporate passwords are never placed in a
-public cloud.</p>
-<p>Any enStratus user may be granted shell/remote desktop access to a cloud virtual machine
-if that user has shell access rights to that virtual machine. If you want to grant a user
-access to a virtual machine, they must have first created Linux (SSH) or Windows
-(password) credentials in enStratus. You can then select the virtual machine to which they
-should be granted access and then grant them access to the virtual machine. When you grant
-that access, a new user account is created on the virtual machine with that users
-authentication credentials.</p>
-<p>If you remove the user from enStratus, enStratus also removes all virtual machine access
-as well.</p>
-<p>To create a new user, navigate to User Manager &gt; Users. Click on the + add user link in
-the upper right of the User List and complete the resulting dialog box. After providing
-the required information the user will be added to the user list.</p>
+  <div class="section" id="id1">
+<h1>ユーザーの管理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>ユーザー管理の課題は、大まかに言って2つの境界に沿って分けられます。最初の課題はenStratusコンソールへのアクセス、
+2つ目はサーバのような個々のクラウドリソースへのアクセス権です。</p>
+<p>クラウド·コンピューティングに固有の弾力性は、企業のシェルアクセスとリモートデスクトップアクセスに
+固有の課題を作成します。
+enStratusは、正式なユーザーデータベースとクラウド仮想マシンへのユーザーアクセスとの間の調停者として動作します。
+このため、調停によって、クラウド仮想マシンは企業のディレクトリサービスとの
+あらゆる種類の信頼関係に参加する必要はありません。</p>
+<p>enStratusは、仮想マシンに個々のユーザーアカウントを追加することにより、この調停者として動作します。
+ユーザーはそのVMに対するenStratusアクセス権に基づいています。 enStratusはVMにアクセスするための
+別のログイン資格情報セットを保持していて、企業のパスワードはパブリッククラウドに置かれることはありません。</p>
+<p>ユーザーがその仮想マシンへのシェルアクセス権を持っている場合、すべてのenStratusユーザーはクラウド、
+仮想マシンにシェル/リモートデスクトップアクセスを付与されます。
+ユーザーに仮想マシンへのアクセス権を付与したい場合、最初にLinuxでは SSH の、Windowsではパスワードの資格情報を
+enStratusで作成しておく必要があります。次に、ユーザーがアクセス権を付与され、アクセスを許可されるべき
+仮想マシンを選択します。ユーザーにアクセスを許可すれば、新規のユーザーアカウントが
+そのユーザーの認証資格情報で仮想マシン上で作成されます。</p>
+<p>enStratusからユーザーを削除すれば、同様にenStratusはまた、すべての仮想マシンへのアクセスを削除します。</p>
+<p>新規のユーザーを作成するには、 User Manager &gt; Users に移動します。
+上部のユーザーリストの右側の &#8220;+ add user link&#8221; をクリックして、現れたダイアログボックスを完了します。
+必要な情報を入力後ユーザーがユーザーリストに追加されます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/newUserDialog1.png"><img alt="New User" src="../_images/newUserDialog1.png" style="width: 500.0px; height: 400.0px;" /></a>
 <p class="caption">New User</p>
 </div>
-<p>Once the user is added to the system, they will inherit the rights associated with the
-group(s) to which they have been added.</p>
-<p>A user must specify remote access credentials prior to gaining access to individual
-running servers in the cloud. To gain access to a running Windows server, the user must
-specify an RDP password. To access a Linux server, a user must specify a public SSH key.</p>
-<p>To associate these credentials, click on their name at the top of the console, and select
-Edit my profile. On the profile page, the RDP password should be entered twice before
-saving the changes to the profile. The SSH public key can be entered either as a string or
-uploaded as a file.</p>
+<p>ユーザがシステムに追加されると、追加されたグループに関連付けられている権限を継承します。</p>
+<p>ユーザーは個々のクラウド内の実行中のサーバにアクセスする前に、リモートアクセス資格情報を指定する必要があります。
+実行中のWindowsサーバにアクセスするには、ユーザーはRDPパスワードを指定する必要があります。
+Linuxサーバにアクセスするには、ユーザーはパブリックSSHキーを指定する必要があります。</p>
+<p>これらの資格情報を関連付けるには、コンソールの上部の自分の名前をクリックして、&#8221;Edit my profile&#8221; を選択します。
+プロフィールページで、RDPパスワードはプロファイルへの変更を保存する前に二度入力する必要があります。
+SSHのパブリックキーは、文字列としてするかまたはアップロードされたファイルとして入力することができます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/clickedUserName1.png"><img alt="Edit Profile" src="../_images/clickedUserName1.png" style="width: 500.0px; height: 150.0px;" /></a>
 <p class="caption">Edit Profile</p>
 </div>
-<p>Once the credentials have been entered and the profile is saved, the user can then access
-remote servers as outlined in the Infrastructure &gt; Servers section through Shell/Remote
-access provided they have the appropriate access rights to take this action.</p>
+<p>資格情報が入力されて、プロファイルが保存されると、ユーザーはリモートサーバにアクセスできます。
+ユーザーは &#8220;Infrastructure &gt; Servers section&#8221; セクションで概説されているように &#8220;Shell/Remote access&#8221; 経由で
+適切なアクセス権を持ってアクセスできます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/userProfileGeneral1.png"><img alt="General Profile Information" src="../_images/userProfileGeneral1.png" style="width: 650.0px; height: 300.0px;" /></a>
 <p class="caption">General Profile Information</p>
@@ -169,7 +164,7 @@ access provided they have the appropriate access rights to take this action.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Managing Users
+		ユーザーの管理
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

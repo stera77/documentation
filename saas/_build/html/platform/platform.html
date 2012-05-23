@@ -63,8 +63,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">6.1. リレーショナルデータベース</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id5">6.2. キー バリュー データベース</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id9">6.3. 通知トピック</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#distributions">6.4. Distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cloud-files">6.5. Cloud Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">6.4. 配布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">6.5. クラウドファイル</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. Users</a></li>
@@ -259,67 +259,68 @@ enStratusのユーザー管理と課金コードオファリングと
 <p>通知トピックを削除するには通知トピックテーブルで &#8220;actions &gt; delete&#8221; をクリックします。</p>
 </div>
 </div>
-<div class="section" id="distributions">
-<h2>6.4. Distributions<a class="headerlink" href="#distributions" title="Permalink to this headline">¶</a></h2>
-<p>enStratus supports cloud based content distribution networks or content delivery networks
-(CDN) through enStratus Distributions. Distributions allow users to distribute content
-from cloud storage quickly and efficiently to end users in the cloud.</p>
-<p>enStratus currently supports Limelight Networks&#8217; CDN through the Rackspace cloud and the
-Amazon Web Services CDN CloudFront. CloudFront allow users to distribute content from
-Amazon S3 storage and Limelight Networks allows users to distribute content from Rackspace
-Cloud Files.</p>
-<p>To create a new distribution in enStratus click on Platform &gt; Distributions then click
-+Create Distribution.</p>
+<div class="section" id="id14">
+<h2>6.4. 配布<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>enStratusは、クラウドベースのコンテンツ配信ネットワークやコンテンツ配信ネットワーク（CDN）をenStratus配布を
+介してサポートしています。配布では、ユーザーがコンテンツをクラウドストレージから迅速かつ
+効率的にクラウド内のエンドユーザーに配布することができます。</p>
+<p>enStratusは現在、RackspaceのクラウドとAmazon WebサービスのCDN CloudFrontを介して
+ライムライト·ネットワークスのCDNをサポートしています。CloudFrontはユーザーがAmazon S3ストレージの
+コンテンツを配布でき、ライムライト·ネットワークスは、ユーザーがRackspaceのクラウド·ファイルからの
+コンテンツを配布することができます。</p>
+<p>enStratusの新規の配布を作成するにはプラットフォームで &#8220;Platform &gt; Distributions&#8221; をクリックし、
+次に &#8220;+Create Distribution&#8221; をクリックします。</p>
 <p>Screenshot</p>
-<p>Note: to create a new distribution you must have a pre-existing directory in Platform &gt;
-Files. Click here for more detail.</p>
-<p>The Name field is where you specify a custom domain name for your distribution. (e.g.
-example.cloudfront.net)</p>
-<p>The Aliases field allows you to map comma delimited aliases to the specific domain name.</p>
-<p>The Select a directory drop-down contains a list of all root-level directories located on
-the Platform &gt; Files page of the enStratus console. The directory that is selected for the
-distribution is mapped to the domain name you created.</p>
-<p>Clicking the actions tab next to your newly created distribution will provide you with the
-options to edit, delete, or activate/deactivate the distribution.</p>
+<p>注：新規の配布を作成するには、Platformで既存のディレクトリを持っている必要が
+あります。:&#8221;Platform &gt; Files&#8221; 詳細はここをクリックしてください。</p>
+<p>nameフィールドで配布用のカスタムドメイン名を指定できます。（例：example.cloudfront.net）</p>
+<p>エイリアスフィールドでは、特定のドメイン名にカンマで区切られた別名をマッピングすることができます。</p>
+<p>Selectは、ディレクトリ ドロップダウンで、ルートレベルにあるすべてのディレクトリのリストが含まれています。
+これはenStratusコンソールの Platform &gt; Files ページに在ります。
+配布のために選択されたディレクトリは、作成されたドメイン名にマップされます。</p>
+<p>新しく作成した配布の横にある &#8220;actions&#8221; タブをクリックすると
+編集、削除、またはアクティブ化/非アクティブ化 のオプションが提供されます。</p>
 </div>
-<div class="section" id="cloud-files">
-<h2>6.5. Cloud Files<a class="headerlink" href="#cloud-files" title="Permalink to this headline">¶</a></h2>
-<p>enStratus supports cloud file storage via the enStratus console. File storage allows users
-to store and retrieve important data for easy and reliable access.</p>
-<p>enStratus supports cloud file storage in Amazon Simple Storage Service (Amazon S3),
-Windows Azure Storage Services, Google Storage, Eucalyptus Walrus, AT&amp;T Synaptic Storage,
-OpenStack Object Storage (Swift), and Rackspace Cloud Files.</p>
-<p>To create a new bucket through the enStratus console click on Platform &gt; Files, then click
-on +create root-level directory.</p>
+<div class="section" id="id15">
+<h2>6.5. クラウドファイル<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>enStratusはenStratusコンソールを介してクラウドファイルの記憶域をサポートしています。
+ファイルストレージでは、ユーザーが簡単かつ信頼性の高いアクセスで重要なデータを
+格納および取得することができますことができます。</p>
+<p>enStratusは、いくつものクラウドファイルストレージをサポートしています。
+AmazonのSimple Storage Service (Amazon S3)、Windows Azureストレージサービス、
+Googleのストレージ、 Eucalyptus の Walrus、AT＆T の Synaptic Storage、
+OpenStack の Object Storage (Swift)と、Rackspaceのクラウド·ファイルです。</p>
+<p>enStratusコンソールを介して新規バケットを作成するにはプラットフォームで Platform &gt; Files をクリックし、
+次に &#8220;+create root-level directory&#8221; をクリックしてディレクトリを作成します。</p>
 <p>Screenshot</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">you can create multiple root-level directories</p>
+<p class="last">複数のルートレベルのディレクトリを作成することができます</p>
 </div>
-<p>The <strong>Name</strong> field is for a custom name to associate with your directory.</p>
-<p>The <strong>Label</strong> field helps you organize your directories by providing a unique color label.</p>
-<p><strong>Billing Code</strong> and <strong>User Group</strong> are the billing code and user group attributes that enStratus
-will use to track billing charges and access rights tied to the user management and
-billing code offerings of enStratus.</p>
-<p>Once the directory is created you can create a hierarchy of directories within the
-root-level directory. Clicking on the actions tab next to the root-level directory will
-bring up options for that directory. These options include:</p>
-<p><strong>Info</strong>: Will provide information relating to the directory (e.g. directory name, user group,
-date created, parent directory, etc.)</p>
+<p><strong>Name</strong> フィールドは、ディレクトリに関連付けるためのカスタム名です。</p>
+<p><strong>Label</strong> フィールドには、独自のカラーラベルを提供することにより、ディレクトリを整理するのに役立ちます。</p>
+<p><strong>課金コード</strong> と <strong>ユーザグループ</strong> はenStratusが請求料金およびユーザー管理とenStratusのオファリングの課金コード
+に関連付けられているアクセス権を追跡するために使用する課金コードとユーザグループの属性です。</p>
+<p>ディレクトリが作成されたら、そのルートレベルのディレクトリ内のディレクトリの階層を作成できます。
+ルートレベルのディレクトリの横にある[アクション]タブをクリックすると
+そのディレクトリのオプションを起動します。これらのオプションは次のとおりです。</p>
+<p><strong>情報</strong>: この情報は、ディレクトリに関連するが提供されます。（例えば、ディレクトリ名、ユーザーグループ、
+作成日、親ディレクトリなど)</p>
 <p>Screenshot</p>
-<p><strong>Permissions</strong>: You can set access level permissions to each directory.</p>
-<p><strong>Upload Files</strong>: You can upload files to the given directory from your local machine.</p>
-<p><strong>New Directory</strong>: Will create a new directory within the current working directory.</p>
-<p><strong>Delete</strong>: Will remove the directory and it’s contents.</p>
-<p>After a file is uploaded, an action tab is placed next to the file and allows for you to
-manage the file. These options include:</p>
-<p>Info: Provides information about the file (e.g. creation date, last updated date, file
-size, etc.)</p>
-<p>Download: Will allow you to download the selected file to your local machine.</p>
-<p>Note: This can take some time depending on file size and currently no progress bar has
-been implemented.</p>
-<p>Rename: Gives you the option to rename the file.</p>
-<p>Delete: Permanently removes the file from the directory.</p>
+<p><strong>Permissions</strong>: 各ディレクトリへのアクセスレベルの権限を設定することができます。</p>
+<p><strong>Upload Files</strong>: ローカルマシンから指定されたディレクトリにファイルをアップロードすることができます。</p>
+<p><strong>New Directory</strong>: 現在の作業ディレクトリ内に新規のディレクトリを作成します。</p>
+<p><strong>Delete</strong>:ディレクトリとその内容も削除します。</p>
+<p>ファイルがアップロードされた後、アクションタブが、ファイルの横に配置され、ファイルを管理することができます。
+これらのオプションは次のとおりです。:</p>
+<p>情報：ファイルについての情報を提供します。（例えば、作成日、最終更新日付、ファイルサイズなど）</p>
+<p>Download: ローカルマシンに選択したファイルをダウンロードすることができます。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">注意：ファイルサイズに応じていくらかの時間がかかることがありますし、現在、進行状況バーが実装されてはいません。</p>
+</div>
+<p>Rename: ファイルの名前を変更するオプションを提供します。</p>
+<p>Delete: ディレクトリからファイルを永久に削除します。</p>
 </div>
 </div>
 
