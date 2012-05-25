@@ -6,7 +6,8 @@
 
 .. include:: downloads/downloads.rst
 
-Contents:
+.. Contents:
+–ÚŽŸ:
 
 .. toctree::
    :maxdepth: 2
