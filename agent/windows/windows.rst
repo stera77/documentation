@@ -1,3 +1,4 @@
-Windows
+.. Windows
+ウィンドウズ
 -------
 Coming Soon...

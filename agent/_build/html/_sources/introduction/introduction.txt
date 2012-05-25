@@ -1,4 +1,5 @@
-Introduction
+.. Introduction
+はじめに
 ============
 
 Coming soon...

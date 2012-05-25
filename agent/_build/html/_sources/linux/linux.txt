@@ -1,4 +1,5 @@
-Linux
+.. Linux
+リナックス
 -----
 
 .. include:: scripts/assembleRaid.rst

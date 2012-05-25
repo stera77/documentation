@@ -1,3 +1,4 @@
-Installation
+.. Installation
+インストール
 ------------
 Coming Soon...
