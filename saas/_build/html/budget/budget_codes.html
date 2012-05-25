@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Budget Codes &mdash; The enStratus Documentation Project</title>
+    <title>予算コード &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Budget Codes</h1></div>
+	<div id="title"><h1>予算コード</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -57,7 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">5. インフラストラクチャ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">6. プラットフォーム</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/users.html">7. ユーザー</a></li>
-<li class="toctree-l1"><a class="reference internal" href="budget.html">8. Budget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="budget.html">8. 予算</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">9. エージェント</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/api.html">10. API</a></li>
 </ul>
@@ -98,65 +98,62 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="budget-codes">
-<h1>Budget Codes<a class="headerlink" href="#budget-codes" title="Permalink to this headline">¶</a></h1>
-<p>enStratus tracks infrastructure costs based on the costs reported by the cloud provider or
-in the case of an on-premise installation of enStratus, against a customizable set of
-values.</p>
-<p>enStratus calculates costs based on the hourly run rate for usage. Servers, storage, load
-balancers, databases, and IP Addresses are all examples of items that have an associated
-cost in many of the public clouds. The values for each of these items is used to calculate
-a run rate and project costs.</p>
+  <div class="section" id="id1">
+<h1>予算コード<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>enStratusは、クラウドプロバイダよって報告されたコストまたはオンプレミスのenStratusインストールの
+場合、カスタマイズ可能な値のセットに対してのコストに基づいてインフラストラクチャの
+コストを追跡します。</p>
+<p>enStratusは、使用量の時間ごとの実行レートに基づいてコストを計算します。サーバ、ストレージ、ロード
+バランサー、データベース、およびIPアドレスがパブリッククラウドの多くに於いて関連するコストを持つ
+項目のすべての例です。これらの各項目の値が実行レートとプロジェクトコストの計算に使用されます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/budgetCodeInitial1.png"><img alt="Budget Codes" src="../_images/budgetCodeInitial1.png" style="width: 1000.0px; height: 300.0px;" /></a>
 <p class="caption">Budget Codes</p>
 </div>
-<p>In diagram above, there are several billing codes in various quota states. Billing codes
-are color coded for quick reference regarding the state of the billing code.</p>
+<p>上記の図では、いくつかの課金コードは、さまざまなクォータの状態にあります。課金コード
+色は課金コードの状態に関するクイックリファレンスのためにコード化されています。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="9%" />
 <col width="91%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Color</th>
-<th class="head">Meaning</th>
+<tr class="row-odd"><th class="head">色</th>
+<th class="head">意味</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Green</td>
-<td>Run rate has not exceeded and additional infrastructure/capacity may be charged
-against this code.</td>
+<tr class="row-even"><td>緑</td>
+<td>実行レートを超えておらず、追加のインフラストラクチャ/容量がこのコードに対して
+課金される場合があります。</td>
 </tr>
-<tr class="row-odd"><td>Yellow</td>
-<td>Run rate has exceeded the soft quota limit. An email warning will be sent, but
-additional infrastructure/capacity may be charged against this code.</td>
+<tr class="row-odd"><td>黄</td>
+<td>実行レートがソフトクォータ制限を超えました。電子メール警告が送信されますが、
+追加のインフラストラクチャ/容量が、このコードに対して課金される場合があります。</td>
 </tr>
-<tr class="row-even"><td>Red</td>
-<td>Run rate exceeded the hard quota. An email message will be sent. No additional
-infrastructure/capacity may be charged against this code.</td>
+<tr class="row-even"><td>赤</td>
+<td>実行レートは、ハードクォータを超えています。電子メールメッセージが送信されます。
+追加のインフラストラクチャ/容量が、このコードに対して課金される場合があります。</td>
 </tr>
 </tbody>
 </table>
-<div class="section" id="definitions">
-<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
-<p><strong>RUN RATE</strong></p>
-<p>The run rate is the calculated usage per hour costs for all of the
-infrastructure being tracked against this code.</p>
-<p><strong>CURRENT USAGE</strong></p>
-<p>The current usage is the total charges tracked against the billing code up
-to the current point in the month. For example, if 10 days of the month have elapsed, the
-current usage value should be approximately one third of the projected usage.</p>
-<p><strong>PROJECTED USAGE</strong></p>
-<p>The projected usage is the projected total usage costs for the month
-based on the current run rate.</p>
+<div class="section" id="id2">
+<h2>定義<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><strong>実行レート</strong></p>
+<p>実行レートはこのコードに対して追跡されている、インフラストラクチャすべての
+時間当たりのコストで計算された使用料です。</p>
+<p><strong>現在使用料</strong></p>
+<p>現在使用料は、課金コードに対して追跡された今月の現在時点までの合計料金です。
+たとえば、今月の10日が経過している場合は、
+現在の使用料の値は予測使用料の約3分の1でなければなりません</p>
+<p><strong>予測使用料</strong></p>
+<p>予測使用料は現在時点の実行レートに基づいた、月当たりの予測される総使用コストです。</p>
 </div>
-<div class="section" id="email-warning-messages">
-<h2>Email Warning Messages<a class="headerlink" href="#email-warning-messages" title="Permalink to this headline">¶</a></h2>
-<p>An example of the email message that is sent when the soft quota is exceeded is shown
-below:</p>
-<div class="section" id="soft-quota-exceeded">
-<h3>Soft Quota Exceeded<a class="headerlink" href="#soft-quota-exceeded" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h2>電子メール警告メッセージ<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>ソフトクォータを超過した場合に送信される電子メールメッセージの例が以下示されています。：</p>
+<div class="section" id="id4">
+<h3>ソフトクォータを超過<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none"><div class="highlight"><pre>New Cloud Event: Wed 01 Dec 2010 02:59:41 UTC Cloud: Amazon Web Services
 Account: Company Subject: NEW EVENT #312218 (Severity 5) - Monthly Soft Run-Rate Exceeded
 for Company Company (YACNGH)
@@ -177,8 +174,8 @@ below:
 </pre></div>
 </div>
 </div>
-<div class="section" id="hard-quota-exceeded">
-<h3>Hard Quota Exceeded<a class="headerlink" href="#hard-quota-exceeded" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>ハードクォータを超過<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none"><div class="highlight"><pre>New Cloud Event: Wed 01 Dec 2010 02:11:15 UTC Cloud: Amazon Web Services Account: Company
 Acc Subject: NEW EVENT #312214 (Severity 7) - Monthly Hard Run-Rate Exceeded for Website
 (WWW)
@@ -203,74 +200,72 @@ any drastic actions such as deleting infrastructure to bring the run rate below 
 </div>
 </div>
 </div>
-<div class="section" id="users">
-<h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
-<p>Users may be a part of one or more billing codes as shown in the user profile, located in
-User Manager &gt; Users.</p>
+<div class="section" id="id6">
+<h2>ユーザー<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>ユーザープロファイルに示すように、ユーザーは User Manager &gt; Users に位置し、
+1つまたは複数の課金コードの一部であるかもしれません。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/userBudgetCodes1.png"><img alt="User Profile" src="../_images/userBudgetCodes1.png" style="width: 360.0px; height: 420.0px;" /></a>
 <p class="caption">User Profile</p>
 </div>
-<p>In this case, the user is a part of three budget codes: TestBudget, Default, and R&amp;D
-Budget.</p>
-<p>Referring back to the overall budget code listing, it becomes apparent that the Default
-and TestBudget budget codes have exceeded the hard quota.</p>
-<p>To see the functionality of budget codes and how they can be used to restrict a users
-ability to provision infrastructure, let&#8217;s try to start a server from a machine image
-and examine the budget code options presented.</p>
+<p>このケースでは、ユーザーは3つの予算コードの一部です：Test予算、デフォルト、およびR＆D予算。</p>
+<p>全体の予算コードのリストに戻って参照すると、デフォルトとTest予算コードが、ハードクォータを
+超えていることが明らかになっています。</p>
+<p>予算コードの機能を確認したり、インフラストラクチャを展開するにあたり、どのようにユーザーの
+能力を制限するのに使用できるかを確認するためにマシンイメージからサーバーを起動して
+提示される予算コードのオプションを確認してみましょう。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/launchInstance1.png"><img alt="Launch Machine w/Billing Code" src="../_images/launchInstance1.png" style="width: 420.0px; height: 360.0px;" /></a>
 <p class="caption">Launch Machine w/Billing Code</p>
 </div>
-<p>enStratus hides budget codes that have exceeded their hard quota from use in the
-enStratus console. If a user is only a part of one budget code <em>and</em> that code has
-exceeded its hard quota, that user will be unable to provision any resources.</p>
+<p>enStratusはenStratusコンソールの[使用]からハードクオータを超過した予算コードを隠します。
+ユーザーが、その予算コードの一部だけであり、 <em>且つ</em> そのコードがハードクォータを超過した場合、
+そのユーザーはすべてのリソースを提供するすることはできません。</p>
 </div>
-<div class="section" id="creating-and-editing-budget-codes">
-<h2>Creating and Editing Budget Codes<a class="headerlink" href="#creating-and-editing-budget-codes" title="Permalink to this headline">¶</a></h2>
-<p>To create a budget code, navigate to Finance &gt; Budget Codes. The list of active budget
-codes will be shown as in Figure 1. To add a new budget code, select + add budget code
-and complete the resulting dialog box.</p>
+<div class="section" id="id7">
+<h2>予算コードの作成と編集<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>予算コードを作成するには、ファイナンス Finance &gt; Budget Codesに移動します。
+アクティブな予算のリストコードが図1のように表示されます。
+新しい予算コードを追加するには、&#8221;+ add budget code&#8221; を選択して、現れる
+ダイアログボックスを完了します。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/createBudgetCode1.png"><img alt="Add New Budget Code" src="../_images/createBudgetCode1.png" style="width: 360.0px; height: 240.0px;" /></a>
 <p class="caption">Add New Budget Code</p>
 </div>
-<p>Once the dialog box is complete, the new budget code will be added to the list of
-available budget codes.</p>
+<p>ダイアログボックスが完了すると、新規の予算コードが利用可能な予算コードのリストに追加されます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/newBudgetCodeAdded1.png"><img alt="Budget Code Added" src="../_images/newBudgetCodeAdded1.png" style="width: 1000.0px; height: 200.0px;" /></a>
 <p class="caption">Budget Code Added</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Before the budget code is available to be used, the user must add that code to
-their profile using User Manager.</p>
+<p class="last">予算コードが使用可能になる前に、ユーザは、ユーザーマネージャを使用して
+プロファイルにそのコードを追加する必要があります。</p>
 </div>
-<p>To edit a billing code, click on the actions option and choose edit.</p>
+<p>課金コードを編集するには、actionsオプションをクリックし、[編集]を選択します。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/editBudgetCode1.png"><img alt="Edit Budget Code" src="../_images/editBudgetCode1.png" style="width: 300.0px; height: 225.0px;" /></a>
 <p class="caption">Edit Budget Code</p>
 </div>
-<p>Once the changes are made, the list of billing codes will be updated immediately.</p>
+<p>変更が行われた後、課金コードのリストはすぐに更新されます。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/quotaChanged1.png"><img alt="Quota Changed" src="../_images/quotaChanged1.png" style="width: 1000.0px; height: 200.0px;" /></a>
 <p class="caption">Quota Changed</p>
 </div>
 </div>
-<div class="section" id="deactivating-billing-codes">
-<h2>Deactivating Billing Codes<a class="headerlink" href="#deactivating-billing-codes" title="Permalink to this headline">¶</a></h2>
-<p>When a billing code is deactivated, a replacement code must be specified. Any
-infrastructure/services being tracked against the billing code set for deactivation will
-be tracked in the replacement code going forward. Historical data will still be available
-via reports in the old billing code.</p>
-<p>To deactivate a billing code, select the code marked for deactivation, click on actions,
-and choose deactivate.</p>
+<div class="section" id="id8">
+<h2>課金コードの無効化<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>課金コードが無効になっている場合は、置換コードを指定する必要があります。
+任意の課金コードセットに対して追跡されている &#8220;infrastructure/services&#8221; は
+無効化をすると今後の置換コードで追跡することができます。
+履歴データはまだ古い課金コードのレポートを経由して利用できるようになります。</p>
+<p>課金コードを無効にするには、無効化用にマークされたコードを選択し、&#8221;actions&#8221; をクリックして
+無効化を選択します。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/deactivateBudgetCode1.png"><img alt="Deactivate Budget Code" src="../_images/deactivateBudgetCode1.png" style="width: 300.0px; height: 175.0px;" /></a>
 <p class="caption">Deactivate Budget Code</p>
 </div>
-<p>Once a replacement code is selected and the deactivation is confirmed, the deactivated
-code is removed from the active list.</p>
+<p>交換用のコードが選択され、無効化が確認されれば、無効なったコードは、アクティブリストから削除されます。</p>
 <p>Screenshot</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/budgetCodeInitial1.png"><img alt="Budget Codes" src="../_images/budgetCodeInitial1.png" style="width: 1000.0px; height: 300.0px;" /></a>
@@ -292,7 +287,7 @@ code is removed from the active list.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Budget Codes
+		予算コード
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
