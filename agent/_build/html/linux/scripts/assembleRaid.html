@@ -50,13 +50,13 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../downloads/downloads.html">1. Agent Downloads (Version 16)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../introduction/introduction.html">2. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">4. Scripts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../linux.html">5. Linux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../windows/windows.html">6. Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../extending/extending.html">7. Extending the Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../downloads/downloads.html">1. Agent ダウンロード (Version 16)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/introduction.html">2. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">3. インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">4. スクリプト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux.html">5. リナックス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/windows.html">6. ウィンドウズ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending/extending.html">7. エージェントの拡張</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -97,36 +97,38 @@
             
   <div class="section" id="assembleraid">
 <h1>assembleRaid<a class="headerlink" href="#assembleraid" title="Permalink to this headline">¶</a></h1>
-<p>assembleRaid - Assembles RAID devices</p>
+<p>assembleRaid - RAIDデバイスをアセンブルします</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p>assembleRaid DEVICE_ID VOLUMES...</p>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>It assembles a RAID device from a list of storage devices. Currently only RAID 0 (striped) volumes are supported</p>
+<p>ストレージデバイスのリストからRAIDデバイスをアセンブルします。現在のところRAID 0（ストライプド）ボリュームのみがサポートされています。</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>DEVICE_ID</dt>
-<dd>Last part of the Linux device name for the RAID device to be created (md0 for /dev/md0 by default)</dd>
+<dd>作成されたRAIDデバイスのLinuxデバイス名の最後の部分（デフォルトでは /dev/md0 のためのmd0）</dd>
+</dl>
+<dl class="docutils">
 <dt>VOLUMES</dt>
-<dd>List of devices to be added to the RAID volume</dd>
+<dd>RAIDボリュームに追加するデバイスのリスト</dd>
 </dl>
 </div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>/enstratus/bin/assembleRaid md0 sdh sdi sdj</dt>
-<dd>Creates the RAID 0 device /dev/md0 from volumes /dev/sdh, /dev/shi and /dev/sdj</dd>
+<dd>/dev/sdh、 /dev/shi と /dev/sdj ボリュームから /dev/md0 の RAID 0 デバイスを作成します。</dd>
 </dl>
 </div>
 <div class="section" id="invocation">
 <h2>Invocation<a class="headerlink" href="#invocation" title="Permalink to this headline">¶</a></h2>
-<p>This script is called when:</p>
+<p>このスクリプトは次の場合に呼ばれます。</p>
 <ul class="simple">
-<li>If a volume is created when manually launching a server from the Machine Images page and a RAID Level other that None is selected.</li>
+<li>手動でマシンイメージページからサーバーが起動され、RAIDレベルが[無し]以外が選択されてボリュームが作成される場合。</li>
 </ul>
 </div>
 <div class="section" id="dependencies">
@@ -139,7 +141,7 @@
 </div>
 <div class="section" id="permission">
 <h2>Permission<a class="headerlink" href="#permission" title="Permalink to this headline">¶</a></h2>
-<p>It is launched by the enstratus user. It needs sudo authority for creating the array</p>
+<p>これはenstratusユーザーによって起動されます。アレイを作成するにはsudo権限が必要です。</p>
 </div>
 <div class="section" id="overrides">
 <h2>Overrides<a class="headerlink" href="#overrides" title="Permalink to this headline">¶</a></h2>

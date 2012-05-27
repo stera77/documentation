@@ -77,7 +77,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../windows/windows.html">6. ウィンドウズ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../extending/extending.html">7. ?G?[?W?F???g?̊g??</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending/extending.html">7. エージェントの拡張</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -120,36 +120,38 @@
 <h1>5. リナックス<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="assembleraid">
 <h2>5.1. assembleRaid<a class="headerlink" href="#assembleraid" title="Permalink to this headline">¶</a></h2>
-<p>assembleRaid - Assembles RAID devices</p>
+<p>assembleRaid - RAIDデバイスをアセンブルします</p>
 <div class="section" id="synopsis">
 <h3>5.1.1. Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h3>
 <p>assembleRaid DEVICE_ID VOLUMES...</p>
 </div>
 <div class="section" id="description">
 <h3>5.1.2. Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
-<p>It assembles a RAID device from a list of storage devices. Currently only RAID 0 (striped) volumes are supported</p>
+<p>ストレージデバイスのリストからRAIDデバイスをアセンブルします。現在のところRAID 0（ストライプド）ボリュームのみがサポートされています。</p>
 </div>
 <div class="section" id="options">
 <h3>5.1.3. Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>DEVICE_ID</dt>
-<dd>Last part of the Linux device name for the RAID device to be created (md0 for /dev/md0 by default)</dd>
+<dd>作成されたRAIDデバイスのLinuxデバイス名の最後の部分（デフォルトでは /dev/md0 のためのmd0）</dd>
+</dl>
+<dl class="docutils">
 <dt>VOLUMES</dt>
-<dd>List of devices to be added to the RAID volume</dd>
+<dd>RAIDボリュームに追加するデバイスのリスト</dd>
 </dl>
 </div>
-<div class="section" id="examples">
-<h3>5.1.4. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>5.1.4. 例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>/enstratus/bin/assembleRaid md0 sdh sdi sdj</dt>
-<dd>Creates the RAID 0 device /dev/md0 from volumes /dev/sdh, /dev/shi and /dev/sdj</dd>
+<dd>/dev/sdh、 /dev/shi と /dev/sdj ボリュームから /dev/md0 の RAID 0 デバイスを作成します。</dd>
 </dl>
 </div>
 <div class="section" id="invocation">
 <h3>5.1.5. Invocation<a class="headerlink" href="#invocation" title="Permalink to this headline">¶</a></h3>
-<p>This script is called when:</p>
+<p>このスクリプトは次の場合に呼ばれます。</p>
 <ul class="simple">
-<li>If a volume is created when manually launching a server from the Machine Images page and a RAID Level other that None is selected.</li>
+<li>手動でマシンイメージページからサーバーが起動され、RAIDレベルが[無し]以外が選択されてボリュームが作成される場合。</li>
 </ul>
 </div>
 <div class="section" id="dependencies">
@@ -162,7 +164,7 @@
 </div>
 <div class="section" id="permission">
 <h3>5.1.7. Permission<a class="headerlink" href="#permission" title="Permalink to this headline">¶</a></h3>
-<p>It is launched by the enstratus user. It needs sudo authority for creating the array</p>
+<p>これはenstratusユーザーによって起動されます。アレイを作成するにはsudo権限が必要です。</p>
 </div>
 <div class="section" id="overrides">
 <h3>5.1.8. Overrides<a class="headerlink" href="#overrides" title="Permalink to this headline">¶</a></h3>
@@ -174,142 +176,153 @@
 <h2>5.2. backupDataSource<a class="headerlink" href="#backupdatasource" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="name">
 <h3>5.2.1. Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h3>
-<p>backupDataSource ~ Dumps a data source to the specified file location</p>
+<p>backupDataSource ~ データソースを指定したファイルの場所にダンプします</p>
 </div>
-<div class="section" id="id2">
-<h3>5.2.2. Synopsis<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>5.2.2. Synopsis<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Language: Bash
 backupDataSource SERVICE_ID DATA_SOURCE CONFIG_FILE FILE_PATH</p>
 </div>
-<div class="section" id="id3">
-<h3>5.2.3. Description<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>It invokes the script /mnt/services/$SERVICE_ID/bin/enstratus-backupDataSource , if existent, to backup a Data Source. enstratus~backupDataSource is usually an ad~hoc script meant to backup an specific kind of data source, for example using mysqldump for MySQL databases, pgdump for PostGRESQL, etc.</p>
-</div>
 <div class="section" id="id4">
-<h3>5.2.4. Options<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>SERVICE_ID</dt>
-<dd>ID of the service to be backed up. It&#8217;s provided by enstratus. Service images are stored in /mnt/services/$SERVICE_ID</dd>
-<dt>DATA_SOURCE</dt>
-<dd>Name of the datasource to be backed up.</dd>
-<dt>CONFIG_FILE</dt>
-<dd>Configuration file provided by enstratus. It contains information required to perform the backup, such as credentials.</dd>
-<dt>FILE_PATH</dt>
-<dd>Temporary file name to be used to store the backup. After a successful backup enstratus will upload the file to the configured cloud storage.</dd>
-</dl>
+<h3>5.2.3. Description<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>バックアップが存在しない場合、データソースをバックアップするために、 /mnt/services/$SERVICE_ID/bin/enstratus-backupDataSource スクリプトを呼び出します。 enstratus~backupDataSource は通常はデータソースの特定の種類のバックアップを作成するための非定形な、例えばMySQLデータベース用の mysqldump 、PostgreSQL用のpgdump等のスクリプトです。</p>
 </div>
 <div class="section" id="id5">
-<h3>5.2.5. Examples<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>backupDataSource a123 testds /mnt/services/a123/cfg/enstratus.cfg /mnt/tmp/123~testds~YYYYMMDD~ID.zip</p>
+<h3>5.2.4. Options<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>SERVICE_ID</dt>
+<dd>サービスIDは、バックアップすることができます。これはenstratusにより提供されています。サービスイメージは /mnt/services/$SERVICE_ID に格納されています</dd>
+</dl>
+<dl class="docutils">
+<dt>DATA_SOURCE</dt>
+<dd>バックアップするデータソースの名前。</dd>
+</dl>
+<dl class="docutils">
+<dt>CONFIG_FILE</dt>
+<dd>構成ファイルはenstratusによって提供されます。これには、資格情報などのバックアップを実行するために必要な情報が含まれています。</dd>
+</dl>
+<dl class="docutils">
+<dt>FILE_PATH</dt>
+<dd>バックアップを格納するために使用する一時ファイル名です。正常なバックアップ後にenstratusが構成されたクラウドストレージにファイルをアップロードします。</dd>
+</dl>
 </div>
 <div class="section" id="id6">
-<h3>5.2.6. Invocation<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<p>This script is called automatically by enstratus if the Data Source has been set for periodic backups, according to the configured frequency.</p>
+<h3>5.2.5. 例<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>backupDataSource a123 testds /mnt/services/a123/cfg/enstratus.cfg /mnt/tmp/123~testds~YYYYMMDD~ID.zip</p>
 </div>
 <div class="section" id="id7">
-<h3>5.2.7. Dependencies<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>5.2.6. Invocation<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>データソースが、定期的なバックアップをするように設定されている場合、このスクリプトは、設定された周期に応じて、enstratusによって自動的に呼び出されます。</p>
+</div>
+<div class="section" id="id8">
+<h3>5.2.7. Dependencies<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>None</li>
 </ul>
 </div>
-<div class="section" id="id8">
-<h3>5.2.8. Permission<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>It is launched by the enstratus user.</p>
-</div>
 <div class="section" id="id9">
-<h3>5.2.9. Overrides<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3>5.2.8. Permission<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>これはenstratusユーザーによって起動されます。</p>
+</div>
+<div class="section" id="id10">
+<h3>5.2.9. Overrides<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>Override: No</p>
 <p>Replace: No</p>
 </div>
 </div>
 <div class="section" id="backupservice">
 <h2>5.3. backupService<a class="headerlink" href="#backupservice" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id10">
-<h3>5.3.1. Name<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<p>backupService ~ Backs up the target service.</p>
-</div>
 <div class="section" id="id11">
-<h3>5.3.2. Synopsis<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<p>backupService SERVICE_ID FILE_PATH</p>
+<h3>5.3.1. Name<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>backupService ~ ターゲットのサービスをバックアップします。</p>
 </div>
 <div class="section" id="id12">
-<h3>5.3.3. Description<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<p>enStratus invokes the script /mnt/services/$SERVICE_ID/bin/enstratus~backupService, if it
-exists, to backup a service. enstratus-backupService is usually an ad-hoc script meant to backup an specific kind of service.</p>
+<h3>5.3.2. Synopsis<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>backupService SERVICE_ID FILE_PATH</p>
 </div>
 <div class="section" id="id13">
-<h3>5.3.4. Options<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>SERVICE_ID</dt>
-<dd>ID of the service to be backed up. It&#8217;s provided by enstratus. Service images are stored in /mnt/services/$SERVICE_ID</dd>
-<dt>FILE_PATH</dt>
-<dd>Temporary file name to be used to store the backup. After a successful backup enstratus will upload the file to the configured cloud storage.</dd>
-</dl>
+<h3>5.3.3. Description<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>もしそれがあれば、サービスをバックアップするために、enStratusは、
+スクリプト /mnt/services/$SERVICE_ID/bin/enstratus~backupService を呼び出します。
+通常 enstratus-backupService は、特定のサービスをバックアップすることを意味する一時的なスクリプトです。</p>
 </div>
 <div class="section" id="id14">
-<h3>5.3.5. Examples<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<p>backupService a123 /mnt/tmp/123-testservice-YYYYMMDD-ID.zip</p>
+<h3>5.3.4. Options<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>SERVICE_ID</dt>
+<dd>サービスIDは、バックアップすることができます。それはenstratusにより提供されています。サービスイメージは /mnt/services/$SERVICE_ID に格納されています</dd>
+</dl>
+<dl class="docutils">
+<dt>FILE_PATH</dt>
+<dd>バックアップを格納するために使用する一時ファイル名です。正常なバックアップ後にenstratusが構成されたクラウドストレージにファイルをアップロードします。</dd>
+</dl>
 </div>
 <div class="section" id="id15">
-<h3>5.3.6. Invocation<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
-<p>This script is called automatically by enstratus if the Service has been set for periodic backups, according to the configured frequency.</p>
+<h3>5.3.5. 例<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>backupService a123 /mnt/tmp/123-testservice-YYYYMMDD-ID.zip</p>
 </div>
 <div class="section" id="id16">
-<h3>5.3.7. Dependencies<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<h3>5.3.6. Invocation<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>サービスが定期的なバックアップをするように設定されている場合、このスクリプトは、設定周期に応じて、enstratusによって自動的に呼び出されます。</p>
+</div>
+<div class="section" id="id17">
+<h3>5.3.7. Dependencies<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>None</li>
 </ul>
 </div>
-<div class="section" id="id17">
-<h3>5.3.8. Permission<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
-<p>It is launched by the enstratus user.</p>
-</div>
 <div class="section" id="id18">
-<h3>5.3.9. Overrides<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<h3>5.3.8. Permission<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>これはenstratusユーザーによって起動されます。</p>
+</div>
+<div class="section" id="id19">
+<h3>5.3.9. Overrides<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <p>Override: Yes, pre and post</p>
 <p>Replace: Yes</p>
 </div>
 </div>
 <div class="section" id="calculateagentdata">
 <h2>5.4. calculateAgentData<a class="headerlink" href="#calculateagentdata" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id19">
-<h3>5.4.1. Name<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
-<p>calculateAgentData -  Shell script called periodically to create a properties file with resource utilization</p>
-</div>
 <div class="section" id="id20">
-<h3>5.4.2. Synopsis<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
-<p>calculateAgentData PROPSFILE</p>
+<h3>5.4.1. Name<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>calculateAgentData -  リソースの使用率を持つプロパティファイルを作成するために定期的に呼び出されるシェルスクリプトです</p>
 </div>
 <div class="section" id="id21">
-<h3>5.4.3. Description<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>enStratus calls this script periodically to recalculate resource usage on the server. The script prints out a file in the form:</dt>
-<dd>property=value</dd>
-</dl>
-<p>It is expected to output the following properties:
-* cpuCount - current number of CPU cores
-* cpuLoad - current server load
-* cpuUtilization - utilization of the server (or, alternately, cpuUser and cpuSys)
-* currentRam - amount of RAM currently in use (in MB)
-* maxRam - total RAM on the system (in MB)
-* processes - current number of processes executing on the server
-* deviceTotal.DEVICE - total disk space in GB on a device (example: deviceTotal.sdh=10)
-* deviceUsed.DEVICE - total disk space in GB in use on a device (example: deviceUsed.sdh=5</p>
+<h3>5.4.2. Synopsis<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>calculateAgentData PROPSFILE</p>
 </div>
 <div class="section" id="id22">
-<h3>5.4.4. Options<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<h3>5.4.3. Description<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
-<dt>PROPSFILE</dt>
-<dd>Output file to store the performance data. By default is /mnt/tmp/stats.properties</dd>
+<dt>enStratusは、サーバー上のリソースの使用状況を定期的に再計算するためにこのスクリプトを呼び出します。スクリプトは、次の形式でファイルを出力します。</dt>
+<dd>プロパティ=値</dd>
 </dl>
+<p>それは、次のプロパティを出力することが期待されています。</p>
+<ul class="simple">
+<li>cpuCount - CPUコアの現在の数</li>
+<li>cpuLoad - 現在のサーバの負荷</li>
+<li>cpuUtilization - サーバー（または、交互に、cpuUserとcpuSys）の使用率</li>
+<li>currentRam - 現在使用中のRAMの容量（MB単位）</li>
+<li>maxRam - システム上のRAMの合計（MB単位）</li>
+<li>processes - サーバ上で実行中のプロセスの現在の数</li>
+<li>deviceTotal.DEVICE - デバイス上でGB単位のディスク領域の合計（例：deviceTotal.sdh= 10）</li>
+<li>deviceUsed.DEVICE - デバイスで使用されているGBのディスク領域の合計（例：deviceUsed.sdh= 5）</li>
+</ul>
 </div>
 <div class="section" id="id23">
-<h3>5.4.5. Examples<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<h3>5.4.4. Options<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>PROPSFILE</dt>
+<dd>パフォーマンス·データを格納する出力ファイルです。デフォルトでは /mnt/tmp/stats.properties です。</dd>
+</dl>
+</div>
+<div class="section" id="examples">
+<h3>5.4.5. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <p>calculateAgentData /mnt/tmp/stats.properties</p>
 </div>
 <div class="section" id="id24">
 <h3>5.4.6. Invocation<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
-<p>This script is called periodically by the enstratus agent and its content sent to the provisioning server.</p>
+<p>このスクリプトはenstratusエージェントによって定期的に呼び出され、その内容は、プロビジョニングサーバーに送信されます。</p>
 </div>
 <div class="section" id="id25">
 <h3>5.4.7. Dependencies<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
@@ -319,7 +332,7 @@ exists, to backup a service. enstratus-backupService is usually an ad-hoc script
 </div>
 <div class="section" id="id26">
 <h3>5.4.8. Permission<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
-<p>It is launched by the enstratus user.</p>
+<p>これはenstratusユーザーによって起動されます。</p>
 </div>
 <div class="section" id="id27">
 <h3>5.4.9. Overrides<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
@@ -331,7 +344,7 @@ exists, to backup a service. enstratus-backupService is usually an ad-hoc script
 <h2>5.5. checkService<a class="headerlink" href="#checkservice" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id28">
 <h3>5.5.1. Name<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
-<p>checkService - This script is used to determine the &#8220;health&#8221; of a service</p>
+<p>checkService - このスクリプトは、サービスの&#8221;健康&#8221;を決定するために使用されます</p>
 </div>
 <div class="section" id="id29">
 <h3>5.5.2. Synopsis<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
@@ -339,25 +352,24 @@ exists, to backup a service. enstratus-backupService is usually an ad-hoc script
 </div>
 <div class="section" id="id30">
 <h3>5.5.3. Description<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
-<p>This script is used to determine the &#8220;health&#8221; of a service. It is meant to be user-extensible. The way to use this script is to write a script called
-enstratus-check and put it in the /bin directory of your service image.
-The enStratus provisioning server will call this script during the launch of the service. If the script returns a code of &#8220;OK&#8221;, the service will be
-marked as running. If not, it will be marked as impaired.</p>
+<p>このスクリプトは、サービスの &#8220;健康&#8221;を決定するために使用されます。それは、ユーザが拡張可能であることを意味します。このスクリプトを使用する方法は &#8220;enstratus-check&#8221; と呼ばれるスクリプトを記述することで
+、サービスイメージの /bin ディレクトリに置きます。
+enStratusプロビジョニングサーバーは、サービスの起動時にこのスクリプトを呼び出します。スクリプトは、&#8221;OK&#8221;のコードを返した場合、サービスが実行しているとしてマークされます。でなければ障害者として、それはマークされます。</p>
 </div>
 <div class="section" id="id31">
 <h3>5.5.4. Options<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>SERVICE_ID</dt>
-<dd>ID of the service to be checked. It&#8217;s provided by enstratus. Service images are stored in /mnt/services/$SERVICE_ID</dd>
+<dd>サービスIDをチェックすることができます。それはenstratusにより提供されています。サービスイメージは /mnt/services/$SERVICE_ID に格納されています</dd>
 </dl>
 </div>
 <div class="section" id="id32">
-<h3>5.5.5. Examples<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<h3>5.5.5. 例<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
 <p>checkService a123</p>
 </div>
 <div class="section" id="id33">
 <h3>5.5.6. Invocation<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
-<p>This script is called automatically by enstratus during the launch of the service</p>
+<p>このスクリプトは、サービスの起動時にenstratusによって自動的に呼び出されます</p>
 </div>
 <div class="section" id="id34">
 <h3>5.5.7. Dependencies<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
@@ -367,7 +379,7 @@ marked as running. If not, it will be marked as impaired.</p>
 </div>
 <div class="section" id="id35">
 <h3>5.5.8. Permission<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
-<p>It is launched by the enstratus user.</p>
+<p>これはenstratusユーザーによって起動されます。</p>
 </div>
 <div class="section" id="id36">
 <h3>5.5.9. Overrides<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
@@ -379,41 +391,51 @@ marked as running. If not, it will be marked as impaired.</p>
 <h2>5.6. format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="function">
 <h3>5.6.1. Function<a class="headerlink" href="#function" title="Permalink to this headline">¶</a></h3>
-<p>It creates a filesystem in a given physical or logical storage volume. Additionally it adds an entry for that volume in /etc/fstab so the volume can be mounted easily. Actual volume mount is performed by the mount script.</p>
+<p>これは、与えられた物理的または論理的なストレージボリュームにファイルシステムを作成します。さらに、ボリュームが簡単にマウントできるように、 /etc/fstab にそのボリュームのエントリを追加します。実際のボリュームのマウントは、マウントスクリプトによって実行されます。</p>
 </div>
 <div class="section" id="usage">
 <h3>5.6.2. Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
 <p>format DEVICE_ID FILE_SYSTEM MOUNT_POINT ENCRYPTED</p>
 <dl class="docutils">
 <dt>DEVICE_ID</dt>
-<dd>Last part of the Linux device name (ie sdh for /dev/sdh or data for /dev/mapper/data ) . Generally this parameter is obtained automatically from the cloud provider.</dd>
+<dd>Linuxのデバイス名（つまり /dev/sdh の sdh または /dev/mapper/data 用の data ）の最後の部分。一般に、このパラメータは、クラウドプロバイダーから自動的に取得されます。</dd>
+</dl>
+<dl class="docutils">
 <dt>FILE_SYSTEM</dt>
-<dd>File system to be created. Most popular Linux filesystems are available (xfs,ext2,ext3,ext4) provided the server image includes support for them. By default enstratus will use xfs</dd>
+<dd>作成されるファイルシステム。最も人気のあるLinuxファイルシステム（XFS、ext2、ext3、ext4は）が、それらのサポートを含むサーバーイメージで提供されて用意されています。デフォルトではenstratusは xfs を使用します。</dd>
+</dl>
+<dl class="docutils">
 <dt>MOUNT_POINT</dt>
-<dd>Empty directory where the formatted volume will be mounted</dd>
+<dd>フォーマットされるボリュームがマウントされる空のディレクトリ</dd>
+</dl>
+<dl class="docutils">
 <dt>ENCRYPTED</dt>
-<dd>Whether or not the volume has been decrypted by enstratus. That is required to find the correct device name and set suitable options in /etc/fstab</dd>
+<dd>ボリュームがenstratusによって復号化されているかどうか。それには /etc/fstab に正しいデバイス名を見つけ、適切なオプションを設定する必要があります</dd>
 </dl>
 </div>
 <div class="section" id="id37">
 <h3>5.6.3. Invocation<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
-<p>This script is called when:</p>
+<p>このスクリプトは、次の場合にに呼び出されます。:</p>
 <ul class="simple">
-<li>If a volume is created when manually launching a server from the Machine Images page. In this case the mount point and file system can be set by the user.</li>
-<li>When a server is launched within a deployment and the launch configuration has been set to automatically create a volume. In this case volume is mounted in /mnt/services and given a xfs filesystem.</li>
+<li>手動でマシンイメージページからサーバーを起動したときにボリュームが作成されます。このケースではマウントポイントとファイルシステムは、ユーザが設定することができます。</li>
+<li>サーバが、配備内で起動され、起動設定が自動的にボリュームを作成するように設定されている場合。この場合、ボリュームは /mnt/services にマウントされ、XFSファイルシステムが与えられます。</li>
 </ul>
 </div>
 <div class="section" id="id38">
 <h3>5.6.4. Dependencies<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>sudo</li>
-<li>mkfs utility for the selected filesystem, that&#8217;s is mkfs.xfs for XFS support, mkfs.ext3 for ext3</li>
-<li>Kernel modules required for mounting the filesystem</li>
+</ul>
+<ul class="simple">
+<li>mkfs 選択されたファイルシステム用のユーティリティで、それはXFSをサポートするための mkfs.xfs 、ext3ファイルシステムのための mkfs.ext3 です。</li>
+</ul>
+<ul class="simple">
+<li>Kernel  ファイルシステムをマウントするために必要なモジュール。</li>
 </ul>
 </div>
 <div class="section" id="id39">
 <h3>5.6.5. Permission<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
-<p>It is launched by the enstratus user. It needs sudo authority for creating a filesystem and editing the /etc/fstab file.</p>
+<p>これはenstratusユーザーによって起動されます。ファイルシステムを作成し、 /etc/fstab ファイルを編集するにはsudo権限が必要です。</p>
 </div>
 <div class="section" id="id40">
 <h3>5.6.6. Overrides<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
@@ -425,7 +447,7 @@ marked as running. If not, it will be marked as impaired.</p>
 <h2>5.7. getIpAddresses<a class="headerlink" href="#getipaddresses" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id41">
 <h3>5.7.1. Name<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h3>
-<p>getIpAddresses - retrieve the internal (private) IP of the server using the ifconfig command</p>
+<p>getIpAddresses - ifconfigコマンドを使用して、サーバーの内部（プライベート）IPアドレスを取得します</p>
 </div>
 <div class="section" id="id42">
 <h3>5.7.2. Synopsis<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h3>
@@ -433,7 +455,7 @@ marked as running. If not, it will be marked as impaired.</p>
 </div>
 <div class="section" id="id43">
 <h3>5.7.3. Description<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
-<p>It retrieves the internal (private) IP of the server using the ifconfig command</p>
+<p>これは、ifconfigコマンドを使用して、サーバーの内部（プライベート）IPアドレスを取得します。</p>
 </div>
 <div class="section" id="id44">
 <h3>5.7.4. Options<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h3>
@@ -441,7 +463,7 @@ marked as running. If not, it will be marked as impaired.</p>
 </div>
 <div class="section" id="id45">
 <h3>5.7.5. Invocation<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h3>
-<p>It can be used by service configuration scripts when it is not possible to obtain the private IP address using other methods.</p>
+<p>他の方法を使用して、プライベートIPアドレスを取得することができないとき、サービスの構成スクリプトを使用することができます。</p>
 </div>
 <div class="section" id="id46">
 <h3>5.7.6. Dependencies<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h3>
@@ -451,7 +473,7 @@ marked as running. If not, it will be marked as impaired.</p>
 </div>
 <div class="section" id="permissions">
 <h3>5.7.7. Permissions<a class="headerlink" href="#permissions" title="Permalink to this headline">¶</a></h3>
-<p>It is launched by the enstratus user.</p>
+<p>これはenstratusユーザーによって起動されます。</p>
 </div>
 <div class="section" id="id47">
 <h3>5.7.8. Overrides<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h3>
@@ -463,7 +485,7 @@ marked as running. If not, it will be marked as impaired.</p>
 <h2>5.8. getUnixOS<a class="headerlink" href="#getunixos" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id48">
 <h3>5.8.1. Name<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h3>
-<p>getUnixOS -  Identifies Linux or Unix flavour</p>
+<p>getUnixOS -  LinuxやUnixのフレーバーを識別します。</p>
 </div>
 <div class="section" id="id49">
 <h3>5.8.2. Synopsis<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h3>
@@ -471,14 +493,14 @@ marked as running. If not, it will be marked as impaired.</p>
 </div>
 <div class="section" id="id50">
 <h3>5.8.3. Description<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
-<p>Identifies the Linux or Unix flavour based on the contents of the /usr/bin/lsb_release file</p>
+<p>これは /usr/bin/lsb_release ファイルの内容に基づいてフレーバーを識別します。</p>
 </div>
 <div class="section" id="id51">
 <h3>5.8.4. Options<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
 <p>None</p>
 </div>
 <div class="section" id="id52">
-<h3>5.8.5. Examples<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h3>
+<h3>5.8.5. 例<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-sh"><div class="highlight"><pre><span class="nv">$ </span>getUnixOS
 UBUNTU
 </pre></div>
@@ -486,7 +508,7 @@ UBUNTU
 </div>
 <div class="section" id="id53">
 <h3>5.8.6. Invocation<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
-<p>It may be invoked by any script that needs to determine the Linux flavour in the server</p>
+<p>これは、サーバのLinuxフレーバを判別する必要があるすべてのスクリプトによって呼び出されるかもしれません。</p>
 </div>
 <div class="section" id="id54">
 <h3>5.8.7. Dependencies<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h3>
@@ -496,7 +518,7 @@ UBUNTU
 </div>
 <div class="section" id="id55">
 <h3>5.8.8. Permission<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h3>
-<p>No administrative permission required.</p>
+<p>管理者権限は必要ありません。</p>
 </div>
 <div class="section" id="id56">
 <h3>5.8.9. Overrides<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h3>
@@ -508,7 +530,7 @@ UBUNTU
 <h2>5.9. getmyIP<a class="headerlink" href="#getmyip" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id57">
 <h3>5.9.1. Function<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h3>
-<p>It retrieves the external (public) IP of the server using the third party service whatismyip.com</p>
+<p>これは、サードパーティのサービス whatismyip.com を使用して、サーバーの外部（パブリック）IPアドレスを取得します。</p>
 </div>
 <div class="section" id="id58">
 <h3>5.9.2. Usage<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h3>
@@ -516,7 +538,7 @@ UBUNTU
 </div>
 <div class="section" id="id59">
 <h3>5.9.3. Invocation<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h3>
-<p>It can be used by service configuration scripts when it is not possible to obtain the public IP address using other methods.</p>
+<p>他の方法を使用してパブリックIPアドレスを取得することができないとき、サービスの構成スクリプトを使用することができます。</p>
 </div>
 <div class="section" id="id60">
 <h3>5.9.4. Dependencies<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h3>
@@ -526,7 +548,7 @@ UBUNTU
 </div>
 <div class="section" id="id61">
 <h3>5.9.5. Permissions<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
-<p>It is launched by the enstratus user.</p>
+<p>これはenstratusユーザーによって起動されます。</p>
 </div>
 <div class="section" id="id62">
 <h3>5.9.6. Overrides<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h3>
@@ -538,7 +560,7 @@ UBUNTU
 <h2>5.10. grantDatabaseAccess<a class="headerlink" href="#grantdatabaseaccess" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id63">
 <h3>5.10.1. Name<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h3>
-<p>grantDatabaseAccess - Triggers a service-specific script for granting database access to a client.</p>
+<p>grantDatabaseAccess - クライアントへのデータベースアクセス権を付与するためのサービス固有のスクリプトをトリガします。</p>
 </div>
 <div class="section" id="id64">
 <h3>5.10.2. Synopsis<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h3>
@@ -546,24 +568,26 @@ UBUNTU
 </div>
 <div class="section" id="id65">
 <h3>5.10.3. Description<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h3>
-<p>It invokes the script /mnt/services/$SERVICE_ID/bin/enstratus-dbgrant , if existent, to allow access to a database from another server</p>
+<p>これは別のサーバーからデータベースへのアクセスを許可するために、もし存在すれば、スクリプト /mnt/services/$SERVICE_ID/bin/enstratus-dbgrant を呼び出します。</p>
 </div>
 <div class="section" id="id66">
 <h3>5.10.4. Options<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>SERVICE_ID</dt>
-<dd>ID of the service. It&#8217;s provided by enstratus. Service images are stored in /mnt/services/$SERVICE_ID</dd>
+<dd>サービスIDです。それはenstratusにより提供されています。サービスイメージは /mnt/services/$SERVICE_ID に格納されています。</dd>
+</dl>
+<dl class="docutils">
 <dt>CONFIG_FILE</dt>
-<dd>Configuration file provided by enstratus. It contains information required to grant access to a data source, like the remote server IP, database name and credentials .</dd>
+<dd>構成ファイルはenstratusによって提供されます。これには、リモートサーバーのIPアドレス、データベース名と資格情報のように、データソースへのアクセス権を付与するために必要な情報が含まれています。</dd>
 </dl>
 </div>
 <div class="section" id="id67">
-<h3>5.10.5. Examples<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
+<h3>5.10.5. 例<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
 <p>grantDatabaseAccess a123 /enstratus/ws/tomcat/temp/database6625343243682788319.cfg</p>
 </div>
 <div class="section" id="id68">
 <h3>5.10.6. Invocation<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h3>
-<p>This script is called automatically by enstratus during a deployment for any new server in a service depending of a Data Source</p>
+<p>このスクリプトは、サービス内のすべての新規サーバーの配備時にデータソースに応じて、enstratusによって自動的に呼び出されます</p>
 </div>
 <div class="section" id="id69">
 <h3>5.10.7. Dependencies<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
@@ -573,7 +597,7 @@ UBUNTU
 </div>
 <div class="section" id="id70">
 <h3>5.10.8. Permission<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h3>
-<p>It is launched by the enstratus user.</p>
+<p>これはenstratusユーザーによって起動されます。</p>
 </div>
 <div class="section" id="id71">
 <h3>5.10.9. Overrides<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h3>
@@ -585,14 +609,14 @@ UBUNTU
 <h2>5.11. listDevices<a class="headerlink" href="#listdevices" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id72">
 <h3>5.11.1. Synopsis<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h3>
-<p>listDevices - List all devices currently mounted for the machine</p>
+<p>listDevices - 現在マシンにマウントされているすべてのデバイスをリストアップします</p>
 </div>
 <div class="section" id="id73">
 <h3>5.11.2. Description<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h3>
-<p>Print a list of mounted partitions, file system, total and used capacity.</p>
+<p>マウントされているパーティションのリスト、ファイルシステム、合計使用容量をプリントします。</p>
 </div>
 <div class="section" id="id74">
-<h3>5.11.3. Examples<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h3>
+<h3>5.11.3. 例<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-sh"><div class="highlight"><pre><span class="nv">$ </span>listDevices
 /dev/sda1 ext3 / 15481840 4471396
 /dev/sdb ext3 /mnt 433455904 22485176
@@ -602,7 +626,7 @@ UBUNTU
 </div>
 <div class="section" id="id75">
 <h3>5.11.4. Invocation<a class="headerlink" href="#id75" title="Permalink to this headline">¶</a></h3>
-<p>It is called by the enstratus provisioning server to display information about the server volumes</p>
+<p>これはenstratusプロビジョニングサーバによってサーバのボリュームに関する情報を表示するために呼び出されます。</p>
 </div>
 <div class="section" id="id76">
 <h3>5.11.5. Dependencies<a class="headerlink" href="#id76" title="Permalink to this headline">¶</a></h3>
@@ -612,7 +636,7 @@ UBUNTU
 </div>
 <div class="section" id="id77">
 <h3>5.11.6. Permissions<a class="headerlink" href="#id77" title="Permalink to this headline">¶</a></h3>
-<p>It is launched by the enstratus user.</p>
+<p>これはenstratusユーザーによって起動されます。</p>
 </div>
 <div class="section" id="id78">
 <h3>5.11.7. Overrides<a class="headerlink" href="#id78" title="Permalink to this headline">¶</a></h3>
@@ -624,7 +648,7 @@ UBUNTU
 <h2>5.12. lockFileSystems<a class="headerlink" href="#lockfilesystems" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id79">
 <h3>5.12.1. Name<a class="headerlink" href="#id79" title="Permalink to this headline">¶</a></h3>
-<p>lockFileSystems -  Locks all mounted XFS partitions</p>
+<p>lockFileSystems -  マウントされているすべてのXFSのパーティションをロックします</p>
 </div>
 <div class="section" id="id80">
 <h3>5.12.2. Synopsis<a class="headerlink" href="#id80" title="Permalink to this headline">¶</a></h3>
@@ -632,21 +656,21 @@ UBUNTU
 </div>
 <div class="section" id="id81">
 <h3>5.12.3. Description<a class="headerlink" href="#id81" title="Permalink to this headline">¶</a></h3>
-<p>It prevents access to all mounted XFS partitions using the xfs_freeze tool as a required step for creating volume snapshots.</p>
+<p>ボリュームのスナップショットを作成するために必要なステップとして xfs_freeze ツールを使用してマウントされているすべてのXFSのパーティションへのアクセスを防止します。</p>
 </div>
 <div class="section" id="id82">
 <h3>5.12.4. Options<a class="headerlink" href="#id82" title="Permalink to this headline">¶</a></h3>
 <p>None</p>
 </div>
 <div class="section" id="id83">
-<h3>5.12.5. Examples<a class="headerlink" href="#id83" title="Permalink to this headline">¶</a></h3>
+<h3>5.12.5. 例<a class="headerlink" href="#id83" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-sh"><div class="highlight"><pre><span class="nv">$ </span>lockFileSystems
 </pre></div>
 </div>
 </div>
 <div class="section" id="id84">
 <h3>5.12.6. Invocation<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h3>
-<p>It is called by volume snapshot scripts</p>
+<p>これは、ボリュームスナップショットスクリプトによって呼び出されます。</p>
 </div>
 <div class="section" id="id85">
 <h3>5.12.7. Dependencies<a class="headerlink" href="#id85" title="Permalink to this headline">¶</a></h3>
@@ -657,7 +681,7 @@ UBUNTU
 </div>
 <div class="section" id="id86">
 <h3>5.12.8. Permission<a class="headerlink" href="#id86" title="Permalink to this headline">¶</a></h3>
-<p>Run by the enstratus user. It needs sudo to run the xfs_freeze command</p>
+<p>enstratusユーザによって実行されます。xfs_freeze コマンドを実行するにはsudoを必要とします。</p>
 </div>
 <div class="section" id="id87">
 <h3>5.12.9. Overrides<a class="headerlink" href="#id87" title="Permalink to this headline">¶</a></h3>
@@ -669,7 +693,7 @@ UBUNTU
 <h2>5.13. log<a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id88">
 <h3>5.13.1. Function<a class="headerlink" href="#id88" title="Permalink to this headline">¶</a></h3>
-<p>It makes entries in the enstratus agent log</p>
+<p>これはenstratusエージェントのログにエントリを作成します</p>
 </div>
 <div class="section" id="id89">
 <h3>5.13.2. Usage<a class="headerlink" href="#id89" title="Permalink to this headline">¶</a></h3>
@@ -681,7 +705,7 @@ UBUNTU
 </div>
 <div class="section" id="id90">
 <h3>5.13.3. Invocation<a class="headerlink" href="#id90" title="Permalink to this headline">¶</a></h3>
-<p>It is used by enstratus agent and service configuration scripts for traceability and debugging purposes</p>
+<p>これはトレーサビリティとデバッグ目的のためにenstratusエージェントとサービスの構成スクリプトによって使用されます</p>
 </div>
 <div class="section" id="id91">
 <h3>5.13.4. Dependencies<a class="headerlink" href="#id91" title="Permalink to this headline">¶</a></h3>
@@ -691,7 +715,7 @@ UBUNTU
 </div>
 <div class="section" id="id92">
 <h3>5.13.5. Permissions<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h3>
-<p>It does not require administrative permission. Can be used by any system user allowed to execute the script.</p>
+<p>これは管理者権限を必要としません。スクリプトの実行を許可されている任意のシステムユーザーで使用することができます。</p>
 </div>
 <div class="section" id="id93">
 <h3>5.13.6. Overrides<a class="headerlink" href="#id93" title="Permalink to this headline">¶</a></h3>
@@ -703,7 +727,7 @@ UBUNTU
 <h2>5.14. makeTemp<a class="headerlink" href="#maketemp" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id94">
 <h3>5.14.1. Name<a class="headerlink" href="#id94" title="Permalink to this headline">¶</a></h3>
-<p>makeTemp -  Shell script to setup the enStratus temp directory</p>
+<p>makeTemp -  enStratusが temp ディレクトリをセットアップするシェルスクリプトです</p>
 </div>
 <div class="section" id="id95">
 <h3>5.14.2. Synopsis<a class="headerlink" href="#id95" title="Permalink to this headline">¶</a></h3>
@@ -711,7 +735,7 @@ UBUNTU
 </div>
 <div class="section" id="id96">
 <h3>5.14.3. Description<a class="headerlink" href="#id96" title="Permalink to this headline">¶</a></h3>
-<p>It creates /mnt/tmp folder and gives ownership to the enstratus user and group, preventing access to other users</p>
+<p>これは /mnt/tmp フォルダを作成し、enstratusのユーザーとグループに所有権を与えて、他のユーザーからのアクセスを防止します。</p>
 </div>
 <div class="section" id="id97">
 <h3>5.14.4. Options<a class="headerlink" href="#id97" title="Permalink to this headline">¶</a></h3>
@@ -734,7 +758,7 @@ UBUNTU
 </div>
 <div class="section" id="id101">
 <h3>5.14.8. Permission<a class="headerlink" href="#id101" title="Permalink to this headline">¶</a></h3>
-<p>Run by the enstratus user. It needs sudo to create the temp folder and assign the correct ownership and permission.</p>
+<p>enstratusユーザによって実行されます。temp フォルダを作成し、適切な所有権とアクセス許可を割り当てるには sudo の権限が必要があります。</p>
 </div>
 <div class="section" id="id102">
 <h3>5.14.9. Overrides<a class="headerlink" href="#id102" title="Permalink to this headline">¶</a></h3>
@@ -746,31 +770,35 @@ UBUNTU
 <h2>5.15. mount<a class="headerlink" href="#mount" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id103">
 <h3>5.15.1. Name<a class="headerlink" href="#id103" title="Permalink to this headline">¶</a></h3>
-<p>mount - It mounts a storage device at a directory.</p>
+<p>mount - ストレージデバイスをディレクトリにマウントします。</p>
 </div>
 <div class="section" id="id104">
 <h3>5.15.2. Description<a class="headerlink" href="#id104" title="Permalink to this headline">¶</a></h3>
-<p>It mounts a storage device at a directory. Additional the mount point will be added to the /etc/fstab file so it is mounted automatically on server restart.</p>
+<p>ストレージデバイスをディレクトリにマウントします。サーバの再起動時に自動的にマウントされるように追加のマウントポイントが /etc/fstab ファイルに追加されます。</p>
 </div>
 <div class="section" id="id105">
 <h3>5.15.3. Usage<a class="headerlink" href="#id105" title="Permalink to this headline">¶</a></h3>
 <p>mount DEVICE_ID FILE_SYSTEM MOUNT_POINT</p>
 <dl class="docutils">
 <dt>DEVICE_ID</dt>
-<dd>Last part of the Linux device name (ie sdh for /dev/sdh or data for /dev/mapper/data ) . Generally this parameter is obtained automatically from the cloud provider.</dd>
+<dd>Linuxのデバイス名（つまり /dev/sdh の sdh または /dev/mapper/data 用の data ）の最後の部分。一般的に、このパラメータは、クラウドプロバイダーから自動的に取得されます。</dd>
+</dl>
+<dl class="docutils">
 <dt>FILE_SYSTEM</dt>
-<dd>File system of the volume to be mounted. It is required to add the mount point to the /etc/fstab file.</dd>
+<dd>マウントされるボリュームのファイルシステムです。これは /etc/fstab ファイルにマウントポイントを追加する必要があります。</dd>
+</dl>
+<dl class="docutils">
 <dt>MOUNT_POINT</dt>
-<dd>Empty directory where the volume will be mounted</dd>
+<dd>ボリュームがマウントされる空のディレクトリ</dd>
 </dl>
 </div>
 <div class="section" id="id106">
 <h3>5.15.4. Invocation<a class="headerlink" href="#id106" title="Permalink to this headline">¶</a></h3>
-<p>This script is called when:</p>
+<p>このスクリプトは、次の場合に呼び出されます。:</p>
 <ul class="simple">
-<li>If a volume is created when manually launching a server from the Machine Images page. In this case the mount point and file system can be set by the user.</li>
-<li>A Volume is attached to a server in the Volume list page, and the option Automount is selected</li>
-<li>When a server is launched within a deployment and its Launch Configuration has been set to automatically create a volume. In this case volume is mounted in /mnt/services and given a xfs filesystem.</li>
+<li>手動でマシンのイメージページからサーバーを起動したときにボリュームが作成されます。このケースではマウントポイントとファイルシステムは、ユーザが設定することができます。</li>
+<li>ボリュームは、ボリュームリストのページのサーバーに接続され、オプションの自動マウントが選択されています。</li>
+<li>サーバは、配備内で起動され、その起動設定が自動的にボリュームを作成するように設定されている場合。この場合、ボリュームは /mnt/services にマウントされ、XFSファイルシステムが与えられます。</li>
 </ul>
 </div>
 <div class="section" id="id107">
@@ -782,7 +810,7 @@ UBUNTU
 </div>
 <div class="section" id="id108">
 <h3>5.15.6. Permissions<a class="headerlink" href="#id108" title="Permalink to this headline">¶</a></h3>
-<p>It is launched by the enstratus user. It needs sudo authority for mounting a filesystem and editing the /etc/fstab file. User enstratus will own the mount point and will be writeable by the user and group enstratus.</p>
+<p>これはenstratusユーザーによって起動されます。ファイルシステムをマウントし、 /etc/fstab ファイルを編集するためには sudo 権限が必要です。enstratusのユーザーは、マウントポイントを所有し、enstratusのユーザーとグループによって書き込み可能になります。</p>
 </div>
 <div class="section" id="id109">
 <h3>5.15.7. Overrides<a class="headerlink" href="#id109" title="Permalink to this headline">¶</a></h3>

@@ -3,7 +3,8 @@ backupService
 
 Name
 +++++
-backupService ~ Backs up the target service.
+.. backupService ~ Backs up the target service.
+backupService ~ ターゲットのサービスをバックアップします。
 
 Synopsis
 ++++++++
@@ -13,20 +14,27 @@ backupService SERVICE_ID FILE_PATH
 Description
 +++++++++++
 
-enStratus invokes the script /mnt/services/$SERVICE_ID/bin/enstratus~backupService, if it
-exists, to backup a service. enstratus-backupService is usually an ad-hoc script meant to backup an specific kind of service.
-
+.. enStratus invokes the script /mnt/services/$SERVICE_ID/bin/enstratus~backupService, if it
+   exists, to backup a service. enstratus-backupService is usually an ad-hoc script meant to backup an specific kind of service.
+もしそれがあれば、サービスをバックアップするために、enStratusは、
+スクリプト /mnt/services/$SERVICE_ID/bin/enstratus~backupService を呼び出します。
+通常 enstratus-backupService は、特定のサービスをバックアップすることを意味する一時的なスクリプトです。
 
 Options
 +++++++
 
+.. SERVICE_ID
+.. 	ID of the service to be backed up. It's provided by enstratus. Service images are stored in /mnt/s   ervices/$SERVICE_ID
 SERVICE_ID
-	ID of the service to be backed up. It's provided by enstratus. Service images are stored in /mnt/services/$SERVICE_ID
+	サービスIDは、バックアップすることができます。それはenstratusにより提供されています。サービスイメージは /mnt/services/$SERVICE_ID に格納されています
 
+.. FILE_PATH
+.. 	Temporary file name to be used to store the backup. After a successful backup enstratus will uploa   d the file to the configured cloud storage.
 FILE_PATH
-	Temporary file name to be used to store the backup. After a successful backup enstratus will upload the file to the configured cloud storage.
+	バックアップを格納するために使用する一時ファイル名です。正常なバックアップ後にenstratusが構成されたクラウドストレージにファイルをアップロードします。
 
-Examples
+.. Examples
+例
 ++++++++
 
 backupService a123 /mnt/tmp/123-testservice-YYYYMMDD-ID.zip
@@ -35,7 +43,8 @@ backupService a123 /mnt/tmp/123-testservice-YYYYMMDD-ID.zip
 Invocation
 ++++++++++
 
-This script is called automatically by enstratus if the Service has been set for periodic backups, according to the configured frequency.
+.. This script is called automatically by enstratus if the Service has been set for periodic backups, according to the configured frequency.
+サービスが定期的なバックアップをするように設定されている場合、このスクリプトは、設定周期に応じて、enstratusによって自動的に呼び出されます。
 
 
 Dependencies
@@ -46,8 +55,8 @@ Dependencies
 Permission
 ++++++++++
 
-It is launched by the enstratus user.
-
+.. It is launched by the enstratus user.
+これはenstratusユーザーによって起動されます。
 
 Overrides
 +++++++++

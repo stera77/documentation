@@ -50,13 +50,13 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../downloads/downloads.html">1. Agent Downloads (Version 16)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../introduction/introduction.html">2. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">4. Scripts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../linux.html">5. Linux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../windows/windows.html">6. Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../extending/extending.html">7. Extending the Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../downloads/downloads.html">1. Agent ダウンロード (Version 16)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/introduction.html">2. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">3. インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">4. スクリプト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux.html">5. リナックス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/windows.html">6. ウィンドウズ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending/extending.html">7. エージェントの拡張</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -99,7 +99,7 @@
 <h1>calculateAgentData<a class="headerlink" href="#calculateagentdata" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="name">
 <h2>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
-<p>calculateAgentData -  Shell script called periodically to create a properties file with resource utilization</p>
+<p>calculateAgentData -  リソースの使用率を持つプロパティファイルを作成するために定期的に呼び出されるシェルスクリプトです</p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
@@ -108,24 +108,26 @@
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
-<dt>enStratus calls this script periodically to recalculate resource usage on the server. The script prints out a file in the form:</dt>
-<dd>property=value</dd>
+<dt>enStratusは、サーバー上のリソースの使用状況を定期的に再計算するためにこのスクリプトを呼び出します。スクリプトは、次の形式でファイルを出力します。</dt>
+<dd>プロパティ=値</dd>
 </dl>
-<p>It is expected to output the following properties:
-* cpuCount - current number of CPU cores
-* cpuLoad - current server load
-* cpuUtilization - utilization of the server (or, alternately, cpuUser and cpuSys)
-* currentRam - amount of RAM currently in use (in MB)
-* maxRam - total RAM on the system (in MB)
-* processes - current number of processes executing on the server
-* deviceTotal.DEVICE - total disk space in GB on a device (example: deviceTotal.sdh=10)
-* deviceUsed.DEVICE - total disk space in GB in use on a device (example: deviceUsed.sdh=5</p>
+<p>それは、次のプロパティを出力することが期待されています。</p>
+<ul class="simple">
+<li>cpuCount - CPUコアの現在の数</li>
+<li>cpuLoad - 現在のサーバの負荷</li>
+<li>cpuUtilization - サーバー（または、交互に、cpuUserとcpuSys）の使用率</li>
+<li>currentRam - 現在使用中のRAMの容量（MB単位）</li>
+<li>maxRam - システム上のRAMの合計（MB単位）</li>
+<li>processes - サーバ上で実行中のプロセスの現在の数</li>
+<li>deviceTotal.DEVICE - デバイス上でGB単位のディスク領域の合計（例：deviceTotal.sdh= 10）</li>
+<li>deviceUsed.DEVICE - デバイスで使用されているGBのディスク領域の合計（例：deviceUsed.sdh= 5）</li>
+</ul>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>PROPSFILE</dt>
-<dd>Output file to store the performance data. By default is /mnt/tmp/stats.properties</dd>
+<dd>パフォーマンス·データを格納する出力ファイルです。デフォルトでは /mnt/tmp/stats.properties です。</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -134,7 +136,7 @@
 </div>
 <div class="section" id="invocation">
 <h2>Invocation<a class="headerlink" href="#invocation" title="Permalink to this headline">¶</a></h2>
-<p>This script is called periodically by the enstratus agent and its content sent to the provisioning server.</p>
+<p>このスクリプトはenstratusエージェントによって定期的に呼び出され、その内容は、プロビジョニングサーバーに送信されます。</p>
 </div>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
@@ -144,7 +146,7 @@
 </div>
 <div class="section" id="permission">
 <h2>Permission<a class="headerlink" href="#permission" title="Permalink to this headline">¶</a></h2>
-<p>It is launched by the enstratus user.</p>
+<p>これはenstratusユーザーによって起動されます。</p>
 </div>
 <div class="section" id="overrides">
 <h2>Overrides<a class="headerlink" href="#overrides" title="Permalink to this headline">¶</a></h2>

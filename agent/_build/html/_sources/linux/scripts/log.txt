@@ -4,7 +4,8 @@ log
 Function
 ++++++++
 
-It makes entries in the enstratus agent log
+.. It makes entries in the enstratus agent log
+これはenstratusエージェントのログにエントリを作成します
 
 Usage
 +++++
@@ -18,8 +19,8 @@ MESSAGE_1
 Invocation
 ++++++++++
 
-It is used by enstratus agent and service configuration scripts for traceability and debugging purposes
-
+.. It is used by enstratus agent and service configuration scripts for traceability and debugging purposes
+これはトレーサビリティとデバッグ目的のためにenstratusエージェントとサービスの構成スクリプトによって使用されます
 
 Dependencies
 ++++++++++++
@@ -30,7 +31,8 @@ Dependencies
 Permissions
 +++++++++++
 
-It does not require administrative permission. Can be used by any system user allowed to execute the script.
+.. It does not require administrative permission. Can be used by any system user allowed to execute the script.
+これは管理者権限を必要としません。スクリプトの実行を許可されている任意のシステムユーザーで使用することができます。
 
 Overrides
 +++++++++

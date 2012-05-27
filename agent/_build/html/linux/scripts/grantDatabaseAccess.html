@@ -50,13 +50,13 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../downloads/downloads.html">1. Agent Downloads (Version 16)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../introduction/introduction.html">2. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">4. Scripts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../linux.html">5. Linux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../windows/windows.html">6. Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../extending/extending.html">7. Extending the Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../downloads/downloads.html">1. Agent ダウンロード (Version 16)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/introduction.html">2. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">3. インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">4. スクリプト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux.html">5. リナックス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/windows.html">6. ウィンドウズ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending/extending.html">7. エージェントの拡張</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -99,7 +99,7 @@
 <h1>grantDatabaseAccess<a class="headerlink" href="#grantdatabaseaccess" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="name">
 <h2>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
-<p>grantDatabaseAccess - Triggers a service-specific script for granting database access to a client.</p>
+<p>grantDatabaseAccess - クライアントへのデータベースアクセス権を付与するためのサービス固有のスクリプトをトリガします。</p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
@@ -107,24 +107,26 @@
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>It invokes the script /mnt/services/$SERVICE_ID/bin/enstratus-dbgrant , if existent, to allow access to a database from another server</p>
+<p>これは別のサーバーからデータベースへのアクセスを許可するために、もし存在すれば、スクリプト /mnt/services/$SERVICE_ID/bin/enstratus-dbgrant を呼び出します。</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>SERVICE_ID</dt>
-<dd>ID of the service. It&#8217;s provided by enstratus. Service images are stored in /mnt/services/$SERVICE_ID</dd>
+<dd>サービスIDです。それはenstratusにより提供されています。サービスイメージは /mnt/services/$SERVICE_ID に格納されています。</dd>
+</dl>
+<dl class="docutils">
 <dt>CONFIG_FILE</dt>
-<dd>Configuration file provided by enstratus. It contains information required to grant access to a data source, like the remote server IP, database name and credentials .</dd>
+<dd>構成ファイルはenstratusによって提供されます。これには、リモートサーバーのIPアドレス、データベース名と資格情報のように、データソースへのアクセス権を付与するために必要な情報が含まれています。</dd>
 </dl>
 </div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>grantDatabaseAccess a123 /enstratus/ws/tomcat/temp/database6625343243682788319.cfg</p>
 </div>
 <div class="section" id="invocation">
 <h2>Invocation<a class="headerlink" href="#invocation" title="Permalink to this headline">¶</a></h2>
-<p>This script is called automatically by enstratus during a deployment for any new server in a service depending of a Data Source</p>
+<p>このスクリプトは、サービス内のすべての新規サーバーの配備時にデータソースに応じて、enstratusによって自動的に呼び出されます</p>
 </div>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
@@ -134,7 +136,7 @@
 </div>
 <div class="section" id="permission">
 <h2>Permission<a class="headerlink" href="#permission" title="Permalink to this headline">¶</a></h2>
-<p>It is launched by the enstratus user.</p>
+<p>これはenstratusユーザーによって起動されます。</p>
 </div>
 <div class="section" id="overrides">
 <h2>Overrides<a class="headerlink" href="#overrides" title="Permalink to this headline">¶</a></h2>

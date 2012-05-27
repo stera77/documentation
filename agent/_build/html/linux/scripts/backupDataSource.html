@@ -50,13 +50,13 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../../index.html">Main Page</a></li></ul>
 	<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../downloads/downloads.html">1. Agent Downloads (Version 16)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../introduction/introduction.html">2. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">4. Scripts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../linux.html">5. Linux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../windows/windows.html">6. Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../extending/extending.html">7. Extending the Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../downloads/downloads.html">1. Agent ダウンロード (Version 16)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/introduction.html">2. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">3. インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">4. スクリプト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux.html">5. リナックス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/windows.html">6. ウィンドウズ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extending/extending.html">7. エージェントの拡張</a></li>
 </ul>
 
     <h3>Downloads</h3>
@@ -99,7 +99,7 @@
 <h1>backupDataSource<a class="headerlink" href="#backupdatasource" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="name">
 <h2>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
-<p>backupDataSource ~ Dumps a data source to the specified file location</p>
+<p>backupDataSource ~ データソースを指定したファイルの場所にダンプします</p>
 </div>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
@@ -108,28 +108,34 @@ backupDataSource SERVICE_ID DATA_SOURCE CONFIG_FILE FILE_PATH</p>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>It invokes the script /mnt/services/$SERVICE_ID/bin/enstratus-backupDataSource , if existent, to backup a Data Source. enstratus~backupDataSource is usually an ad~hoc script meant to backup an specific kind of data source, for example using mysqldump for MySQL databases, pgdump for PostGRESQL, etc.</p>
+<p>バックアップが存在しない場合、データソースをバックアップするために、 /mnt/services/$SERVICE_ID/bin/enstratus-backupDataSource スクリプトを呼び出します。 enstratus~backupDataSource は通常はデータソースの特定の種類のバックアップを作成するための非定形な、例えばMySQLデータベース用の mysqldump 、PostgreSQL用のpgdump等のスクリプトです。</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>SERVICE_ID</dt>
-<dd>ID of the service to be backed up. It&#8217;s provided by enstratus. Service images are stored in /mnt/services/$SERVICE_ID</dd>
+<dd>サービスIDは、バックアップすることができます。これはenstratusにより提供されています。サービスイメージは /mnt/services/$SERVICE_ID に格納されています</dd>
+</dl>
+<dl class="docutils">
 <dt>DATA_SOURCE</dt>
-<dd>Name of the datasource to be backed up.</dd>
+<dd>バックアップするデータソースの名前。</dd>
+</dl>
+<dl class="docutils">
 <dt>CONFIG_FILE</dt>
-<dd>Configuration file provided by enstratus. It contains information required to perform the backup, such as credentials.</dd>
+<dd>構成ファイルはenstratusによって提供されます。これには、資格情報などのバックアップを実行するために必要な情報が含まれています。</dd>
+</dl>
+<dl class="docutils">
 <dt>FILE_PATH</dt>
-<dd>Temporary file name to be used to store the backup. After a successful backup enstratus will upload the file to the configured cloud storage.</dd>
+<dd>バックアップを格納するために使用する一時ファイル名です。正常なバックアップ後にenstratusが構成されたクラウドストレージにファイルをアップロードします。</dd>
 </dl>
 </div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>例<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>backupDataSource a123 testds /mnt/services/a123/cfg/enstratus.cfg /mnt/tmp/123~testds~YYYYMMDD~ID.zip</p>
 </div>
 <div class="section" id="invocation">
 <h2>Invocation<a class="headerlink" href="#invocation" title="Permalink to this headline">¶</a></h2>
-<p>This script is called automatically by enstratus if the Data Source has been set for periodic backups, according to the configured frequency.</p>
+<p>データソースが、定期的なバックアップをするように設定されている場合、このスクリプトは、設定された周期に応じて、enstratusによって自動的に呼び出されます。</p>
 </div>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
@@ -139,7 +145,7 @@ backupDataSource SERVICE_ID DATA_SOURCE CONFIG_FILE FILE_PATH</p>
 </div>
 <div class="section" id="permission">
 <h2>Permission<a class="headerlink" href="#permission" title="Permalink to this headline">¶</a></h2>
-<p>It is launched by the enstratus user.</p>
+<p>これはenstratusユーザーによって起動されます。</p>
 </div>
 <div class="section" id="overrides">
 <h2>Overrides<a class="headerlink" href="#overrides" title="Permalink to this headline">¶</a></h2>

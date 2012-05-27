@@ -4,13 +4,16 @@ listDevices
 Synopsis
 ++++++++
 
-listDevices - List all devices currently mounted for the machine
+.. listDevices - List all devices currently mounted for the machine
+listDevices - 現在マシンにマウントされているすべてのデバイスをリストアップします
 
 Description
 +++++++++++
-Print a list of mounted partitions, file system, total and used capacity.
+.. Print a list of mounted partitions, file system, total and used capacity.
+マウントされているパーティションのリスト、ファイルシステム、合計使用容量をプリントします。
 
-Examples
+.. Examples
+例
 ++++++++
 
 .. code-block:: sh
@@ -25,8 +28,8 @@ Examples
 Invocation
 ++++++++++
 
-It is called by the enstratus provisioning server to display information about the server volumes
-
+.. It is called by the enstratus provisioning server to display information about the server volumes
+これはenstratusプロビジョニングサーバによってサーバのボリュームに関する情報を表示するために呼び出されます。
 
 Dependencies
 ++++++++++++
@@ -37,7 +40,8 @@ Dependencies
 Permissions
 +++++++++++
 
-It is launched by the enstratus user.
+.. It is launched by the enstratus user.
+これはenstratusユーザーによって起動されます。
 
 
 Overrides
