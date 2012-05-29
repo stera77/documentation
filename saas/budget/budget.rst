@@ -4,7 +4,7 @@
 
 .. enStratus financial controls allow for a useful feature for setting quotas and
    limiting/tracking costs incurred in the cloud.
-enStratus財務コントロールは、クォータ(割当て量)を設定してクラウド内で発生した費用を制限/追跡する便利な機能を可能にします。
+enStratus財務コントロールは、クォータ(使用枠)を設定してクラウド内で発生した費用を制限/追跡する便利な機能を可能にします。
 
 .. include:: budget_codes.rst
 .. include:: invoices.rst

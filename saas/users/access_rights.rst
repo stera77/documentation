@@ -47,7 +47,7 @@ enStratusコンソールのすべてのページ、リンク、アクション�
 各リソースの重要な組み合わせのセクションを参照してください。
 
 .. **QUALIFIER:** 
-**修飾子**
+**クオリファイヤー**
 
 .. There are five different qualifiers: ANY, GROUP, THIS GROUP, BILLING, and
    MINE. These represent ownership of resources such as servers and machine images. For exam-
@@ -56,7 +56,7 @@ enStratusコンソールのすべてのページ、リンク、アクション�
    user who launched it. With access rights you can limit access to the server to users who
    belong to the group you chose, the chosen billing code, or the user who launched the
    server.
-ANY、GROUP、 THIS GROUP、 BILLING、および MINE の5つの異なる修飾子があります。
+ANY、GROUP、 THIS GROUP、 BILLING、および MINE の5つの異なるクオリファイヤーがあります。
 これらは、サーバーやマシンイメージなどのリソースの所有権を表します。たとえば、ユーザーがサーバーを
 起動したとき、それらをグループおよび課金コードに関連付けることができます。
 起動されたサーバは、それに割り当てられたグループおよび課金コードとそれを起動したユーザーによって所有されています。
@@ -67,9 +67,9 @@ ANY、GROUP、 THIS GROUP、 BILLING、および MINE の5つの異なる修飾�
    qualifier. For some resources, such as console and firewall, the group, this group,
    billing, and mine qualifiers have no meaning because there is no ownership associated with
    the resource. In these cases you should always use ANY when adding access rights.
-ロール内のユーザーがすべてのサーバーへのアクセスを持ちたいのであれば、 ANY 修飾子を使用します。
+ロール内のユーザーがすべてのサーバーへのアクセスを持ちたいのであれば、 ANY クオリファイヤーを使用します。
 コンソールやファイアウォールのようないくつかのリソースにとって、GROUP、 THIS GROUP、 BILLING、および MINE の
-修飾子は意味がありません。なぜならそれにはリソースに関連付けられた所有権がありません。
+クオリファイヤーは意味がありません。なぜならそれにはリソースに関連付けられた所有権がありません。
 このケースでは、アクセス権を追加するときに常に ANY を使用する必要があります。
 
 .. Note: Ownership of some resources are still under development.
@@ -104,7 +104,7 @@ ANY、GROUP、 THIS GROUP、 BILLING、および MINE の5つの異なる修飾�
    QA Group, using the resource SERVER and the action Image. This is what each qualifier will
    allow members of the QA group to do:
 QAグループに関連付けられているQAロールに SERVER サーバーと Image アクションを使用してアクセス権を追加します。
-これは各修飾子がQAグループのメンバーに何をすることを許可するのかを示します。
+これは各クオリファイヤーがQAグループのメンバーに何をすることを許可するのかを示します。
 
 **ANY**   
 
